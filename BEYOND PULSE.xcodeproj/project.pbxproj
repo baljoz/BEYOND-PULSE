@@ -1,0 +1,616 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07266E581EE9A508005C5BFF /* ForgatPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07266E571EE9A508005C5BFF /* ForgatPasswordViewController.swift */; };
+		0726971D1EE98B15005AC23A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0726971C1EE98B15005AC23A /* AppDelegate.swift */; };
+		072697221EE98B15005AC23A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072697201EE98B15005AC23A /* Main.storyboard */; };
+		072697241EE98B15005AC23A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 072697231EE98B15005AC23A /* Assets.xcassets */; };
+		072697271EE98B15005AC23A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072697251EE98B15005AC23A /* LaunchScreen.storyboard */; };
+		072697321EE98B15005AC23A /* BEYOND_PULSETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072697311EE98B15005AC23A /* BEYOND_PULSETests.swift */; };
+		0726973D1EE98B15005AC23A /* BEYOND_PULSEUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0726973C1EE98B15005AC23A /* BEYOND_PULSEUITests.swift */; };
+		0726974B1EE98B67005AC23A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0726974A1EE98B67005AC23A /* LoginViewController.swift */; };
+		07387E251EEA7985003E73D9 /* SelectTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07387E241EEA7985003E73D9 /* SelectTeamViewController.swift */; };
+		07387E271EEA79E1003E73D9 /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07387E261EEA79E1003E73D9 /* TeamTableViewCell.swift */; };
+		07387E2B1EEA8645003E73D9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07387E2A1EEA8645003E73D9 /* SWRevealViewController.m */; };
+		07387E2D1EEA960B003E73D9 /* CoachViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07387E2C1EEA960B003E73D9 /* CoachViewController.swift */; };
+		07901C051EF949130000F40A /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07901C041EF949130000F40A /* CustomTabBarController.swift */; };
+		07901C071EF960F20000F40A /* TraningSesionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07901C061EF960F20000F40A /* TraningSesionTableViewCell.swift */; };
+		07906D1C1F051CCF00FB36D0 /* iOSDevCenters+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07906D1B1F051CCF00FB36D0 /* iOSDevCenters+GIF.swift */; };
+		07906D1E1F051F1800FB36D0 /* heartbeat.gif in Resources */ = {isa = PBXBuildFile; fileRef = 07906D1D1F051F1800FB36D0 /* heartbeat.gif */; };
+		079597071F025D46002FD487 /* ServerComunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079597061F025D46002FD487 /* ServerComunication.swift */; };
+		079991421F03BFAA00D4860E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079991411F03BFAA00D4860E /* SettingsViewController.swift */; };
+		07A6238D1EF1151A003A5395 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A6238C1EF1151A003A5395 /* PlayerTableViewCell.swift */; };
+		07A6238F1EF1158F003A5395 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A6238E1EF1158F003A5395 /* PlayerViewController.swift */; };
+		07EF5BE71F05012200476225 /* FirstScreanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EF5BE61F05012200476225 /* FirstScreanViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0726972E1EE98B15005AC23A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 072697111EE98B15005AC23A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 072697181EE98B15005AC23A;
+			remoteInfo = "BEYOND PULSE";
+		};
+		072697391EE98B15005AC23A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 072697111EE98B15005AC23A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 072697181EE98B15005AC23A;
+			remoteInfo = "BEYOND PULSE";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		07266E571EE9A508005C5BFF /* ForgatPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgatPasswordViewController.swift; sourceTree = "<group>"; };
+		072697191EE98B15005AC23A /* BEYOND PULSE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BEYOND PULSE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0726971C1EE98B15005AC23A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		072697211EE98B15005AC23A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		072697231EE98B15005AC23A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		072697261EE98B15005AC23A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		072697281EE98B15005AC23A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0726972D1EE98B15005AC23A /* BEYOND PULSETests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BEYOND PULSETests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		072697311EE98B15005AC23A /* BEYOND_PULSETests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEYOND_PULSETests.swift; sourceTree = "<group>"; };
+		072697331EE98B15005AC23A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		072697381EE98B15005AC23A /* BEYOND PULSEUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BEYOND PULSEUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0726973C1EE98B15005AC23A /* BEYOND_PULSEUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEYOND_PULSEUITests.swift; sourceTree = "<group>"; };
+		0726973E1EE98B15005AC23A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0726974A1EE98B67005AC23A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		07387E241EEA7985003E73D9 /* SelectTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectTeamViewController.swift; path = ../SelectTeamViewController.swift; sourceTree = "<group>"; };
+		07387E261EEA79E1003E73D9 /* TeamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
+		07387E281EEA8645003E73D9 /* BEYOND PULSE-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BEYOND PULSE-Bridging-Header.h"; sourceTree = "<group>"; };
+		07387E291EEA8645003E73D9 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		07387E2A1EEA8645003E73D9 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		07387E2C1EEA960B003E73D9 /* CoachViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoachViewController.swift; sourceTree = "<group>"; };
+		07901C041EF949130000F40A /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		07901C061EF960F20000F40A /* TraningSesionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraningSesionTableViewCell.swift; sourceTree = "<group>"; };
+		07906D1B1F051CCF00FB36D0 /* iOSDevCenters+GIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "iOSDevCenters+GIF.swift"; sourceTree = SOURCE_ROOT; };
+		07906D1D1F051F1800FB36D0 /* heartbeat.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = heartbeat.gif; path = ../../../../Downloads/heartbeat.gif; sourceTree = "<group>"; };
+		079597061F025D46002FD487 /* ServerComunication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerComunication.swift; sourceTree = "<group>"; };
+		079991411F03BFAA00D4860E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		07A6238C1EF1151A003A5395 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
+		07A6238E1EF1158F003A5395 /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		07EF5BE61F05012200476225 /* FirstScreanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstScreanViewController.swift; path = Assets.xcassets/FirstScreanViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		072697161EE98B15005AC23A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0726972A1EE98B15005AC23A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		072697351EE98B15005AC23A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		072697101EE98B15005AC23A = {
+			isa = PBXGroup;
+			children = (
+				0726971B1EE98B15005AC23A /* BEYOND PULSE */,
+				072697301EE98B15005AC23A /* BEYOND PULSETests */,
+				0726973B1EE98B15005AC23A /* BEYOND PULSEUITests */,
+				0726971A1EE98B15005AC23A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0726971A1EE98B15005AC23A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				072697191EE98B15005AC23A /* BEYOND PULSE.app */,
+				0726972D1EE98B15005AC23A /* BEYOND PULSETests.xctest */,
+				072697381EE98B15005AC23A /* BEYOND PULSEUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0726971B1EE98B15005AC23A /* BEYOND PULSE */ = {
+			isa = PBXGroup;
+			children = (
+				07387E241EEA7985003E73D9 /* SelectTeamViewController.swift */,
+				0726971C1EE98B15005AC23A /* AppDelegate.swift */,
+				072697201EE98B15005AC23A /* Main.storyboard */,
+				072697231EE98B15005AC23A /* Assets.xcassets */,
+				072697251EE98B15005AC23A /* LaunchScreen.storyboard */,
+				072697281EE98B15005AC23A /* Info.plist */,
+				0726974A1EE98B67005AC23A /* LoginViewController.swift */,
+				07266E571EE9A508005C5BFF /* ForgatPasswordViewController.swift */,
+				07387E261EEA79E1003E73D9 /* TeamTableViewCell.swift */,
+				07387E291EEA8645003E73D9 /* SWRevealViewController.h */,
+				07387E2A1EEA8645003E73D9 /* SWRevealViewController.m */,
+				07387E281EEA8645003E73D9 /* BEYOND PULSE-Bridging-Header.h */,
+				07387E2C1EEA960B003E73D9 /* CoachViewController.swift */,
+				07A6238C1EF1151A003A5395 /* PlayerTableViewCell.swift */,
+				07A6238E1EF1158F003A5395 /* PlayerViewController.swift */,
+				07901C041EF949130000F40A /* CustomTabBarController.swift */,
+				07901C061EF960F20000F40A /* TraningSesionTableViewCell.swift */,
+				079597061F025D46002FD487 /* ServerComunication.swift */,
+				079991411F03BFAA00D4860E /* SettingsViewController.swift */,
+				07EF5BE61F05012200476225 /* FirstScreanViewController.swift */,
+				07906D1B1F051CCF00FB36D0 /* iOSDevCenters+GIF.swift */,
+				07906D1D1F051F1800FB36D0 /* heartbeat.gif */,
+			);
+			path = "BEYOND PULSE";
+			sourceTree = "<group>";
+		};
+		072697301EE98B15005AC23A /* BEYOND PULSETests */ = {
+			isa = PBXGroup;
+			children = (
+				072697311EE98B15005AC23A /* BEYOND_PULSETests.swift */,
+				072697331EE98B15005AC23A /* Info.plist */,
+			);
+			path = "BEYOND PULSETests";
+			sourceTree = "<group>";
+		};
+		0726973B1EE98B15005AC23A /* BEYOND PULSEUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0726973C1EE98B15005AC23A /* BEYOND_PULSEUITests.swift */,
+				0726973E1EE98B15005AC23A /* Info.plist */,
+			);
+			path = "BEYOND PULSEUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		072697181EE98B15005AC23A /* BEYOND PULSE */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 072697411EE98B15005AC23A /* Build configuration list for PBXNativeTarget "BEYOND PULSE" */;
+			buildPhases = (
+				072697151EE98B15005AC23A /* Sources */,
+				072697161EE98B15005AC23A /* Frameworks */,
+				072697171EE98B15005AC23A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BEYOND PULSE";
+			productName = "BEYOND PULSE";
+			productReference = 072697191EE98B15005AC23A /* BEYOND PULSE.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0726972C1EE98B15005AC23A /* BEYOND PULSETests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 072697441EE98B15005AC23A /* Build configuration list for PBXNativeTarget "BEYOND PULSETests" */;
+			buildPhases = (
+				072697291EE98B15005AC23A /* Sources */,
+				0726972A1EE98B15005AC23A /* Frameworks */,
+				0726972B1EE98B15005AC23A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0726972F1EE98B15005AC23A /* PBXTargetDependency */,
+			);
+			name = "BEYOND PULSETests";
+			productName = "BEYOND PULSETests";
+			productReference = 0726972D1EE98B15005AC23A /* BEYOND PULSETests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		072697371EE98B15005AC23A /* BEYOND PULSEUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 072697471EE98B15005AC23A /* Build configuration list for PBXNativeTarget "BEYOND PULSEUITests" */;
+			buildPhases = (
+				072697341EE98B15005AC23A /* Sources */,
+				072697351EE98B15005AC23A /* Frameworks */,
+				072697361EE98B15005AC23A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0726973A1EE98B15005AC23A /* PBXTargetDependency */,
+			);
+			name = "BEYOND PULSEUITests";
+			productName = "BEYOND PULSEUITests";
+			productReference = 072697381EE98B15005AC23A /* BEYOND PULSEUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		072697111EE98B15005AC23A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Milos Stosic";
+				TargetAttributes = {
+					072697181EE98B15005AC23A = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = J6WMU365TR;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
+					};
+					0726972C1EE98B15005AC23A = {
+						CreatedOnToolsVersion = 8.3.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 072697181EE98B15005AC23A;
+					};
+					072697371EE98B15005AC23A = {
+						CreatedOnToolsVersion = 8.3.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 072697181EE98B15005AC23A;
+					};
+				};
+			};
+			buildConfigurationList = 072697141EE98B15005AC23A /* Build configuration list for PBXProject "BEYOND PULSE" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 072697101EE98B15005AC23A;
+			productRefGroup = 0726971A1EE98B15005AC23A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				072697181EE98B15005AC23A /* BEYOND PULSE */,
+				0726972C1EE98B15005AC23A /* BEYOND PULSETests */,
+				072697371EE98B15005AC23A /* BEYOND PULSEUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		072697171EE98B15005AC23A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				072697271EE98B15005AC23A /* LaunchScreen.storyboard in Resources */,
+				07906D1E1F051F1800FB36D0 /* heartbeat.gif in Resources */,
+				072697241EE98B15005AC23A /* Assets.xcassets in Resources */,
+				072697221EE98B15005AC23A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0726972B1EE98B15005AC23A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		072697361EE98B15005AC23A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		072697151EE98B15005AC23A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07387E2D1EEA960B003E73D9 /* CoachViewController.swift in Sources */,
+				07906D1C1F051CCF00FB36D0 /* iOSDevCenters+GIF.swift in Sources */,
+				07901C071EF960F20000F40A /* TraningSesionTableViewCell.swift in Sources */,
+				07266E581EE9A508005C5BFF /* ForgatPasswordViewController.swift in Sources */,
+				07901C051EF949130000F40A /* CustomTabBarController.swift in Sources */,
+				07387E271EEA79E1003E73D9 /* TeamTableViewCell.swift in Sources */,
+				07EF5BE71F05012200476225 /* FirstScreanViewController.swift in Sources */,
+				0726974B1EE98B67005AC23A /* LoginViewController.swift in Sources */,
+				07A6238D1EF1151A003A5395 /* PlayerTableViewCell.swift in Sources */,
+				07A6238F1EF1158F003A5395 /* PlayerViewController.swift in Sources */,
+				0726971D1EE98B15005AC23A /* AppDelegate.swift in Sources */,
+				07387E251EEA7985003E73D9 /* SelectTeamViewController.swift in Sources */,
+				079991421F03BFAA00D4860E /* SettingsViewController.swift in Sources */,
+				07387E2B1EEA8645003E73D9 /* SWRevealViewController.m in Sources */,
+				079597071F025D46002FD487 /* ServerComunication.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		072697291EE98B15005AC23A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				072697321EE98B15005AC23A /* BEYOND_PULSETests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		072697341EE98B15005AC23A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0726973D1EE98B15005AC23A /* BEYOND_PULSEUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0726972F1EE98B15005AC23A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 072697181EE98B15005AC23A /* BEYOND PULSE */;
+			targetProxy = 0726972E1EE98B15005AC23A /* PBXContainerItemProxy */;
+		};
+		0726973A1EE98B15005AC23A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 072697181EE98B15005AC23A /* BEYOND PULSE */;
+			targetProxy = 072697391EE98B15005AC23A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		072697201EE98B15005AC23A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				072697211EE98B15005AC23A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		072697251EE98B15005AC23A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				072697261EE98B15005AC23A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0726973F1EE98B15005AC23A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		072697401EE98B15005AC23A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		072697421EE98B15005AC23A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = J6WMU365TR;
+				INFOPLIST_FILE = "BEYOND PULSE/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gamecredits.BEYOND-PULSE";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "BEYOND PULSE/BEYOND PULSE-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		072697431EE98B15005AC23A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = J6WMU365TR;
+				INFOPLIST_FILE = "BEYOND PULSE/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gamecredits.BEYOND-PULSE";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "BEYOND PULSE/BEYOND PULSE-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		072697451EE98B15005AC23A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "BEYOND PULSETests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gamecredits.BEYOND-PULSETests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BEYOND PULSE.app/BEYOND PULSE";
+			};
+			name = Debug;
+		};
+		072697461EE98B15005AC23A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "BEYOND PULSETests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gamecredits.BEYOND-PULSETests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BEYOND PULSE.app/BEYOND PULSE";
+			};
+			name = Release;
+		};
+		072697481EE98B15005AC23A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "BEYOND PULSEUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gamecredits.BEYOND-PULSEUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "BEYOND PULSE";
+			};
+			name = Debug;
+		};
+		072697491EE98B15005AC23A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "BEYOND PULSEUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gamecredits.BEYOND-PULSEUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "BEYOND PULSE";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		072697141EE98B15005AC23A /* Build configuration list for PBXProject "BEYOND PULSE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0726973F1EE98B15005AC23A /* Debug */,
+				072697401EE98B15005AC23A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		072697411EE98B15005AC23A /* Build configuration list for PBXNativeTarget "BEYOND PULSE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				072697421EE98B15005AC23A /* Debug */,
+				072697431EE98B15005AC23A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		072697441EE98B15005AC23A /* Build configuration list for PBXNativeTarget "BEYOND PULSETests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				072697451EE98B15005AC23A /* Debug */,
+				072697461EE98B15005AC23A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		072697471EE98B15005AC23A /* Build configuration list for PBXNativeTarget "BEYOND PULSEUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				072697481EE98B15005AC23A /* Debug */,
+				072697491EE98B15005AC23A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 072697111EE98B15005AC23A /* Project object */;
+}

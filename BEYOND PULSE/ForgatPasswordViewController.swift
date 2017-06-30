@@ -10,6 +10,7 @@ import UIKit
 
 class ForgatPasswordViewController: UIViewController {
 
+    @IBOutlet weak var mailView: UIView!
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
     var JOSN = serverCommunications()
@@ -22,8 +23,22 @@ class ForgatPasswordViewController: UIViewController {
         emailTextField.leftView = UIImageView(image: UIImage(named: "mesage"))
         
         submitButton.layer.cornerRadius = 1;
-        submitButton.layer.borderWidth = 1;
+        //submitButton.layer.borderWidth = 1;
         submitButton.layer.cornerRadius=10
+        
+        let img = UIImageView(image: UIImage(named: "mesage"))
+        img.frame=CGRect(x:0.0, y:0.0, width:(img.image?.size.width)!+10.0, height:(img.image?.size.height)!)
+        img.contentMode = .left
+        emailTextField.leftView = img
+        emailTextField.leftViewMode = .always
+        
+        mailView.layer.cornerRadius = 2;
+       // mailView.layer.borderWidth = 1;
+        //textfieldView.layer.borderColor = UIColor(red: 128, green: 128, blue: 128, alpha: 1).cgColor
+        //   login.layer.cornerRadius=10
+       mailView.layer.cornerRadius=10
+
+
     }
 
     override func didReceiveMemoryWarning() {

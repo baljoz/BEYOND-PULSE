@@ -20,14 +20,14 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         eMailTextfild.leftViewMode = UITextFieldViewMode.always
-        var img = UIImageView(image: UIImage(named: "mesage"))
+        let img = UIImageView(image: UIImage(named: "mesage"))
         img.frame=CGRect(x:0.0, y:0.0, width:(img.image?.size.width)!+10.0, height:(img.image?.size.height)!)
         img.contentMode = .left
         eMailTextfild.leftView = img
         eMailTextfild.leftViewMode = .always
             //UIImageView(image: UIImage(named: "mesage"))//mesage
         passwordTextfild.leftViewMode = UITextFieldViewMode.always
-        var img2 = UIImageView(image: UIImage(named: "lock"))
+        let img2 = UIImageView(image: UIImage(named: "lock"))
         img2.frame=CGRect(x:0.0, y:0.0, width:(img.image?.size.width)!+10.0, height:(img.image?.size.height)!)
         img2.contentMode = .left
         passwordTextfild.leftView = img2

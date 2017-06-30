@@ -26,6 +26,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
     var navTitleName = String()
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
+    @IBOutlet weak var startTrening: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,6 +86,11 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         menuButton.target=revealViewController()
         menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
          navigationBar.topItem?.title = navTitleName
+        
+        startTrening.layer.cornerRadius = 1;
+        startTrening.layer.borderWidth = 1;
+        startTrening.layer.cornerRadius=10
+
     }
 
     override func didReceiveMemoryWarning() {

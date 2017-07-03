@@ -27,7 +27,9 @@
 		079991421F03BFAA00D4860E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079991411F03BFAA00D4860E /* SettingsViewController.swift */; };
 		07A6238D1EF1151A003A5395 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A6238C1EF1151A003A5395 /* PlayerTableViewCell.swift */; };
 		07A6238F1EF1158F003A5395 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A6238E1EF1158F003A5395 /* PlayerViewController.swift */; };
+		07B37FB61F0A5C4F00B7FB8A /* JWTDecode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B37FB51F0A5C4F00B7FB8A /* JWTDecode.framework */; };
 		07EF5BE71F05012200476225 /* FirstScreanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EF5BE61F05012200476225 /* FirstScreanViewController.swift */; };
+		20C03F728ADDABABD69FA559 /* Pods_BEYOND_PULSE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE56B61D44F869070813D23C /* Pods_BEYOND_PULSE.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,34 @@
 			proxyType = 1;
 			remoteGlobalIDString = 072697181EE98B15005AC23A;
 			remoteInfo = "BEYOND PULSE";
+		};
+		07B37FB41F0A5C4F00B7FB8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07D64FD41F0A47E400094F2D /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BFEEBE3D57B1F776FD33C787F2227E48;
+			remoteInfo = JWTDecode;
+		};
+		07D64FDA1F0A47E400094F2D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07D64FD41F0A47E400094F2D /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 46CE1C34A37DEA1E05DF03882BDA377F;
+			remoteInfo = CryptoSwift;
+		};
+		07D64FDC1F0A47E400094F2D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07D64FD41F0A47E400094F2D /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B3082BE86D08A26B2870C061363E3449;
+			remoteInfo = JSONWebToken;
+		};
+		07D64FDE1F0A47E400094F2D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07D64FD41F0A47E400094F2D /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EC4D159509235E70CBCF8CF8E325DDB3;
+			remoteInfo = "Pods-BEYOND PULSE";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -76,7 +106,11 @@
 		079991411F03BFAA00D4860E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		07A6238C1EF1151A003A5395 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		07A6238E1EF1158F003A5395 /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		07D64FD41F0A47E400094F2D /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		07EF5BE61F05012200476225 /* FirstScreanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstScreanViewController.swift; path = Assets.xcassets/FirstScreanViewController.swift; sourceTree = "<group>"; };
+		CE56B61D44F869070813D23C /* Pods_BEYOND_PULSE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BEYOND_PULSE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4BF2E3B0A085E188959C844 /* Pods-BEYOND PULSE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BEYOND PULSE.release.xcconfig"; path = "Pods/Target Support Files/Pods-BEYOND PULSE/Pods-BEYOND PULSE.release.xcconfig"; sourceTree = "<group>"; };
+		F1219D49C68EB9C547365E0F /* Pods-BEYOND PULSE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BEYOND PULSE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BEYOND PULSE/Pods-BEYOND PULSE.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +118,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07B37FB61F0A5C4F00B7FB8A /* JWTDecode.framework in Frameworks */,
+				20C03F728ADDABABD69FA559 /* Pods_BEYOND_PULSE.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +147,8 @@
 				072697301EE98B15005AC23A /* BEYOND PULSETests */,
 				0726973B1EE98B15005AC23A /* BEYOND PULSEUITests */,
 				0726971A1EE98B15005AC23A /* Products */,
+				A2E1028AFA6AF1490E3D0A20 /* Pods */,
+				8DA6AC824F3BE42630CCFD17 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -171,6 +209,35 @@
 			path = "BEYOND PULSEUITests";
 			sourceTree = "<group>";
 		};
+		07D64FD51F0A47E400094F2D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				07D64FDB1F0A47E400094F2D /* CryptoSwift.framework */,
+				07D64FDD1F0A47E400094F2D /* JWT.framework */,
+				07B37FB51F0A5C4F00B7FB8A /* JWTDecode.framework */,
+				07D64FDF1F0A47E400094F2D /* Pods_BEYOND_PULSE.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8DA6AC824F3BE42630CCFD17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				07D64FD41F0A47E400094F2D /* Pods.xcodeproj */,
+				CE56B61D44F869070813D23C /* Pods_BEYOND_PULSE.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A2E1028AFA6AF1490E3D0A20 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F1219D49C68EB9C547365E0F /* Pods-BEYOND PULSE.debug.xcconfig */,
+				D4BF2E3B0A085E188959C844 /* Pods-BEYOND PULSE.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -178,9 +245,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 072697411EE98B15005AC23A /* Build configuration list for PBXNativeTarget "BEYOND PULSE" */;
 			buildPhases = (
+				0FBBCFA075EB21948A683C57 /* [CP] Check Pods Manifest.lock */,
 				072697151EE98B15005AC23A /* Sources */,
 				072697161EE98B15005AC23A /* Frameworks */,
 				072697171EE98B15005AC23A /* Resources */,
+				F71AB71C0B2627D8D27C4554 /* [CP] Embed Pods Frameworks */,
+				FCD5D092840DB5B1DD9DF9D3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -266,6 +336,12 @@
 			mainGroup = 072697101EE98B15005AC23A;
 			productRefGroup = 0726971A1EE98B15005AC23A /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 07D64FD51F0A47E400094F2D /* Products */;
+					ProjectRef = 07D64FD41F0A47E400094F2D /* Pods.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				072697181EE98B15005AC23A /* BEYOND PULSE */,
@@ -274,6 +350,37 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		07B37FB51F0A5C4F00B7FB8A /* JWTDecode.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = JWTDecode.framework;
+			remoteRef = 07B37FB41F0A5C4F00B7FB8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		07D64FDB1F0A47E400094F2D /* CryptoSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CryptoSwift.framework;
+			remoteRef = 07D64FDA1F0A47E400094F2D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		07D64FDD1F0A47E400094F2D /* JWT.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = JWT.framework;
+			remoteRef = 07D64FDC1F0A47E400094F2D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		07D64FDF1F0A47E400094F2D /* Pods_BEYOND_PULSE.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pods_BEYOND_PULSE.framework;
+			remoteRef = 07D64FDE1F0A47E400094F2D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		072697171EE98B15005AC23A /* Resources */ = {
@@ -302,6 +409,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0FBBCFA075EB21948A683C57 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F71AB71C0B2627D8D27C4554 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BEYOND PULSE/Pods-BEYOND PULSE-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FCD5D092840DB5B1DD9DF9D3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BEYOND PULSE/Pods-BEYOND PULSE-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		072697151EE98B15005AC23A /* Sources */ = {
@@ -474,6 +629,7 @@
 		};
 		072697421EE98B15005AC23A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1219D49C68EB9C547365E0F /* Pods-BEYOND PULSE.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -494,6 +650,7 @@
 		};
 		072697431EE98B15005AC23A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4BF2E3B0A085E188959C844 /* Pods-BEYOND PULSE.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

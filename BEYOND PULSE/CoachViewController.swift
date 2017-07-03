@@ -11,11 +11,14 @@ import UIKit
 class CoachViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     @IBOutlet weak var coachImage: UIImageView!
 
+    @IBOutlet weak var coachName: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var settingButton: UIButton!
     var teamName = [String]()
     var teamImg = [UIImage]()
+    
+    var sing = MySingleton.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +44,9 @@ class CoachViewController: UIViewController,UITableViewDataSource,UITableViewDel
         
         tableView.separatorStyle = .none
         coachImage.contentMode = .scaleAspectFit
-    }
+        coachImage.image = sing.serverData.coatchRes.image
+        coachName.text = sing.serverData.coatchRes.firstName+" "+sing.serverData.coatchRes.middleName+" "+sing.serverData.coatchRes.lastName
+           }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -51,12 +56,12 @@ class CoachViewController: UIViewController,UITableViewDataSource,UITableViewDel
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return sing.serverData.teams.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "coatchcell") as! TeamTableViewCell
         cell.imageTeam.image = teamImg[indexPath.row]
-        cell.nameTeam.text = teamName[indexPath.row]
+        cell.nameTeam.text = sing.serverData.teams[indexPath.row].name
        cell.imageTeam.layer.borderWidth = 1
        
         

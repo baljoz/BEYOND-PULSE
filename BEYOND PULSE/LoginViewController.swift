@@ -16,12 +16,13 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextfild: UITextField!
     @IBOutlet weak var eMailTextfild: UITextField!
     
+    var sing = MySingleton.sharedInstance
+    
     var JSON = serverCommunications()
     
     override func viewDidLoad() {
         
         
-          dek()
         super.viewDidLoad()
         eMailTextfild.leftViewMode = UITextFieldViewMode.always
         let img = UIImageView(image: UIImage(named: "mesage"))
@@ -51,6 +52,8 @@ class LoginViewController: UIViewController {
         continueButton.layer.cornerRadius=10
         
         // Do any additional setup after loading the view.
+        
+       
                }
 
     override func didReceiveMemoryWarning() {
@@ -73,19 +76,27 @@ class LoginViewController: UIViewController {
         
  
         
-        JSON.loginGetToken(username: eMailTextfild.text!,password: passwordTextfild.text!) { (ress:response) -> Void in
+        JSON.loginGetToken(username: eMailTextfild.text!,password: passwordTextfild.text!) { (ress:loginResponse) -> Void in
         
             
             if ress.statusCode == "BP_200"
              {
-            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let newViewController = storyBoard.instantiateViewController(withIdentifier: "team") as! SWRevealViewController
-            
-            newViewController.sirnaslajdera = (self.view.frame.size.width / 3) * 2
-            let next = newViewController
-            self.present(next, animated: true, completion: nil)
+                let id  = self.getTokenIdCoach(token: ress.token)
+                self.JSON.getCoachInfo(id: id, token: ress.token) { (response:coachResponese) -> Void in
+                    self.sing.serverData = self.JSON
+                    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    let newViewController = storyBoard.instantiateViewController(withIdentifier: "team") as! SWRevealViewController
+                    
+                    newViewController.sirnaslajdera = (self.view.frame.size.width / 3) * 2
+                //    newViewController.team = JSON.teams
+                    let next = newViewController
+                    DispatchQueue.main.async {
+                        
+                    self.present(next, animated: true, completion: nil)
+                 
+                    }
+                }
             }
-
             else{
                 let alert = UIAlertController(title: "Alert", message:ress.statusDescription, preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
@@ -116,28 +127,21 @@ class LoginViewController: UIViewController {
     */
    
     }
-
-    func dek()
+    //
+    //on token get id
+    func getTokenIdCoach(token : String) -> Int
     {
-        
+         var id = -1
         do {
-            // the token that will be decoded
-            let token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2IiwiaWF0IjoxNDk5MDY1OTk0LCJleHAiOjE0OTkwNjk1OTQsInR5cGUiOiJhY2Nlc3MifQ.2wbgOdL6yYxXQsS8YeyiaPwjBQ5XHC4IzWIbyT1NnzqghpBB2VZBTOZjrRcidLXEnAYP0JPxkaJOMMELnCRH0A"
-           
-          //  let payload = try JWT.decode(jwt: token,algorithm: .hs256("secret".data(using: .utf8)!))
-        //    print(payload)
-      //  } catch {
-      //      print("Failed to decode JWT: \(error)")
-     //   }
-    do {
-            let claims = try decode(jwt: token)
-        //;JWT.decode("eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2IiwiaWF0IjoxNDk5MDY1OTk0LCJleHAiOjE0OTkwNjk1OTQsInR5cGUiOiJyZWZyZXNoIiwidmVyc2lvbiI6MX0.ykKj6iIsN09cU6fS74dDEL4InwbTt4GJn9LgYgkkrKuzm9XeQk7zXQfZvNRJrX3vQ0XnQynf0mjurDW2GgMYuw", algorithm: .hs512("encoded".data(using: .utf8)!))
-       var g = claims.body  as? [String: Any]
-        print(claims.body)
-            print(g?["iat"])
-        } catch {
-            print("Failed to decode JWT: \(error)")
+                let claims = try decode(jwt: token)
+                var body = claims.body  as? [String: Any]
+            
+                 id = Int((body?["sub"] as? String)!)!
+            } catch {
+                print("Failed to decode JWT: \(error)")
         }
-    }
-}
+        return id
+        }
+    
+
 }

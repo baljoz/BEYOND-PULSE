@@ -9,9 +9,12 @@
 import UIKit
 
 class SettingsViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
-
+ 
+   
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var settingsTable: UITableView!
+    var sing = MySingleton.sharedInstance
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,8 +40,28 @@ class SettingsViewController: UIViewController,UITableViewDataSource,UITableView
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+      
         let iden = String(indexPath.row)
+        
+        if indexPath.row == 1
+        {
+            let cell = self.settingsTable.dequeueReusableCell(withIdentifier:iden) as! SettingsTableViewCell
+            cell.dataSyncAndNotification.isOn = sing.serverData.settings.autoDataSync
+            return cell
+        }
+        else if indexPath.row == 2
+        {
+            let cell = self.settingsTable.dequeueReusableCell(withIdentifier:iden) as! SettingsTableViewCell
+            cell.dataSyncAndNotification.isOn = sing.serverData.settings.notificationsEnabled
+            return cell
+        }
+        else if indexPath.row == 4
+        {
+             let cell = self.settingsTable.dequeueReusableCell(withIdentifier:iden) as! SettingsTableViewCell
+            cell.launge.text = sing.serverData.settings.language
+            return cell
+        }
+        
         let cell = self.settingsTable.dequeueReusableCell(withIdentifier: iden)!
         cell.selectionStyle = .none
       return cell

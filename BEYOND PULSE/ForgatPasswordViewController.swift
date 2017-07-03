@@ -50,7 +50,7 @@ class ForgatPasswordViewController: UIViewController {
     @IBAction func resetPassword(_ sender: Any)
     {
         
-    JOSN.ForgootPassword(email: emailTextField.text!){ (ress:response) -> Void in
+    JOSN.ForgootPassword(email: emailTextField.text!){ (ress:loginResponse) -> Void in
         
         if ress.statusCode == "BP_200"
         {

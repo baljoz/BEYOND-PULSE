@@ -27,7 +27,10 @@
 		079991421F03BFAA00D4860E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079991411F03BFAA00D4860E /* SettingsViewController.swift */; };
 		07A6238D1EF1151A003A5395 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A6238C1EF1151A003A5395 /* PlayerTableViewCell.swift */; };
 		07A6238F1EF1158F003A5395 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A6238E1EF1158F003A5395 /* PlayerViewController.swift */; };
+		07B380031F0A965600B7FB8A /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B380021F0A965600B7FB8A /* Singleton.swift */; };
+		07B380051F0A9F7D00B7FB8A /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B380041F0A9F7D00B7FB8A /* SettingsTableViewCell.swift */; };
 		07EF5BE71F05012200476225 /* FirstScreanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EF5BE61F05012200476225 /* FirstScreanViewController.swift */; };
+		1C9D61EEC8F6E847CD6C5C9C /* Pods_BEYOND_PULSE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7802A0E123206CCF959F2B45 /* Pods_BEYOND_PULSE.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,7 +93,12 @@
 		07B37FCA1F0A687600B7FB8A /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		07B37FCB1F0A687600B7FB8A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		07B37FCE1F0A688B00B7FB8A /* XcodeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XcodeKit.framework; path = Library/Frameworks/XcodeKit.framework; sourceTree = DEVELOPER_DIR; };
+		07B380021F0A965600B7FB8A /* Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Singleton.swift; path = ../Singleton.swift; sourceTree = "<group>"; };
+		07B380041F0A9F7D00B7FB8A /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		07EF5BE61F05012200476225 /* FirstScreanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstScreanViewController.swift; path = Assets.xcassets/FirstScreanViewController.swift; sourceTree = "<group>"; };
+		10CAC75485C41836B5E78DC4 /* Pods-BEYOND PULSE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BEYOND PULSE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BEYOND PULSE/Pods-BEYOND PULSE.debug.xcconfig"; sourceTree = "<group>"; };
+		7802A0E123206CCF959F2B45 /* Pods_BEYOND_PULSE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BEYOND_PULSE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8F6056CD1D0A617B8F75847 /* Pods-BEYOND PULSE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BEYOND PULSE.release.xcconfig"; path = "Pods/Target Support Files/Pods-BEYOND PULSE/Pods-BEYOND PULSE.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C9D61EEC8F6E847CD6C5C9C /* Pods_BEYOND_PULSE.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +135,7 @@
 				0726973B1EE98B15005AC23A /* BEYOND PULSEUITests */,
 				0726971A1EE98B15005AC23A /* Products */,
 				07B37FB71F0A681100B7FB8A /* Frameworks */,
+				C279FF22B130BB80A55C531E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,11 +169,13 @@
 				07A6238E1EF1158F003A5395 /* PlayerViewController.swift */,
 				07901C041EF949130000F40A /* CustomTabBarController.swift */,
 				07901C061EF960F20000F40A /* TraningSesionTableViewCell.swift */,
-				079597061F025D46002FD487 /* ServerComunication.swift */,
 				079991411F03BFAA00D4860E /* SettingsViewController.swift */,
 				07EF5BE61F05012200476225 /* FirstScreanViewController.swift */,
 				07906D1B1F051CCF00FB36D0 /* iOSDevCenters+GIF.swift */,
 				07906D1D1F051F1800FB36D0 /* heartbeat.gif */,
+				079597061F025D46002FD487 /* ServerComunication.swift */,
+				07B380021F0A965600B7FB8A /* Singleton.swift */,
+				07B380041F0A9F7D00B7FB8A /* SettingsTableViewCell.swift */,
 			);
 			path = "BEYOND PULSE";
 			sourceTree = "<group>";
@@ -193,6 +205,7 @@
 				07B37FC21F0A687600B7FB8A /* Pods */,
 				07B37FC01F0A684B00B7FB8A /* BEYOND PULSE.xcworkspace */,
 				07B37FB81F0A681100B7FB8A /* JWTDecode */,
+				7802A0E123206CCF959F2B45 /* Pods_BEYOND_PULSE.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -272,6 +285,15 @@
 			path = "Target Support Files";
 			sourceTree = "<group>";
 		};
+		C279FF22B130BB80A55C531E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				10CAC75485C41836B5E78DC4 /* Pods-BEYOND PULSE.debug.xcconfig */,
+				E8F6056CD1D0A617B8F75847 /* Pods-BEYOND PULSE.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -279,9 +301,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 072697411EE98B15005AC23A /* Build configuration list for PBXNativeTarget "BEYOND PULSE" */;
 			buildPhases = (
+				137CED39E6A423542913E46E /* [CP] Check Pods Manifest.lock */,
 				072697151EE98B15005AC23A /* Sources */,
 				072697161EE98B15005AC23A /* Frameworks */,
 				072697171EE98B15005AC23A /* Resources */,
+				E756425DECD1F7EDCC6DE01B /* [CP] Embed Pods Frameworks */,
+				6033D0F02B0C54F76593496D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -404,6 +429,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		137CED39E6A423542913E46E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6033D0F02B0C54F76593496D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BEYOND PULSE/Pods-BEYOND PULSE-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E756425DECD1F7EDCC6DE01B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BEYOND PULSE/Pods-BEYOND PULSE-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		072697151EE98B15005AC23A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -420,8 +493,10 @@
 				07A6238D1EF1151A003A5395 /* PlayerTableViewCell.swift in Sources */,
 				07A6238F1EF1158F003A5395 /* PlayerViewController.swift in Sources */,
 				0726971D1EE98B15005AC23A /* AppDelegate.swift in Sources */,
+				07B380051F0A9F7D00B7FB8A /* SettingsTableViewCell.swift in Sources */,
 				07387E251EEA7985003E73D9 /* SelectTeamViewController.swift in Sources */,
 				079991421F03BFAA00D4860E /* SettingsViewController.swift in Sources */,
+				07B380031F0A965600B7FB8A /* Singleton.swift in Sources */,
 				07387E2B1EEA8645003E73D9 /* SWRevealViewController.m in Sources */,
 				079597071F025D46002FD487 /* ServerComunication.swift in Sources */,
 			);
@@ -575,6 +650,7 @@
 		};
 		072697421EE98B15005AC23A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10CAC75485C41836B5E78DC4 /* Pods-BEYOND PULSE.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -595,6 +671,7 @@
 		};
 		072697431EE98B15005AC23A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8F6056CD1D0A617B8F75847 /* Pods-BEYOND PULSE.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

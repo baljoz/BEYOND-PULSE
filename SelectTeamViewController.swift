@@ -16,15 +16,20 @@ class SelectTeamViewController: UIViewController,UITableViewDataSource,UITableVi
     @IBOutlet weak var teamTable: UITableView!
     var teamName = [String]()
     var teamImg = [UIImage]()
+    var JSON = serverCommunications()
+    var team = [Team]()
+    var coatch = [coachResponese]()
+    
+    var sing = MySingleton.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        teamName.append("FC Munchester United")
+        /*teamName.append("FC Munchester United")
         teamName.append("FC Real Madrid")
         teamName.append("FC Barcelona")
-        
+        */
         teamImg.append(UIImage(named: "mancester")!)
         teamImg.append(UIImage(named: "real")!)
         teamImg.append(UIImage(named: "barca")!)
@@ -49,7 +54,7 @@ class SelectTeamViewController: UIViewController,UITableViewDataSource,UITableVi
         // Dispose of any resources that can be recreated.
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return sing.serverData.teams.count
     }
   
     
@@ -57,7 +62,7 @@ class SelectTeamViewController: UIViewController,UITableViewDataSource,UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.teamTable.dequeueReusableCell(withIdentifier: "teamCell") as! TeamTableViewCell
         cell.imageTeam.image = teamImg[indexPath.row]
-        cell.nameTeam.text = teamName[indexPath.row]
+        cell.nameTeam.text = sing.serverData.teams[indexPath.row].name
         
         cell.imageTeam.contentMode = .scaleAspectFit
         cell.backgroundColor = nil
@@ -73,9 +78,9 @@ class SelectTeamViewController: UIViewController,UITableViewDataSource,UITableVi
       
         
        let newViewController = storyBoard.instantiateViewController(withIdentifier: "selP") as! PlayerViewController
-    print(teamName[indexPath.row])
-        newViewController.navTitleName = teamName[indexPath.row]
-        newViewController.navigationItem.title = teamName[indexPath.row]
+  
+        newViewController.navTitleName = sing.serverData.teams[indexPath.row].name
+        newViewController.navigationItem.title = sing.serverData.teams[indexPath.row].name
         revealviewcontroller.pushFrontViewController(newViewController, animated: true)
         
     }

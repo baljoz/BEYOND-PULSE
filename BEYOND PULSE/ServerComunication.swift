@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct response {
+struct loginResponse {
 
     var statusCode = "404"
     var statusDescription =  "Server not responding"
@@ -16,16 +16,43 @@ struct response {
     var refreshToken = String()
     var data = String()
 }
+
+struct coachResponese
+{
+   var id = Int()
+   var   firstName = String()
+   var middleName = String()
+   var lastName = String()
+   var imageUrl = String()
+   var image = UIImage()
+    
+}
+struct Team
+{
+    var id = Int()
+    var name = String()
+    var gender = String()
+    var ageGrup = String()
+}
+struct SettingsData
+{
+  var autoDataSync = Bool()
+  var notificationsEnabled = Bool()
+   var language = String()
+}
+
 class serverCommunications
 {
-    
-    var   res = response()
+    var coatchRes = coachResponese()
+    var   res = loginResponse()
     var isLoad = false
+    var teams = [Team]()
+    var settings = SettingsData()
     init() {
     }
     
    // func loginGetToken(username: String,password : String)
-    func loginGetToken(username: String,password : String, handler:@escaping (_ re:response)-> Void)
+    func loginGetToken(username: String,password : String, handler:@escaping (_ re:loginResponse)-> Void)
     {
         let json: [String: Any] = ["email": username,
         "password": password]
@@ -60,31 +87,20 @@ class serverCommunications
                    
                        
                }
-                handler(self.res)
-               //  self.isLoad = true
+                
             }
-            
+            handler(self.res)
+
             }
             
 
         task.resume()
-      //  while (!isLoad) {}
+    
        
         
     }
-   // func Login(username:String,password:String) -> response
-   // {
-     //   loginGetToken(username:username,password: password)
-      //  return res
-    //}
-    
-  /*  func resetPassword (email : String) -> response
-    {
-        ForgootPassword( email : email)
-        return res
-    }*/
-    
-    func ForgootPassword( email : String,handler:@escaping (_ re:response)-> Void)
+
+    func ForgootPassword( email : String,handler:@escaping (_ re:loginResponse)-> Void)
     {
     let json: [String: Any] = ["email": email]
                                
@@ -97,16 +113,6 @@ class serverCommunications
     request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
     request.httpMethod = "POST"
     
-        
-        /*
- 
-         "data": "Sent mail with reset password instructions",
-         "status": {
-         "code": "BP_200",
-         "desc": "Success"
-         }
- */
-    // insert json data to the request
     request.httpBody = jsonData
     
     let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -124,14 +130,13 @@ class serverCommunications
             {
            self.res.data = responseJSON["data"] as! String
             }
-             //self.isLoad = true
             handler(self.res)
             }
         
         }
         
     task.resume()
-   // while (!isLoad) {}
+
     
     
 }
@@ -149,9 +154,7 @@ class serverCommunications
         var request = URLRequest(url: url)
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
-        
-        
-      
+
         request.httpBody = jsonData
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -183,6 +186,77 @@ class serverCommunications
         
     }
 
+        func getCoachInfo(id: Int,token:String,handler:@escaping (_ re:coachResponese)-> Void)
+    {
+            // create post request
+            let url = URL(string: "http://bp.dev.ingsoftware.com:9092/coaches/"+String(id))!
+        
+            var request = URLRequest(url: url)
+           request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+            request.setValue("Bearer "+token ,forHTTPHeaderField:"Authorization")
+            request.httpMethod = "GET"
+
+            let task = URLSession.shared.dataTask(with: request)  { data, response, error in
+                guard let data = data, error == nil else {
+                    print(error?.localizedDescription ?? "No data")
+                    return    handler(self.coatchRes)
+                }
+                let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+            
+                if let responseJSON = responseJSON as? [String: Any] {
+                    let status = responseJSON["status"] as? [String: Any]
+                   
+                    self.res.statusCode = status?["code"] as! String
+                    self.res.statusDescription = status?["desc"] as! String
+                    if status?["code"] as? String == "BP_200"{
+                        var data = responseJSON["data"] as? [String: Any]
+                        
+                       
+                       self.coatchRes.id = data!["id"] as? Int ?? -1
+                        self.coatchRes.firstName = data?["firstName"] as? String! ?? ""
+                        self.coatchRes.middleName = data?["middleName"] as? String! ?? ""
+                        self.coatchRes.lastName = data?["lastName"] as? String! ?? ""
+                        self.coatchRes.imageUrl = data?["photo"] as? String! ?? ""
+                        
+                        let str = NSURL(string :  self.coatchRes.imageUrl)
+                        let dst = NSData(contentsOf: str! as URL)!
+                        if dst != nil
+                        {
+                        self.coatchRes.image = (UIImage(data: dst as Data)!)
+                        }
+                        
+                  let      team = data?["teams"] as? [[String : Any]]
+                    for te in team!
+                        {
+                            var t = Team()
+                         t.id = te["id"] as? Int ?? -1
+                          
+                            t.ageGrup = te["ageGrup"] as? String ?? ""
+                            t.name = te["name"] as? String ?? ""
+                            t.gender = te["gender"] as? String ?? ""
+                        self.teams.append(t)
+                        }
+                        let setings = data?["mobileAppSettings"] as? [String: Any]
+                        self.settings.autoDataSync = setings?["autoDataSync"] as? Bool ?? false
+                        self.settings.language = setings?["language"] as? String ?? "EU"
+                        self.settings.notificationsEnabled = setings?["notificationsEnabled"] as? Bool ?? false
+                        
+                    }
+                    handler(self.coatchRes)
+                
+                }
+                
+            }
+            
+            
+            task.resume()
+         
+            
+            
+        }
+
+    
+    
     
     
 

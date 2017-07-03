@@ -5,8 +5,9 @@
 //  Created by Milos Stosic on 6/8/17.
 //  Copyright © 2017 Milos Stosic. All rights reserved.
 //
-
+import JWT
 import UIKit
+import JWTDecode
 
 class LoginViewController: UIViewController {
 
@@ -18,6 +19,9 @@ class LoginViewController: UIViewController {
     var JSON = serverCommunications()
     
     override func viewDidLoad() {
+        
+        
+          dek()
         super.viewDidLoad()
         eMailTextfild.leftViewMode = UITextFieldViewMode.always
         let img = UIImageView(image: UIImage(named: "mesage"))
@@ -41,7 +45,7 @@ class LoginViewController: UIViewController {
         textfieldView.layer.cornerRadius=10
 
         continueButton.layer.cornerRadius = 1;
-        continueButton.layer.borderWidth = 1;
+        //continueButton.layer.borderWidth = 1;
         //textfieldView.layer.borderColor = UIColor(red: 128, green: 128, blue: 128, alpha: 1).cgColor
         //   login.layer.cornerRadius=10
         continueButton.layer.cornerRadius=10
@@ -89,6 +93,7 @@ class LoginViewController: UIViewController {
 
             }
         }
+      
    //   let res = JSON.Login(username: eMailTextfild.text!,password: passwordTextfild.text!)
         
        // if res.statusCode == "BP_200"
@@ -111,5 +116,28 @@ class LoginViewController: UIViewController {
     */
    
     }
-   
+
+    func dek()
+    {
+        
+        do {
+            // the token that will be decoded
+            let token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2IiwiaWF0IjoxNDk5MDY1OTk0LCJleHAiOjE0OTkwNjk1OTQsInR5cGUiOiJhY2Nlc3MifQ.2wbgOdL6yYxXQsS8YeyiaPwjBQ5XHC4IzWIbyT1NnzqghpBB2VZBTOZjrRcidLXEnAYP0JPxkaJOMMELnCRH0A"
+           
+          //  let payload = try JWT.decode(jwt: token,algorithm: .hs256("secret".data(using: .utf8)!))
+        //    print(payload)
+      //  } catch {
+      //      print("Failed to decode JWT: \(error)")
+     //   }
+    do {
+            let claims = try decode(jwt: token)
+        //;JWT.decode("eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2IiwiaWF0IjoxNDk5MDY1OTk0LCJleHAiOjE0OTkwNjk1OTQsInR5cGUiOiJyZWZyZXNoIiwidmVyc2lvbiI6MX0.ykKj6iIsN09cU6fS74dDEL4InwbTt4GJn9LgYgkkrKuzm9XeQk7zXQfZvNRJrX3vQ0XnQynf0mjurDW2GgMYuw", algorithm: .hs512("encoded".data(using: .utf8)!))
+       var g = claims.body  as? [String: Any]
+        print(claims.body)
+            print(g?["iat"])
+        } catch {
+            print("Failed to decode JWT: \(error)")
+        }
+    }
+}
 }

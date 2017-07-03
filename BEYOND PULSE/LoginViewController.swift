@@ -5,7 +5,7 @@
 //  Created by Milos Stosic on 6/8/17.
 //  Copyright © 2017 Milos Stosic. All rights reserved.
 //
-import JWT
+
 import UIKit
 import JWTDecode
 

@@ -76,6 +76,20 @@
 		079991411F03BFAA00D4860E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		07A6238C1EF1151A003A5395 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		07A6238E1EF1158F003A5395 /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		07B37FBA1F0A681100B7FB8A /* A0JWT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A0JWT.swift; sourceTree = "<group>"; };
+		07B37FBB1F0A681100B7FB8A /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		07B37FBC1F0A681100B7FB8A /* JWT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWT.swift; sourceTree = "<group>"; };
+		07B37FBD1F0A681100B7FB8A /* JWTDecode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWTDecode.swift; sourceTree = "<group>"; };
+		07B37FBE1F0A681100B7FB8A /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		07B37FBF1F0A681100B7FB8A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		07B37FC01F0A684B00B7FB8A /* BEYOND PULSE.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = "BEYOND PULSE.xcworkspace"; sourceTree = "<group>"; };
+		07B37FC61F0A687600B7FB8A /* A0JWT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A0JWT.swift; sourceTree = "<group>"; };
+		07B37FC71F0A687600B7FB8A /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		07B37FC81F0A687600B7FB8A /* JWT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWT.swift; sourceTree = "<group>"; };
+		07B37FC91F0A687600B7FB8A /* JWTDecode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWTDecode.swift; sourceTree = "<group>"; };
+		07B37FCA1F0A687600B7FB8A /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		07B37FCB1F0A687600B7FB8A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		07B37FCE1F0A688B00B7FB8A /* XcodeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XcodeKit.framework; path = Library/Frameworks/XcodeKit.framework; sourceTree = DEVELOPER_DIR; };
 		07EF5BE61F05012200476225 /* FirstScreanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstScreanViewController.swift; path = Assets.xcassets/FirstScreanViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,6 +125,7 @@
 				072697301EE98B15005AC23A /* BEYOND PULSETests */,
 				0726973B1EE98B15005AC23A /* BEYOND PULSEUITests */,
 				0726971A1EE98B15005AC23A /* Products */,
+				07B37FB71F0A681100B7FB8A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -169,6 +184,92 @@
 				0726973E1EE98B15005AC23A /* Info.plist */,
 			);
 			path = "BEYOND PULSEUITests";
+			sourceTree = "<group>";
+		};
+		07B37FB71F0A681100B7FB8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				07B37FCE1F0A688B00B7FB8A /* XcodeKit.framework */,
+				07B37FC21F0A687600B7FB8A /* Pods */,
+				07B37FC01F0A684B00B7FB8A /* BEYOND PULSE.xcworkspace */,
+				07B37FB81F0A681100B7FB8A /* JWTDecode */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		07B37FB81F0A681100B7FB8A /* JWTDecode */ = {
+			isa = PBXGroup;
+			children = (
+				07B37FB91F0A681100B7FB8A /* JWTDecode */,
+				07B37FBE1F0A681100B7FB8A /* LICENSE.txt */,
+				07B37FBF1F0A681100B7FB8A /* README.md */,
+			);
+			name = JWTDecode;
+			path = Pods/JWTDecode;
+			sourceTree = "<group>";
+		};
+		07B37FB91F0A681100B7FB8A /* JWTDecode */ = {
+			isa = PBXGroup;
+			children = (
+				07B37FBA1F0A681100B7FB8A /* A0JWT.swift */,
+				07B37FBB1F0A681100B7FB8A /* Errors.swift */,
+				07B37FBC1F0A681100B7FB8A /* JWT.swift */,
+				07B37FBD1F0A681100B7FB8A /* JWTDecode.swift */,
+			);
+			path = JWTDecode;
+			sourceTree = "<group>";
+		};
+		07B37FC21F0A687600B7FB8A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				07B37FC31F0A687600B7FB8A /* Headers */,
+				07B37FC41F0A687600B7FB8A /* JWTDecode */,
+				07B37FCC1F0A687600B7FB8A /* Local Podspecs */,
+				07B37FCD1F0A687700B7FB8A /* Target Support Files */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		07B37FC31F0A687600B7FB8A /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		07B37FC41F0A687600B7FB8A /* JWTDecode */ = {
+			isa = PBXGroup;
+			children = (
+				07B37FC51F0A687600B7FB8A /* JWTDecode */,
+				07B37FCA1F0A687600B7FB8A /* LICENSE.txt */,
+				07B37FCB1F0A687600B7FB8A /* README.md */,
+			);
+			path = JWTDecode;
+			sourceTree = "<group>";
+		};
+		07B37FC51F0A687600B7FB8A /* JWTDecode */ = {
+			isa = PBXGroup;
+			children = (
+				07B37FC61F0A687600B7FB8A /* A0JWT.swift */,
+				07B37FC71F0A687600B7FB8A /* Errors.swift */,
+				07B37FC81F0A687600B7FB8A /* JWT.swift */,
+				07B37FC91F0A687600B7FB8A /* JWTDecode.swift */,
+			);
+			path = JWTDecode;
+			sourceTree = "<group>";
+		};
+		07B37FCC1F0A687600B7FB8A /* Local Podspecs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Local Podspecs";
+			sourceTree = "<group>";
+		};
+		07B37FCD1F0A687700B7FB8A /* Target Support Files */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Target Support Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

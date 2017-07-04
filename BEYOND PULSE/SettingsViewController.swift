@@ -80,8 +80,29 @@ class SettingsViewController: UIViewController,UITableViewDataSource,UITableView
               }
     }
     
+    @IBAction func automaticDataSyncUpdateState(_ sender: Any) {
+       
+        if self.sing.serverData.settings.autoDataSync
+        {
+            self.sing.serverData.settings.autoDataSync = false
+        }
+        else
+        {
+            self.sing.serverData.settings.autoDataSync = true
+        }
+    }
     
-    
+    @IBAction func notificationUpdatState(_ sender: Any) {
+        if self.sing.serverData.settings.notificationsEnabled
+        {
+            self.sing.serverData.settings.notificationsEnabled = false
+        }
+        else
+        {
+            self.sing.serverData.settings.notificationsEnabled = true
+        }
+    }
+
     /*
     // MARK: - Navigation
 

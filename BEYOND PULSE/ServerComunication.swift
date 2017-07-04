@@ -48,6 +48,7 @@ class serverCommunications
     var isLoad = false
     var teams = [Team]()
     var settings = SettingsData()
+    var playerOnTeam = [Players]()
     init() {
         
     }
@@ -264,7 +265,7 @@ class serverCommunications
      var request = URLRequest(url: url)
      request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
      request.setValue("Bearer "+token ,forHTTPHeaderField:"Authorization")
-     request.httpMethod = "POST"
+     request.httpMethod = "PUT"
      
      request.httpBody = jsonData
      
@@ -297,8 +298,90 @@ class serverCommunications
      task.resume()
      }
      
+     //func getCoachInfo(id: Int,token:String,handler:@escaping (_ re:coachResponese)-> Void)
+    func getPlayersOfTeam(token:String , id: Int,handler:@escaping (_ player:[Players])-> Void)  {
+    
+        
+        let url = URL(string: "http://bp.dev.ingsoftware.com:9092/teams/"+String(id)+"/players")
+        
+        var request = URLRequest(url: url!)
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer "+token ,forHTTPHeaderField:"Authorization")
+        request.httpMethod = "GET"
+        
+        let task = URLSession.shared.dataTask(with: request)  { data, response, error in
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return    handler(self.playerOnTeam)
+            }
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+            
+            if let responseJSON = responseJSON as? [String: Any] {
+                var status = responseJSON["status"] as? [String : Any]
+                if status?["code"] as? String == "BP_200"
+                {
+                let data = responseJSON["data"] as? [[String: Any]]
+                    var i = 0
+                    for player in data!
+                    {
+                        var pl = Players()
+                        pl.id = player["id"] as? Int ?? -1
+                        pl.firstName = player["firstName"] as? String ?? ""
+                        pl.lastName = player["lastName"] as? String ?? ""
+                        pl.middleName = player["middleName"] as? String ?? ""
+                        pl.photoUrl = player["photo"] as? String ?? ""
+                        if pl.photoUrl != ""
+                        {
+                            do{
+                        try    self.getImage(urlImage:pl.photoUrl,index:i)
+                            }
+                            catch {
+                                
+                            }
+                        
+                        }
+                        pl.postition = player["position"] as? String ?? ""
+                        pl.beltName = player["beltNumber"] as? String ?? ""
+                        self.playerOnTeam.append(pl)
+                        i = i + 1
+                    }
+                
+                }
+                    
+                    handler(self.playerOnTeam)
+                    
+                }
+            
+            }
+        task.resume()
+
+        }
+    
+        
+  
+    func getImage(urlImage : String,index : Int) throws
+{
+    let url = URL(string:urlImage)
+    
+    let task = URLSession.shared.dataTask(with: url!) { data, response, error in
+        guard let data = data, error == nil else { return }
+        if data.isEmpty
+        {
+            return
+        }
      
-     
-     
+        
+       // DispatchQueue.main.sync() {
+            if let image = UIImage(data: data){
+             self.playerOnTeam[index].playerImage =  image
+          //  }
+        }
+        
+    
+    }
+    task.resume()
+    }
+
+    
      
 }

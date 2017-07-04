@@ -13,6 +13,7 @@ class CoachViewController: UIViewController,UITableViewDataSource,UITableViewDel
 
     @IBOutlet weak var coachName: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    var JSON = serverCommunications()
     
     @IBOutlet weak var settingButton: UIButton!
     var teamName = [String]()
@@ -80,7 +81,7 @@ class CoachViewController: UIViewController,UITableViewDataSource,UITableViewDel
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let revealviewcontroller:SWRevealViewController = self.revealViewController()
+       /* let revealviewcontroller:SWRevealViewController = self.revealViewController()
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
@@ -89,7 +90,23 @@ class CoachViewController: UIViewController,UITableViewDataSource,UITableViewDel
         print(teamName[indexPath.row])
         newViewController.navTitleName = teamName[indexPath.row]
         newViewController.navigationItem.title = teamName[indexPath.row]
-        revealviewcontroller.pushFrontViewController(newViewController, animated: true)
+        revealviewcontroller.pushFrontViewController(newViewController, animated: true)*/
+        self.JSON.playerOnTeam.removeAll()
+        let revealviewcontroller:SWRevealViewController = self.revealViewController()
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        JSON.getPlayersOfTeam(token:sing.serverData.res.token , id: sing.serverData.teams[indexPath.row].id) { ( player:[Players])-> Void in
+            
+            self.sing.serverData.playerOnTeam = self.JSON.playerOnTeam
+            let newViewController = storyBoard.instantiateViewController(withIdentifier: "selP") as! PlayerViewController
+            
+            newViewController.navTitleName = self.sing.serverData.teams[indexPath.row].name
+            newViewController.navigationItem.title = self.sing.serverData.teams[indexPath.row].name
+            DispatchQueue.main.async(execute: {
+                revealviewcontroller.pushFrontViewController(newViewController, animated: true)
+            })
+        }
+
     }
  
     @IBAction func clickOnSettongs(_ sender: Any) {

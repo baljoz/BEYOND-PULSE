@@ -15,6 +15,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
     var img = [UIImage]()
     var connected = [String]()
     var imgPlayer  = [UIImage]()
+     var sing = MySingleton.sharedInstance
     
     @IBOutlet weak var navigationBar: UINavigationBar!
     var date = [String]()
@@ -99,7 +100,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tabControl.selectedSegmentIndex == 0 {
-            return 5
+            return sing.serverData.playerOnTeam.count
         }
         else
         {
@@ -117,14 +118,14 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         if tabControl.selectedSegmentIndex == 0
         {
             let cell = self.playerTable.dequeueReusableCell(withIdentifier: "playercell") as! PlayerTableViewCell
-               cell.playerName.text = name[indexPath.row]
-        cell.playerPosition.text = position [indexPath.row]
-        cell.connectionImage.image = img[indexPath.row]
-        cell.playerConection.text = connected[indexPath.row]
+               cell.playerName.text = sing.serverData.playerOnTeam[indexPath.row].firstName+" "+sing.serverData.playerOnTeam[indexPath.row].middleName+" "+sing.serverData.playerOnTeam[indexPath.row].lastName
+        cell.playerPosition.text = sing.serverData.playerOnTeam[indexPath.row].postition
+    //    cell.connectionImage.image = img[indexPath.row]
+      //  cell.playerConection.text = connected[indexPath.row]
         if indexPath.row != 3 {
         cell.playerConection.textColor = UIColor.red
         }
-        cell.playerImage.image = imgPlayer[indexPath.row]
+        cell.playerImage.image = sing.serverData.playerOnTeam[indexPath.row].playerImage
          cell.playerImage.contentMode = .scaleAspectFit
         
         cell.connectionImage.contentMode = .scaleAspectFit

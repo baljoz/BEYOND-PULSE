@@ -75,13 +75,18 @@ class SelectTeamViewController: UIViewController,UITableViewDataSource,UITableVi
         let revealviewcontroller:SWRevealViewController = self.revealViewController()
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-      
+        JSON.getPlayersOfTeam(token:sing.serverData.res.token , id: sing.serverData.teams[indexPath.row].id) { ( player:[Players])-> Void in
         
+            self.sing.serverData.playerOnTeam = self.JSON.playerOnTeam
        let newViewController = storyBoard.instantiateViewController(withIdentifier: "selP") as! PlayerViewController
   
-        newViewController.navTitleName = sing.serverData.teams[indexPath.row].name
-        newViewController.navigationItem.title = sing.serverData.teams[indexPath.row].name
+        newViewController.navTitleName = self.sing.serverData.teams[indexPath.row].name
+        newViewController.navigationItem.title = self.sing.serverData.teams[indexPath.row].name
+            DispatchQueue.main.async(execute: {
         revealviewcontroller.pushFrontViewController(newViewController, animated: true)
+            })
+        }
+        
         
     }
     

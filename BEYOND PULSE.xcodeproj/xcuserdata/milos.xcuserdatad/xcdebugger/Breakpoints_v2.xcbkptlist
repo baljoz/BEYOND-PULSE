@@ -25,22 +25,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BEYOND PULSE/ServerComunication.swift"
-            timestampString = "520789463.42451"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
-            landmarkName = "ForgootPassword(token:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "BEYOND PULSE/Assets.xcassets/FirstScreanViewController.swift"
             timestampString = "520429670.074836"
             startingColumnNumber = "9223372036854775807"
@@ -73,38 +57,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BEYOND PULSE/ServerComunication.swift"
-            timestampString = "520789463.42451"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "loginGetToken(username:password:handler:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BEYOND PULSE/ServerComunication.swift"
-            timestampString = "520789463.42451"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "loginGetToken(username:password:handler:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "BEYOND PULSE/ForgatPasswordViewController.swift"
             timestampString = "520510962.743089"
             startingColumnNumber = "9223372036854775807"
@@ -112,6 +64,252 @@
             startingLineNumber = "29"
             endingLineNumber = "29"
             landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BEYOND PULSE/LoginViewController.swift"
+            timestampString = "520838254.034825"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "onClickContinue(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BEYOND PULSE/ServerComunication.swift"
+            timestampString = "520843754.628774"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "311"
+            endingLineNumber = "311">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BEYOND PULSE/ServerComunication.swift"
+            timestampString = "520843754.628774"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "316"
+            endingLineNumber = "316">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BEYOND PULSE/ServerComunication.swift"
+            timestampString = "520843754.628774"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "312"
+            endingLineNumber = "312">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BEYOND PULSE/LoginViewController.swift"
+            timestampString = "520842254.127147"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "LoginViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BEYOND_PULSE.LoginViewController.sing.getter : BEYOND_PULSE.MySingleton"
+                  moduleName = "BEYOND PULSE"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/milos/Desktop/xCodeProject/BEYONDPULSE/BEYOND%20PULSE/LoginViewController.swift"
+                  timestampString = "520842414.457096"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "35">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BEYOND_PULSE.LoginViewController.sing.setter : BEYOND_PULSE.MySingleton"
+                  moduleName = "BEYOND PULSE"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/milos/Desktop/xCodeProject/BEYONDPULSE/BEYOND%20PULSE/LoginViewController.swift"
+                  timestampString = "520842414.460404"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "63">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BEYOND_PULSE.LoginViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; BEYOND_PULSE.LoginViewController"
+                  moduleName = "BEYOND PULSE"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/milos/Desktop/xCodeProject/BEYONDPULSE/BEYOND%20PULSE/LoginViewController.swift"
+                  timestampString = "520842414.464001"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "324">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BEYOND_PULSE.LoginViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;BEYOND_PULSE.LoginViewController&gt;"
+                  moduleName = "BEYOND PULSE"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/milos/Desktop/xCodeProject/BEYONDPULSE/BEYOND%20PULSE/LoginViewController.swift"
+                  timestampString = "520842414.467457"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "226">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BEYOND PULSE/LoginViewController.swift"
+            timestampString = "520842256.196597"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "LoginViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BEYOND_PULSE.LoginViewController.JSON.getter : BEYOND_PULSE.serverCommunications"
+                  moduleName = "BEYOND PULSE"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/milos/Desktop/xCodeProject/BEYONDPULSE/BEYOND%20PULSE/LoginViewController.swift"
+                  timestampString = "520842414.477731"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "35">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BEYOND_PULSE.LoginViewController.JSON.setter : BEYOND_PULSE.serverCommunications"
+                  moduleName = "BEYOND PULSE"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/milos/Desktop/xCodeProject/BEYONDPULSE/BEYOND%20PULSE/LoginViewController.swift"
+                  timestampString = "520842414.481033"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "63">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BEYOND_PULSE.LoginViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; BEYOND_PULSE.LoginViewController"
+                  moduleName = "BEYOND PULSE"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/milos/Desktop/xCodeProject/BEYONDPULSE/BEYOND%20PULSE/LoginViewController.swift"
+                  timestampString = "520842414.484279"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "375">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BEYOND_PULSE.LoginViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;BEYOND_PULSE.LoginViewController&gt;"
+                  moduleName = "BEYOND PULSE"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/milos/Desktop/xCodeProject/BEYONDPULSE/BEYOND%20PULSE/LoginViewController.swift"
+                  timestampString = "520842414.487928"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "268">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BEYOND PULSE/ServerComunication.swift"
+            timestampString = "520843754.628774"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "276"
+            endingLineNumber = "276"
+            landmarkName = "sendSettings(dataSync:notification:language:token:id:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BEYOND PULSE/ServerComunication.swift"
+            timestampString = "520844485.625339"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "260"
+            endingLineNumber = "260"
+            landmarkName = "sendSettings(dataSync:notification:language:token:id:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

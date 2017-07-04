@@ -10,7 +10,7 @@ import UIKit
 
 class SettingsViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
  
-   
+   var JSON = serverCommunications()
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var settingsTable: UITableView!
     var sing = MySingleton.sharedInstance
@@ -72,7 +72,7 @@ class SettingsViewController: UIViewController,UITableViewDataSource,UITableView
         if indexPath.row == 8
         {
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-          
+          JSON.sendSettings(dataSync: sing.serverData.settings.autoDataSync, notification: sing.serverData.settings.notificationsEnabled, language: sing.serverData.settings.language, token: sing.serverData.res.token,id: sing.serverData.coatchRes.id)
             
             let newViewController = storyBoard.instantiateViewController(withIdentifier: "login") as! LoginViewController
            self.present(newViewController, animated: true, completion: nil)

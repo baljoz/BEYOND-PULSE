@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0708E2911F0CB1F300A3143C /* BLEController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0708E2901F0CB1F300A3143C /* BLEController.m */; };
 		07266E581EE9A508005C5BFF /* ForgatPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07266E571EE9A508005C5BFF /* ForgatPasswordViewController.swift */; };
 		0726971D1EE98B15005AC23A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0726971C1EE98B15005AC23A /* AppDelegate.swift */; };
 		072697221EE98B15005AC23A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072697201EE98B15005AC23A /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 		07387E271EEA79E1003E73D9 /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07387E261EEA79E1003E73D9 /* TeamTableViewCell.swift */; };
 		07387E2B1EEA8645003E73D9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07387E2A1EEA8645003E73D9 /* SWRevealViewController.m */; };
 		07387E2D1EEA960B003E73D9 /* CoachViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07387E2C1EEA960B003E73D9 /* CoachViewController.swift */; };
+		073BA5501F0E3020005AF769 /* JWTDecode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0708E28D1F0CB00400A3143C /* JWTDecode.framework */; };
 		07901C051EF949130000F40A /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07901C041EF949130000F40A /* CustomTabBarController.swift */; };
 		07901C071EF960F20000F40A /* TraningSesionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07901C061EF960F20000F40A /* TraningSesionTableViewCell.swift */; };
 		07906D1C1F051CCF00FB36D0 /* iOSDevCenters+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07906D1B1F051CCF00FB36D0 /* iOSDevCenters+GIF.swift */; };
@@ -30,8 +32,10 @@
 		07B380031F0A965600B7FB8A /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B380021F0A965600B7FB8A /* Singleton.swift */; };
 		07B380051F0A9F7D00B7FB8A /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B380041F0A9F7D00B7FB8A /* SettingsTableViewCell.swift */; };
 		07BA88FE1F0BB9B8001C4637 /* Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BA88FD1F0BB9B8001C4637 /* Players.swift */; };
+		07DB2B821F0CB3AC00D686C9 /* BLETestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DB2B811F0CB3AC00D686C9 /* BLETestViewController.swift */; };
+		07DB2B851F0CC49C00D686C9 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DB2B841F0CC49C00D686C9 /* CoreBluetooth.framework */; };
+		07DB2B871F0CCD0100D686C9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DB2B861F0CCD0100D686C9 /* CoreLocation.framework */; };
 		07EF5BE71F05012200476225 /* FirstScreanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EF5BE61F05012200476225 /* FirstScreanViewController.swift */; };
-		1C9D61EEC8F6E847CD6C5C9C /* Pods_BEYOND_PULSE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7802A0E123206CCF959F2B45 /* Pods_BEYOND_PULSE.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +56,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0708E28D1F0CB00400A3143C /* JWTDecode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JWTDecode.framework; path = "../../../Library/Developer/Xcode/DerivedData/BEYOND_PULSE-grfmbrefobspsjavpugseiybuubc/Build/Products/Debug-iphoneos/JWTDecode.framework"; sourceTree = "<group>"; };
+		0708E28F1F0CB1F300A3143C /* BLEController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEController.h; sourceTree = SOURCE_ROOT; };
+		0708E2901F0CB1F300A3143C /* BLEController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEController.m; sourceTree = SOURCE_ROOT; };
 		07266E571EE9A508005C5BFF /* ForgatPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgatPasswordViewController.swift; sourceTree = "<group>"; };
 		072697191EE98B15005AC23A /* BEYOND PULSE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BEYOND PULSE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0726971C1EE98B15005AC23A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +104,9 @@
 		07B380021F0A965600B7FB8A /* Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Singleton.swift; path = ../Singleton.swift; sourceTree = "<group>"; };
 		07B380041F0A9F7D00B7FB8A /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		07BA88FD1F0BB9B8001C4637 /* Players.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Players.swift; sourceTree = "<group>"; };
+		07DB2B811F0CB3AC00D686C9 /* BLETestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLETestViewController.swift; sourceTree = "<group>"; };
+		07DB2B841F0CC49C00D686C9 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		07DB2B861F0CCD0100D686C9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		07EF5BE61F05012200476225 /* FirstScreanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstScreanViewController.swift; path = Assets.xcassets/FirstScreanViewController.swift; sourceTree = "<group>"; };
 		10CAC75485C41836B5E78DC4 /* Pods-BEYOND PULSE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BEYOND PULSE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BEYOND PULSE/Pods-BEYOND PULSE.debug.xcconfig"; sourceTree = "<group>"; };
 		7802A0E123206CCF959F2B45 /* Pods_BEYOND_PULSE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BEYOND_PULSE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,7 +118,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C9D61EEC8F6E847CD6C5C9C /* Pods_BEYOND_PULSE.framework in Frameworks */,
+				073BA5501F0E3020005AF769 /* JWTDecode.framework in Frameworks */,
+				07DB2B871F0CCD0100D686C9 /* CoreLocation.framework in Frameworks */,
+				07DB2B851F0CC49C00D686C9 /* CoreBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +191,9 @@
 				07B380021F0A965600B7FB8A /* Singleton.swift */,
 				07B380041F0A9F7D00B7FB8A /* SettingsTableViewCell.swift */,
 				07BA88FD1F0BB9B8001C4637 /* Players.swift */,
+				0708E28F1F0CB1F300A3143C /* BLEController.h */,
+				0708E2901F0CB1F300A3143C /* BLEController.m */,
+				07DB2B811F0CB3AC00D686C9 /* BLETestViewController.swift */,
 			);
 			path = "BEYOND PULSE";
 			sourceTree = "<group>";
@@ -204,6 +219,9 @@
 		07B37FB71F0A681100B7FB8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				07DB2B861F0CCD0100D686C9 /* CoreLocation.framework */,
+				07DB2B841F0CC49C00D686C9 /* CoreBluetooth.framework */,
+				0708E28D1F0CB00400A3143C /* JWTDecode.framework */,
 				07B37FCE1F0A688B00B7FB8A /* XcodeKit.framework */,
 				07B37FC21F0A687600B7FB8A /* Pods */,
 				07B37FC01F0A684B00B7FB8A /* BEYOND PULSE.xcworkspace */,
@@ -492,10 +510,12 @@
 				07266E581EE9A508005C5BFF /* ForgatPasswordViewController.swift in Sources */,
 				07901C051EF949130000F40A /* CustomTabBarController.swift in Sources */,
 				07387E271EEA79E1003E73D9 /* TeamTableViewCell.swift in Sources */,
+				0708E2911F0CB1F300A3143C /* BLEController.m in Sources */,
 				07EF5BE71F05012200476225 /* FirstScreanViewController.swift in Sources */,
 				0726974B1EE98B67005AC23A /* LoginViewController.swift in Sources */,
 				07A6238D1EF1151A003A5395 /* PlayerTableViewCell.swift in Sources */,
 				07A6238F1EF1158F003A5395 /* PlayerViewController.swift in Sources */,
+				07DB2B821F0CB3AC00D686C9 /* BLETestViewController.swift in Sources */,
 				0726971D1EE98B15005AC23A /* AppDelegate.swift in Sources */,
 				07B380051F0A9F7D00B7FB8A /* SettingsTableViewCell.swift in Sources */,
 				07387E251EEA7985003E73D9 /* SelectTeamViewController.swift in Sources */,
@@ -660,8 +680,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = J6WMU365TR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)",
+				);
 				INFOPLIST_FILE = "BEYOND PULSE/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gamecredits.BEYOND-PULSE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -682,7 +706,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = J6WMU365TR;
 				INFOPLIST_FILE = "BEYOND PULSE/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gamecredits.BEYOND-PULSE";
 				PRODUCT_NAME = "$(TARGET_NAME)";

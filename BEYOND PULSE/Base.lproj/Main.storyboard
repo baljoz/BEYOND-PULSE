@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -707,6 +708,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TsZ-z5-AvR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1724" y="-604.04797601199402"/>
+        </scene>
+        <!--Test View Controller-->
+        <scene sceneID="hKp-qr-3zL">
+            <objects>
+                <viewController id="Utd-Lp-aBX" customClass="BLETestViewController" customModule="BEYOND_PULSE" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BH4-Er-tr7"/>
+                        <viewControllerLayoutGuide type="bottom" id="mqH-iS-Ch3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="exb-4c-P12">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsv-bn-Sdf">
+                                <rect key="frame" x="164" y="488" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="onClick:" destination="Utd-Lp-aBX" eventType="touchUpInside" id="hbt-Q0-Gg0"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dx7-aL-NZq">
+                                <rect key="frame" x="0.0" y="179" width="375" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dx7-aL-NZq" firstAttribute="centerX" secondItem="zsv-bn-Sdf" secondAttribute="centerX" id="0tT-tg-Gyr"/>
+                            <constraint firstAttribute="trailing" secondItem="dx7-aL-NZq" secondAttribute="trailing" id="QTo-qP-ESy"/>
+                            <constraint firstItem="dx7-aL-NZq" firstAttribute="leading" secondItem="exb-4c-P12" secondAttribute="leading" id="SJp-2Q-MkH"/>
+                            <constraint firstItem="dx7-aL-NZq" firstAttribute="top" secondItem="BH4-Er-tr7" secondAttribute="bottom" constant="159" id="co2-Id-zer"/>
+                            <constraint firstItem="mqH-iS-Ch3" firstAttribute="top" secondItem="zsv-bn-Sdf" secondAttribute="bottom" constant="149" id="kcv-hV-BTB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lab" destination="dx7-aL-NZq" id="i8N-Nu-C5o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yvc-dH-AQX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="709.60000000000002" y="-1411.8440779610196"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="Rtl-Pm-wCP">

@@ -82,6 +82,7 @@ class SelectTeamViewController: UIViewController,UITableViewDataSource,UITableVi
   
         newViewController.navTitleName = self.sing.serverData.teams[indexPath.row].name
         newViewController.navigationItem.title = self.sing.serverData.teams[indexPath.row].name
+            newViewController.indexTeam = indexPath.row
             DispatchQueue.main.async(execute: {
         revealviewcontroller.pushFrontViewController(newViewController, animated: true)
             })

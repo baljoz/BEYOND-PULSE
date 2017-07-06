@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BEYOND PULSE/ServerComunication.swift"
-            timestampString = "520867607.17513"
+            timestampString = "521022232.409721"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "394"
-            endingLineNumber = "394">
+            startingLineNumber = "451"
+            endingLineNumber = "451">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -88,11 +88,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BEYOND PULSE/ServerComunication.swift"
-            timestampString = "520867607.17513"
+            timestampString = "521022232.409721"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "399"
-            endingLineNumber = "399">
+            startingLineNumber = "456"
+            endingLineNumber = "456">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -102,11 +102,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BEYOND PULSE/ServerComunication.swift"
-            timestampString = "520867607.17513"
+            timestampString = "521022232.409721"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395">
+            startingLineNumber = "452"
+            endingLineNumber = "452">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -261,6 +261,180 @@
                   startingLineNumber = "21"
                   endingLineNumber = "21"
                   offsetFromSymbolStart = "268">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BLEController.h"
+            timestampString = "520927264.834144"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "8"
+            endingLineNumber = "8">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BEYOND PULSE/BLETestViewController.swift"
+            timestampString = "520936007.29061"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "onClick(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BLEController.m"
+            timestampString = "520932948.711495"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "303"
+            endingLineNumber = "303"
+            landmarkName = "-centralManager:didDisconnectPeripheral:error:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BLEController.m"
+            timestampString = "520932949.27921"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "304"
+            endingLineNumber = "304"
+            landmarkName = "-centralManager:didDisconnectPeripheral:error:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BEYOND PULSE/BLETestViewController.swift"
+            timestampString = "520941191.939896"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "abortPairing()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BLEController.h"
+            timestampString = "520945901.381566"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "-newHeartRateValue:"
+            landmarkType = "6">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[BLEController delegate]"
+                  moduleName = "BEYOND PULSE"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/milos/Desktop/xCodeProject/BEYONDPULSE/BLEController.h"
+                  timestampString = "521025744.938717"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[BLEController setDelegate:]"
+                  moduleName = "BEYOND PULSE"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/milos/Desktop/xCodeProject/BEYONDPULSE/BLEController.h"
+                  timestampString = "521025744.942349"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "46">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BEYOND PULSE/PlayerViewController.swift"
+            timestampString = "521022547.3437"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
+            landmarkName = "onClickToSegment(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BEYOND_PULSE.PlayerViewController.(onClickToSegment (Any) -&gt; ()).(closure #1)"
+                  moduleName = "BEYOND PULSE"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/milos/Desktop/xCodeProject/BEYONDPULSE/BEYOND%20PULSE/PlayerViewController.swift"
+                  timestampString = "521021994.640251"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "187"
+                  endingLineNumber = "187"
+                  offsetFromSymbolStart = "19">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BEYOND_PULSE.PlayerViewController.(onClickToSegment (Any) -&gt; ()).(closure #1).(closure #1)"
+                  moduleName = "BEYOND PULSE"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/milos/Desktop/xCodeProject/BEYONDPULSE/BEYOND%20PULSE/PlayerViewController.swift"
+                  timestampString = "521021994.643316"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "189"
+                  endingLineNumber = "189"
+                  offsetFromSymbolStart = "22">
                </Location>
             </Locations>
          </BreakpointContent>

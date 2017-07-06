@@ -8,39 +8,6 @@
 
 import Foundation
 
-struct loginResponse {
-    
-    var statusCode = "404"
-    var statusDescription =  "Server not responding"
-    var token = String()
-    var refreshToken = String()
-    var data = String()
-}
-
-struct coachResponese
-{
-    var id = Int()
-    var   firstName = String()
-    var middleName = String()
-    var lastName = String()
-    var imageUrl = String()
-    var image = UIImage()
-    
-}
-struct Team
-{
-    var id = Int()
-    var name = String()
-    var gender = String()
-    var ageGrup = String()
-}
-struct SettingsData
-{
-    var autoDataSync = Bool()
-    var notificationsEnabled = Bool()
-    var language = String()
-}
-
 class serverCommunications
 {
     var coatchRes = coachResponese()
@@ -49,6 +16,7 @@ class serverCommunications
     var teams = [Team]()
     var settings = SettingsData()
     var playerOnTeam = [Players]()
+    var sesion = [traningSesion]()
     init() {
         
     }
@@ -382,6 +350,95 @@ class serverCommunications
     task.resume()
     }
 
-    
+    func getTraningSesionOfTeam(token:String , id: Int,handler:@escaping (_ ses :[traningSesion])-> Void)  {
+        
+        
+        let url = URL(string: "http://bp.dev.ingsoftware.com:9092/teams/"+String(id)+"/sessions")
+        
+        var request = URLRequest(url: url!)
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer "+token ,forHTTPHeaderField:"Authorization")
+        request.httpMethod = "GET"
+        
+        let task = URLSession.shared.dataTask(with: request)  { data, response, error in
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return handler(self.sesion)
+
+            }
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+                     if let responseJSON = responseJSON as? [String: Any] {
+                var status = responseJSON["status"] as? [String : Any]
+                if status?["code"] as? String == "BP_200"
+                {
+                    let data = responseJSON["data"] as? [[String: Any]]
+                 
+                    for sesion in data!
+                    {
+                        var ses = traningSesion()
+                        ses.id = sesion["id"] as? Int ?? -1
+                        ses.teamId = sesion["teamId"] as? Int ?? -1
+                        ses.started = sesion["started"] as? String ?? ""
+                        ses.ended = sesion["ended"] as? String ?? ""
+                       ses.uploadStatus = sesion["uploadStatus"] as? String ?? ""
+                       
+                       self.sesion.append(ses)
+                    }
+                    
+                }
+                        handler(self.sesion)
+
+                
+                
+            }
+            
+        }
+        task.resume()
+        
+    }
+
      
 }
+
+
+struct loginResponse {
+    
+    var statusCode = "404"
+    var statusDescription =  "Server not responding"
+    var token = String()
+    var refreshToken = String()
+    var data = String()
+}
+
+struct coachResponese
+{
+    var id = Int()
+    var   firstName = String()
+    var middleName = String()
+    var lastName = String()
+    var imageUrl = String()
+    var image = UIImage()
+    
+}
+struct Team
+{
+    var id = Int()
+    var name = String()
+    var gender = String()
+    var ageGrup = String()
+}
+struct SettingsData
+{
+    var autoDataSync = Bool()
+    var notificationsEnabled = Bool()
+    var language = String()
+}
+
+struct traningSesion{
+ var id = Int()
+ var teamId = Int()
+ var started = String()
+ var ended = String()
+ var uploadStatus = String()
+}
+

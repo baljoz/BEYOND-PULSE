@@ -16,6 +16,9 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
     var connected = [String]()
     var imgPlayer  = [UIImage]()
      var sing = MySingleton.sharedInstance
+    var JSON = serverCommunications()
+    var indexTeam = Int()
+    
     
     @IBOutlet weak var navigationBar: UINavigationBar!
     var date = [String]()
@@ -104,7 +107,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         }
         else
         {
-        return 3
+        return sing.serverData.sesion.count
         }
     }
     
@@ -142,9 +145,9 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
             let cell = self.traningSesion.dequeueReusableCell(withIdentifier: "traningSesion") as! TraningSesionTableViewCell
 
-            cell.date.text = date[indexPath.row]
-            cell.time.text = time[indexPath.row]
-            cell.device.text = device[indexPath.row]
+            cell.date.text = sing.serverData.sesion[indexPath.row].started
+            cell.time.text = sing.serverData.sesion[indexPath.row].ended
+            cell.device.text = sing.serverData.sesion[indexPath.row].uploadStatus
         cell.layer.cornerRadius = 1;
         cell.layer.borderWidth = 1;
         //textfieldView.layer.borderColor = UIColor(red: 128, green: 128, blue: 128, alpha: 1).cgColor
@@ -177,11 +180,27 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
             playerTable.isHidden = false
             playerTable.reloadData()
         }
-        else
+        else  //        JSON.getPlayersOfTeam(token:sing.serverData.res.token , id: sing.serverData.teams[indexPath.row].id) { ( player:[Players])-> Void in
         {
-            playerTable.isHidden = true
-            traningSesion.isHidden = false
-            traningSesion.reloadData()
+            if sing.serverData.sesion.count == 0 {
+JSON.getTraningSesionOfTeam(token: self.sing.serverData.res.token, id: sing.serverData.teams[indexTeam].id){  ( se:[traningSesion])-> Void in
+
+                 self.sing.serverData.sesion = self.JSON.sesion
+                DispatchQueue.main.async(execute: {
+     
+                self.playerTable.isHidden = true
+                self.traningSesion.isHidden = false
+                self.traningSesion.reloadData()
+                })
+            }
+           
+        }
+            else
+            {
+                self.playerTable.isHidden = true
+                self.traningSesion.isHidden = false
+                self.traningSesion.reloadData()
+            }
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

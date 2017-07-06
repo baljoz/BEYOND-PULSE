@@ -36,56 +36,15 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        name.append("Wayne Rooney")
-        name.append("Zlatan Ibrahimmovic")
-        name .append("Marcus Rashford")
-        name.append("Marouane Fellaini")
-        name.append("Henrikh Mkhitaryan")
-        
-        position.append("DEFENDER")
-        position.append("FORWARD")
-        position.append("MIDDLE")
-        position.append("FORWARD")
-        position.append("FORWARD")
-        
-        connected.append("NOT CONNECTED")
-         connected.append("NOT CONNECTED")
-         connected.append("NOT CONNECTED")
-         connected.append("NOT PEAR")
-         connected.append("NOT CONNECTED")
-        
-        img.append(UIImage(named: "cancle")!)
-        img.append(UIImage(named: "cancle")!)
-        img.append(UIImage(named: "cancle")!)
-        img.append(UIImage(named: "pear")!)
-        img.append(UIImage(named: "cancle")!)
-        
-        imgPlayer.append(UIImage(named:"rony")!)
-        imgPlayer.append(UIImage(named:"zlatan")!)
-        imgPlayer.append(UIImage(named:"rasvord")!)
-        imgPlayer.append(UIImage(named:"felaini")!)
-        imgPlayer.append(UIImage(named:"mikitarijan")!)
+
         
         traningSesion.isHidden=true
         traningSesion.backgroundColor = UIColor.clear
         traningSesion.separatorStyle = .none
         
         playerTable.backgroundColor = UIColor.clear
-        
-        date.append("22/6/2017")
-        time.append("1:30 AM - 2:30 AM")
-        device.append("Device not synced")
-    
-        
-        date.append("2/6/2017")
-        time.append("3:30 PM - 5:30 PM")
-        device.append("Device partiril synced")
-        
-        date.append("22/6/2017")
-        time.append("7:45 AM - 9:30 AM")
-        device.append("Device  synced")
-        
-        tabControl.setTitle("Players ("+String(img.count) + ")", forSegmentAt: 0)
+ 
+        tabControl.setTitle("Players ("+String(sing.serverData.playerOnTeam.count) + ")", forSegmentAt: 0)
         
         menuButton.target=revealViewController()
         menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
@@ -183,7 +142,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         else  //        JSON.getPlayersOfTeam(token:sing.serverData.res.token , id: sing.serverData.teams[indexPath.row].id) { ( player:[Players])-> Void in
         {
             if sing.serverData.sesion.count == 0 {
-JSON.getTraningSesionOfTeam(token: self.sing.serverData.res.token, id: sing.serverData.teams[indexTeam].id){  ( se:[traningSesion])-> Void in
+                JSON.getTraningSesionOfTeam(token: self.sing.serverData.res.token, id: sing.serverData.teams[indexTeam].id){  ( se:[traningSesion])-> Void in
 
                  self.sing.serverData.sesion = self.JSON.sesion
                 DispatchQueue.main.async(execute: {
@@ -205,14 +164,30 @@ JSON.getTraningSesionOfTeam(token: self.sing.serverData.res.token, id: sing.serv
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if playerTable.isHidden == false
-        {
-         
-            
-            
+       if tabControl.selectedSegmentIndex == 0
+       {
+         //ako se klikne na igraca za uparivanje ili sta vec
         }
+       else{
         
+        JSON.getPlayersOfSesionTranning(token: self.sing.serverData.res.token, idTeam: sing.serverData.teams[indexTeam].id,idSesion: sing.serverData.sesion[indexPath.row].id){  ( se:[Players])-> Void in
+            
+            self.sing.serverData.playerOnTeam.removeAll()
+            self.sing.serverData.playerOnTeam = self.JSON.playerOnTeam
+            print(se[indexPath.row].firstName)
+            self.sing.serverData.sesion.removeAll()
+            self.sing.serverData.sesion = self.JSON.sesion
+            DispatchQueue.main.async(execute: {
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let newViewController = storyBoard.instantiateViewController(withIdentifier: "sesion") as! SessionViewController
+                
+                self.present(newViewController, animated: true, completion: nil)
+
+            })
+
+        }
     }
+}
     /*
     // MARK: - Navigation
 

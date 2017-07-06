@@ -21,6 +21,8 @@
 		07387E2B1EEA8645003E73D9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07387E2A1EEA8645003E73D9 /* SWRevealViewController.m */; };
 		07387E2D1EEA960B003E73D9 /* CoachViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07387E2C1EEA960B003E73D9 /* CoachViewController.swift */; };
 		073BA5501F0E3020005AF769 /* JWTDecode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0708E28D1F0CB00400A3143C /* JWTDecode.framework */; };
+		0765C26D1F0E3E6A007F0792 /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765C26C1F0E3E6A007F0792 /* SessionViewController.swift */; };
+		0765C26F1F0E3F41007F0792 /* SessionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765C26E1F0E3F41007F0792 /* SessionTableViewCell.swift */; };
 		07901C051EF949130000F40A /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07901C041EF949130000F40A /* CustomTabBarController.swift */; };
 		07901C071EF960F20000F40A /* TraningSesionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07901C061EF960F20000F40A /* TraningSesionTableViewCell.swift */; };
 		07906D1C1F051CCF00FB36D0 /* iOSDevCenters+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07906D1B1F051CCF00FB36D0 /* iOSDevCenters+GIF.swift */; };
@@ -79,6 +81,8 @@
 		07387E291EEA8645003E73D9 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		07387E2A1EEA8645003E73D9 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		07387E2C1EEA960B003E73D9 /* CoachViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoachViewController.swift; sourceTree = "<group>"; };
+		0765C26C1F0E3E6A007F0792 /* SessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionViewController.swift; sourceTree = "<group>"; };
+		0765C26E1F0E3F41007F0792 /* SessionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionTableViewCell.swift; sourceTree = "<group>"; };
 		07901C041EF949130000F40A /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		07901C061EF960F20000F40A /* TraningSesionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraningSesionTableViewCell.swift; sourceTree = "<group>"; };
 		07906D1B1F051CCF00FB36D0 /* iOSDevCenters+GIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "iOSDevCenters+GIF.swift"; sourceTree = SOURCE_ROOT; };
@@ -187,13 +191,15 @@
 				07EF5BE61F05012200476225 /* FirstScreanViewController.swift */,
 				07906D1B1F051CCF00FB36D0 /* iOSDevCenters+GIF.swift */,
 				07906D1D1F051F1800FB36D0 /* heartbeat.gif */,
-				079597061F025D46002FD487 /* ServerComunication.swift */,
 				07B380021F0A965600B7FB8A /* Singleton.swift */,
 				07B380041F0A9F7D00B7FB8A /* SettingsTableViewCell.swift */,
 				07BA88FD1F0BB9B8001C4637 /* Players.swift */,
 				0708E28F1F0CB1F300A3143C /* BLEController.h */,
 				0708E2901F0CB1F300A3143C /* BLEController.m */,
+				0765C26C1F0E3E6A007F0792 /* SessionViewController.swift */,
 				07DB2B811F0CB3AC00D686C9 /* BLETestViewController.swift */,
+				0765C26E1F0E3F41007F0792 /* SessionTableViewCell.swift */,
+				079597061F025D46002FD487 /* ServerComunication.swift */,
 			);
 			path = "BEYOND PULSE";
 			sourceTree = "<group>";
@@ -515,11 +521,13 @@
 				0726974B1EE98B67005AC23A /* LoginViewController.swift in Sources */,
 				07A6238D1EF1151A003A5395 /* PlayerTableViewCell.swift in Sources */,
 				07A6238F1EF1158F003A5395 /* PlayerViewController.swift in Sources */,
+				0765C26D1F0E3E6A007F0792 /* SessionViewController.swift in Sources */,
 				07DB2B821F0CB3AC00D686C9 /* BLETestViewController.swift in Sources */,
 				0726971D1EE98B15005AC23A /* AppDelegate.swift in Sources */,
 				07B380051F0A9F7D00B7FB8A /* SettingsTableViewCell.swift in Sources */,
 				07387E251EEA7985003E73D9 /* SelectTeamViewController.swift in Sources */,
 				079991421F03BFAA00D4860E /* SettingsViewController.swift in Sources */,
+				0765C26F1F0E3F41007F0792 /* SessionTableViewCell.swift in Sources */,
 				07B380031F0A965600B7FB8A /* Singleton.swift in Sources */,
 				07387E2B1EEA8645003E73D9 /* SWRevealViewController.m in Sources */,
 				079597071F025D46002FD487 /* ServerComunication.swift in Sources */,

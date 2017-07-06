@@ -397,6 +397,86 @@ class serverCommunications
         
     }
 
+    
+    func getPlayersOfSesionTranning(token:String , idTeam: Int,idSesion:Int,handler:@escaping (_ player:[Players])-> Void)  {
+        
+        
+        let url = URL(string: "http://bp.dev.ingsoftware.com:9092//teams/"+String(idTeam)+"/sessions/"+String(idSesion))
+        
+        var request = URLRequest(url: url!)
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer "+token ,forHTTPHeaderField:"Authorization")
+        request.httpMethod = "GET"
+        
+        let task = URLSession.shared.dataTask(with: request)  { data, response, error in
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return    handler(self.playerOnTeam)
+            }
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+            
+            if let responseJSON = responseJSON as? [String: Any] {
+                var status = responseJSON["status"] as? [String : Any]
+                if status?["code"] as? String == "BP_200"
+                {
+                    let data = responseJSON["data"] as? [String: Any]
+                  
+                    var ses = traningSesion()
+                    ses.id = data?["id"] as? Int ?? -1
+                    ses.teamId = data?["teamId"] as? Int ?? -1
+                    ses.ended = data?["ended"] as? String ?? ""
+                    ses.started = data?["started"] as? String ?? ""
+                    ses.uploadStatus = data?["uploadStatus"] as? String ?? ""
+                    print(responseJSON["data"])
+                    print( data?["playerActivities"])
+                    let palyers = data?["playerActivities"] as? [[String : Any ]]
+                    var i = 0
+                    for play in palyers!
+                    {
+                        let pl = Players()
+                        pl.id = play["playerId"] as? Int ?? -1
+                        pl.firstName = play["playerName"] as? String ?? ""
+                        pl.lastName = play["playerLastName"] as? String ?? ""
+                        pl.middleName = play["playerMiddleName"] as? String ?? ""
+                        pl.photoUrl = play["playerPhoto"] as? String ?? ""
+                        if pl.photoUrl != ""
+                        {
+                            do{
+                                try    self.getImage(urlImage:pl.photoUrl,index:i)
+                            }
+                            catch {
+                                
+                            }
+                            
+                        }
+                      
+                        pl.postition = play["playerPosition"] as? String ?? ""
+                        pl.beltName = play["beltNum"] as? String ?? ""
+                        pl.playerIdinSesion = play["playerIdinSesion"] as? Int ?? -1
+                        
+                         pl.teamActivityId=play["teamActivityId"] as? Int ?? -1
+                         pl.dataUploaded = play["dataUploaded"] as? String ?? ""
+                        pl.created = play["created"] as? String ?? ""
+                      
+                        i = i+1
+                        
+                        
+                        self.playerOnTeam.append(pl)
+                       
+                    }
+                    
+                }
+                
+                handler(self.playerOnTeam)
+                
+            }
+            
+        }
+        task.resume()
+        
+    }
+    
+
      
 }
 

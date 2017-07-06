@@ -8,17 +8,7 @@
 
 import Foundation
 
-/*
- 
- "id": 2,
- "firstName": "Sesc",
- "middleName": null,
- "lastName": "Fabregas",
- "photo": "http://bp.dev.ingsoftware.com:9093/player-avatar/sesc-fabregas-12345.png",
- "position": "central midfielder",
- "beltNumber": "234234223234"
- 
- */
+
 class Players
 {
     var id = Int()
@@ -29,4 +19,19 @@ class Players
     var postition = String()
     var beltName = String()
     var playerImage = UIImage()
+    
+    //for sesion on player
+    var playerIdinSesion = Int()
+    var teamActivityId   =  Int()
+    var  dataUploaded = String()
+    var created = String()
 }
+
+
+
+
+
+
+
+ 
+ 

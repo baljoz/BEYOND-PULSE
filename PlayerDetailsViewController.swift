@@ -98,7 +98,20 @@ class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITabl
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func clickOnBack(_ sender: Any) {
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "selP") as! PlayerViewController
+        newViewController.players = sing.serverData.playerOnTeam
+          newViewController.ses = sing.serverData.sesion
+        self.present(newViewController, animated: true, completion: nil)
+       
+    }
 
+   
+    
 }
 extension String {
     

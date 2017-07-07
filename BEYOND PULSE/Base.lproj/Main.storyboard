@@ -211,7 +211,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3uc-ue-cHF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-775.20000000000005" y="123.68815592203899"/>
+            <point key="canvasLocation" x="-857" y="124"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -455,7 +455,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lcs-up-QSQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-546" y="-314"/>
+            <point key="canvasLocation" x="-1178" y="-538"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zSd-Ab-YFC">
@@ -841,7 +841,7 @@
                         <outlet property="playerTable" destination="opN-1z-WhY" id="4OM-ur-Twl"/>
                         <outlet property="startTrening" destination="laZ-IM-7Hx" id="DXU-M7-kRm"/>
                         <outlet property="tabControl" destination="oBw-dN-Yfx" id="60C-Hk-0uB"/>
-                        <outlet property="traningSesion" destination="VIt-m9-0TH" id="7pz-3C-gTV"/>
+                        <outlet property="tranningTable" destination="VIt-m9-0TH" id="rhs-sT-R1P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TsZ-z5-AvR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -907,7 +907,21 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Title" id="Uhn-mh-j08"/>
+                                    <navigationItem title="Title" id="Uhn-mh-j08">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="xut-uQ-ZS8">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3fW-eM-11D">
+                                                <rect key="frame" x="16" y="7" width="83" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Back"/>
+                                                <connections>
+                                                    <action selector="clickOnBack:" destination="Pla-kV-vG9" eventType="touchUpInside" id="CNh-n6-kkE"/>
+                                                </connections>
+                                            </button>
+                                            <connections>
+                                                <action selector="clickOnBack:" destination="Pla-kV-vG9" id="ykV-Kg-tKI"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lCU-cB-Yn9">
@@ -1067,12 +1081,12 @@
                         <outlet property="playerImage" destination="lCU-cB-Yn9" id="iOK-cp-wGC"/>
                         <outlet property="playerName" destination="3xX-ha-wwt" id="1po-L1-tJ1"/>
                         <outlet property="playerPosition" destination="Qu7-dV-Ape" id="rcP-U7-ys6"/>
-                        <outlet property="tranningSesion" destination="TTX-VN-zM4" id="3yI-d4-Omt"/>
+                        <outlet property="tranningSesion" destination="TTX-VN-zM4" id="jAh-5s-ceY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bwU-wL-pFb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-548" y="-1240.9295352323838"/>
+            <point key="canvasLocation" x="-631" y="-1540"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="Rtl-Pm-wCP">

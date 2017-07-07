@@ -11,6 +11,10 @@ import UIKit
 class SessionViewController: UIViewController,UITableViewDataSource,UITableViewDelegate{
     @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var sesionTable: UITableView!
+    
+    var player = [Players]()
+    var session = [traningSesion]()
+    
 var sing = MySingleton.sharedInstance
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +31,7 @@ var sing = MySingleton.sharedInstance
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //sesionCell
+        
         
          let cell = self.sesionTable.dequeueReusableCell(withIdentifier: "sesionCell") as! SessionTableViewCell
         print(sing.serverData.playerOnTeam[indexPath.row].firstName)
@@ -52,7 +56,8 @@ var sing = MySingleton.sharedInstance
         
         
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "selP") as! PlayerViewController
-        
+        newViewController.players = sing.serverData.playerOnTeam
+        newViewController.ses = sing.serverData.sesion
           self.present(newViewController, animated: true, completion: nil)
     }
     /*

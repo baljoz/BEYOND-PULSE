@@ -102,6 +102,7 @@ class CoachViewController: UIViewController,UITableViewDataSource,UITableViewDel
             
             newViewController.navTitleName = self.sing.serverData.teams[indexPath.row].name
             newViewController.navigationItem.title = self.sing.serverData.teams[indexPath.row].name
+            newViewController.players = self.sing.serverData.playerOnTeam
             DispatchQueue.main.async(execute: {
                 revealviewcontroller.pushFrontViewController(newViewController, animated: true)
             })

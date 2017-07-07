@@ -19,28 +19,32 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
     var JSON = serverCommunications()
     var indexTeam = Int()
     
+    var players = [Players]()
+    
     
     @IBOutlet weak var navigationBar: UINavigationBar!
     var date = [String]()
     var time = [String]()
     var device = [String]()
     
-    @IBOutlet weak var traningSesion: UITableView!
+    @IBOutlet weak var tranningTable: UITableView!
+    
     @IBOutlet weak var tabControl: UISegmentedControl!
     var navTitleName = String()
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
     @IBOutlet weak var startTrening: UIButton!
     
+     var ses = [traningSesion]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
 
         
-        traningSesion.isHidden=true
-        traningSesion.backgroundColor = UIColor.clear
-        traningSesion.separatorStyle = .none
+        tranningTable.isHidden=true
+        tranningTable.backgroundColor = UIColor.clear
+        tranningTable.separatorStyle = .none
         
         playerTable.backgroundColor = UIColor.clear
  
@@ -64,11 +68,11 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tabControl.selectedSegmentIndex == 0 {
-            return sing.serverData.playerOnTeam.count
+            return players.count
         }
         else
         {
-        return sing.serverData.sesion.count
+        return ses.count
         }
     }
     
@@ -82,22 +86,15 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         if tabControl.selectedSegmentIndex == 0
         {
             let cell = self.playerTable.dequeueReusableCell(withIdentifier: "playercell") as! PlayerTableViewCell
-               cell.playerName.text = sing.serverData.playerOnTeam[indexPath.row].firstName+" "+sing.serverData.playerOnTeam[indexPath.row].middleName+" "+sing.serverData.playerOnTeam[indexPath.row].lastName
-        cell.playerPosition.text = sing.serverData.playerOnTeam[indexPath.row].postition
-    //    cell.connectionImage.image = img[indexPath.row]
-      //  cell.playerConection.text = connected[indexPath.row]
+               cell.playerName.text = players[indexPath.row].firstName+" "+players[indexPath.row].middleName+" "+players[indexPath.row].lastName
+        cell.playerPosition.text = players[indexPath.row].postition
         if indexPath.row != 3 {
         cell.playerConection.textColor = UIColor.red
         }
-        cell.playerImage.image = sing.serverData.playerOnTeam[indexPath.row].playerImage
+        cell.playerImage.image = players[indexPath.row].playerImage
          cell.playerImage.contentMode = .scaleAspectFit
         
         cell.connectionImage.contentMode = .scaleAspectFit
-            
-       //     cell.layer.cornerRadius = 1;
-         //   cell.layer.borderWidth = 1;
-            //textfieldView.layer.borderColor = UIColor(red: 128, green: 128, blue: 128, alpha: 1).cgColor
-            //   login.layer.cornerRadius=10
             cell.layer.cornerRadius=10
           cell.cellView.layer.cornerRadius=10
             cell.selectionStyle = UITableViewCellSelectionStyle.none
@@ -105,16 +102,16 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         return cell
         }
         
-            let cell = self.traningSesion.dequeueReusableCell(withIdentifier: "traningSesion") as! TraningSesionTableViewCell
+            let cell = self.tranningTable.dequeueReusableCell(withIdentifier: "traningSesion") as! TraningSesionTableViewCell
 
         
     
         
-        cell.date.text = sing.serverData.sesion[indexPath.row].started.charOfString(start:0,end:10)
-        // cell.date.text = session[indexPath.row].started
-        var time  = sing.serverData.sesion[indexPath.row].started.charOfString(start:12,end:19)
+        cell.date.text = ses[indexPath.row].started.charOfString(start:0,end:10)
+    
+        var time  = ses[indexPath.row].started.charOfString(start:12,end:19)
         time = time+"/"
-        time  = time+cell.time.text!+sing.serverData.sesion[indexPath.row].ended.charOfString(start:12,end:19)
+        time  = time+cell.time.text!+ses[indexPath.row].ended.charOfString(start:12,end:19)
         cell.time.text = time
         cell.cellView.layer.cornerRadius=10
         
@@ -154,21 +151,22 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
     @IBAction func onClickToSegment(_ sender: Any) {
         if tabControl.selectedSegmentIndex == 0
         {
-            traningSesion.isHidden = true
+            tranningTable.isHidden = true
             playerTable.isHidden = false
             playerTable.reloadData()
         }
         else  //        JSON.getPlayersOfTeam(token:sing.serverData.res.token , id: sing.serverData.teams[indexPath.row].id) { ( player:[Players])-> Void in
         {
-            if sing.serverData.sesion.count == 0 {
-                JSON.getTraningSesionOfTeam(token: self.sing.serverData.res.token, id: sing.serverData.teams[indexTeam].id){  ( se:[traningSesion])-> Void in
+            if ses.count == 0 {
+                JSON.getTraningSesionOfTeam(token: self.sing.serverData.res.token, id:indexTeam){  ( se:[traningSesion])-> Void in
 
                  self.sing.serverData.sesion = self.JSON.sesion
+                self.ses = self.JSON.sesion
                 DispatchQueue.main.async(execute: {
      
                 self.playerTable.isHidden = true
-                self.traningSesion.isHidden = false
-                self.traningSesion.reloadData()
+                self.tranningTable.isHidden = false
+                self.tranningTable.reloadData()
                 })
             }
            
@@ -176,8 +174,8 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
             else
             {
                 self.playerTable.isHidden = true
-                self.traningSesion.isHidden = false
-                self.traningSesion.reloadData()
+                self.tranningTable.isHidden = false
+                self.tranningTable.reloadData()
             }
         }
     }
@@ -190,7 +188,8 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "pdetails") as! PlayerDetailsViewController
         newViewController.pl = sing.serverData.playerOnTeam[indexPath.row]
-        newViewController.idTeam = sing.serverData.teams[indexPath.row].id
+        print(indexPath.row)
+        newViewController.idTeam = indexTeam
         DispatchQueue.main.async(execute: {
 
         self.present(newViewController, animated: true, completion: nil)
@@ -198,16 +197,13 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         }
        else{
         
-        JSON.getPlayersOfSesionTranning(token: self.sing.serverData.res.token, idTeam: sing.serverData.teams[indexTeam].id,idSesion: sing.serverData.sesion[indexPath.row].id){  ( se:[Players])-> Void in
+        JSON.getPlayersOfSesionTranning(token: self.sing.serverData.res.token, idTeam:indexTeam,idSesion: ses[indexPath.row].id){  ( se:[Players])-> Void in
             
-            self.sing.serverData.playerOnTeam.removeAll()
-            self.sing.serverData.playerOnTeam = self.JSON.playerOnTeam
-            self.sing.serverData.sesion.removeAll()
-            self.sing.serverData.sesion = self.JSON.sesion
             DispatchQueue.main.async(execute: {
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let newViewController = storyBoard.instantiateViewController(withIdentifier: "sesion") as! SessionViewController
-                
+                newViewController.player = self.JSON.playerOnTeam
+                newViewController.session = self.JSON.sesion
                 self.present(newViewController, animated: true, completion: nil)
 
             })

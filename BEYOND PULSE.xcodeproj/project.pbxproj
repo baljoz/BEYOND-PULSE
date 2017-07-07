@@ -37,6 +37,7 @@
 		07DB2B821F0CB3AC00D686C9 /* BLETestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DB2B811F0CB3AC00D686C9 /* BLETestViewController.swift */; };
 		07DB2B851F0CC49C00D686C9 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DB2B841F0CC49C00D686C9 /* CoreBluetooth.framework */; };
 		07DB2B871F0CCD0100D686C9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DB2B861F0CCD0100D686C9 /* CoreLocation.framework */; };
+		07E88F181F0F5B530022FC4C /* PlayerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E88F171F0F5B530022FC4C /* PlayerDetailsViewController.swift */; };
 		07EF5BE71F05012200476225 /* FirstScreanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EF5BE61F05012200476225 /* FirstScreanViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -111,6 +112,7 @@
 		07DB2B811F0CB3AC00D686C9 /* BLETestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLETestViewController.swift; sourceTree = "<group>"; };
 		07DB2B841F0CC49C00D686C9 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		07DB2B861F0CCD0100D686C9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		07E88F171F0F5B530022FC4C /* PlayerDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerDetailsViewController.swift; path = ../PlayerDetailsViewController.swift; sourceTree = "<group>"; };
 		07EF5BE61F05012200476225 /* FirstScreanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstScreanViewController.swift; path = Assets.xcassets/FirstScreanViewController.swift; sourceTree = "<group>"; };
 		10CAC75485C41836B5E78DC4 /* Pods-BEYOND PULSE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BEYOND PULSE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BEYOND PULSE/Pods-BEYOND PULSE.debug.xcconfig"; sourceTree = "<group>"; };
 		7802A0E123206CCF959F2B45 /* Pods_BEYOND_PULSE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BEYOND_PULSE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,8 +180,8 @@
 				072697281EE98B15005AC23A /* Info.plist */,
 				0726974A1EE98B67005AC23A /* LoginViewController.swift */,
 				07266E571EE9A508005C5BFF /* ForgatPasswordViewController.swift */,
-				07387E261EEA79E1003E73D9 /* TeamTableViewCell.swift */,
 				07387E291EEA8645003E73D9 /* SWRevealViewController.h */,
+				07387E261EEA79E1003E73D9 /* TeamTableViewCell.swift */,
 				07387E2A1EEA8645003E73D9 /* SWRevealViewController.m */,
 				07387E281EEA8645003E73D9 /* BEYOND PULSE-Bridging-Header.h */,
 				07387E2C1EEA960B003E73D9 /* CoachViewController.swift */,
@@ -196,10 +198,11 @@
 				07BA88FD1F0BB9B8001C4637 /* Players.swift */,
 				0708E28F1F0CB1F300A3143C /* BLEController.h */,
 				0708E2901F0CB1F300A3143C /* BLEController.m */,
-				0765C26C1F0E3E6A007F0792 /* SessionViewController.swift */,
 				07DB2B811F0CB3AC00D686C9 /* BLETestViewController.swift */,
+				0765C26C1F0E3E6A007F0792 /* SessionViewController.swift */,
 				0765C26E1F0E3F41007F0792 /* SessionTableViewCell.swift */,
 				079597061F025D46002FD487 /* ServerComunication.swift */,
+				07E88F171F0F5B530022FC4C /* PlayerDetailsViewController.swift */,
 			);
 			path = "BEYOND PULSE";
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 				0765C26F1F0E3F41007F0792 /* SessionTableViewCell.swift in Sources */,
 				07B380031F0A965600B7FB8A /* Singleton.swift in Sources */,
 				07387E2B1EEA8645003E73D9 /* SWRevealViewController.m in Sources */,
+				07E88F181F0F5B530022FC4C /* PlayerDetailsViewController.swift in Sources */,
 				079597071F025D46002FD487 /* ServerComunication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -693,7 +697,7 @@
 					"$(SRCROOT)",
 				);
 				INFOPLIST_FILE = "BEYOND PULSE/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gamecredits.BEYOND-PULSE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -714,7 +718,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = J6WMU365TR;
 				INFOPLIST_FILE = "BEYOND PULSE/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gamecredits.BEYOND-PULSE";
 				PRODUCT_NAME = "$(TARGET_NAME)";

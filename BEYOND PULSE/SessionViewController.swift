@@ -9,12 +9,16 @@
 import UIKit
 
 class SessionViewController: UIViewController,UITableViewDataSource,UITableViewDelegate{
+    @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var sesionTable: UITableView!
 var sing = MySingleton.sharedInstance
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        backButton.target=revealViewController()
+       // backButton.action = #selector(SWRevealViewController.revealToggle(_:))
         // Do any additional setup after loading the view.
+        sesionTable.backgroundColor = UIColor.clear
+        sesionTable.separatorStyle = .none
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,11 +37,23 @@ var sing = MySingleton.sharedInstance
         cell.imagePlayer.image = sing.serverData.playerOnTeam[indexPath.row].playerImage
         cell.imagePlayer.contentMode = .scaleAspectFit
         cell.connectionImage.image = UIImage(named: "ok")
+        cell.connectionImage.contentMode = .scaleAspectFit
+        cell.backgroundColor = UIColor.clear
         return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print(sing.serverData.playerOnTeam.count)
         return sing.serverData.playerOnTeam.count
+    }
+    @IBAction func clickOnBack(_ sender: Any) {
+        
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "selP") as! PlayerViewController
+        
+          self.present(newViewController, animated: true, completion: nil)
     }
     /*
     // MARK: - Navigation

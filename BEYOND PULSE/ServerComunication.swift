@@ -401,7 +401,7 @@ class serverCommunications
     func getPlayersOfSesionTranning(token:String , idTeam: Int,idSesion:Int,handler:@escaping (_ player:[Players])-> Void)  {
         
         
-        let url = URL(string: "http://bp.dev.ingsoftware.com:9092//teams/"+String(idTeam)+"/sessions/"+String(idSesion))
+        let url = URL(string: "http://bp.dev.ingsoftware.com:9092/teams/"+String(idTeam)+"/sessions/"+String(idSesion))
         
         var request = URLRequest(url: url!)
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
@@ -476,6 +476,49 @@ class serverCommunications
         
     }
     
+    func getTraningSesionOnPlayer(token:String , idTeam: Int,idPlayer:Int,handler:@escaping (_ ses:[traningSesion])-> Void)  {
+        
+        ///teams/4/players/2/sessions
+        let url = URL(string: "http://bp.dev.ingsoftware.com:9092/teams/"+String(idTeam)+"/players/"+String(idPlayer)+"/sessions")
+        
+        var request = URLRequest(url: url!)
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer "+token ,forHTTPHeaderField:"Authorization")
+        request.httpMethod = "GET"
+        
+        let task = URLSession.shared.dataTask(with: request)  { data, response, error in
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return    handler(self.sesion)
+            }
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+            
+            if let responseJSON = responseJSON as? [String: Any] {
+                var status = responseJSON["status"] as? [String : Any]
+                if status?["code"] as? String == "BP_200"
+                {
+                    let data = responseJSON["data"] as? [[String: Any]]
+                    for da in data!
+                    {
+                    var ses = traningSesion()
+                    ses.id = da["id"] as? Int ?? -1
+                    ses.teamId = da["teamId"] as? Int ?? -1
+                    ses.ended = da["ended"] as? String ?? ""
+                    ses.started = da["started"] as? String ?? ""
+                    ses.uploadStatus = da["uploadStatus"] as? String ?? ""
+                    
+                    self.sesion.append(ses)
+                    }
+                }
+                
+                handler(self.sesion)
+                
+            }
+            
+        }
+        task.resume()
+        
+    }
 
      
 }

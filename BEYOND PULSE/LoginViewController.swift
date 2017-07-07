@@ -15,6 +15,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var textfieldView: UIView!
     @IBOutlet weak var passwordTextfild: UITextField!
     @IBOutlet weak var eMailTextfild: UITextField!
+    @IBOutlet weak var viewe: UIView!
     
     var sing = MySingleton.sharedInstance
     

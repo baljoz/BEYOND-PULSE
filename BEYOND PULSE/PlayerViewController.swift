@@ -53,6 +53,8 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         startTrening.layer.cornerRadius = 1;
         startTrening.layer.borderWidth = 1;
         startTrening.layer.cornerRadius=10
+        
+        playerTable.separatorStyle = .none
 
     }
 
@@ -97,18 +99,33 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
             //textfieldView.layer.borderColor = UIColor(red: 128, green: 128, blue: 128, alpha: 1).cgColor
             //   login.layer.cornerRadius=10
             cell.layer.cornerRadius=10
+          cell.cellView.layer.cornerRadius=10
             cell.selectionStyle = UITableViewCellSelectionStyle.none
-        
+        cell.backgroundColor = UIColor.clear
         return cell
         }
         
             let cell = self.traningSesion.dequeueReusableCell(withIdentifier: "traningSesion") as! TraningSesionTableViewCell
 
-            cell.date.text = sing.serverData.sesion[indexPath.row].started
-            cell.time.text = sing.serverData.sesion[indexPath.row].ended
+        
+    
+        
+        cell.date.text = sing.serverData.sesion[indexPath.row].started.charOfString(start:0,end:10)
+        // cell.date.text = session[indexPath.row].started
+        var time  = sing.serverData.sesion[indexPath.row].started.charOfString(start:12,end:19)
+        time = time+"/"
+        time  = time+cell.time.text!+sing.serverData.sesion[indexPath.row].ended.charOfString(start:12,end:19)
+        cell.time.text = time
+        cell.cellView.layer.cornerRadius=10
+        
+        
+        
+        
+        cell.backgroundColor = UIColor.clear
+           // cell.date.text = sing.serverData.sesion[indexPath.row].started
+            //cell.time.text = sing.serverData.sesion[indexPath.row].ended
             cell.device.text = sing.serverData.sesion[indexPath.row].uploadStatus
-        cell.layer.cornerRadius = 1;
-        cell.layer.borderWidth = 1;
+       
         //textfieldView.layer.borderColor = UIColor(red: 128, green: 128, blue: 128, alpha: 1).cgColor
         //   login.layer.cornerRadius=10
         cell.layer.cornerRadius=10
@@ -126,6 +143,8 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
             cell.device.textColor = UIColor.green
         }
         cell.selectionStyle = UITableViewCellSelectionStyle.none
+        cell.backgroundColor = UIColor.clear
+        cell.cellView.layer.cornerRadius=10
             return cell
             
         
@@ -166,7 +185,16 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
        if tabControl.selectedSegmentIndex == 0
        {
-         //ako se klikne na igraca za uparivanje ili sta vec
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "pdetails") as! PlayerDetailsViewController
+        newViewController.pl = sing.serverData.playerOnTeam[indexPath.row]
+        newViewController.idTeam = sing.serverData.teams[indexPath.row].id
+        DispatchQueue.main.async(execute: {
+
+        self.present(newViewController, animated: true, completion: nil)
+        })
         }
        else{
         
@@ -174,7 +202,6 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
             
             self.sing.serverData.playerOnTeam.removeAll()
             self.sing.serverData.playerOnTeam = self.JSON.playerOnTeam
-            print(se[indexPath.row].firstName)
             self.sing.serverData.sesion.removeAll()
             self.sing.serverData.sesion = self.JSON.sesion
             DispatchQueue.main.async(execute: {

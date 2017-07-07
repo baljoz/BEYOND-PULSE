@@ -13,6 +13,7 @@ class TraningSesionTableViewCell: UITableViewCell {
     @IBOutlet weak var device: UILabel!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var cellView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

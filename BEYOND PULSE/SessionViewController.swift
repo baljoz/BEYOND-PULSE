@@ -11,7 +11,7 @@ import UIKit
 class SessionViewController: UIViewController,UITableViewDataSource,UITableViewDelegate{
     @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var sesionTable: UITableView!
-    
+    var idTeam = Int()
     var player = [Players]()
     var session = [traningSesion]()
     
@@ -58,6 +58,7 @@ var sing = MySingleton.sharedInstance
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "selP") as! PlayerViewController
         newViewController.players = sing.serverData.playerOnTeam
         newViewController.ses = sing.serverData.sesion
+        newViewController.indexTeam = idTeam
           self.present(newViewController, animated: true, completion: nil)
     }
     /*

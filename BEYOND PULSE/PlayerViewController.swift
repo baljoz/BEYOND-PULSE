@@ -204,6 +204,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
                 let newViewController = storyBoard.instantiateViewController(withIdentifier: "sesion") as! SessionViewController
                 newViewController.player = self.JSON.playerOnTeam
                 newViewController.session = self.JSON.sesion
+                newViewController.idTeam = self.indexTeam
                 self.present(newViewController, animated: true, completion: nil)
 
             })

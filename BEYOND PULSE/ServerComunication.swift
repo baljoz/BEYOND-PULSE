@@ -495,6 +495,9 @@ class serverCommunications
             
             if let responseJSON = responseJSON as? [String: Any] {
                 var status = responseJSON["status"] as? [String : Any]
+                
+                var g = status?["code"]
+                print(g)
                 if status?["code"] as? String == "BP_200"
                 {
                     let data = responseJSON["data"] as? [[String: Any]]

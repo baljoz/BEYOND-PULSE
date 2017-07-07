@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BEYOND PULSE/ServerComunication.swift"
-            timestampString = "521106936.703314"
+            timestampString = "521127432.332117"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "574"
-            endingLineNumber = "574">
+            startingLineNumber = "577"
+            endingLineNumber = "577">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -88,11 +88,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BEYOND PULSE/ServerComunication.swift"
-            timestampString = "521106936.703314"
+            timestampString = "521127432.332117"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "579"
-            endingLineNumber = "579">
+            startingLineNumber = "582"
+            endingLineNumber = "582">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -102,11 +102,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BEYOND PULSE/ServerComunication.swift"
-            timestampString = "521106936.703314"
+            timestampString = "521127432.332117"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "575"
-            endingLineNumber = "575">
+            startingLineNumber = "578"
+            endingLineNumber = "578">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -366,7 +366,7 @@
                   moduleName = "BEYOND PULSE"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/milos/Desktop/xCodeProject/BEYONDPULSE/BLEController.h"
-                  timestampString = "521126693.569252"
+                  timestampString = "521128221.992599"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "24"
@@ -381,7 +381,7 @@
                   moduleName = "BEYOND PULSE"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/milos/Desktop/xCodeProject/BEYONDPULSE/BLEController.h"
-                  timestampString = "521126693.57338"
+                  timestampString = "521128221.997987"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "24"
@@ -469,6 +469,54 @@
             endingLineNumber = "89"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BEYOND PULSE/ServerComunication.swift"
+            timestampString = "521126913.547588"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "496"
+            endingLineNumber = "496"
+            landmarkName = "getTraningSesionOnPlayer(token:idTeam:idPlayer:handler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BEYOND_PULSE.serverCommunications.(getTraningSesionOnPlayer (token : Swift.String, idTeam : Swift.Int, idPlayer : Swift.Int, handler : (Swift.Array&lt;BEYOND_PULSE.traningSesion&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "BEYOND PULSE"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/milos/Desktop/xCodeProject/BEYONDPULSE/BEYOND%20PULSE/ServerComunication.swift"
+                  timestampString = "521127432.574573"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "496"
+                  endingLineNumber = "496"
+                  offsetFromSymbolStart = "958">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BEYOND_PULSE.serverCommunications.(getTraningSesionOnPlayer (token : Swift.String, idTeam : Swift.Int, idPlayer : Swift.Int, handler : (Swift.Array&lt;BEYOND_PULSE.traningSesion&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "BEYOND PULSE"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/milos/Desktop/xCodeProject/BEYONDPULSE/BEYOND%20PULSE/ServerComunication.swift"
+                  timestampString = "521127432.578287"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "496"
+                  endingLineNumber = "496"
+                  offsetFromSymbolStart = "1339">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -22,6 +22,7 @@ class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITabl
     var JSON = serverCommunications()
     var sing = MySingleton.sharedInstance
     
+    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var connectButton: UIButton!
     @IBOutlet weak var tranningSesion: UITableView!
     override func viewDidLoad() {
@@ -45,6 +46,7 @@ class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITabl
         
         connectButton.layer.cornerRadius=10
         
+       
     
        // self.view.translatesAutoresizingMaskIntoConstraints = NO;
         
@@ -106,6 +108,7 @@ class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITabl
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "selP") as! PlayerViewController
         newViewController.players = sing.serverData.playerOnTeam
           newViewController.ses = sing.serverData.sesion
+        newViewController.indexTeam = idTeam
         self.present(newViewController, animated: true, completion: nil)
        
     }

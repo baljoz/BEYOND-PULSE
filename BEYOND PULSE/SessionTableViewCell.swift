@@ -10,6 +10,7 @@ import UIKit
 
 class SessionTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var viewCell: UIView!
     @IBOutlet weak var imagePlayer: UIImageView!
     @IBOutlet weak var positionPlayer: UILabel!
     @IBOutlet weak var playerName: UILabel!

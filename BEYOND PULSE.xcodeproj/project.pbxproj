@@ -21,6 +21,7 @@
 		07387E2B1EEA8645003E73D9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07387E2A1EEA8645003E73D9 /* SWRevealViewController.m */; };
 		07387E2D1EEA960B003E73D9 /* CoachViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07387E2C1EEA960B003E73D9 /* CoachViewController.swift */; };
 		0742F06F1F134CAB001FA68D /* Pods_BEYOND_PULSE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0742F06E1F134C90001FA68D /* Pods_BEYOND_PULSE.framework */; };
+		0742F0711F13878A001FA68D /* StartTraningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0742F0701F13878A001FA68D /* StartTraningViewController.swift */; };
 		0765C26D1F0E3E6A007F0792 /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765C26C1F0E3E6A007F0792 /* SessionViewController.swift */; };
 		0765C26F1F0E3F41007F0792 /* SessionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765C26E1F0E3F41007F0792 /* SessionTableViewCell.swift */; };
 		07901C051EF949130000F40A /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07901C041EF949130000F40A /* CustomTabBarController.swift */; };
@@ -97,6 +98,7 @@
 		07387E2A1EEA8645003E73D9 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		07387E2C1EEA960B003E73D9 /* CoachViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoachViewController.swift; sourceTree = "<group>"; };
 		0742F0661F134C90001FA68D /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
+		0742F0701F13878A001FA68D /* StartTraningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartTraningViewController.swift; sourceTree = "<group>"; };
 		0765C26C1F0E3E6A007F0792 /* SessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionViewController.swift; sourceTree = "<group>"; };
 		0765C26E1F0E3F41007F0792 /* SessionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionTableViewCell.swift; sourceTree = "<group>"; };
 		07901C041EF949130000F40A /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				0765C26E1F0E3F41007F0792 /* SessionTableViewCell.swift */,
 				079597061F025D46002FD487 /* ServerComunication.swift */,
 				07E88F171F0F5B530022FC4C /* PlayerDetailsViewController.swift */,
+				0742F0701F13878A001FA68D /* StartTraningViewController.swift */,
 			);
 			path = "BEYOND PULSE";
 			sourceTree = "<group>";
@@ -566,6 +569,7 @@
 				07901C071EF960F20000F40A /* TraningSesionTableViewCell.swift in Sources */,
 				07266E581EE9A508005C5BFF /* ForgatPasswordViewController.swift in Sources */,
 				07901C051EF949130000F40A /* CustomTabBarController.swift in Sources */,
+				0742F0711F13878A001FA68D /* StartTraningViewController.swift in Sources */,
 				07387E271EEA79E1003E73D9 /* TeamTableViewCell.swift in Sources */,
 				0708E2911F0CB1F300A3143C /* BLEController.m in Sources */,
 				07EF5BE71F05012200476225 /* FirstScreanViewController.swift in Sources */,

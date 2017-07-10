@@ -43,6 +43,7 @@ var sing = MySingleton.sharedInstance
         cell.connectionImage.image = UIImage(named: "ok")
         cell.connectionImage.contentMode = .scaleAspectFit
         cell.backgroundColor = UIColor.clear
+        cell.viewCell.layer.cornerRadius = 10
         return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

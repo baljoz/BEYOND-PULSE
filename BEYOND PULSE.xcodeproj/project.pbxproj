@@ -20,7 +20,7 @@
 		07387E271EEA79E1003E73D9 /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07387E261EEA79E1003E73D9 /* TeamTableViewCell.swift */; };
 		07387E2B1EEA8645003E73D9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07387E2A1EEA8645003E73D9 /* SWRevealViewController.m */; };
 		07387E2D1EEA960B003E73D9 /* CoachViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07387E2C1EEA960B003E73D9 /* CoachViewController.swift */; };
-		073BA5501F0E3020005AF769 /* JWTDecode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0708E28D1F0CB00400A3143C /* JWTDecode.framework */; };
+		0742F06F1F134CAB001FA68D /* Pods_BEYOND_PULSE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0742F06E1F134C90001FA68D /* Pods_BEYOND_PULSE.framework */; };
 		0765C26D1F0E3E6A007F0792 /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765C26C1F0E3E6A007F0792 /* SessionViewController.swift */; };
 		0765C26F1F0E3F41007F0792 /* SessionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765C26E1F0E3F41007F0792 /* SessionTableViewCell.swift */; };
 		07901C051EF949130000F40A /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07901C041EF949130000F40A /* CustomTabBarController.swift */; };
@@ -56,6 +56,20 @@
 			remoteGlobalIDString = 072697181EE98B15005AC23A;
 			remoteInfo = "BEYOND PULSE";
 		};
+		0742F06B1F134C90001FA68D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0742F0661F134C90001FA68D /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C0089CA1C4AF43F80F6D96ABC69A945D;
+			remoteInfo = JWTDecode;
+		};
+		0742F06D1F134C90001FA68D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0742F0661F134C90001FA68D /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A80F3B18A27E72E93A18AE7123A4FB9A;
+			remoteInfo = "Pods-BEYOND PULSE";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +96,7 @@
 		07387E291EEA8645003E73D9 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		07387E2A1EEA8645003E73D9 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		07387E2C1EEA960B003E73D9 /* CoachViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoachViewController.swift; sourceTree = "<group>"; };
+		0742F0661F134C90001FA68D /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		0765C26C1F0E3E6A007F0792 /* SessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionViewController.swift; sourceTree = "<group>"; };
 		0765C26E1F0E3F41007F0792 /* SessionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionTableViewCell.swift; sourceTree = "<group>"; };
 		07901C041EF949130000F40A /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
@@ -124,7 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				073BA5501F0E3020005AF769 /* JWTDecode.framework in Frameworks */,
+				0742F06F1F134CAB001FA68D /* Pods_BEYOND_PULSE.framework in Frameworks */,
 				07DB2B871F0CCD0100D686C9 /* CoreLocation.framework in Frameworks */,
 				07DB2B851F0CC49C00D686C9 /* CoreBluetooth.framework in Frameworks */,
 			);
@@ -155,6 +170,7 @@
 				0726973B1EE98B15005AC23A /* BEYOND PULSEUITests */,
 				0726971A1EE98B15005AC23A /* Products */,
 				07B37FB71F0A681100B7FB8A /* Frameworks */,
+				0742F0661F134C90001FA68D /* Pods.xcodeproj */,
 				C279FF22B130BB80A55C531E /* Pods */,
 			);
 			sourceTree = "<group>";
@@ -185,12 +201,12 @@
 				07387E2A1EEA8645003E73D9 /* SWRevealViewController.m */,
 				07387E281EEA8645003E73D9 /* BEYOND PULSE-Bridging-Header.h */,
 				07387E2C1EEA960B003E73D9 /* CoachViewController.swift */,
+				07EF5BE61F05012200476225 /* FirstScreanViewController.swift */,
 				07A6238C1EF1151A003A5395 /* PlayerTableViewCell.swift */,
 				07A6238E1EF1158F003A5395 /* PlayerViewController.swift */,
 				07901C041EF949130000F40A /* CustomTabBarController.swift */,
 				07901C061EF960F20000F40A /* TraningSesionTableViewCell.swift */,
 				079991411F03BFAA00D4860E /* SettingsViewController.swift */,
-				07EF5BE61F05012200476225 /* FirstScreanViewController.swift */,
 				07906D1B1F051CCF00FB36D0 /* iOSDevCenters+GIF.swift */,
 				07906D1D1F051F1800FB36D0 /* heartbeat.gif */,
 				07B380021F0A965600B7FB8A /* Singleton.swift */,
@@ -223,6 +239,15 @@
 				0726973E1EE98B15005AC23A /* Info.plist */,
 			);
 			path = "BEYOND PULSEUITests";
+			sourceTree = "<group>";
+		};
+		0742F0671F134C90001FA68D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0742F06C1F134C90001FA68D /* JWTDecode.framework */,
+				0742F06E1F134C90001FA68D /* Pods_BEYOND_PULSE.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		07B37FB71F0A681100B7FB8A /* Frameworks */ = {
@@ -422,6 +447,12 @@
 			mainGroup = 072697101EE98B15005AC23A;
 			productRefGroup = 0726971A1EE98B15005AC23A /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 0742F0671F134C90001FA68D /* Products */;
+					ProjectRef = 0742F0661F134C90001FA68D /* Pods.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				072697181EE98B15005AC23A /* BEYOND PULSE */,
@@ -430,6 +461,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		0742F06C1F134C90001FA68D /* JWTDecode.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = JWTDecode.framework;
+			remoteRef = 0742F06B1F134C90001FA68D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0742F06E1F134C90001FA68D /* Pods_BEYOND_PULSE.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pods_BEYOND_PULSE.framework;
+			remoteRef = 0742F06D1F134C90001FA68D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		072697171EE98B15005AC23A /* Resources */ = {

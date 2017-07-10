@@ -50,6 +50,12 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
  
         tabControl.setTitle("Players ("+String(sing.serverData.playerOnTeam.count) + ")", forSegmentAt: 0)
         
+      //  if self.revealViewController() != nil {
+        //    menuButton.target = self.revealViewController()
+      //      menuButton.action = "revealToggle:"
+      //      self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+     //   }
+        
         menuButton.target=revealViewController()
         menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
          navigationBar.topItem?.title = navTitleName
@@ -184,28 +190,44 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
        if tabControl.selectedSegmentIndex == 0
        {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        /*
+ 
+         
+         let revealviewcontroller:SWRevealViewController = self.revealViewController()
+         
         
-        
+         let newViewController = storyBoard.instantiateViewController(withIdentifier: "selP") as! PlayerViewController
+         
+         newViewController.navTitleName = self.sing.serverData.teams[indexPath.row].name
+         newViewController.navigationItem.title = self.sing.serverData.teams[indexPath.row].name
+         newViewController.players = self.sing.serverData.playerOnTeam
+         newViewController.indexTeam = self.sing.serverData.teams[indexPath.row].id
+         DispatchQueue.main.async(execute: {
+         revealviewcontroller.pushFrontViewController(newViewController, animated: true)
+ */
+         let revealviewcontroller:SWRevealViewController = self.revealViewController()
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "pdetails") as! PlayerDetailsViewController
         newViewController.pl = sing.serverData.playerOnTeam[indexPath.row]
         print(indexPath.row)
         newViewController.idTeam = indexTeam
         DispatchQueue.main.async(execute: {
-
-        self.present(newViewController, animated: true, completion: nil)
+ revealviewcontroller.pushFrontViewController(newViewController, animated: true)
+       // self.present(newViewController, animated: true, completion: nil)
         })
         }
        else{
         
         JSON.getPlayersOfSesionTranning(token: self.sing.serverData.res.token, idTeam:indexTeam,idSesion: ses[indexPath.row].id){  ( se:[Players])-> Void in
-            
+             let revealviewcontroller:SWRevealViewController = self.revealViewController()
             DispatchQueue.main.async(execute: {
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let newViewController = storyBoard.instantiateViewController(withIdentifier: "sesion") as! SessionViewController
                 newViewController.player = self.JSON.playerOnTeam
                 newViewController.session = self.JSON.sesion
                 newViewController.idTeam = self.indexTeam
-                self.present(newViewController, animated: true, completion: nil)
+               // self.present(newViewController, animated: true, completion: nil)
+                revealviewcontroller.pushFrontViewController(newViewController, animated: true)
+
 
             })
 

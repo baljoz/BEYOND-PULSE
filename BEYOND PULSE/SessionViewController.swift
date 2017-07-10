@@ -18,7 +18,7 @@ class SessionViewController: UIViewController,UITableViewDataSource,UITableViewD
 var sing = MySingleton.sharedInstance
     override func viewDidLoad() {
         super.viewDidLoad()
-        backButton.target=revealViewController()
+    
        // backButton.action = #selector(SWRevealViewController.revealToggle(_:))
         // Do any additional setup after loading the view.
         sesionTable.backgroundColor = UIColor.clear
@@ -51,7 +51,7 @@ var sing = MySingleton.sharedInstance
     }
     @IBAction func clickOnBack(_ sender: Any) {
         
-        
+        let revealviewcontroller:SWRevealViewController = self.revealViewController()
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
         
@@ -59,7 +59,8 @@ var sing = MySingleton.sharedInstance
         newViewController.players = sing.serverData.playerOnTeam
         newViewController.ses = sing.serverData.sesion
         newViewController.indexTeam = idTeam
-          self.present(newViewController, animated: true, completion: nil)
+         revealviewcontroller.pushFrontViewController(newViewController, animated: true)
+         
     }
     /*
     // MARK: - Navigation

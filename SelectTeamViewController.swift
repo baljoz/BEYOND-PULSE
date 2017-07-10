@@ -26,10 +26,7 @@ class SelectTeamViewController: UIViewController,UITableViewDataSource,UITableVi
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        /*teamName.append("FC Munchester United")
-        teamName.append("FC Real Madrid")
-        teamName.append("FC Barcelona")
-        */
+       
      
         team = sing.serverData.teams
         

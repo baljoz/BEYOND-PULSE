@@ -22,8 +22,7 @@ class ForgatPasswordViewController: UIViewController {
         emailTextField.leftViewMode = UITextFieldViewMode.always
         emailTextField.leftView = UIImageView(image: UIImage(named: "mesage"))
         
-        submitButton.layer.cornerRadius = 1;
-        //submitButton.layer.borderWidth = 1;
+        submitButton.layer.cornerRadius = 1
         submitButton.layer.cornerRadius=10
         
         let img = UIImageView(image: UIImage(named: "mesage"))
@@ -33,9 +32,6 @@ class ForgatPasswordViewController: UIViewController {
         emailTextField.leftViewMode = .always
         
         mailView.layer.cornerRadius = 2;
-       // mailView.layer.borderWidth = 1;
-        //textfieldView.layer.borderColor = UIColor(red: 128, green: 128, blue: 128, alpha: 1).cgColor
-        //   login.layer.cornerRadius=10
        mailView.layer.cornerRadius=10
 
 

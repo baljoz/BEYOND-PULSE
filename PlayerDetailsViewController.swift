@@ -101,11 +101,7 @@ class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITabl
     }
     */
     @IBAction func clickOnBack(_ sender: Any) {
-        /*
-  revealviewcontroller.pushFrontViewController(newViewController, animated: true)
- 
- */
-        let revealviewcontroller:SWRevealViewController = self.revealViewController()
+              let revealviewcontroller:SWRevealViewController = self.revealViewController()
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
@@ -115,7 +111,7 @@ class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITabl
           newViewController.ses = sing.serverData.sesion
         newViewController.indexTeam = idTeam
         revealviewcontroller.pushFrontViewController(newViewController, animated: true)
-      //  self.present(newViewController, animated: true, completion: nil)
+     
        
     }
 

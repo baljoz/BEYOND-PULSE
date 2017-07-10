@@ -26,19 +26,11 @@ class CoachViewController: UIViewController,UITableViewDataSource,UITableViewDel
 
         // Do any additional setup after loading the view.
         
-        teamName.append("FC Munchester United")
-        teamName.append("FC Real Madrid")
-        teamName.append("FC Barcelona")
-        
-        teamImg.append(UIImage(named: "mancester")!)
-        teamImg.append(UIImage(named: "real")!)
-        teamImg.append(UIImage(named: "barca")!)
-
-        
         coachImage.layer.cornerRadius = 2;
         coachImage.layer.borderWidth = 1;
         coachImage.layer.borderColor = UIColor(red: 255, green: 255, blue: 255, alpha: 1).cgColor
      
+    
         
         coachImage.layer.cornerRadius=10
 

@@ -31,25 +31,17 @@ class LoginViewController: UIViewController {
         img.contentMode = .left
         eMailTextfild.leftView = img
         eMailTextfild.leftViewMode = .always
-            //UIImageView(image: UIImage(named: "mesage"))//mesage
         passwordTextfild.leftViewMode = UITextFieldViewMode.always
         let img2 = UIImageView(image: UIImage(named: "lock"))
         img2.frame=CGRect(x:0.0, y:0.0, width:(img.image?.size.width)!+10.0, height:(img.image?.size.height)!)
         img2.contentMode = .left
         passwordTextfild.leftView = img2
         passwordTextfild.leftViewMode = .always
-      //  passwordTextfild.leftView = UIImageView(image: UIImage(named: "lock"))
-        //textfieldView.frame.
         textfieldView.layer.cornerRadius = 2;
         textfieldView.layer.borderWidth = 1;
-        //textfieldView.layer.borderColor = UIColor(red: 128, green: 128, blue: 128, alpha: 1).cgColor
-        //   login.layer.cornerRadius=10
         textfieldView.layer.cornerRadius=10
 
         continueButton.layer.cornerRadius = 1;
-        //continueButton.layer.borderWidth = 1;
-        //textfieldView.layer.borderColor = UIColor(red: 128, green: 128, blue: 128, alpha: 1).cgColor
-        //   login.layer.cornerRadius=10
         continueButton.layer.cornerRadius=10
         
         // Do any additional setup after loading the view.
@@ -106,27 +98,6 @@ class LoginViewController: UIViewController {
             }
         }
       
-   //   let res = JSON.Login(username: eMailTextfild.text!,password: passwordTextfild.text!)
-        
-       // if res.statusCode == "BP_200"
-       // {
-         /*   let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let newViewController = storyBoard.instantiateViewController(withIdentifier: "team") as! SWRevealViewController
-           
-            newViewController.sirnaslajdera = (self.view.frame.size.width / 3) * 2
-            let next = newViewController
-            self.present(next, animated: true, completion: nil)
-            */
- 
-       /* }
-        else
-        {
-            let alert = UIAlertController(title: "Alert", message:res.statusDescription, preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
-    */
-   
     }
     //
     //on token get id

@@ -366,7 +366,7 @@
                   moduleName = "BEYOND PULSE"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/milos/Desktop/xCodeProject/BEYONDPULSE/BLEController.h"
-                  timestampString = "521128221.992599"
+                  timestampString = "521356516.721958"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "24"
@@ -381,7 +381,7 @@
                   moduleName = "BEYOND PULSE"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/milos/Desktop/xCodeProject/BEYONDPULSE/BLEController.h"
-                  timestampString = "521128221.997987"
+                  timestampString = "521356516.725494"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "24"
@@ -467,8 +467,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "89"
             endingLineNumber = "89"
-            landmarkName = "tableView(_:numberOfRowsInSection:)"
-            landmarkType = "7">
+            landmarkName = "PlayerDetailsViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

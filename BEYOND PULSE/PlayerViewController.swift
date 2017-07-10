@@ -246,6 +246,29 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         }
         }
     }
+    
+    @IBAction func connectAndStartTraning(_ sender: Any) {
+        let menu = UIAlertController(title:"Unable to connect to all devices",message:"Some of the devices failed to connect.Platers are euther out of rage or batteries are too low.",preferredStyle: .actionSheet)
+        menu.view.tintColor = UIColor.orange
+        
+        
+        let startTranning = UIAlertAction(title:"Start Training Session Anyway",style : .default,handler:{(alert : UIAlertAction!)-> Void in
+            print("Start tranning")
+        })
+        
+        let retry = UIAlertAction(title:"Retry",style : .default,handler:{(alert : UIAlertAction!)-> Void in
+            print("retry")
+        })
+        let cancle = UIAlertAction(title:"Cancle",style : .default,handler:{(alert : UIAlertAction!)-> Void in
+            print("Cancle")
+        })
+        menu.addAction(startTranning)
+        menu.addAction(retry)
+        menu.addAction(cancle)
+        present(menu,animated: true , completion: nil)
+    }
+    
+    
     /*
     // MARK: - Navigation
 

@@ -350,10 +350,9 @@ class serverCommunications
     task.resume()
     }
 
-    func getTraningSesionOfTeam(token:String , id: Int,handler:@escaping (_ ses :[traningSesion])-> Void)  {
-        
-        
-        let url = URL(string: "http://bp.dev.ingsoftware.com:9092/teams/"+String(id)+"/sessions")
+    func getTraningSesionOfTeam(token:String , id: Int,page:Int,handler:@escaping (_ ses :[traningSesion])-> Void)  {
+                // treba da se implementira paging
+        let url = URL(string: "http://bp.dev.ingsoftware.com:9092/teams/"+String(id)+"/sessions?page="+String(page)+"&size=5")
         
         var request = URLRequest(url: url!)
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
@@ -478,7 +477,7 @@ class serverCommunications
     
     func getTraningSesionOnPlayer(token:String , idTeam: Int,idPlayer:Int,handler:@escaping (_ ses:[traningSesion])-> Void)  {
         
-        ///teams/4/players/2/sessions
+        // treba pejdzing da se implementira
         let url = URL(string: "http://bp.dev.ingsoftware.com:9092/teams/"+String(idTeam)+"/players/"+String(idPlayer)+"/sessions")
         
         var request = URLRequest(url: url!)
@@ -496,8 +495,7 @@ class serverCommunications
             if let responseJSON = responseJSON as? [String: Any] {
                 var status = responseJSON["status"] as? [String : Any]
                 
-                var g = status?["code"]
-                print(g)
+          
                 if status?["code"] as? String == "BP_200"
                 {
                     let data = responseJSON["data"] as? [[String: Any]]
@@ -515,6 +513,69 @@ class serverCommunications
                 }
                 
                 handler(self.sesion)
+                
+            }
+            
+        }
+        task.resume()
+        
+    }
+    func getPlayerDetails(token:String , idTeam: Int,idPlayer:Int,handler:@escaping (_ player:[Players])-> Void)  {
+        
+        playerOnTeam.removeAll()
+        
+        let url = URL(string: "http://bp.dev.ingsoftware.com:9092/teams/"+String(idTeam)+"/players/"+String(idPlayer))
+        
+        var request = URLRequest(url: url!)
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer "+token ,forHTTPHeaderField:"Authorization")
+        request.httpMethod = "GET"
+        
+        let task = URLSession.shared.dataTask(with: request)  { data, response, error in
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return    handler(self.playerOnTeam)
+            }
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+            
+            if let responseJSON = responseJSON as? [String: Any] {
+                var status = responseJSON["status"] as? [String : Any]
+                if status?["code"] as? String == "BP_200"
+                {
+                    let data = responseJSON["data"] as? [String: Any]
+                    
+                    var i = 0
+                    
+                        let pl = Players()
+                        pl.id = data?["id"] as? Int ?? -1
+                        pl.firstName = data?["firstName"] as? String ?? ""
+                        pl.lastName = data?["lastName"] as? String ?? ""
+                        pl.middleName = data?["middleName"] as? String ?? ""
+                        pl.photoUrl = data?["photo"] as? String ?? ""
+                        if pl.photoUrl != ""
+                        {
+                            do{
+                                try    self.getImage(urlImage:pl.photoUrl,index:i)
+                            }
+                            catch {
+                                
+                            }
+                            
+                        }
+                        
+                        pl.postition = data?["position"] as? String ?? ""
+                        pl.beltName = data?["beltNumber"] as? String ?? ""
+                        pl.dob = data?["dob"] as? String ?? ""
+                        i = i+1
+                        
+                        
+                        self.playerOnTeam.append(pl)
+                        
+                    
+                    
+                }
+                
+                handler(self.playerOnTeam)
                 
             }
             

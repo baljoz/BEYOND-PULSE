@@ -19,7 +19,7 @@ class Players
     var postition = String()
     var beltName = String()
     var playerImage = UIImage()
-    
+    var dob = String()
     //for sesion on player
     var playerIdinSesion = Int()
     var teamActivityId   =  Int()

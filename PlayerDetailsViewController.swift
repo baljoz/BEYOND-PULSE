@@ -33,7 +33,7 @@ class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITabl
         playerImage.contentMode = .scaleAspectFit
         playerName.text = pl.firstName+" "+pl.middleName+" "+pl.lastName
         playerPosition.text = pl.postition
-        playerBirth.text = "?"
+        playerBirth.text = pl.dob
         
         beltID.text = "Belt ID:"+"  "+pl.beltName
         beltBatery.text = "Battery:"+"N/A"
@@ -78,7 +78,7 @@ class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITabl
         time  = time + session[indexPath.row].ended.charOfString(start:12,end:19)
         cell.time.text = time
         cell.cellView.layer.cornerRadius=10
-        
+       
         
                 
         

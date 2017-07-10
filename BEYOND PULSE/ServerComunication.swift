@@ -202,7 +202,18 @@ class serverCommunications
                         t.id = te["id"] as? Int ?? -1
                         
                         t.ageGrup = te["ageGrup"] as? String ?? ""
-                        t.name = te["name"] as? String ?? ""
+                        var cName = data?["club"] as! [String : Any]
+                        t.name = cName["name"] as? String ?? ""
+                        t.name.append(" ")
+                        t.name.append(te["name"] as? String ?? "")
+                        t.urlImage = cName["logo"] as? String ?? ""
+                        let str = NSURL(string : t.urlImage)
+                         let dstt = NSData(contentsOf: str! as URL)!
+                        if dstt != nil
+                        {
+                            t.img = (UIImage(data: dstt as Data)!)
+                        }
+                        
                         t.gender = te["gender"] as? String ?? ""
                         self.teams.append(t)
                     }
@@ -522,7 +533,7 @@ class serverCommunications
     }
     func getPlayerDetails(token:String , idTeam: Int,idPlayer:Int,handler:@escaping (_ player:[Players])-> Void)  {
         
-        playerOnTeam.removeAll()
+       
         
         let url = URL(string: "http://bp.dev.ingsoftware.com:9092/teams/"+String(idTeam)+"/players/"+String(idPlayer))
         
@@ -613,6 +624,8 @@ struct Team
     var name = String()
     var gender = String()
     var ageGrup = String()
+    var urlImage = String()
+    var img = UIImage()
 }
 struct SettingsData
 {

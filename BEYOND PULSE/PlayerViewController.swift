@@ -191,23 +191,9 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
        if tabControl.selectedSegmentIndex == 0
        {
+        JSON.playerOnTeam.removeAll()
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        /*
- 
-         
-         let revealviewcontroller:SWRevealViewController = self.revealViewController()
-         
-        
-         let newViewController = storyBoard.instantiateViewController(withIdentifier: "selP") as! PlayerViewController
-         
-         newViewController.navTitleName = self.sing.serverData.teams[indexPath.row].name
-         newViewController.navigationItem.title = self.sing.serverData.teams[indexPath.row].name
-         newViewController.players = self.sing.serverData.playerOnTeam
-         newViewController.indexTeam = self.sing.serverData.teams[indexPath.row].id
-         DispatchQueue.main.async(execute: {
-         revealviewcontroller.pushFrontViewController(newViewController, animated: true)
- */
-         let revealviewcontroller:SWRevealViewController = self.revealViewController()
+               let revealviewcontroller:SWRevealViewController = self.revealViewController()
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "pdetails") as! PlayerDetailsViewController
         JSON.getPlayerDetails(token: sing.serverData.res.token, idTeam: indexTeam, idPlayer: sing.serverData.playerOnTeam[indexPath.row].id){ ( player:[Players])-> Void in
         newViewController.pl = self.JSON.playerOnTeam[0]
@@ -220,9 +206,9 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         }
         }
        else{
-        
+          let revealviewcontroller:SWRevealViewController = self.revealViewController()
         JSON.getPlayersOfSesionTranning(token: self.sing.serverData.res.token, idTeam:indexTeam,idSesion: ses[indexPath.row].id){  ( se:[Players])-> Void in
-             let revealviewcontroller:SWRevealViewController = self.revealViewController()
+          
             DispatchQueue.main.async(execute: {
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let newViewController = storyBoard.instantiateViewController(withIdentifier: "sesion") as! SessionViewController

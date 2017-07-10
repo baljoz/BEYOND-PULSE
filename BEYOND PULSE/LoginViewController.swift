@@ -89,7 +89,7 @@ class LoginViewController: UIViewController {
                     let newViewController = storyBoard.instantiateViewController(withIdentifier: "team") as! SWRevealViewController
                     
                     newViewController.sirnaslajdera = (self.view.frame.size.width / 3) * 2
-                //    newViewController.team = JSON.teams
+                
                     let next = newViewController
                     DispatchQueue.main.async {
                         

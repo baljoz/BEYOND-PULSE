@@ -61,7 +61,7 @@ class CoachViewController: UIViewController,UITableViewDataSource,UITableViewDel
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "coatchcell") as! TeamTableViewCell
-        cell.imageTeam.image = teamImg[indexPath.row]
+        cell.imageTeam.image = sing.serverData.teams[indexPath.row].img
         cell.nameTeam.text = sing.serverData.teams[indexPath.row].name
        cell.imageTeam.layer.borderWidth = 1
        
@@ -80,17 +80,7 @@ class CoachViewController: UIViewController,UITableViewDataSource,UITableViewDel
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-       /* let revealviewcontroller:SWRevealViewController = self.revealViewController()
-        
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: "selP") as! PlayerViewController
-        print(teamName[indexPath.row])
-        newViewController.navTitleName = teamName[indexPath.row]
-        newViewController.navigationItem.title = teamName[indexPath.row]
-        revealviewcontroller.pushFrontViewController(newViewController, animated: true)*/
+       
         self.JSON.playerOnTeam.removeAll()
         let revealviewcontroller:SWRevealViewController = self.revealViewController()
         
@@ -99,7 +89,7 @@ class CoachViewController: UIViewController,UITableViewDataSource,UITableViewDel
             
             self.sing.serverData.playerOnTeam = self.JSON.playerOnTeam
             let newViewController = storyBoard.instantiateViewController(withIdentifier: "selP") as! PlayerViewController
-            
+            newViewController.indexTeam = self.sing.serverData.teams[indexPath.row].id
             newViewController.navTitleName = self.sing.serverData.teams[indexPath.row].name
             newViewController.navigationItem.title = self.sing.serverData.teams[indexPath.row].name
             newViewController.players = self.sing.serverData.playerOnTeam

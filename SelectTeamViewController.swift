@@ -14,8 +14,8 @@ class SelectTeamViewController: UIViewController,UITableViewDataSource,UITableVi
     @IBOutlet weak var rightNavigatioButton: UIBarButtonItem!
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var teamTable: UITableView!
-    var teamName = [String]()
-    var teamImg = [UIImage]()
+
+    
     var JSON = serverCommunications()
     var team = [Team]()
     var coatch = [coachResponese]()
@@ -30,9 +30,8 @@ class SelectTeamViewController: UIViewController,UITableViewDataSource,UITableVi
         teamName.append("FC Real Madrid")
         teamName.append("FC Barcelona")
         */
-        teamImg.append(UIImage(named: "mancester")!)
-        teamImg.append(UIImage(named: "real")!)
-        teamImg.append(UIImage(named: "barca")!)
+     
+        team = sing.serverData.teams
         
         menuButton.target=revealViewController()
         menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
@@ -61,8 +60,8 @@ class SelectTeamViewController: UIViewController,UITableViewDataSource,UITableVi
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.teamTable.dequeueReusableCell(withIdentifier: "teamCell") as! TeamTableViewCell
-        cell.imageTeam.image = teamImg[indexPath.row]
-        cell.nameTeam.text = sing.serverData.teams[indexPath.row].name
+        cell.imageTeam.image = team[indexPath.row].img
+        cell.nameTeam.text = team[indexPath.row].name
         
         cell.imageTeam.contentMode = .scaleAspectFit
         cell.backgroundColor = nil

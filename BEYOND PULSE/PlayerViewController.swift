@@ -27,6 +27,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
     var time = [String]()
     var device = [String]()
     
+
     @IBOutlet weak var tranningTable: UITableView!
     
     @IBOutlet weak var tabControl: UISegmentedControl!
@@ -50,14 +51,11 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
  
         tabControl.setTitle("Players ("+String(sing.serverData.playerOnTeam.count) + ")", forSegmentAt: 0)
         
-      //  if self.revealViewController() != nil {
-        //    menuButton.target = self.revealViewController()
-      //      menuButton.action = "revealToggle:"
-      //      self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-     //   }
         
+
         menuButton.target=revealViewController()
         menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+        
          navigationBar.topItem?.title = navTitleName
         
         startTrening.layer.cornerRadius = 1;
@@ -259,7 +257,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         let retry = UIAlertAction(title:"Retry",style : .default,handler:{(alert : UIAlertAction!)-> Void in
             print("retry")
         })
-        let cancle = UIAlertAction(title:"Cancle",style : .default,handler:{(alert : UIAlertAction!)-> Void in
+        let cancle = UIAlertAction(title:"Cancel",style : .default,handler:{(alert : UIAlertAction!)-> Void in
             print("Cancle")
         })
         menu.addAction(startTranning)

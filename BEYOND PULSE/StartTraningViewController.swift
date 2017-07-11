@@ -13,12 +13,18 @@ class StartTraningViewController: UIViewController {
     @IBOutlet weak var stratButton: UIButton!
 
     @IBOutlet weak var tileLabel: UILabel!
+    @IBOutlet weak var lockViewLeftSide: NSLayoutConstraint!
     
     @IBOutlet weak var lockView: UIView!
     
+    @IBOutlet weak var swipeToUnlock: UILabel!
+    @IBOutlet weak var constraint: NSLayoutConstraint!
  
-    
+    @IBOutlet weak var unlockLabelCentar: NSLayoutConstraint!
+     var tim = Timer()
     var timer = Timer()
+        var leftSideView = CGFloat()
+        var labCentar = CGFloat()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,7 +32,9 @@ class StartTraningViewController: UIViewController {
                 
         tileLabel.text = DateFormatter.localizedString(from: NSDate() as Date,dateStyle:.medium,timeStyle: .medium)
         lockView.isHidden = true
-       
+        leftSideView = self.lockViewLeftSide.constant
+        labCentar =  self.unlockLabelCentar.constant
+        self.swipeToUnlock.isHidden = true
    
     }
 
@@ -40,13 +48,33 @@ class StartTraningViewController: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: 1.0,target: self,selector:#selector(incrementTimer),userInfo: nil,repeats: true)
         lockView.isHidden = false
         stratButton.isEnabled = false
+        self.swipeToUnlock.isHidden = false
 
     }
 
     @IBAction func swipeUnlock(_ sender: UISwipeGestureRecognizer) {
-        lockView.transform.translatedBy(x: 10, y: 0)
-  
+       
+     
+        UIView.animate(withDuration: 0.5) {
+            self.lockViewLeftSide.constant = self.lockViewLeftSide.constant  + self.view.frame.maxX
+            self.view.layoutIfNeeded()
+            self.unlockLabelCentar.constant = self.unlockLabelCentar.constant + self.view.frame.maxX
+        }
+       
+        tim = Timer.scheduledTimer(timeInterval: 1.0,target: self,selector:#selector(updateFrame),userInfo: nil,repeats: true)
+       
             }
+    
+    func updateFrame()
+    {
+        self.stratButton.isEnabled = true
+        self.lockView.isHidden = true
+        self.swipeToUnlock.isHidden = true
+        self.lockViewLeftSide.constant = leftSideView
+        self.unlockLabelCentar.constant = labCentar
+        tim.invalidate()
+
+    }
     
     func incrementTimer() {
         tileLabel.text = DateFormatter.localizedString(from: NSDate() as Date,dateStyle:.medium,timeStyle: .medium)

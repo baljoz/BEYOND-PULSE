@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="A0e-be-GWF">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -997,8 +997,11 @@
                     </view>
                     <connections>
                         <outlet property="lockView" destination="wok-mV-5uU" id="6BW-NE-umF"/>
+                        <outlet property="lockViewLeftSide" destination="C8q-ik-uzJ" id="9kM-u2-eto"/>
                         <outlet property="stratButton" destination="uiR-4t-2So" id="9Sq-gp-b6b"/>
+                        <outlet property="swipeToUnlock" destination="V7x-vL-tUr" id="Jbe-yb-TQf"/>
                         <outlet property="tileLabel" destination="orD-2G-FP4" id="6mc-On-lTd"/>
+                        <outlet property="unlockLabelCentar" destination="aDJ-Th-hNg" id="tq5-rq-vp4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yzh-tP-6JH" userLabel="First Responder" sceneMemberID="firstResponder"/>

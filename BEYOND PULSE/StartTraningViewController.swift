@@ -25,6 +25,8 @@ class StartTraningViewController: UIViewController {
     var timer = Timer()
         var leftSideView = CGFloat()
         var labCentar = CGFloat()
+    var sing = MySingleton.sharedInstance
+    var start = false
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -45,26 +47,43 @@ class StartTraningViewController: UIViewController {
     
     
     @IBAction func startSession(_ sender: Any) {
-        timer = Timer.scheduledTimer(timeInterval: 1.0,target: self,selector:#selector(incrementTimer),userInfo: nil,repeats: true)
-        lockView.isHidden = false
-        stratButton.isEnabled = false
-        self.swipeToUnlock.isHidden = false
+        if start
+        {
+            let revealviewcontroller:SWRevealViewController = self.revealViewController()
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let newViewController = storyBoard.instantiateViewController(withIdentifier: "selP") as! PlayerViewController
+          //  newViewController.navTitleName = self.sing.serverData.teams[indexPath.row].name
+         //   newViewController.navigationItem.title = self.sing.serverData.teams[indexPath.row].name
+            newViewController.players = self.sing.serverData.playerOnTeam
+        //    newViewController.indexTeam = self.sing.serverData.teams[indexPath.row].id
+            revealviewcontroller.pushFrontViewController(newViewController, animated: true)
+
+        }
+        else
+        {
+            timer = Timer.scheduledTimer(timeInterval: 1.0,target: self,selector:#selector(incrementTimer),userInfo: nil,repeats: true)
+            lockView.isHidden = false
+            stratButton.isEnabled = false
+            self.swipeToUnlock.isHidden = false
+            start = true
+        }
 
     }
 
     @IBAction func swipeUnlock(_ sender: UISwipeGestureRecognizer) {
        
-     
+        
+        
         UIView.animate(withDuration: 0.5) {
             self.lockViewLeftSide.constant = self.lockViewLeftSide.constant  + self.view.frame.maxX
             self.view.layoutIfNeeded()
             self.unlockLabelCentar.constant = self.unlockLabelCentar.constant + self.view.frame.maxX
-        }
+        
        
-        tim = Timer.scheduledTimer(timeInterval: 1.0,target: self,selector:#selector(updateFrame),userInfo: nil,repeats: true)
+        self.tim = Timer.scheduledTimer(timeInterval: 1.0,target: self,selector:#selector(self.updateFrame),userInfo: nil,repeats: true)
        
-            }
-    
+    }
+}
     func updateFrame()
     {
         self.stratButton.isEnabled = true

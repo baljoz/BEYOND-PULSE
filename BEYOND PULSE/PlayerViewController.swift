@@ -64,6 +64,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
         playerTable.separatorStyle = .none
 
+         
     }
 
     override func didReceiveMemoryWarning() {
@@ -103,10 +104,11 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
           cell.cellView.layer.cornerRadius=10
             cell.selectionStyle = UITableViewCellSelectionStyle.none
         cell.backgroundColor = UIColor.clear
+            
         return cell
         }
         
-            let cell = self.tranningTable.dequeueReusableCell(withIdentifier: "traningSesion") as! TraningSesionTableViewCell
+        let cell = self.tranningTable.dequeueReusableCell(withIdentifier: "traningSesion") as! TraningSesionTableViewCell
 
         cell.time.text?.removeAll()
     
@@ -162,11 +164,13 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         else
         {
             if ses.count == 0 {
-                
+                if sing.serverData.sesion.count == 0 {
                 JSON.getTraningSesionOfTeam(token: self.sing.serverData.res.token, id:indexTeam,page:pageOfSesion){  ( se:[traningSesion])-> Void in
 
                  self.sing.serverData.sesion = self.JSON.sesion
-                self.ses = self.JSON.sesion
+                    }
+                }
+                self.ses =  self.sing.serverData.sesion
                     self.pageOfSesion = self.pageOfSesion + 1
                 DispatchQueue.main.async(execute: {
      
@@ -176,7 +180,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
                 })
             }
            
-        }
+        
             else
             {
                 self.playerTable.isHidden = true
@@ -245,14 +249,36 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
     }
     
     @IBAction func connectAndStartTraning(_ sender: Any) {
-        let menu = UIAlertController(title:"Unable to connect to all devices",message:"Some of the devices failed to connect.Platers are euther out of rage or batteries are too low.",preferredStyle: .actionSheet)
+        
+        let message = NSAttributedString(string: "Some of the devices failed to connect.Platers are euther out of rage or batteries are too low.", attributes: [
+            NSFontAttributeName:UIFont.systemFont(ofSize: 15),
+            NSForegroundColorAttributeName : UIColor.white
+            ])
+        let title = NSAttributedString(string: "Unable to connect to all devices.", attributes: [
+            NSFontAttributeName:UIFont.systemFont(ofSize: 25),
+            NSForegroundColorAttributeName : UIColor.white
+            ])
+
+        
+        let menu = UIAlertController(title:"",message:"",preferredStyle: .actionSheet)
+    
+       menu.setValue(message, forKey: "attributedMessage")
+        menu.setValue(title, forKey: "attributedTitle")
+
+        let subview = (menu.view.subviews.first?.subviews.first?.subviews.first!)! as UIView
+        
+     
+        subview.backgroundColor = UIColor(red: (0/255.0), green: (0/255.0), blue: (0/255.0), alpha: 0.2)
+        
         menu.view.tintColor = UIColor.orange
         
-        
         let startTranning = UIAlertAction(title:"Start Training Session Anyway",style : .default,handler:{(alert : UIAlertAction!)-> Void in
-            print("Start tranning")
+            let revealviewcontroller:SWRevealViewController = self.revealViewController()
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let newViewController = storyBoard.instantiateViewController(withIdentifier: "starttranning") as! StartTraningViewController
+                revealviewcontroller.pushFrontViewController(newViewController, animated: true)
         })
-        
+      
         let retry = UIAlertAction(title:"Retry",style : .default,handler:{(alert : UIAlertAction!)-> Void in
             print("retry")
         })
@@ -262,7 +288,11 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         menu.addAction(startTranning)
         menu.addAction(retry)
         menu.addAction(cancle)
+    
         present(menu,animated: true , completion: nil)
+       
+        
+       
     }
     
     
@@ -276,4 +306,26 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
     }
     */
 
+}
+extension UIView
+{
+    func searchVisualEffectsSubview() -> UIVisualEffectView?
+    {
+        if let visualEffectView = self as? UIVisualEffectView
+        {
+            return visualEffectView
+        }
+        else
+        {
+            for subview in subviews
+            {
+                if let found = subview.searchVisualEffectsSubview()
+                {
+                    return found
+                }
+            }
+        }
+        
+        return nil
+    }
 }

@@ -14,7 +14,7 @@ class SessionViewController: UIViewController,UITableViewDataSource,UITableViewD
     var idTeam = Int()
     var player = [Players]()
     var session = [traningSesion]()
-    
+    var pageOfSeeions = Int()
 var sing = MySingleton.sharedInstance
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +60,7 @@ var sing = MySingleton.sharedInstance
         newViewController.players = sing.serverData.playerOnTeam
         newViewController.ses = sing.serverData.sesion
         newViewController.indexTeam = idTeam
+        newViewController.pageOfSesion = pageOfSeeions
          revealviewcontroller.pushFrontViewController(newViewController, animated: true)
          
     }

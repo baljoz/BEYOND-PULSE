@@ -195,7 +195,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "pdetails") as! PlayerDetailsViewController
         JSON.getPlayerDetails(token: sing.serverData.res.token, idTeam: indexTeam, idPlayer: sing.serverData.playerOnTeam[indexPath.row].id){ ( player:[Players])-> Void in
         newViewController.pl = self.JSON.playerOnTeam[0]
-       
+       newViewController.pageOfSeeions = self.pageOfSesion
         newViewController.idTeam = self.indexTeam
         DispatchQueue.main.async(execute: {
  revealviewcontroller.pushFrontViewController(newViewController, animated: true)
@@ -211,9 +211,8 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let newViewController = storyBoard.instantiateViewController(withIdentifier: "sesion") as! SessionViewController
                 newViewController.player = self.JSON.playerOnTeam
-               // newViewController.session = self.JSON.sesion
                 newViewController.idTeam = self.indexTeam
-               
+               newViewController.pageOfSeeions = self.pageOfSesion
                // self.present(newViewController, animated: true, completion: nil)
                 revealviewcontroller.pushFrontViewController(newViewController, animated: true)
 

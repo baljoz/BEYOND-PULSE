@@ -21,7 +21,7 @@ class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITabl
     @IBOutlet weak var beltStatus: UILabel!
     var JSON = serverCommunications()
     var sing = MySingleton.sharedInstance
-    
+    var pageOfSeeions = Int()
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var connectButton: UIButton!
     @IBOutlet weak var tranningSesion: UITableView!
@@ -110,6 +110,7 @@ class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITabl
         newViewController.players = sing.serverData.playerOnTeam
           newViewController.ses = sing.serverData.sesion
         newViewController.indexTeam = idTeam
+        newViewController.pageOfSesion = pageOfSeeions
         revealviewcontroller.pushFrontViewController(newViewController, animated: true)
      
        

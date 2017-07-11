@@ -17,6 +17,7 @@ class serverCommunications
     var settings = SettingsData()
     var playerOnTeam = [Players]()
     var sesion = [traningSesion]()
+    var idSesion = Int()
     init() {
         
     }
@@ -593,6 +594,130 @@ class serverCommunications
         }
         task.resume()
         
+    }
+    //Treba da se proveri da li vraca ok i sve to (Nije testirano)
+    func updatePlayerBelt(token:String , idTeam: Int,idPlayer:Int,beltNumber:String)
+
+    {
+        // vraca BP_500 ????
+        let json: [String: Any] = ["beltNumber": beltNumber]
+        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+        
+        // /teams/4/players/2
+        let url = URL(string: "http://bp.dev.ingsoftware.com:9092/teams/"+String(idTeam)+"/players"+String(idPlayer))!
+        var request = URLRequest(url: url)
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer "+token ,forHTTPHeaderField:"Authorization")
+        request.httpMethod = "PUT"
+        
+        request.httpBody = jsonData
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+            if let responseJSON = responseJSON as? [String: Any] {
+                
+                if let status = responseJSON["status"] as? [String : Any]
+                {
+                    var code = status["code"] as? String ?? " "
+                    if code == "BP_200"
+                    {
+                        return
+                    }
+                    else if code == "BP_403"
+                    {
+                        self.refreshToken(token: self.res.refreshToken)
+                        self.updatePlayerBelt(token:self.res.token,idTeam: idTeam,idPlayer: idPlayer,beltNumber: beltNumber)
+                    }
+                }
+                
+                
+            }
+            
+        }
+        task.resume()
+    }
+//i ova metoda treba da se testira da se vidi da li radi
+    func createNewTraningSessins(token:String , idTeam: Int,sessionStart:String,sessionEnd:String,idPlayers:[Int])    {
+    
+        let json: [String: Any] = ["started": sessionStart,
+                                   "ended": sessionEnd,"playerIds":idPlayers]
+        
+        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+        
+        // /teams/4/sessions
+        let url = URL(string: "http://bp.dev.ingsoftware.com:9092/teams"+String(idTeam)+"/sessions")!
+        var request = URLRequest(url: url)
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer "+token ,forHTTPHeaderField:"Authorization")
+        request.httpMethod = "POST"
+        
+        // insert json data to the request
+        request.httpBody = jsonData
+        
+        let task = URLSession.shared.dataTask(with: request)  { data, response, error in
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+            if let responseJSON = responseJSON as? [String: Any] {
+                let status = responseJSON["status"] as? [String: Any]
+                var code = status?["code"] as? String ?? ""
+                if code == "BP_200"
+                {
+                    self.idSesion = responseJSON["data"] as? Int ?? 0
+                }
+                else {
+                    //hvali za not found za token ..... treba da se izhendluje
+                }
+            }
+        }
+        task.resume()
+    }
+    //isto da se proveri ... (kako treba da izgleda data ????
+    func updatePlayerTraningSessionsData(token:String , idTeam: Int,idSession:Int,beltNumber:String,data: NSData,idPlayer:Int)
+        
+    {
+        // vraca BP_500 ????
+        let json: [String: Any] = ["beltNumber": beltNumber,"playerId":idPlayer,"data":data]
+        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+        
+        // }/teams/4/sessions/6
+        let url = URL(string: "http://bp.dev.ingsoftware.com:9092/teams/"+String(idTeam)+"/sessions"+String(idSesion))!
+        var request = URLRequest(url: url)
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer "+token ,forHTTPHeaderField:"Authorization")
+        request.httpMethod = "PUT"
+        
+        request.httpBody = jsonData
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+            if let responseJSON = responseJSON as? [String: Any] {
+                
+                if let status = responseJSON["status"] as? [String : Any]
+                {
+                    var code = status["code"] as? String ?? " "
+                    if code == "BP_200"
+                    {
+                        return
+                    }
+                 
+                }
+                
+                
+            }
+            
+        }
+        task.resume()
     }
 
      

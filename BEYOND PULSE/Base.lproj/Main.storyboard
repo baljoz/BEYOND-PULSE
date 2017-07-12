@@ -356,11 +356,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xZR-Ol-p3d">
+                            <navigationBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="xZR-Ol-p3d">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Title" id="rHj-cW-9x6">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="aYu-lh-RVa">
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="clickOnBack:" destination="rfa-wX-axl" id="LFY-pT-Dd5"/>
                                             </connections>
@@ -483,10 +488,14 @@
         <scene sceneID="zSd-Ab-YFC">
             <objects>
                 <navigationController id="y0O-8y-kSX" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RIw-3u-y0U">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackTranslucent" id="RIw-3u-y0U">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="Cco-Us-Auw" kind="relationship" relationship="rootViewController" id="VxG-kh-Gvd"/>
@@ -589,7 +598,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="0H7-d9-Ydz" firstAttribute="leading" secondItem="8pg-DA-akF" secondAttribute="leading" id="7t8-O9-lnf"/>
                             <constraint firstItem="md2-Ip-AFi" firstAttribute="top" secondItem="0H7-d9-Ydz" secondAttribute="bottom" id="N3u-Dl-7N4"/>
@@ -602,7 +611,7 @@
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" width="50" id="ss5-5G-VYJ">
-                            <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
+                            <inset key="imageInsets" minX="0.0" minY="50" maxX="0.0" maxY="10"/>
                             <color key="tintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
@@ -824,8 +833,13 @@
                                     <action selector="connectAndStartTraning:" destination="njb-gC-g3q" eventType="touchUpInside" id="cfg-TP-CUO"/>
                                 </connections>
                             </button>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E6S-OM-kcv">
+                            <navigationBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="E6S-OM-kcv">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="eu2-CL-EuL"/>
+                                    <constraint firstAttribute="width" constant="375" id="yuP-Oa-yAm"/>
+                                </constraints>
                                 <items>
                                     <navigationItem title="Teams Selections" id="GQW-kL-2hf">
                                         <barButtonItem key="leftBarButtonItem" image="menu" id="VqN-xJ-45h">
@@ -868,6 +882,7 @@
                             <constraint firstItem="oBw-dN-Yfx" firstAttribute="trailing" secondItem="mQk-Mt-ENL" secondAttribute="trailingMargin" id="ZQw-zr-SFf"/>
                             <constraint firstItem="oBw-dN-Yfx" firstAttribute="leading" secondItem="mQk-Mt-ENL" secondAttribute="leadingMargin" id="jtx-VF-gcG"/>
                             <constraint firstAttribute="trailing" secondItem="E6S-OM-kcv" secondAttribute="trailing" id="lew-Kg-sKv"/>
+                            <constraint firstItem="E6S-OM-kcv" firstAttribute="top" secondItem="mQk-Mt-ENL" secondAttribute="top" id="teg-5R-y5w"/>
                             <constraint firstItem="oBw-dN-Yfx" firstAttribute="top" secondItem="jiR-45-7kR" secondAttribute="bottom" constant="46" id="zmI-U8-uVR"/>
                         </constraints>
                     </view>
@@ -1026,8 +1041,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bSw-Ju-CWx">
+                            <navigationBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="bSw-Ju-CWx">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Title" id="Uhn-mh-j08">
                                         <barButtonItem key="leftBarButtonItem" style="plain" id="xut-uQ-ZS8">
@@ -1039,6 +1058,7 @@
                                                     <action selector="clickOnBack:" destination="Pla-kV-vG9" eventType="touchUpInside" id="CNh-n6-kkE"/>
                                                 </connections>
                                             </button>
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="clickOnBack:" destination="Pla-kV-vG9" id="ykV-Kg-tKI"/>
                                             </connections>
@@ -1609,8 +1629,12 @@
                                     <outlet property="delegate" destination="Hxd-9e-8mc" id="5Y4-8a-f7K"/>
                                 </connections>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m7c-JS-1cz">
+                            <navigationBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="m7c-JS-1cz">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Settings" id="zpX-SQ-aNM">
                                         <barButtonItem key="leftBarButtonItem" image="menu" id="yoh-Rw-wsU">

@@ -9,6 +9,7 @@
 import UIKit
 
 class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+    
     @IBOutlet weak var playerTable: UITableView!
     var name = [String]()
     var position  = [String]()
@@ -49,7 +50,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
         playerTable.backgroundColor = UIColor.clear
  
-        tabControl.setTitle("Players ("+String(sing.serverData.playerOnTeam.count) + ")", forSegmentAt: 0)
+        tabControl.setTitle("Players ("+String(sing.playerOnTeam.count) + ")", forSegmentAt: 0)
         
         
 
@@ -63,7 +64,9 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         startTrening.layer.cornerRadius=10
         
         playerTable.separatorStyle = .none
-
+        
+        indexTeam = sing.teamSelectId
+        players = sing.playerOnTeam
          
     }
 
@@ -77,7 +80,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         }
         else
         {
-        return ses.count
+            return ses.count
         }
     }
     
@@ -125,12 +128,9 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
         
         cell.backgroundColor = UIColor.clear
-           // cell.date.text = sing.serverData.sesion[indexPath.row].started
-            //cell.time.text = sing.serverData.sesion[indexPath.row].ended
+        
             cell.device.text = ses[indexPath.row].uploadStatus
        
-        //textfieldView.layer.borderColor = UIColor(red: 128, green: 128, blue: 128, alpha: 1).cgColor
-        //   login.layer.cornerRadius=10
         cell.layer.cornerRadius=10
         
         if indexPath.row == 0
@@ -163,20 +163,22 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         }
         else
         {
+            
             if ses.count == 0 {
                 if sing.serverData.sesion.count == 0 {
-                JSON.getTraningSesionOfTeam(token: self.sing.serverData.res.token, id:indexTeam,page:pageOfSesion){  ( se:[traningSesion])-> Void in
+                JSON.getTraningSesionOfTeam(token: self.sing.loadingInfo.token, id:indexTeam,page:pageOfSesion){  ( session:[traningSesion])-> Void in
 
-                 self.sing.serverData.sesion = self.JSON.sesion
+                 self.sing.serverData.sesion = session
                     }
                 }
-                self.ses =  self.sing.serverData.sesion
+                self.ses = self.sing.serverData.sesion
                     self.pageOfSesion = self.pageOfSesion + 1
                 DispatchQueue.main.async(execute: {
      
                 self.playerTable.isHidden = true
                 self.tranningTable.isHidden = false
                 self.tranningTable.reloadData()
+                    
                 })
             }
            
@@ -194,28 +196,29 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
        if tabControl.selectedSegmentIndex == 0
        {
         JSON.playerOnTeam.removeAll()
+        
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-               let revealviewcontroller:SWRevealViewController = self.revealViewController()
+        let revealviewcontroller:SWRevealViewController = self.revealViewController()
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "pdetails") as! PlayerDetailsViewController
-        JSON.getPlayerDetails(token: sing.serverData.res.token, idTeam: indexTeam, idPlayer: sing.serverData.playerOnTeam[indexPath.row].id){ ( player:[Players])-> Void in
-        newViewController.pl = self.JSON.playerOnTeam[0]
+        
+        JSON.getPlayerDetails(token: sing.loadingInfo.token, idTeam: indexTeam, idPlayer: sing.playerOnTeam[indexPath.row].id){ ( player:Players)-> Void in
+        newViewController.pl = player
        newViewController.pageOfSeeions = self.pageOfSesion
-        newViewController.idTeam = self.indexTeam
-        DispatchQueue.main.async(execute: {
- revealviewcontroller.pushFrontViewController(newViewController, animated: true)
-       // self.present(newViewController, animated: true, completion: nil)
-        })
+      
+            DispatchQueue.main.async(execute: {
+ revealviewcontroller.pushFrontViewController(newViewController, animated: true)  })
         }
         }
        else{
           let revealviewcontroller:SWRevealViewController = self.revealViewController()
-        JSON.getPlayersOfSesionTranning(token: self.sing.serverData.res.token, idTeam:indexTeam,idSesion: ses[indexPath.row].id){  ( se:[Players])-> Void in
+        JSON.getPlayersOfSesionTranning(token: self.sing.loadingInfo.token, idTeam:indexTeam,idSesion: ses[indexPath.row].id){  ( pos:playerOfSessions)-> Void in
           
             DispatchQueue.main.async(execute: {
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let newViewController = storyBoard.instantiateViewController(withIdentifier: "sesion") as! SessionViewController
-                newViewController.player = self.JSON.playerOnTeam
-                newViewController.idTeam = self.indexTeam
+                newViewController.player = pos.player
+                
+                
                newViewController.pageOfSeeions = self.pageOfSesion
                // self.present(newViewController, animated: true, completion: nil)
                 revealviewcontroller.pushFrontViewController(newViewController, animated: true)

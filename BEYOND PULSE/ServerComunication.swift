@@ -42,25 +42,27 @@ class serverCommunications
         let task = URLSession.shared.dataTask(with: request)  { data, response, error in
             guard let data = data, error == nil else {
                 print(error?.localizedDescription ?? "No data")
-                return    handler(self.res)
+                return    handler(loginResponse())
             }
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+            var response = loginResponse()
+
             if let responseJSON = responseJSON as? [String: Any] {
                 let status = responseJSON["status"] as? [String: Any]
                 
-                self.res.statusCode = status?["code"] as! String
-                self.res.statusDescription = status?["desc"] as! String
+                response.stat.statusCode = status?["code"] as! String
+                response.stat.statusDescription = status?["desc"] as! String
                 if status?["code"] as? String == "BP_200"{
                     var data = responseJSON["data"] as? [String: Any]
                     
-                    self.res.token = (data?["accessToken"] as? String)!
-                    self.res.refreshToken = (data?["refreshToken"] as? String)!
+                    response.token = (data?["accessToken"] as? String)!
+                    response.refreshToken = (data?["refreshToken"] as? String)!
                     
                     
                 }
-                
+             
             }
-            handler(self.res)
+            handler(response)
             
         }
         
@@ -95,9 +97,9 @@ class serverCommunications
             if let responseJSON = responseJSON as? [String: Any] {
                 let status = responseJSON["status"] as? [String: Any]
                 
-                self.res.statusCode = status?["code"] as! String
-                self.res.statusDescription = status?["desc"] as! String
-                if self.res.statusCode == "BP_200"
+                self.res.stat.statusCode = status?["code"] as! String
+                self.res.stat.statusDescription = status?["desc"] as! String
+                if self.res.stat.statusCode == "BP_200"
                 {
                     self.res.data = responseJSON["data"] as! String
                 }
@@ -113,8 +115,9 @@ class serverCommunications
     }
     
     //get new token
-    func refreshToken( token : String)
+    func refreshToken( token : String,handler:@escaping (_ info:loginResponse)-> Void)
     {
+        var loginRes = loginResponse()
         let json: [String: Any] = ["refresh": token]
         
         
@@ -130,34 +133,35 @@ class serverCommunications
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {
-                self.isLoad = true
+                handler(loginRes)
                 print(error?.localizedDescription ?? "No data")
-                return
+                return handler(loginRes)
             }
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
             if let responseJSON = responseJSON as? [String: Any] {
                 let status = responseJSON["status"] as? [String: Any]
                 
-                self.res.statusCode = status?["code"] as! String
-                self.res.statusDescription = status?["desc"] as! String
-                if self.res.statusCode == "BP_200"
+                loginRes.stat.statusCode = status?["code"] as! String
+                loginRes.stat.statusDescription = status?["desc"] as! String
+                if loginRes.stat.statusCode == "BP_200"
                 {
                     var data = responseJSON["data"] as! [String: Any]
-                    self.res.refreshToken = data["refreshToken"] as! String
-                    self.res.token = data["accessToken"] as! String
+                    loginRes.refreshToken = data["refreshToken"] as! String
+                    loginRes.token = data["accessToken"] as! String
                     
                 }
                 
             }
-            self.isLoad = true
+            handler(loginRes)
+          
         }
         
         task.resume()
-        while(isLoad){}
+        
         
     }
     
-    func getCoachInfo(id: Int,token:String,handler:@escaping (_ re:coachResponese)-> Void)
+    func getCoachInfo(id: Int,token:String,handler:@escaping (_ coa:CoachInfo)-> Void)
     {
         // create post request
         let url = URL(string: "http://bp.dev.ingsoftware.com:9092/coaches/"+String(id))!
@@ -170,30 +174,34 @@ class serverCommunications
         let task = URLSession.shared.dataTask(with: request)  { data, response, error in
             guard let data = data, error == nil else {
                 print(error?.localizedDescription ?? "No data")
-                return    handler(self.coatchRes)
+                return    handler(CoachInfo())
             }
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
             
             if let responseJSON = responseJSON as? [String: Any] {
-                let status = responseJSON["status"] as? [String: Any]
+                let statuss = responseJSON["status"] as? [String: Any]
+                var checkStatus = status()
                 
-                self.res.statusCode = status?["code"] as! String
-                self.res.statusDescription = status?["desc"] as! String
-                if status?["code"] as? String == "BP_200"{
+                checkStatus.statusCode = statuss?["code"] as! String
+                checkStatus.statusDescription = statuss?["desc"] as! String
+                var couch = coachResponese()
+                var teams = [Team]()
+                var sett = SettingsData()
+                if statuss?["code"] as? String == "BP_200"{
                     var data = responseJSON["data"] as? [String: Any]
                     
                     
-                    self.coatchRes.id = data!["id"] as? Int ?? -1
-                    self.coatchRes.firstName = data?["firstName"] as? String! ?? ""
-                    self.coatchRes.middleName = data?["middleName"] as? String! ?? ""
-                    self.coatchRes.lastName = data?["lastName"] as? String! ?? ""
-                    self.coatchRes.imageUrl = data?["photo"] as? String! ?? ""
+                    couch.id = data!["id"] as? Int ?? -1
+                   couch.firstName = data?["firstName"] as? String! ?? ""
+                    couch.middleName = data?["middleName"] as? String! ?? ""
+                    couch.lastName = data?["lastName"] as? String! ?? ""
+                    couch.imageUrl = data?["photo"] as? String! ?? ""
                     
-                    let str = NSURL(string :  self.coatchRes.imageUrl)
+                    let str = NSURL(string :couch.imageUrl)
                     let dst = NSData(contentsOf: str! as URL)!
                     if dst != nil
                     {
-                        self.coatchRes.image = (UIImage(data: dst as Data)!)
+                        couch.image = (UIImage(data: dst as Data)!)
                     }
                     
                     let      team = data?["teams"] as? [[String : Any]]
@@ -216,15 +224,21 @@ class serverCommunications
                         }
                         
                         t.gender = te["gender"] as? String ?? ""
-                        self.teams.append(t)
+                        teams.append(t)
                     }
                     let setings = data?["mobileAppSettings"] as? [String: Any]
-                    self.settings.autoDataSync = setings?["autoDataSync"] as? Bool ?? false
-                    self.settings.language = setings?["language"] as? String ?? "EU"
-                    self.settings.notificationsEnabled = setings?["notificationsEnabled"] as? Bool ?? false
+                    sett.autoDataSync = setings?["autoDataSync"] as? Bool ?? false
+                    sett.language = setings?["language"] as? String ?? "EU"
+                    sett.notificationsEnabled = setings?["notificationsEnabled"] as? Bool ?? false
                     
                 }
-                handler(self.coatchRes)
+                var coa = CoachInfo()
+                coa.info = couch
+                coa.settings = sett
+                
+                coa.team = teams
+                coa.stat = checkStatus
+                handler(coa)
                 
             }
             
@@ -266,8 +280,9 @@ class serverCommunications
                     }
                     else if code == "BP_403"
                     {
-                        self.refreshToken(token: self.res.refreshToken)
-                        self.sendSettings(dataSync: dataSync, notification: notification, language: language, token: self.res.token,id:id)
+                        self.refreshToken(token: self.res.refreshToken){  ( res:loginResponse)-> Void in
+                            
+                            self.sendSettings(dataSync: dataSync, notification: notification, language: language, token: res.token,id:id) }
                     }
             }
      
@@ -278,7 +293,7 @@ class serverCommunications
      task.resume()
      }
      
-     //func getCoachInfo(id: Int,token:String,handler:@escaping (_ re:coachResponese)-> Void)
+
     func getPlayersOfTeam(token:String , id: Int,handler:@escaping (_ player:[Players])-> Void)  {
     
         
@@ -292,16 +307,18 @@ class serverCommunications
         let task = URLSession.shared.dataTask(with: request)  { data, response, error in
             guard let data = data, error == nil else {
                 print(error?.localizedDescription ?? "No data")
-                return    handler(self.playerOnTeam)
+                return    handler([Players]())
             }
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
             
             if let responseJSON = responseJSON as? [String: Any] {
                 var status = responseJSON["status"] as? [String : Any]
+                var play = [Players]()
                 if status?["code"] as? String == "BP_200"
                 {
                 let data = responseJSON["data"] as? [[String: Any]]
                     var i = 0
+                    
                     for player in data!
                     {
                         var pl = Players()
@@ -313,7 +330,10 @@ class serverCommunications
                         if pl.photoUrl != ""
                         {
                             do{
-                        try    self.getImage(urlImage:pl.photoUrl,index:i)
+                                try    self.getImage(urlImage:pl.photoUrl,index:i) { ( img:UIImage)-> Void in
+
+                                    pl.playerImage = img
+                                }
                             }
                             catch {
                                 
@@ -322,13 +342,13 @@ class serverCommunications
                         }
                         pl.postition = player["position"] as? String ?? ""
                         pl.beltName = player["beltNumber"] as? String ?? ""
-                        self.playerOnTeam.append(pl)
+                        play.append(pl)
                         i = i + 1
                     }
                 
                 }
                     
-                    handler(self.playerOnTeam)
+                    handler(play)
                     
                 }
             
@@ -339,7 +359,7 @@ class serverCommunications
     
         
   
-    func getImage(urlImage : String,index : Int) throws
+    func getImage(urlImage : String,index : Int,handler:@escaping (_ img:UIImage)-> Void) throws
 {
     let url = URL(string:urlImage)
     
@@ -353,8 +373,7 @@ class serverCommunications
         
        // DispatchQueue.main.sync() {
             if let image = UIImage(data: data){
-             self.playerOnTeam[index].playerImage =  image
-          //  }
+             handler(image)          //  }
         }
         
     
@@ -362,8 +381,9 @@ class serverCommunications
     task.resume()
     }
 
-    func getTraningSesionOfTeam(token:String , id: Int,page:Int,handler:@escaping (_ ses :[traningSesion])-> Void)  {
-                // treba da se implementira paging
+    func getTraningSesionOfTeam(token:String , id: Int,page:Int,handler:@escaping (_ session  :[traningSesion])-> Void)  {
+        
+        var sesions = [traningSesion]()
         let url = URL(string: "http://bp.dev.ingsoftware.com:9092/teams/"+String(id)+"/sessions?page="+String(page)+"&size=5")
         
         var request = URLRequest(url: url!)
@@ -374,7 +394,7 @@ class serverCommunications
         let task = URLSession.shared.dataTask(with: request)  { data, response, error in
             guard let data = data, error == nil else {
                 print(error?.localizedDescription ?? "No data")
-                return handler(self.sesion)
+                return handler(sesions)
 
             }
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
@@ -393,11 +413,11 @@ class serverCommunications
                         ses.ended = sesion["ended"] as? String ?? ""
                        ses.uploadStatus = sesion["uploadStatus"] as? String ?? ""
                        
-                       self.sesion.append(ses)
+                       sesions.append(ses)
                     }
                     
                 }
-                        handler(self.sesion)
+                        handler(sesions)
 
                 
                 
@@ -409,8 +429,9 @@ class serverCommunications
     }
 
     
-    func getPlayersOfSesionTranning(token:String , idTeam: Int,idSesion:Int,handler:@escaping (_ player:[Players])-> Void)  {
+    func getPlayersOfSesionTranning(token:String , idTeam: Int,idSesion:Int,handler:@escaping (_ player:playerOfSessions)-> Void)  {
         
+        var pos = playerOfSessions()
         
         let url = URL(string: "http://bp.dev.ingsoftware.com:9092/teams/"+String(idTeam)+"/sessions/"+String(idSesion))
         
@@ -422,7 +443,7 @@ class serverCommunications
         let task = URLSession.shared.dataTask(with: request)  { data, response, error in
             guard let data = data, error == nil else {
                 print(error?.localizedDescription ?? "No data")
-                return    handler(self.playerOnTeam)
+                return    handler(pos)
             }
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
             
@@ -431,15 +452,16 @@ class serverCommunications
                 if status?["code"] as? String == "BP_200"
                 {
                     let data = responseJSON["data"] as? [String: Any]
-                  
+                
                     var ses = traningSesion()
                     ses.id = data?["id"] as? Int ?? -1
                     ses.teamId = data?["teamId"] as? Int ?? -1
                     ses.ended = data?["ended"] as? String ?? ""
                     ses.started = data?["started"] as? String ?? ""
                     ses.uploadStatus = data?["uploadStatus"] as? String ?? ""
-                    print(responseJSON["data"])
-                    print( data?["playerActivities"])
+               
+                    pos.sesion = ses
+                
                     let palyers = data?["playerActivities"] as? [[String : Any ]]
                     var i = 0
                     for play in palyers!
@@ -453,7 +475,9 @@ class serverCommunications
                         if pl.photoUrl != ""
                         {
                             do{
-                                try    self.getImage(urlImage:pl.photoUrl,index:i)
+                                try    self.getImage(urlImage:pl.photoUrl,index:i) { ( img:UIImage)-> Void in
+                                    pl.playerImage = img
+                                }
                             }
                             catch {
                                 
@@ -472,13 +496,13 @@ class serverCommunications
                         i = i+1
                         
                         
-                        self.playerOnTeam.append(pl)
+                        pos.player.append(pl)
                        
                     }
                     
                 }
                 
-                handler(self.playerOnTeam)
+                handler(pos)
                 
             }
             
@@ -489,6 +513,7 @@ class serverCommunications
     
     func getTraningSesionOnPlayer(token:String , idTeam: Int,idPlayer:Int,handler:@escaping (_ ses:[traningSesion])-> Void)  {
         
+        var sesion = [traningSesion]()
         // treba pejdzing da se implementira
         let url = URL(string: "http://bp.dev.ingsoftware.com:9092/teams/"+String(idTeam)+"/players/"+String(idPlayer)+"/sessions")
         
@@ -500,7 +525,7 @@ class serverCommunications
         let task = URLSession.shared.dataTask(with: request)  { data, response, error in
             guard let data = data, error == nil else {
                 print(error?.localizedDescription ?? "No data")
-                return    handler(self.sesion)
+                return    handler(sesion)
             }
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
             
@@ -520,11 +545,11 @@ class serverCommunications
                     ses.started = da["started"] as? String ?? ""
                     ses.uploadStatus = da["uploadStatus"] as? String ?? ""
                     
-                    self.sesion.append(ses)
+                    sesion.append(ses)
                     }
                 }
                 
-                handler(self.sesion)
+                handler(sesion)
                 
             }
             
@@ -532,9 +557,9 @@ class serverCommunications
         task.resume()
         
     }
-    func getPlayerDetails(token:String , idTeam: Int,idPlayer:Int,handler:@escaping (_ player:[Players])-> Void)  {
+    func getPlayerDetails(token:String , idTeam: Int,idPlayer:Int,handler:@escaping (_ player:Players)-> Void)  {
         
-       
+       var playe = Players()
         
         let url = URL(string: "http://bp.dev.ingsoftware.com:9092/teams/"+String(idTeam)+"/players/"+String(idPlayer))
         
@@ -546,7 +571,7 @@ class serverCommunications
         let task = URLSession.shared.dataTask(with: request)  { data, response, error in
             guard let data = data, error == nil else {
                 print(error?.localizedDescription ?? "No data")
-                return    handler(self.playerOnTeam)
+                return    handler(playe)
             }
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
             
@@ -567,7 +592,11 @@ class serverCommunications
                         if pl.photoUrl != ""
                         {
                             do{
-                                try    self.getImage(urlImage:pl.photoUrl,index:i)
+                                try    self.getImage(urlImage:pl.photoUrl,index:i) { ( img:UIImage)-> Void in
+                                    
+                                        pl.playerImage = img
+                                
+                                }
                             }
                             catch {
                                 
@@ -581,13 +610,13 @@ class serverCommunications
                         i = i+1
                         
                         
-                        self.playerOnTeam.append(pl)
+                        playe = pl
                         
                     
                     
                 }
                 
-                handler(self.playerOnTeam)
+                handler(playe)
                 
             }
             
@@ -629,9 +658,9 @@ class serverCommunications
                     }
                     else if code == "BP_403"
                     {
-                        self.refreshToken(token: self.res.refreshToken)
-                        self.updatePlayerBelt(token:self.res.token,idTeam: idTeam,idPlayer: idPlayer,beltNumber: beltNumber)
-                    }
+                        self.refreshToken(token: self.res.refreshToken){  ( res:loginResponse)-> Void in
+                        self.updatePlayerBelt(token:res.token,idTeam: idTeam,idPlayer: idPlayer,beltNumber: beltNumber)
+                        }}
                 }
                 
                 
@@ -722,12 +751,14 @@ class serverCommunications
 
      
 }
-
-
-struct loginResponse {
-    
+struct status{
     var statusCode = "404"
     var statusDescription =  "Server not responding"
+
+}
+
+struct loginResponse {
+    var stat = status()
     var token = String()
     var refreshToken = String()
     var data = String()
@@ -767,3 +798,15 @@ struct traningSesion{
  var uploadStatus = String()
 }
 
+struct CoachInfo
+{
+    var stat = status()
+    var info = coachResponese()
+    var settings = SettingsData()
+    var team = [Team]()
+}
+struct playerOfSessions
+{
+    var sesion = traningSesion()
+    var player = [Players]()
+}

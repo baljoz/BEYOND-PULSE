@@ -37,8 +37,8 @@ class CoachViewController: UIViewController,UITableViewDataSource,UITableViewDel
         
         tableView.separatorStyle = .none
         coachImage.contentMode = .scaleAspectFit
-        coachImage.image = sing.serverData.coatchRes.image
-        coachName.text = sing.serverData.coatchRes.firstName+" "+sing.serverData.coatchRes.middleName+" "+sing.serverData.coatchRes.lastName
+        coachImage.image = sing.coatch.info.image
+        coachName.text = sing.coatch.info.firstName+" "+sing.coatch.info.middleName+" "+sing.coatch.info.lastName
            }
 
     override func didReceiveMemoryWarning() {
@@ -49,12 +49,12 @@ class CoachViewController: UIViewController,UITableViewDataSource,UITableViewDel
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sing.serverData.teams.count
+        return sing.coatch.team.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "coatchcell") as! TeamTableViewCell
-        cell.imageTeam.image = sing.serverData.teams[indexPath.row].img
-        cell.nameTeam.text = sing.serverData.teams[indexPath.row].name
+        cell.imageTeam.image = sing.coatch.team[indexPath.row].img
+        cell.nameTeam.text = sing.coatch.team[indexPath.row].name
        cell.imageTeam.layer.borderWidth = 1
        
         
@@ -77,14 +77,15 @@ class CoachViewController: UIViewController,UITableViewDataSource,UITableViewDel
         let revealviewcontroller:SWRevealViewController = self.revealViewController()
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        JSON.getPlayersOfTeam(token:sing.serverData.res.token , id: sing.serverData.teams[indexPath.row].id) { ( player:[Players])-> Void in
-            
-            self.sing.serverData.playerOnTeam = self.JSON.playerOnTeam
+        JSON.getPlayersOfTeam(token:sing.loadingInfo.token , id: sing.coatch.team[indexPath.row].id) { ( player:[Players])-> Void in
+            self.sing.serverData.sesion.removeAll()
+            self.sing.playerOnTeam = player
+            self.sing.teamSelectId = self.sing.coatch.team[indexPath.row].id
             let newViewController = storyBoard.instantiateViewController(withIdentifier: "selP") as! PlayerViewController
-            newViewController.indexTeam = self.sing.serverData.teams[indexPath.row].id
-            newViewController.navTitleName = self.sing.serverData.teams[indexPath.row].name
-            newViewController.navigationItem.title = self.sing.serverData.teams[indexPath.row].name
-            newViewController.players = self.sing.serverData.playerOnTeam
+            newViewController.indexTeam = self.sing.coatch.team[indexPath.row].id
+            newViewController.navTitleName = self.sing.coatch.team[indexPath.row].name
+            newViewController.navigationItem.title = self.sing.coatch.team[indexPath.row].name
+            newViewController.players = player
             DispatchQueue.main.async(execute: {
                 revealviewcontroller.pushFrontViewController(newViewController, animated: true)
             })

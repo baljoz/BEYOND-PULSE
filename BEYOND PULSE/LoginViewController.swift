@@ -72,11 +72,15 @@ class LoginViewController: UIViewController {
         JSON.loginGetToken(username: eMailTextfild.text!,password: passwordTextfild.text!) { (ress:loginResponse) -> Void in
         
             
-            if ress.statusCode == "BP_200"
+            if ress.stat.statusCode == "BP_200"
              {
+                self.sing.loadingInfo = ress
                 let id  = self.getTokenIdCoach(token: ress.token)
-                self.JSON.getCoachInfo(id: id, token: ress.token) { (response:coachResponese) -> Void in
-                    self.sing.serverData = self.JSON
+                self.JSON.getCoachInfo(id: id, token: ress.token) { (coa:CoachInfo) -> Void in
+                 
+                    self.sing.coatch = coa
+                    //self.sing.settings = coa.settings
+                    
                     let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                     let newViewController = storyBoard.instantiateViewController(withIdentifier: "team") as! SWRevealViewController
                     
@@ -91,7 +95,7 @@ class LoginViewController: UIViewController {
                 }
             }
             else{
-                let alert = UIAlertController(title: "Alert", message:ress.statusDescription, preferredStyle: UIAlertControllerStyle.alert)
+                let alert = UIAlertController(title: "Alert", message:ress.stat.statusDescription, preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
 

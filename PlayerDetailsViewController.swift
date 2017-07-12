@@ -46,18 +46,22 @@ class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITabl
         
         connectButton.layer.cornerRadius=10
         
+        self.navigationItem.title = pl.firstName+" "+pl.lastName
        
     
        // self.view.translatesAutoresizingMaskIntoConstraints = NO;
         
-        JSON.getTraningSesionOnPlayer(token: sing.serverData.res.token, idTeam: idTeam, idPlayer: pl.id){( ses:[traningSesion])->Void in
+        idTeam = sing.teamSelectId
         
-            self.session = self.JSON.sesion
+        JSON.getTraningSesionOnPlayer(token: sing.loadingInfo.token, idTeam: idTeam, idPlayer: pl.id){( ses:[traningSesion])->Void in
+        
+            self.session = ses
             DispatchQueue.main.async(execute: {
 
                 self.tranningSesion.reloadData() } )
             
             }
+        
         // JSON.getPlayersOfTeam(token:sing.serverData.res.token , id: sing.serverData.teams[indexPath.row].id) { ( player:[Players])-> Void in
         
     }
@@ -109,7 +113,6 @@ class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITabl
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "selP") as! PlayerViewController
         newViewController.players = sing.serverData.playerOnTeam
           newViewController.ses = sing.serverData.sesion
-        newViewController.indexTeam = idTeam
         newViewController.pageOfSesion = pageOfSeeions
         revealviewcontroller.pushFrontViewController(newViewController, animated: true)
      

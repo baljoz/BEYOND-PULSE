@@ -52,10 +52,8 @@ class StartTraningViewController: UIViewController {
             let revealviewcontroller:SWRevealViewController = self.revealViewController()
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let newViewController = storyBoard.instantiateViewController(withIdentifier: "selP") as! PlayerViewController
-          //  newViewController.navTitleName = self.sing.serverData.teams[indexPath.row].name
-         //   newViewController.navigationItem.title = self.sing.serverData.teams[indexPath.row].name
-            newViewController.players = self.sing.serverData.playerOnTeam
-        //    newViewController.indexTeam = self.sing.serverData.teams[indexPath.row].id
+           
+      
             revealviewcontroller.pushFrontViewController(newViewController, animated: true)
 
         }

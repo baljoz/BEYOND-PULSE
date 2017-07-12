@@ -46,19 +46,19 @@ class SettingsViewController: UIViewController,UITableViewDataSource,UITableView
         if indexPath.row == 1
         {
             let cell = self.settingsTable.dequeueReusableCell(withIdentifier:iden) as! SettingsTableViewCell
-            cell.dataSyncAndNotification.isOn = sing.serverData.settings.autoDataSync
+            cell.dataSyncAndNotification.isOn = sing.coatch.settings.autoDataSync
             return cell
         }
         else if indexPath.row == 2
         {
             let cell = self.settingsTable.dequeueReusableCell(withIdentifier:iden) as! SettingsTableViewCell
-            cell.dataSyncAndNotification.isOn = sing.serverData.settings.notificationsEnabled
+            cell.dataSyncAndNotification.isOn = sing.coatch.settings.notificationsEnabled
             return cell
         }
         else if indexPath.row == 4
         {
              let cell = self.settingsTable.dequeueReusableCell(withIdentifier:iden) as! SettingsTableViewCell
-            cell.launge.text = sing.serverData.settings.language
+            cell.launge.text = sing.coatch.settings.language
             return cell
         }
         
@@ -72,7 +72,7 @@ class SettingsViewController: UIViewController,UITableViewDataSource,UITableView
         if indexPath.row == 8
         {
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-          JSON.sendSettings(dataSync: sing.serverData.settings.autoDataSync, notification: sing.serverData.settings.notificationsEnabled, language: sing.serverData.settings.language, token: sing.serverData.res.token,id: sing.serverData.coatchRes.id)
+          JSON.sendSettings(dataSync: sing.coatch.settings.autoDataSync, notification: sing.coatch.settings.notificationsEnabled, language: sing.coatch.settings.language, token: sing.loadingInfo.token,id: sing.coatch.info.id)
             
             let newViewController = storyBoard.instantiateViewController(withIdentifier: "login") as! LoginViewController
            self.present(newViewController, animated: true, completion: nil)
@@ -82,24 +82,24 @@ class SettingsViewController: UIViewController,UITableViewDataSource,UITableView
     
     @IBAction func automaticDataSyncUpdateState(_ sender: Any) {
        
-        if self.sing.serverData.settings.autoDataSync
+        if self.sing.coatch.settings.autoDataSync
         {
-            self.sing.serverData.settings.autoDataSync = false
+            self.sing.coatch.settings.autoDataSync = false
         }
         else
         {
-            self.sing.serverData.settings.autoDataSync = true
+            self.sing.coatch.settings.autoDataSync = true
         }
     }
     
     @IBAction func notificationUpdatState(_ sender: Any) {
-        if self.sing.serverData.settings.notificationsEnabled
+        if self.sing.coatch.settings.notificationsEnabled
         {
-            self.sing.serverData.settings.notificationsEnabled = false
+            self.sing.coatch.settings.notificationsEnabled = false
         }
         else
         {
-            self.sing.serverData.settings.notificationsEnabled = true
+            self.sing.coatch.settings.notificationsEnabled = true
         }
     }
 

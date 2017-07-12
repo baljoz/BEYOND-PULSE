@@ -48,7 +48,7 @@ class ForgatPasswordViewController: UIViewController {
         
     JOSN.ForgootPassword(email: emailTextField.text!){ (ress:loginResponse) -> Void in
         
-        if ress.statusCode == "BP_200"
+        if ress.stat.statusCode == "BP_200"
         {
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let newViewController = storyBoard.instantiateViewController(withIdentifier: "resetPassword")
@@ -56,7 +56,8 @@ class ForgatPasswordViewController: UIViewController {
         }
         else
         {
-            let alert = UIAlertController(title: "Alert", message:ress.statusDescription, preferredStyle: UIAlertControllerStyle.alert)
+            
+            let alert = UIAlertController(title: "Alert", message:ress.stat.statusDescription, preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }

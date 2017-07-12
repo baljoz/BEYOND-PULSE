@@ -34,6 +34,7 @@
 		07A6238F1EF1158F003A5395 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A6238E1EF1158F003A5395 /* PlayerViewController.swift */; };
 		07B380031F0A965600B7FB8A /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B380021F0A965600B7FB8A /* Singleton.swift */; };
 		07B380051F0A9F7D00B7FB8A /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B380041F0A9F7D00B7FB8A /* SettingsTableViewCell.swift */; };
+		07B813621F15EBD40026A26D /* JWTDecode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0742F06C1F134C90001FA68D /* JWTDecode.framework */; };
 		07BA88FE1F0BB9B8001C4637 /* Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BA88FD1F0BB9B8001C4637 /* Players.swift */; };
 		07DB2B821F0CB3AC00D686C9 /* BLETestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DB2B811F0CB3AC00D686C9 /* BLETestViewController.swift */; };
 		07DB2B851F0CC49C00D686C9 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DB2B841F0CC49C00D686C9 /* CoreBluetooth.framework */; };
@@ -74,7 +75,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0708E28D1F0CB00400A3143C /* JWTDecode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JWTDecode.framework; path = "../../../Library/Developer/Xcode/DerivedData/BEYOND_PULSE-grfmbrefobspsjavpugseiybuubc/Build/Products/Debug-iphoneos/JWTDecode.framework"; sourceTree = "<group>"; };
 		0708E28F1F0CB1F300A3143C /* BLEController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEController.h; sourceTree = SOURCE_ROOT; };
 		0708E2901F0CB1F300A3143C /* BLEController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEController.m; sourceTree = SOURCE_ROOT; };
 		07266E571EE9A508005C5BFF /* ForgatPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgatPasswordViewController.swift; sourceTree = "<group>"; };
@@ -132,7 +132,6 @@
 		07E88F171F0F5B530022FC4C /* PlayerDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerDetailsViewController.swift; path = ../PlayerDetailsViewController.swift; sourceTree = "<group>"; };
 		07EF5BE61F05012200476225 /* FirstScreanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstScreanViewController.swift; path = Assets.xcassets/FirstScreanViewController.swift; sourceTree = "<group>"; };
 		10CAC75485C41836B5E78DC4 /* Pods-BEYOND PULSE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BEYOND PULSE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BEYOND PULSE/Pods-BEYOND PULSE.debug.xcconfig"; sourceTree = "<group>"; };
-		7802A0E123206CCF959F2B45 /* Pods_BEYOND_PULSE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BEYOND_PULSE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8F6056CD1D0A617B8F75847 /* Pods-BEYOND PULSE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BEYOND PULSE.release.xcconfig"; path = "Pods/Target Support Files/Pods-BEYOND PULSE/Pods-BEYOND PULSE.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,6 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07B813621F15EBD40026A26D /* JWTDecode.framework in Frameworks */,
 				0742F06F1F134CAB001FA68D /* Pods_BEYOND_PULSE.framework in Frameworks */,
 				07DB2B871F0CCD0100D686C9 /* CoreLocation.framework in Frameworks */,
 				07DB2B851F0CC49C00D686C9 /* CoreBluetooth.framework in Frameworks */,
@@ -258,12 +258,10 @@
 			children = (
 				07DB2B861F0CCD0100D686C9 /* CoreLocation.framework */,
 				07DB2B841F0CC49C00D686C9 /* CoreBluetooth.framework */,
-				0708E28D1F0CB00400A3143C /* JWTDecode.framework */,
 				07B37FCE1F0A688B00B7FB8A /* XcodeKit.framework */,
 				07B37FC21F0A687600B7FB8A /* Pods */,
 				07B37FC01F0A684B00B7FB8A /* BEYOND PULSE.xcworkspace */,
 				07B37FB81F0A681100B7FB8A /* JWTDecode */,
-				7802A0E123206CCF959F2B45 /* Pods_BEYOND_PULSE.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

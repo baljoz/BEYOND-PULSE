@@ -28,7 +28,7 @@ class SelectTeamViewController: UIViewController,UITableViewDataSource,UITableVi
         // Do any additional setup after loading the view.
        
      
-        team = sing.serverData.teams
+        team = sing.coatch.team
         
         menuButton.target=revealViewController()
         menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
@@ -37,10 +37,12 @@ class SelectTeamViewController: UIViewController,UITableViewDataSource,UITableVi
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "top"), for: .normal)
         button.imageView?.tintColor = UIColor.orange
-        button.setTitle("Coaches Website", for: .normal)
+        button.titleLabel!.lineBreakMode = .byWordWrapping
+        button.setTitle("Coaches \nWebsite", for: .normal)
+        button.titleLabel?.textColor = UIColor.white
        // button.addTarget(self, action: #selector(showCategories), for: .touchUpInside)
         button.sizeToFit()
-    
+        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
 
     }
@@ -50,7 +52,7 @@ class SelectTeamViewController: UIViewController,UITableViewDataSource,UITableVi
         // Dispose of any resources that can be recreated.
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sing.serverData.teams.count
+        return team.count
     }
   
     
@@ -71,15 +73,15 @@ class SelectTeamViewController: UIViewController,UITableViewDataSource,UITableVi
         let revealviewcontroller:SWRevealViewController = self.revealViewController()
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        JSON.getPlayersOfTeam(token:sing.serverData.res.token , id: sing.serverData.teams[indexPath.row].id) { ( player:[Players])-> Void in
+        JSON.getPlayersOfTeam(token:sing.loadingInfo.token , id: sing.coatch.team[indexPath.row].id) { ( player:[Players])-> Void in
         
-            self.sing.serverData.playerOnTeam = self.JSON.playerOnTeam
+            self.sing.playerOnTeam = player
        let newViewController = storyBoard.instantiateViewController(withIdentifier: "selP") as! PlayerViewController
   
-        newViewController.navTitleName = self.sing.serverData.teams[indexPath.row].name
-        newViewController.navigationItem.title = self.sing.serverData.teams[indexPath.row].name
-             newViewController.players = self.sing.serverData.playerOnTeam
-            newViewController.indexTeam = self.sing.serverData.teams[indexPath.row].id
+        newViewController.navTitleName = self.sing.coatch.team[indexPath.row].name
+        newViewController.navigationItem.title = self.sing.coatch.team[indexPath.row].name
+             newViewController.players = player
+            self.sing.teamSelectId = self.sing.coatch.team[indexPath.row].id
             DispatchQueue.main.async(execute: {
         revealviewcontroller.pushFrontViewController(newViewController, animated: true)
             })

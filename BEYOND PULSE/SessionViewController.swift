@@ -11,11 +11,12 @@ import UIKit
 class SessionViewController: UIViewController,UITableViewDataSource,UITableViewDelegate{
     @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var sesionTable: UITableView!
-    var idTeam = Int()
+
+    
     var player = [Players]()
     var session = [traningSesion]()
     var pageOfSeeions = Int()
-var sing = MySingleton.sharedInstance
+    var sing = MySingleton.sharedInstance
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -34,11 +35,11 @@ var sing = MySingleton.sharedInstance
         
         
          let cell = self.sesionTable.dequeueReusableCell(withIdentifier: "sesionCell") as! SessionTableViewCell
-        print(sing.serverData.playerOnTeam[indexPath.row].firstName)
-        cell.playerName.text = sing.serverData.playerOnTeam[indexPath.row].firstName+" "+sing.serverData.playerOnTeam[indexPath.row].middleName+" "+sing.serverData.playerOnTeam[indexPath.row].lastName
-        cell.positionPlayer.text = sing.serverData.playerOnTeam[indexPath.row].postition
-        cell.connectionPlayer.text = sing.serverData.playerOnTeam[indexPath.row].dataUploaded
-        cell.imagePlayer.image = sing.serverData.playerOnTeam[indexPath.row].playerImage
+        
+            cell.playerName.text = player[indexPath.row].firstName+" "+player[indexPath.row].middleName+" "+player[indexPath.row].lastName
+        cell.positionPlayer.text = player[indexPath.row].postition
+        cell.connectionPlayer.text = player[indexPath.row].dataUploaded
+        cell.imagePlayer.image = player[indexPath.row].playerImage
         cell.imagePlayer.contentMode = .scaleAspectFit
         cell.connectionImage.image = UIImage(named: "ok")
         cell.connectionImage.contentMode = .scaleAspectFit
@@ -47,8 +48,9 @@ var sing = MySingleton.sharedInstance
         return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(sing.serverData.playerOnTeam.count)
-        return sing.serverData.playerOnTeam.count
+        
+             print(player.count)
+              return player.count
     }
     @IBAction func clickOnBack(_ sender: Any) {
         
@@ -59,7 +61,8 @@ var sing = MySingleton.sharedInstance
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "selP") as! PlayerViewController
         newViewController.players = sing.serverData.playerOnTeam
         newViewController.ses = sing.serverData.sesion
-        newViewController.indexTeam = idTeam
+     
+        
         newViewController.pageOfSesion = pageOfSeeions
          revealviewcontroller.pushFrontViewController(newViewController, animated: true)
          

@@ -74,9 +74,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         indexTeam = sing.teamSelectId
         players = sing.playerOnTeam
         
-        
-       
-    }
+}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -307,6 +305,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
             view2.frame = CGRect(x:20,y:self.view.frame.maxY-view2.frame.maxY-20,width:self.view.frame.width-40,height:view2.frame.height)
             view2.layer.cornerRadius = 10
       
+            view2.continueButton.addTarget(self, action: #selector(pressContinue), for: .touchUpInside)
          
             view2.backgroundColor = UIColor.black.withAlphaComponent(0.9)
             
@@ -316,6 +315,11 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
        
     }
     
+    func pressContinue()
+    {
+        
+      JSON.updatePlayerTraningSessionsData(token: sing.loadingInfo.token, idTeam: indexTeam, idSession: 4, beltNumber: "111222336", data: "2222ppbbbbmmmm", idPlayer: 6)
+    }
     
     /*
     // MARK: - Navigation

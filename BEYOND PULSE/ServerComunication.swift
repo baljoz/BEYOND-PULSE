@@ -624,7 +624,7 @@ class serverCommunications
         task.resume()
         
     }
-    //Treba da se proveri da li vraca ok i sve to (Nije testirano)
+   //TESTIRANAAA RADI SAMO JE SOTALO DA SE UKLOPI TAMO GDE TREA!!!!
     func updatePlayerBelt(token:String , idTeam: Int,idPlayer:Int,beltNumber:String)
 
     {
@@ -633,7 +633,7 @@ class serverCommunications
         let jsonData = try? JSONSerialization.data(withJSONObject: json)
         
         // /teams/4/players/2
-        let url = URL(string: "http://bp.dev.ingsoftware.com:9092/teams/"+String(idTeam)+"/players"+String(idPlayer))!
+        let url = URL(string: "http://bp.dev.ingsoftware.com:9092/teams/"+String(idTeam)+"/players/"+String(idPlayer))!
         var request = URLRequest(url: url)
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer "+token ,forHTTPHeaderField:"Authorization")
@@ -648,7 +648,7 @@ class serverCommunications
             }
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
             if let responseJSON = responseJSON as? [String: Any] {
-                
+              
                 if let status = responseJSON["status"] as? [String : Any]
                 {
                     var code = status["code"] as? String ?? " "
@@ -669,7 +669,9 @@ class serverCommunications
         }
         task.resume()
     }
-//i ova metoda treba da se testira da se vidi da li radi
+    
+    
+//Proverena .... radi ali msm da ce treba malo drugojacije da se implementira
     func createNewTraningSessins(token:String , idTeam: Int,sessionStart:String,sessionEnd:String,idPlayers:[Int])    {
     
         let json: [String: Any] = ["started": sessionStart,
@@ -678,7 +680,7 @@ class serverCommunications
         let jsonData = try? JSONSerialization.data(withJSONObject: json)
         
         // /teams/4/sessions
-        let url = URL(string: "http://bp.dev.ingsoftware.com:9092/teams"+String(idTeam)+"/sessions")!
+        let url = URL(string: "http://bp.dev.ingsoftware.com:9092/teams/"+String(idTeam)+"/sessions")!
         var request = URLRequest(url: url)
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer "+token ,forHTTPHeaderField:"Authorization")
@@ -707,8 +709,8 @@ class serverCommunications
         }
         task.resume()
     }
-    //isto da se proveri ... (kako treba da izgleda data ????
-    func updatePlayerTraningSessionsData(token:String , idTeam: Int,idSession:Int,beltNumber:String,data: NSData,idPlayer:Int)
+    // Testirana radi 
+    func updatePlayerTraningSessionsData(token:String , idTeam: Int,idSession:Int,beltNumber:String,data: String,idPlayer:Int)
         
     {
         // vraca BP_500 ????
@@ -716,7 +718,7 @@ class serverCommunications
         let jsonData = try? JSONSerialization.data(withJSONObject: json)
         
         // }/teams/4/sessions/6
-        let url = URL(string: "http://bp.dev.ingsoftware.com:9092/teams/"+String(idTeam)+"/sessions"+String(idSesion))!
+        let url = URL(string: "http://bp.dev.ingsoftware.com:9092/teams/"+String(idTeam)+"/sessions/"+String(idSession))!
         var request = URLRequest(url: url)
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer "+token ,forHTTPHeaderField:"Authorization")
@@ -731,7 +733,7 @@ class serverCommunications
             }
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
             if let responseJSON = responseJSON as? [String: Any] {
-                
+                print(responseJSON)
                 if let status = responseJSON["status"] as? [String : Any]
                 {
                     var code = status["code"] as? String ?? " "

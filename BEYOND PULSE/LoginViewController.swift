@@ -71,7 +71,7 @@ class LoginViewController: UIViewController {
         
         JSON.loginGetToken(username: eMailTextfild.text!,password: passwordTextfild.text!) { (ress:loginResponse) -> Void in
         
-            
+          
             if ress.stat.statusCode == "BP_200"
              {
                 self.sing.loadingInfo = ress
@@ -79,7 +79,6 @@ class LoginViewController: UIViewController {
                 self.JSON.getCoachInfo(id: id, token: ress.token) { (coa:CoachInfo) -> Void in
                  
                     self.sing.coatch = coa
-                    //self.sing.settings = coa.settings
                     
                     let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                     let newViewController = storyBoard.instantiateViewController(withIdentifier: "team") as! SWRevealViewController
@@ -95,10 +94,11 @@ class LoginViewController: UIViewController {
                 }
             }
             else{
-                let alert = UIAlertController(title: "Alert", message:ress.stat.statusDescription, preferredStyle: UIAlertControllerStyle.alert)
+                DispatchQueue.main.async {
+                let alert = UIAlertController(title: ress.stat.statusCode, message:ress.stat.statusDescription, preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
-
+                }
             }
         }
       
@@ -110,7 +110,7 @@ class LoginViewController: UIViewController {
          var id = -1
         do {
                 let claims = try decode(jwt: token)
-                var body = claims.body  as? [String: Any]
+                var body = claims.body  as? [String : Any]
             
                  id = Int((body?["sub"] as? String)!)!
             } catch {

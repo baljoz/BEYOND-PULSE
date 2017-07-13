@@ -25,6 +25,12 @@ class Players
     var teamActivityId   =  Int()
     var  dataUploaded = String()
     var created = String()
+    
+    var height = Float()
+    var weight = Float()
+    var gender = String()
+    var maxHeartRate = Int()
+    var age = Int()
 }
 
 
@@ -33,5 +39,5 @@ class Players
 
 
 
- 
- 
+
+

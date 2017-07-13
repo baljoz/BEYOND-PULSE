@@ -641,7 +641,6 @@
                     <connections>
                         <segue destination="UVJ-AS-cNu" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="3MT-xo-8bz"/>
                         <segue destination="y0O-8y-kSX" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="W8X-Tz-zCx"/>
-                        <segue destination="njb-gC-g3q" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="aHb-2E-iLV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oiL-uK-wHy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -899,6 +898,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TsZ-z5-AvR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="bnl-4n-p7D" customClass="actionSheet" customModule="BEYOND_PULSE" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="370" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </objects>
             <point key="canvasLocation" x="2556" y="-584"/>
         </scene>
@@ -948,7 +952,7 @@
         <!--Start Traning View Controller-->
         <scene sceneID="fuy-Du-Mzf">
             <objects>
-                <viewController storyboardIdentifier="starttranning" id="A0e-be-GWF" customClass="StartTraningViewController" customModule="BEYOND_PULSE" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="A0e-be-GWF" customClass="StartTraningViewController" customModule="BEYOND_PULSE" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Drn-rI-rhH"/>
                         <viewControllerLayoutGuide type="bottom" id="OvJ-gl-PaU"/>
@@ -1053,7 +1057,9 @@
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3fW-eM-11D">
                                                 <rect key="frame" x="16" y="7" width="83" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Back"/>
+                                                <state key="normal" title="Back">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="clickOnBack:" destination="Pla-kV-vG9" eventType="touchUpInside" id="CNh-n6-kkE"/>
                                                 </connections>
@@ -1141,6 +1147,9 @@
                                 <state key="normal" title="Sync">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="clickSync:" destination="Pla-kV-vG9" eventType="touchUpInside" id="ies-t3-ibH"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="56" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TTX-VN-zM4">
                                 <rect key="frame" x="0.0" y="390" width="375" height="277"/>
@@ -1269,6 +1278,7 @@
                         <outlet property="beltID" destination="ZfK-eE-Rgm" id="hXE-Xe-b9H"/>
                         <outlet property="beltStatus" destination="2gP-DT-aod" id="3Q8-tV-X6N"/>
                         <outlet property="connectButton" destination="C3G-Gm-mkC" id="9cT-T2-ISb"/>
+                        <outlet property="navigationTitle" destination="Uhn-mh-j08" id="0ja-HW-ZpB"/>
                         <outlet property="playerBirth" destination="PNv-ZA-OyE" id="3wR-H6-Wo5"/>
                         <outlet property="playerImage" destination="lCU-cB-Yn9" id="iOK-cp-wGC"/>
                         <outlet property="playerName" destination="3xX-ha-wwt" id="1po-L1-tJ1"/>

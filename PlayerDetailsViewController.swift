@@ -25,6 +25,7 @@ class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITabl
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var connectButton: UIButton!
     @IBOutlet weak var tranningSesion: UITableView!
+    @IBOutlet weak var navigationTitle: UINavigationItem!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -46,11 +47,8 @@ class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITabl
         
         connectButton.layer.cornerRadius=10
         
-        self.navigationItem.title = pl.firstName+" "+pl.lastName
+        self.navigationTitle.title = pl.firstName+" "+pl.lastName
        
-    
-       // self.view.translatesAutoresizingMaskIntoConstraints = NO;
-        
         idTeam = sing.teamSelectId
         
         JSON.getTraningSesionOnPlayer(token: sing.loadingInfo.token, idTeam: idTeam, idPlayer: pl.id){( ses:[traningSesion])->Void in
@@ -62,8 +60,7 @@ class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITabl
             
             }
         
-        // JSON.getPlayersOfTeam(token:sing.serverData.res.token , id: sing.serverData.teams[indexPath.row].id) { ( player:[Players])-> Void in
-        
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -117,6 +114,43 @@ class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITabl
         revealviewcontroller.pushFrontViewController(newViewController, animated: true)
      
        
+    }
+    @IBAction func clickSync(_ sender: Any) {
+        let message = NSAttributedString(string: "You are about to unpair this player device from Beyond Pulse application.", attributes: [
+            NSFontAttributeName:UIFont.systemFont(ofSize: 15),
+            NSForegroundColorAttributeName : UIColor.white
+            ])
+        let title = NSAttributedString(string: "Unpair Device", attributes: [
+            NSFontAttributeName:UIFont.systemFont(ofSize: 25),
+            NSForegroundColorAttributeName : UIColor.white
+            ])
+        
+        
+        let menu = UIAlertController(title:"",message:"",preferredStyle: .alert)
+        
+        menu.setValue(message, forKey: "attributedMessage")
+        menu.setValue(title, forKey: "attributedTitle")
+        
+     menu.view.backgroundColor = UIColor(red: (0/255.0), green: (0/255.0), blue: (0/255.0), alpha: 0.2)
+        
+        
+      //  subview.backgroundColor = UIColor(red: (0/255.0), green: (0/255.0), blue: (0/255.0), alpha: 0.2)
+        
+        menu.view.tintColor = UIColor.orange
+        
+       
+        let retry = UIAlertAction(title:"Unpair",style : .default,handler:{(alert : UIAlertAction!)-> Void in
+            print("retry")
+        })
+        let cancle = UIAlertAction(title:"Cancel",style : .default,handler:{(alert : UIAlertAction!)-> Void in
+            print("Cancle")
+        })
+         menu.addAction(cancle)
+        menu.addAction(retry)
+     
+        
+        present(menu,animated: true , completion: nil)
+
     }
 
    

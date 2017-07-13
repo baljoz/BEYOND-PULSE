@@ -53,7 +53,13 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         tabControl.setTitle("Players ("+String(sing.playerOnTeam.count) + ")", forSegmentAt: 0)
         
         
-
+        JSON.getTraningSesionOfTeam(token: self.sing.loadingInfo.token, id:indexTeam,page:pageOfSesion){  ( session:[traningSesion])-> Void in
+            
+            self.sing.serverData.sesion = session
+        }
+    
+    
+        
         menuButton.target=revealViewController()
         menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
         
@@ -67,7 +73,9 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
         indexTeam = sing.teamSelectId
         players = sing.playerOnTeam
-         
+        
+        
+       
     }
 
     override func didReceiveMemoryWarning() {
@@ -253,7 +261,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
     @IBAction func connectAndStartTraning(_ sender: Any) {
         
-        let message = NSAttributedString(string: "Some of the devices failed to connect.Platers are euther out of rage or batteries are too low.", attributes: [
+      /*  let message = NSAttributedString(string: "Some of the devices failed to connect.Platers are euther out of rage or batteries are too low.", attributes: [
             NSFontAttributeName:UIFont.systemFont(ofSize: 15),
             NSForegroundColorAttributeName : UIColor.white
             ])
@@ -292,9 +300,19 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         menu.addAction(retry)
         menu.addAction(cancle)
     
-        present(menu,animated: true , completion: nil)
+        present(menu,animated: true , completion: nil)*/
        
-        
+        if let view2 = Bundle.main.loadNibNamed("actionSheet", owner: self, options: nil)?.first as? actionSheet
+        {
+            view2.frame = CGRect(x:20,y:self.view.frame.maxY-view2.frame.maxY-20,width:self.view.frame.width-40,height:view2.frame.height)
+            view2.layer.cornerRadius = 10
+      
+         
+            view2.backgroundColor = UIColor.black.withAlphaComponent(0.9)
+            
+            self.view.addSubview(view2)
+            
+        }
        
     }
     

@@ -318,7 +318,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
     func pressContinue()
     {
         
-      JSON.updatePlayerTraningSessionsData(token: sing.loadingInfo.token, idTeam: indexTeam, idSession: 4, beltNumber: "111222336", data: "2222ppbbbbmmmm", idPlayer: 6)
+     // JSON.updatePlayerTraningSessionsData(token: sing.loadingInfo.token, idTeam: indexTeam, idSession: 4, beltNumber: "111222336", data: "2222ppbbbbmmmm", idPlayer: 6)
     }
     
     /*

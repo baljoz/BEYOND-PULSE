@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0708E2911F0CB1F300A3143C /* BLEController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0708E2901F0CB1F300A3143C /* BLEController.m */; };
+		070B29191F1CAAA6002A7CF4 /* SQLDataIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070B29181F1CAAA6002A7CF4 /* SQLDataIO.swift */; };
+		070B291D1F1CACB8002A7CF4 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 070B291C1F1CACB8002A7CF4 /* libsqlite3.tbd */; };
 		07266E581EE9A508005C5BFF /* ForgatPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07266E571EE9A508005C5BFF /* ForgatPasswordViewController.swift */; };
 		0726971D1EE98B15005AC23A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0726971C1EE98B15005AC23A /* AppDelegate.swift */; };
 		072697221EE98B15005AC23A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072697201EE98B15005AC23A /* Main.storyboard */; };
@@ -41,6 +43,7 @@
 		07DB2B821F0CB3AC00D686C9 /* BLETestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DB2B811F0CB3AC00D686C9 /* BLETestViewController.swift */; };
 		07DB2B851F0CC49C00D686C9 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DB2B841F0CC49C00D686C9 /* CoreBluetooth.framework */; };
 		07DB2B871F0CCD0100D686C9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DB2B861F0CCD0100D686C9 /* CoreLocation.framework */; };
+		07E2BE2D1F1C017900A134DE /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E2BE2C1F1C017900A134DE /* libsqlite3.0.tbd */; };
 		07E88F181F0F5B530022FC4C /* PlayerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E88F171F0F5B530022FC4C /* PlayerDetailsViewController.swift */; };
 		07EF5BE71F05012200476225 /* FirstScreanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EF5BE61F05012200476225 /* FirstScreanViewController.swift */; };
 /* End PBXBuildFile section */
@@ -79,6 +82,8 @@
 /* Begin PBXFileReference section */
 		0708E28F1F0CB1F300A3143C /* BLEController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEController.h; sourceTree = SOURCE_ROOT; };
 		0708E2901F0CB1F300A3143C /* BLEController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEController.m; sourceTree = SOURCE_ROOT; };
+		070B29181F1CAAA6002A7CF4 /* SQLDataIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLDataIO.swift; sourceTree = SOURCE_ROOT; };
+		070B291C1F1CACB8002A7CF4 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		07266E571EE9A508005C5BFF /* ForgatPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgatPasswordViewController.swift; sourceTree = "<group>"; };
 		072697191EE98B15005AC23A /* BEYOND PULSE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BEYOND PULSE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0726971C1EE98B15005AC23A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +138,7 @@
 		07DB2B811F0CB3AC00D686C9 /* BLETestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLETestViewController.swift; sourceTree = "<group>"; };
 		07DB2B841F0CC49C00D686C9 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		07DB2B861F0CCD0100D686C9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		07E2BE2C1F1C017900A134DE /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		07E88F171F0F5B530022FC4C /* PlayerDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerDetailsViewController.swift; path = ../PlayerDetailsViewController.swift; sourceTree = "<group>"; };
 		07EF5BE61F05012200476225 /* FirstScreanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstScreanViewController.swift; path = Assets.xcassets/FirstScreanViewController.swift; sourceTree = "<group>"; };
 		10CAC75485C41836B5E78DC4 /* Pods-BEYOND PULSE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BEYOND PULSE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BEYOND PULSE/Pods-BEYOND PULSE.debug.xcconfig"; sourceTree = "<group>"; };
@@ -144,6 +150,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				070B291D1F1CACB8002A7CF4 /* libsqlite3.tbd in Frameworks */,
+				07E2BE2D1F1C017900A134DE /* libsqlite3.0.tbd in Frameworks */,
 				07B813621F15EBD40026A26D /* JWTDecode.framework in Frameworks */,
 				0742F06F1F134CAB001FA68D /* Pods_BEYOND_PULSE.framework in Frameworks */,
 				07DB2B871F0CCD0100D686C9 /* CoreLocation.framework in Frameworks */,
@@ -194,6 +202,7 @@
 		0726971B1EE98B15005AC23A /* BEYOND PULSE */ = {
 			isa = PBXGroup;
 			children = (
+				070B29181F1CAAA6002A7CF4 /* SQLDataIO.swift */,
 				07387E241EEA7985003E73D9 /* SelectTeamViewController.swift */,
 				0726971C1EE98B15005AC23A /* AppDelegate.swift */,
 				072697201EE98B15005AC23A /* Main.storyboard */,
@@ -262,6 +271,8 @@
 		07B37FB71F0A681100B7FB8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				070B291C1F1CACB8002A7CF4 /* libsqlite3.tbd */,
+				07E2BE2C1F1C017900A134DE /* libsqlite3.0.tbd */,
 				07DB2B861F0CCD0100D686C9 /* CoreLocation.framework */,
 				07DB2B841F0CC49C00D686C9 /* CoreBluetooth.framework */,
 				07B37FCE1F0A688B00B7FB8A /* XcodeKit.framework */,
@@ -568,6 +579,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				070B29191F1CAAA6002A7CF4 /* SQLDataIO.swift in Sources */,
 				07BA88FE1F0BB9B8001C4637 /* Players.swift in Sources */,
 				07387E2D1EEA960B003E73D9 /* CoachViewController.swift in Sources */,
 				07906D1C1F051CCF00FB36D0 /* iOSDevCenters+GIF.swift in Sources */,

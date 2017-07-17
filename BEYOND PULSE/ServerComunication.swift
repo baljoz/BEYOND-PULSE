@@ -710,11 +710,12 @@ class serverCommunications
         task.resume()
     }
     // Testirana radi 
-    func updatePlayerTraningSessionsData(token:String , idTeam: Int,idSession:Int,beltNumber:String,data: String,idPlayer:Int)
+    
+    func updatePlayerTraningSessionsData(token:String , idTeam: Int,idSession:Int,beltNumber:String,idPlayer:Int,strideRate: Int,numberOfSteps:Int,heartRate:Int)
         
     {
         // vraca BP_500 ????
-        let json: [String: Any] = ["beltNumber": beltNumber,"playerId":idPlayer,"data":data]
+        let json: [String: Any] = ["beltNumber": beltNumber,"playerId":idPlayer,"strideRate":strideRate,"numberOfSteps":numberOfSteps,"heartRate":heartRate]
         let jsonData = try? JSONSerialization.data(withJSONObject: json)
         
         // }/teams/4/sessions/6

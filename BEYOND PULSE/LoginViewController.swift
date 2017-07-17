@@ -45,7 +45,7 @@ class LoginViewController: UIViewController {
         continueButton.layer.cornerRadius=10
         
         // Do any additional setup after loading the view.
-        
+        var db = SQLDataIO()
        
                }
 

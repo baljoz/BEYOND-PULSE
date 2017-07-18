@@ -45,6 +45,7 @@
 		07DB2B871F0CCD0100D686C9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DB2B861F0CCD0100D686C9 /* CoreLocation.framework */; };
 		07DFEC211F1DD1F700280D65 /* navigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07DFEC201F1DD1F700280D65 /* navigationView.xib */; };
 		07DFEC251F1DD2E600280D65 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DFEC241F1DD2E600280D65 /* NavigationView.swift */; };
+		07DFEC281F1DFD5000280D65 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07DFEC271F1DFD3500280D65 /* RobotoCondensed-Regular.ttf */; };
 		07E2BE2D1F1C017900A134DE /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E2BE2C1F1C017900A134DE /* libsqlite3.0.tbd */; };
 		07E88F181F0F5B530022FC4C /* PlayerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E88F171F0F5B530022FC4C /* PlayerDetailsViewController.swift */; };
 		07EF5BE71F05012200476225 /* FirstScreanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EF5BE61F05012200476225 /* FirstScreanViewController.swift */; };
@@ -142,6 +143,7 @@
 		07DB2B861F0CCD0100D686C9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		07DFEC201F1DD1F700280D65 /* navigationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = navigationView.xib; sourceTree = "<group>"; };
 		07DFEC241F1DD2E600280D65 /* NavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
+		07DFEC271F1DFD3500280D65 /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
 		07E2BE2C1F1C017900A134DE /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		07E88F171F0F5B530022FC4C /* PlayerDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerDetailsViewController.swift; path = ../PlayerDetailsViewController.swift; sourceTree = "<group>"; };
 		07EF5BE61F05012200476225 /* FirstScreanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstScreanViewController.swift; path = Assets.xcassets/FirstScreanViewController.swift; sourceTree = "<group>"; };
@@ -207,12 +209,12 @@
 			isa = PBXGroup;
 			children = (
 				070B29181F1CAAA6002A7CF4 /* SQLDataIO.swift */,
-				07387E241EEA7985003E73D9 /* SelectTeamViewController.swift */,
 				0726971C1EE98B15005AC23A /* AppDelegate.swift */,
 				072697201EE98B15005AC23A /* Main.storyboard */,
 				072697231EE98B15005AC23A /* Assets.xcassets */,
 				072697251EE98B15005AC23A /* LaunchScreen.storyboard */,
 				072697281EE98B15005AC23A /* Info.plist */,
+				07387E241EEA7985003E73D9 /* SelectTeamViewController.swift */,
 				0726974A1EE98B67005AC23A /* LoginViewController.swift */,
 				07266E571EE9A508005C5BFF /* ForgatPasswordViewController.swift */,
 				07387E291EEA8645003E73D9 /* SWRevealViewController.h */,
@@ -239,10 +241,8 @@
 				079597061F025D46002FD487 /* ServerComunication.swift */,
 				07E88F171F0F5B530022FC4C /* PlayerDetailsViewController.swift */,
 				0742F0701F13878A001FA68D /* StartTraningViewController.swift */,
-				073D5C4C1F175D2000FB76BA /* actionSheet.xib */,
-				073D5C4E1F175EFD00FB76BA /* actionSheet.swift */,
-				07DFEC201F1DD1F700280D65 /* navigationView.xib */,
-				07DFEC241F1DD2E600280D65 /* NavigationView.swift */,
+				07DFEC271F1DFD3500280D65 /* RobotoCondensed-Regular.ttf */,
+				07DFEC261F1DE86300280D65 /* Custom View */,
 			);
 			path = "BEYOND PULSE";
 			sourceTree = "<group>";
@@ -362,6 +362,17 @@
 			children = (
 			);
 			path = "Target Support Files";
+			sourceTree = "<group>";
+		};
+		07DFEC261F1DE86300280D65 /* Custom View */ = {
+			isa = PBXGroup;
+			children = (
+				073D5C4C1F175D2000FB76BA /* actionSheet.xib */,
+				073D5C4E1F175EFD00FB76BA /* actionSheet.swift */,
+				07DFEC201F1DD1F700280D65 /* navigationView.xib */,
+				07DFEC241F1DD2E600280D65 /* NavigationView.swift */,
+			);
+			name = "Custom View";
 			sourceTree = "<group>";
 		};
 		C279FF22B130BB80A55C531E /* Pods */ = {
@@ -508,6 +519,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07DFEC281F1DFD5000280D65 /* RobotoCondensed-Regular.ttf in Resources */,
 				072697271EE98B15005AC23A /* LaunchScreen.storyboard in Resources */,
 				07906D1E1F051F1800FB36D0 /* heartbeat.gif in Resources */,
 				07DFEC211F1DD1F700280D65 /* navigationView.xib in Resources */,

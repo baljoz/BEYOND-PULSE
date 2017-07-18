@@ -19,22 +19,17 @@ class ForgatPasswordViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        emailTextField.leftViewMode = UITextFieldViewMode.always
-        emailTextField.leftView = UIImageView(image: UIImage(named: "mesage"))
+        
         
         submitButton.layer.cornerRadius = 1
-        submitButton.layer.cornerRadius=10
+        submitButton.layer.cornerRadius=1
         
-        let img = UIImageView(image: UIImage(named: "mesage"))
-        img.frame=CGRect(x:0.0, y:0.0, width:(img.image?.size.width)!+10.0, height:(img.image?.size.height)!)
-        img.contentMode = .left
-        emailTextField.leftView = img
-        emailTextField.leftViewMode = .always
-        
+        mailView.backgroundColor = UIColor.gray.withAlphaComponent(0.6)
         mailView.layer.cornerRadius = 2;
-       mailView.layer.cornerRadius=10
-
-
+       mailView.layer.cornerRadius=5
+    
+        mailView.layer.borderWidth = 1
+    mailView.layer.borderColor = UIColor(red: 66, green: 66, blue: 66, alpha: 1).cgColor
     }
 
     override func didReceiveMemoryWarning() {

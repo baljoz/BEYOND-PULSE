@@ -320,6 +320,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
             view2.layer.cornerRadius = 10
       
             view2.continueButton.addTarget(self, action: #selector(pressContinue), for: .touchUpInside)
+             view2.continueButton.addTarget(self, action: #selector(pressCancel), for: .touchUpInside)
          
             view2.backgroundColor = UIColor.black.withAlphaComponent(0.9)
             
@@ -328,7 +329,10 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         }
        
     }
-    
+    func pressCancel()
+    {
+        
+    }
     func pressContinue()
     {
         

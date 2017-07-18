@@ -10,7 +10,10 @@ import UIKit
 import JWTDecode
 
 class LoginViewController: UIViewController {
+    @IBOutlet weak var passwordIcon: UIImageView!
 
+    @IBOutlet weak var `switch`: UISwitch!
+    @IBOutlet weak var emailIcon: UIImageView!
     @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var textfieldView: UIView!
     @IBOutlet weak var passwordTextfild: UITextField!
@@ -26,26 +29,35 @@ class LoginViewController: UIViewController {
         
         super.viewDidLoad()
         eMailTextfild.leftViewMode = UITextFieldViewMode.always
-        let img = UIImageView(image: UIImage(named: "mesage"))
-        img.frame=CGRect(x:0.0, y:0.0, width:(img.image?.size.width)!+10.0, height:(img.image?.size.height)!)
-        img.contentMode = .left
-        eMailTextfild.leftView = img
-        eMailTextfild.leftViewMode = .always
-        passwordTextfild.leftViewMode = UITextFieldViewMode.always
-        let img2 = UIImageView(image: UIImage(named: "lock"))
-        img2.frame=CGRect(x:0.0, y:0.0, width:(img.image?.size.width)!+10.0, height:(img.image?.size.height)!)
-        img2.contentMode = .left
-        passwordTextfild.leftView = img2
-        passwordTextfild.leftViewMode = .always
-        textfieldView.layer.cornerRadius = 2;
-        textfieldView.layer.borderWidth = 1;
-        textfieldView.layer.cornerRadius=10
+     
+        
+        textfieldView.backgroundColor = UIColor.gray.withAlphaComponent(0.6)
+        textfieldView.layer.borderWidth = 1
+        var color = UIColor(red: 61.0, green: 61.0, blue: 61.0, alpha: 0.6)
+        textfieldView.layer.borderColor = color.cgColor
+        textfieldView.layer.cornerRadius=5
 
+        
+       // let loginButton = UIButton(frame: CGRect(x: 10, y: 50, width: 300, height: 30))
+       // self.view.addSubview(loginButton)
+        
+        let gradient:CAGradientLayer = CAGradientLayer()
+        let colorBottom = UIColor(red: 158.0/255.0, green: 33.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
+        let colorTop = UIColor(red: 255.0, green: 156.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
+        //colorBottom
+        gradient.colors = [colorTop, colorBottom]
+        gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
+        gradient.endPoint = CGPoint(x: 1.0, y: 0.0)
+        gradient.frame = continueButton.bounds
+        gradient.cornerRadius = 2
+        
+        continueButton.layer.addSublayer(gradient)
+        
         continueButton.layer.cornerRadius = 1;
         continueButton.layer.cornerRadius=10
-        
-        // Do any additional setup after loading the view.
-        var db = SQLDataIO()
+          emailIcon.contentMode = .scaleAspectFit
+        passwordIcon.contentMode = .scaleAspectFit // Do any additional setup after loading the view.
+        `switch`.transform = CGAffineTransform(scaleX: 0.6, y: 0.6);
        
                }
 

@@ -44,6 +44,8 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         // Do any additional setup after loading the view.
 
         
+       
+        
         tranningTable.isHidden=true
         tranningTable.backgroundColor = UIColor.clear
         tranningTable.separatorStyle = .none
@@ -56,6 +58,8 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         JSON.getTraningSesionOfTeam(token: self.sing.loadingInfo.token, id:indexTeam,page:pageOfSesion){  ( session:[traningSesion])-> Void in
             
             self.sing.serverData.sesion = session
+            
+           
         }
     
     
@@ -63,7 +67,6 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         menuButton.target=revealViewController()
         menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
         
-         navigationBar.topItem?.title = navTitleName
         
         startTrening.layer.cornerRadius = 1;
         startTrening.layer.borderWidth = 1;
@@ -73,6 +76,17 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
         indexTeam = sing.teamSelectId
         players = sing.playerOnTeam
+        
+        
+        if let navView = Bundle.main.loadNibNamed("navigationView", owner: self, options: nil)?.first as? NavigationView
+        {
+            navView.image.image = self.sing.coatch.team[0].img
+            navView.title.text = self.sing.coatch.team[0].name
+            navView.center = self.navigationBar.center
+            self.navigationBar.topItem?.titleView = navView
+            navView.sizeToFit()
+        }
+
         
 }
 

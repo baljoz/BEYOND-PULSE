@@ -45,6 +45,7 @@ class SelectTeamViewController: UIViewController,UITableViewDataSource,UITableVi
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
 
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,10 +78,9 @@ class SelectTeamViewController: UIViewController,UITableViewDataSource,UITableVi
         
             self.sing.playerOnTeam = player
        let newViewController = storyBoard.instantiateViewController(withIdentifier: "selP") as! PlayerViewController
-  
-        newViewController.navTitleName = self.sing.coatch.team[indexPath.row].name
-        newViewController.navigationItem.title = self.sing.coatch.team[indexPath.row].name
-             newViewController.players = player
+            newViewController.indexTeam = indexPath.row
+            
+            newViewController.players = player
             self.sing.teamSelectId = self.sing.coatch.team[indexPath.row].id
             DispatchQueue.main.async(execute: {
         revealviewcontroller.pushFrontViewController(newViewController, animated: true)

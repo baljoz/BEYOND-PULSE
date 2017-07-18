@@ -840,11 +840,11 @@
                                     <constraint firstAttribute="width" constant="375" id="yuP-Oa-yAm"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Teams Selections" id="GQW-kL-2hf">
+                                    <navigationItem id="GQW-kL-2hf">
                                         <barButtonItem key="leftBarButtonItem" image="menu" id="VqN-xJ-45h">
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" width="50" id="PLZ-pA-gEP">
+                                        <barButtonItem key="rightBarButtonItem" image="top" width="50" id="PLZ-pA-gEP">
                                             <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
                                             <color key="tintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </barButtonItem>
@@ -1832,6 +1832,7 @@
         <image name="right" width="50" height="50"/>
         <image name="settings" width="50" height="50"/>
         <image name="stop" width="96" height="96"/>
+        <image name="top" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="LfU-lB-ESd"/>

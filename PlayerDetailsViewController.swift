@@ -26,6 +26,10 @@ class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITabl
     @IBOutlet weak var connectButton: UIButton!
     @IBOutlet weak var tranningSesion: UITableView!
     @IBOutlet weak var navigationTitle: UINavigationItem!
+    @IBOutlet weak var playerHeartRate: UILabel!
+    @IBOutlet weak var playerHeight: UILabel!
+    @IBOutlet weak var playerGender: UILabel!
+    @IBOutlet weak var playerWeight: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -46,6 +50,18 @@ class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITabl
         tranningSesion.allowsSelection = false
         
         connectButton.layer.cornerRadius=10
+        let gradient:CAGradientLayer = CAGradientLayer()
+        let colorBottom = UIColor(red: 158.0/255.0, green: 33.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
+        let colorTop = UIColor(red: 255.0, green: 156.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
+        //colorBottom
+        gradient.colors = [colorTop, colorBottom]
+        gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
+        gradient.endPoint = CGPoint(x: 1.0, y: 0.0)
+        gradient.frame = connectButton.bounds
+        gradient.cornerRadius = 10
+        
+       connectButton.layer.addSublayer(gradient)
+
         
         self.navigationTitle.title = pl.firstName+" "+pl.lastName
        
@@ -60,6 +76,14 @@ class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITabl
             
             }
         
+        
+       playerImage.layer.masksToBounds = true
+        playerImage.layer.cornerRadius = 10
+        
+        playerGender.text = pl.gender
+        playerWeight.text = String(pl.weight)
+        playerHeight.text = String(pl.height)
+        playerHeartRate.text = String(pl.maxHeartRate)
     
     }
 

@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BEYOND PULSE/ServerComunication.swift"
-            timestampString = "521986262.273433"
+            timestampString = "522151273.49595"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "833"
-            endingLineNumber = "833">
+            startingLineNumber = "836"
+            endingLineNumber = "836">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -88,11 +88,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BEYOND PULSE/ServerComunication.swift"
-            timestampString = "521986262.273433"
+            timestampString = "522151273.49595"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "838"
-            endingLineNumber = "838">
+            startingLineNumber = "841"
+            endingLineNumber = "841">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -102,11 +102,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BEYOND PULSE/ServerComunication.swift"
-            timestampString = "521986262.273433"
+            timestampString = "522151273.49595"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "834"
-            endingLineNumber = "834">
+            startingLineNumber = "837"
+            endingLineNumber = "837">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -366,7 +366,7 @@
                   moduleName = "BEYOND PULSE"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/milos/Desktop/xCodeProject/BEYONDPULSE/BLEController.h"
-                  timestampString = "522140153.696298"
+                  timestampString = "522151449.364347"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "24"
@@ -381,7 +381,7 @@
                   moduleName = "BEYOND PULSE"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/milos/Desktop/xCodeProject/BEYONDPULSE/BLEController.h"
-                  timestampString = "522140153.699855"
+                  timestampString = "522151449.368112"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "24"

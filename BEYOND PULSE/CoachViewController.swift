@@ -32,7 +32,7 @@ class CoachViewController: UIViewController,UITableViewDataSource,UITableViewDel
         coachImage.layer.cornerRadius=10
         coachImage.contentMode = .scaleAspectFit
         coachImage.image = sing.coatch.info.image
-       
+        coachImage.layer.masksToBounds = true
 
         
         tableView.separatorStyle = .none

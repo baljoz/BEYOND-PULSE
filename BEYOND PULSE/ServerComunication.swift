@@ -608,8 +608,11 @@ class serverCommunications
                         pl.beltName = data?["beltNumber"] as? String ?? ""
                         pl.dob = data?["dob"] as? String ?? ""
                         i = i+1
-                        
-                        
+                        pl.height = (data?["height"] as? Float)!
+                    pl.weight = (data?["weight"] as? Float)!
+                    pl.gender = (data?["gender"] as? String)!
+                    pl.maxHeartRate = (data?["maxHeartRate"] as? Int)!
+                    pl.age = (data?["age"] as? Int)!
                         playe = pl
                         
                     

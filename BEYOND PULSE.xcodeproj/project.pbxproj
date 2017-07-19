@@ -118,6 +118,7 @@
 		07906D1B1F051CCF00FB36D0 /* iOSDevCenters+GIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "iOSDevCenters+GIF.swift"; sourceTree = SOURCE_ROOT; };
 		07906D1D1F051F1800FB36D0 /* heartbeat.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = heartbeat.gif; path = ../../../../Downloads/heartbeat.gif; sourceTree = "<group>"; };
 		079597061F025D46002FD487 /* ServerComunication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerComunication.swift; sourceTree = "<group>"; };
+		07961F781F1F6D0800A8919E /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		079991411F03BFAA00D4860E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		07A6238C1EF1151A003A5395 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		07A6238E1EF1158F003A5395 /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
@@ -218,9 +219,9 @@
 				0726974A1EE98B67005AC23A /* LoginViewController.swift */,
 				07266E571EE9A508005C5BFF /* ForgatPasswordViewController.swift */,
 				07387E291EEA8645003E73D9 /* SWRevealViewController.h */,
+				07387E281EEA8645003E73D9 /* BEYOND PULSE-Bridging-Header.h */,
 				07387E261EEA79E1003E73D9 /* TeamTableViewCell.swift */,
 				07387E2A1EEA8645003E73D9 /* SWRevealViewController.m */,
-				07387E281EEA8645003E73D9 /* BEYOND PULSE-Bridging-Header.h */,
 				07387E2C1EEA960B003E73D9 /* CoachViewController.swift */,
 				07EF5BE61F05012200476225 /* FirstScreanViewController.swift */,
 				07A6238C1EF1151A003A5395 /* PlayerTableViewCell.swift */,
@@ -242,6 +243,7 @@
 				07E88F171F0F5B530022FC4C /* PlayerDetailsViewController.swift */,
 				0742F0701F13878A001FA68D /* StartTraningViewController.swift */,
 				07DFEC271F1DFD3500280D65 /* RobotoCondensed-Regular.ttf */,
+				07961F781F1F6D0800A8919E /* Roboto-Medium.ttf */,
 				07DFEC261F1DE86300280D65 /* Custom View */,
 			);
 			path = "BEYOND PULSE";

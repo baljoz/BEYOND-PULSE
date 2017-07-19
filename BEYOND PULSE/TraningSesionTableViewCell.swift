@@ -24,5 +24,7 @@ class TraningSesionTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    @IBOutlet weak var sessionConnectionView: UIView!
+    @IBOutlet weak var connectionImage: UIImageView!
 
 }

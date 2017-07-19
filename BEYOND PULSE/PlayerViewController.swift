@@ -149,22 +149,46 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
         cell.backgroundColor = UIColor.clear
         
-            cell.device.text = ses[indexPath.row].uploadStatus
+        
        
         cell.layer.cornerRadius=10
         
-        if indexPath.row == 0
+        let gradient:CAGradientLayer = CAGradientLayer()
+        var colorBottom : CGColor
+        var colorTop : CGColor
+        
+    
+        if  cell.device.text! == "PENDING"
         {
-            cell.device.textColor = UIColor.red
+            colorBottom = UIColor(red: 158.0/255.0, green: 33.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
+             colorTop = UIColor(red: 255.0, green: 156.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
         }
-        else if indexPath.row == 1
+        else if cell.device.text! == "COMPLETED"
         {
-            cell.device.textColor = UIColor.yellow
+            colorBottom = UIColor(red: 38.0/255.0, green: 93.0/255.0, blue: 201.0/255.0, alpha: 1.0).cgColor
+            colorTop = UIColor(red: 131.0, green: 197.0/255.0, blue: 45.0/255.0, alpha: 1.0).cgColor
         }
         else
         {
-            cell.device.textColor = UIColor.green
+           
+            colorBottom = UIColor(red: 213.0/255.0, green: 133.0/255.0, blue: 7.0/255.0, alpha: 1.0).cgColor
+            colorTop = UIColor(red: 255.0, green: 254.0/255.0, blue: 148.0/255.0, alpha: 1.0).cgColor
         }
+       
+        //kako da zamaskiram gornji deo viewa da mi se ne zakrivuje nego da ima ostre ivice |-
+        gradient.colors = [colorTop, colorBottom]
+        gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
+        gradient.endPoint = CGPoint(x: 1.0, y: 0.0)
+        gradient.frame = cell.sessionConnectionView.bounds
+        gradient.cornerRadius = 10
+       
+        cell.sessionConnectionView.layer.addSublayer(gradient)
+        
+        cell.device.text = ses[indexPath.row].uploadStatus
+        cell.sessionConnectionView.layer.addSublayer(cell.device.layer)
+        cell.sessionConnectionView.layer.addSublayer(cell.connectionImage.layer)
+        
+        
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         cell.backgroundColor = UIColor.clear
         cell.cellView.layer.cornerRadius=10
@@ -180,6 +204,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
             tranningTable.isHidden = true
             playerTable.isHidden = false
             playerTable.reloadData()
+            self.startTrening.isHidden = false
         }
         else
         {
@@ -198,13 +223,14 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
                 self.playerTable.isHidden = true
                 self.tranningTable.isHidden = false
                 self.tranningTable.reloadData()
-                    
+                self.startTrening.isHidden = true
                 })
             }
            
         
             else
             {
+                self.startTrening.isHidden = true
                 self.playerTable.isHidden = true
                 self.tranningTable.isHidden = false
                 self.tranningTable.reloadData()
@@ -350,6 +376,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
     */
 
 }
+
 extension UIView
 {
     func searchVisualEffectsSubview() -> UIVisualEffectView?

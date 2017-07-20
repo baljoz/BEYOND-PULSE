@@ -592,54 +592,48 @@ and performance</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="0H7-d9-Ydz">
-                                <rect key="frame" x="16" y="105" width="345" height="554"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9td-RF-RqC">
+                                <rect key="frame" x="0.0" y="321" width="375" height="305"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="sectionIndexBackgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="teamCell" rowHeight="70" id="zKd-n9-Voz" customClass="TeamTableViewCell" customModule="BEYOND_PULSE" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1" width="345" height="70"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="teamCell" id="gm6-al-BK5" customClass="TeamTableViewCell" customModule="BEYOND_PULSE" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zKd-n9-Voz" id="vPa-lV-Mh8">
-                                            <rect key="frame" x="0.0" y="0.0" width="345" height="69.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gm6-al-BK5" id="zm0-lL-bBt">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ncB-En-6QK">
-                                                    <rect key="frame" x="8" y="7" width="337" height="57"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xyO-5P-0CR">
-                                                            <rect key="frame" x="5" y="0.0" width="60" height="70"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVx-5f-sDy">
-                                                            <rect key="frame" x="113" y="36" width="0.0" height="0.0"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d6r-ZZ-Cgh">
-                                                            <rect key="frame" x="70" y="10" width="1" height="52"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        </view>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                </view>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7UM-X4-hv4">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="OlX-lP-Lnf"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpc-dB-ebl">
+                                                    <rect key="frame" x="55" y="12" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="gpc-dB-ebl" firstAttribute="centerY" secondItem="7UM-X4-hv4" secondAttribute="centerY" id="7hF-vw-vfw"/>
+                                                <constraint firstItem="7UM-X4-hv4" firstAttribute="leading" secondItem="zm0-lL-bBt" secondAttribute="leading" id="Hhq-TH-u1D"/>
+                                                <constraint firstItem="gpc-dB-ebl" firstAttribute="leading" secondItem="7UM-X4-hv4" secondAttribute="trailing" constant="5" id="TV0-5I-yXy"/>
+                                                <constraint firstItem="7UM-X4-hv4" firstAttribute="top" secondItem="zm0-lL-bBt" secondAttribute="top" id="k8x-vJ-WWm"/>
+                                                <constraint firstAttribute="bottom" secondItem="7UM-X4-hv4" secondAttribute="bottom" id="nhn-UU-7Ml"/>
+                                            </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <outlet property="imageTeam" destination="xyO-5P-0CR" id="9sj-ZN-t9c"/>
-                                            <outlet property="nameTeam" destination="UVx-5f-sDy" id="DLO-fJ-pFy"/>
+                                            <outlet property="imageTeam" destination="7UM-X4-hv4" id="Z4C-Zp-J6f"/>
+                                            <outlet property="nameTeam" destination="gpc-dB-ebl" id="sEx-5V-rqV"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="Cco-Us-Auw" id="fiu-2a-mdq"/>
-                                    <outlet property="delegate" destination="Cco-Us-Auw" id="q5O-mb-7SM"/>
+                                    <outlet property="dataSource" destination="Cco-Us-Auw" id="enV-1h-m0y"/>
+                                    <outlet property="delegate" destination="Cco-Us-Auw" id="nXk-Co-y9e"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -657,7 +651,7 @@ and performance</string>
                     <connections>
                         <outlet property="menuButton" destination="rkw-v9-GpI" id="wqu-sJ-O2W"/>
                         <outlet property="rightNavigatioButton" destination="ss5-5G-VYJ" id="V2z-3M-2Ux"/>
-                        <outlet property="teamTable" destination="0H7-d9-Ydz" id="sCf-lU-6Lb"/>
+                        <outlet property="teamTable" destination="9td-RF-RqC" id="rJf-kN-F5c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FOX-jF-hO2" userLabel="First Responder" sceneMemberID="firstResponder"/>

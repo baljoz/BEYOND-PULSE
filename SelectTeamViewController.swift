@@ -53,7 +53,6 @@ class SelectTeamViewController: UIViewController,UITableViewDataSource,UITableVi
         // Dispose of any resources that can be recreated.
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(team.count)
         return team.count
     }
   
@@ -61,6 +60,8 @@ class SelectTeamViewController: UIViewController,UITableViewDataSource,UITableVi
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.teamTable.dequeueReusableCell(withIdentifier: "teamCell") as! TeamTableViewCell
+        
+        print(team[indexPath.row])
         cell.imageTeam.image = team[indexPath.row].img
         cell.nameTeam.text = team[indexPath.row].name
         

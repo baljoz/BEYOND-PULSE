@@ -14,7 +14,7 @@ class SessionViewController: UIViewController,UITableViewDataSource,UITableViewD
 
     
     var player = [Players]()
-    var session = [traningSesion]()
+    var session = traningSesion()
     var pageOfSeeions = Int()
     var sing = MySingleton.sharedInstance
     override func viewDidLoad() {
@@ -24,6 +24,7 @@ class SessionViewController: UIViewController,UITableViewDataSource,UITableViewD
         // Do any additional setup after loading the view.
         sesionTable.backgroundColor = UIColor.clear
         sesionTable.separatorStyle = .none
+        sesionTable.allowsSelection = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,15 +37,54 @@ class SessionViewController: UIViewController,UITableViewDataSource,UITableViewD
         
          let cell = self.sesionTable.dequeueReusableCell(withIdentifier: "sesionCell") as! SessionTableViewCell
         
-            cell.playerName.text = player[indexPath.row].firstName+" "+player[indexPath.row].middleName+" "+player[indexPath.row].lastName
+        cell.playerName.text = player[indexPath.row].firstName+" "+player[indexPath.row].middleName+" "+player[indexPath.row].lastName
         cell.positionPlayer.text = player[indexPath.row].postition
-        cell.connectionPlayer.text = player[indexPath.row].dataUploaded
+        cell.connectionPlayer.text = session.uploadStatus
         cell.imagePlayer.image = player[indexPath.row].playerImage
         cell.imagePlayer.contentMode = .scaleAspectFit
-        cell.connectionImage.image = UIImage(named: "ok")
+        
         cell.connectionImage.contentMode = .scaleAspectFit
         cell.backgroundColor = UIColor.clear
         cell.viewCell.layer.cornerRadius = 10
+        
+        
+        let gradient:CAGradientLayer = CAGradientLayer()
+        var colorBottom : CGColor
+        var colorTop : CGColor
+        
+      
+        if  cell.connectionPlayer.text! == "PENDING"
+        {
+            colorBottom = UIColor(red: 158.0/255.0, green: 33.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
+            colorTop = UIColor(red: 255.0/255.0, green: 156.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
+        }
+        else if cell.connectionPlayer.text! == "COMPLETED"
+        {
+            colorBottom = UIColor(red: 38.0/255.0, green: 93.0/255.0, blue: 201.0/255.0, alpha: 1.0).cgColor
+            colorTop = UIColor(red: 131.0/255.0, green: 197.0/255.0, blue: 45.0/255.0, alpha: 1.0).cgColor
+        }
+        else
+        {
+            
+            colorBottom = UIColor(red: 213.0/255.0, green: 133.0/255.0, blue: 7.0/255.0, alpha: 1.0).cgColor
+            colorTop = UIColor(red: 255.0/255.0, green: 254.0/255.0, blue: 148.0/255.0, alpha: 1.0).cgColor
+        }
+        
+        //kako da zamaskiram gornji deo viewa da mi se ne zakrivuje nego da ima ostre ivice |-
+        gradient.colors = [colorTop, colorBottom]
+        gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
+        gradient.endPoint = CGPoint(x: 1.0, y: 0.0)
+        gradient.frame = cell.sessionConnectionView.bounds
+        gradient.cornerRadius = 10
+        
+        cell.sessionConnectionView.layer.addSublayer(gradient)
+        
+        
+        cell.sessionConnectionView.layer.addSublayer(cell.connectionPlayer.layer)
+        cell.sessionConnectionView.layer.addSublayer(cell.connectionImage.layer)
+        
+        
+        
         return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

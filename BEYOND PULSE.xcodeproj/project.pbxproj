@@ -40,6 +40,9 @@
 		07B380051F0A9F7D00B7FB8A /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B380041F0A9F7D00B7FB8A /* SettingsTableViewCell.swift */; };
 		07B813621F15EBD40026A26D /* JWTDecode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0742F06C1F134C90001FA68D /* JWTDecode.framework */; };
 		07BA88FE1F0BB9B8001C4637 /* Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BA88FD1F0BB9B8001C4637 /* Players.swift */; };
+		07CC00BF1F20A53700045D42 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07CC00BB1F2095B800045D42 /* Roboto-Bold.ttf */; };
+		07CC00C01F20A53C00045D42 /* MyriadPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07CC00BE1F20A50300045D42 /* MyriadPro-Regular.otf */; };
+		07CC00C11F20A54100045D42 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07961F781F1F6D0800A8919E /* Roboto-Medium.ttf */; };
 		07DB2B821F0CB3AC00D686C9 /* BLETestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DB2B811F0CB3AC00D686C9 /* BLETestViewController.swift */; };
 		07DB2B851F0CC49C00D686C9 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DB2B841F0CC49C00D686C9 /* CoreBluetooth.framework */; };
 		07DB2B871F0CCD0100D686C9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DB2B861F0CCD0100D686C9 /* CoreLocation.framework */; };
@@ -139,6 +142,8 @@
 		07B380021F0A965600B7FB8A /* Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Singleton.swift; path = ../Singleton.swift; sourceTree = "<group>"; };
 		07B380041F0A9F7D00B7FB8A /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		07BA88FD1F0BB9B8001C4637 /* Players.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Players.swift; sourceTree = "<group>"; };
+		07CC00BB1F2095B800045D42 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		07CC00BE1F20A50300045D42 /* MyriadPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Regular.otf"; sourceTree = "<group>"; };
 		07DB2B811F0CB3AC00D686C9 /* BLETestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLETestViewController.swift; sourceTree = "<group>"; };
 		07DB2B841F0CC49C00D686C9 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		07DB2B861F0CCD0100D686C9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -244,6 +249,8 @@
 				0742F0701F13878A001FA68D /* StartTraningViewController.swift */,
 				07DFEC271F1DFD3500280D65 /* RobotoCondensed-Regular.ttf */,
 				07961F781F1F6D0800A8919E /* Roboto-Medium.ttf */,
+				07CC00BB1F2095B800045D42 /* Roboto-Bold.ttf */,
+				07CC00BE1F20A50300045D42 /* MyriadPro-Regular.otf */,
 				07DFEC261F1DE86300280D65 /* Custom View */,
 			);
 			path = "BEYOND PULSE";
@@ -522,6 +529,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				07DFEC281F1DFD5000280D65 /* RobotoCondensed-Regular.ttf in Resources */,
+				07CC00BF1F20A53700045D42 /* Roboto-Bold.ttf in Resources */,
+				07CC00C01F20A53C00045D42 /* MyriadPro-Regular.otf in Resources */,
+				07CC00C11F20A54100045D42 /* Roboto-Medium.ttf in Resources */,
 				072697271EE98B15005AC23A /* LaunchScreen.storyboard in Resources */,
 				07906D1E1F051F1800FB36D0 /* heartbeat.gif in Resources */,
 				07DFEC211F1DD1F700280D65 /* navigationView.xib in Resources */,

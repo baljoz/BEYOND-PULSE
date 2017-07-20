@@ -12,6 +12,7 @@ class SelectTeamViewController: UIViewController,UITableViewDataSource,UITableVi
 
   
     @IBOutlet weak var rightNavigatioButton: UIBarButtonItem!
+    @IBOutlet weak var clubNameLabel: UILabel!
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var teamTable: UITableView!
 
@@ -45,7 +46,9 @@ class SelectTeamViewController: UIViewController,UITableViewDataSource,UITableVi
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
 
-        
+        let backUnderground = UIColor(red: 33.0/255.0, green: 33.0/255.0, blue: 33.0/255.0, alpha: 1.0)
+        teamTable.backgroundColor = backUnderground
+        clubNameLabel.text = sing.coatch.coutchClub.name
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,12 +64,12 @@ class SelectTeamViewController: UIViewController,UITableViewDataSource,UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.teamTable.dequeueReusableCell(withIdentifier: "teamCell") as! TeamTableViewCell
         
-        print(team[indexPath.row])
+        
         cell.imageTeam.image = team[indexPath.row].img
         cell.nameTeam.text = team[indexPath.row].name
         
         cell.imageTeam.contentMode = .scaleAspectFit
-        cell.backgroundColor = nil
+        cell.backgroundColor = UIColor.clear
         return cell
     }
   

@@ -27,4 +27,6 @@ class PlayerTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @IBOutlet weak var maxHR: UILabel!
+    @IBOutlet weak var connectionView: UIView!
 }

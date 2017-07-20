@@ -4,8 +4,10 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Roboto-Bold.ttf</string>
 		<string>RobotoCondensed-Regular.ttf</string>
 		<string>Roboto-Medium.ttf</string>
+		<string>MyriadPro-Regular.otf</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>

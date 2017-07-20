@@ -22,6 +22,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
     var pageOfSesion : Int = 0
     var players = [Players]()
     
+    @IBOutlet weak var rightBarButton: UIBarButtonItem!
     
     @IBOutlet weak var navigationBar: UINavigationBar!
     var date = [String]()
@@ -58,8 +59,9 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         JSON.getTraningSesionOfTeam(token: self.sing.loadingInfo.token, id:indexTeam,page:pageOfSesion){  ( session:[traningSesion])-> Void in
             
             self.sing.serverData.sesion = session
-            
+            self.rightBarButton.title = "Coaches\nWebsite"
            
+            
         }
     
     
@@ -68,9 +70,24 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
         
         
-        startTrening.layer.cornerRadius = 1;
-        startTrening.layer.borderWidth = 1;
+     
+      
         startTrening.layer.cornerRadius=10
+       
+        
+        let gradient:CAGradientLayer = CAGradientLayer()
+           let colorBottom = UIColor(red: 254.0/255.0, green: 92.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
+          let  colorTop = UIColor(red: 255.0/255.0, green: 186.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
+        
+        gradient.colors = [colorTop, colorBottom]
+        gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
+        gradient.endPoint = CGPoint(x: 1.0, y: 0.0)
+        gradient.frame = startTrening.bounds
+        gradient.cornerRadius = 10
+        
+       startTrening.layer.addSublayer(gradient)
+
+        
         
         playerTable.separatorStyle = .none
         
@@ -86,7 +103,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
             self.navigationBar.topItem?.titleView = navView
             navView.sizeToFit()
         }
-
+        
         
 }
 
@@ -114,11 +131,10 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         if tabControl.selectedSegmentIndex == 0
         {
             let cell = self.playerTable.dequeueReusableCell(withIdentifier: "playercell") as! PlayerTableViewCell
+            
                cell.playerName.text = players[indexPath.row].firstName+" "+players[indexPath.row].middleName+" "+players[indexPath.row].lastName
+            
         cell.playerPosition.text = players[indexPath.row].postition
-        if indexPath.row != 3 {
-        cell.playerConection.textColor = UIColor.red
-        }
         cell.playerImage.image = players[indexPath.row].playerImage
          cell.playerImage.contentMode = .scaleAspectFit
         
@@ -127,7 +143,44 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
           cell.cellView.layer.cornerRadius=10
             cell.selectionStyle = UITableViewCellSelectionStyle.none
         cell.backgroundColor = UIColor.clear
+            cell.connectionImage.image = UIImage(named:"x")
+            cell.playerConection.text = "NOT Connected"
             
+            let gradient:CAGradientLayer = CAGradientLayer()
+            var colorBottom : CGColor
+            var colorTop : CGColor
+            
+            
+            if  cell.playerConection.text! == "NOT Connected"
+            {
+                colorBottom = UIColor(red: 158.0/255.0, green: 33.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
+                colorTop = UIColor(red: 255.0/255.0, green: 156.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
+            }
+            else if cell.playerConection.text! == "COMPLETED"
+            {
+                colorBottom = UIColor(red: 38.0/255.0, green: 93.0/255.0, blue: 201.0/255.0, alpha: 1.0).cgColor
+                colorTop = UIColor(red: 131.0/255.0, green: 197.0/255.0, blue: 45.0/255.0, alpha: 1.0).cgColor
+            }
+            else
+            {
+                
+                colorBottom = UIColor(red: 213.0/255.0, green: 133.0/255.0, blue: 7.0/255.0, alpha: 1.0).cgColor
+                colorTop = UIColor(red: 255.0/255.0, green: 254.0/255.0, blue: 148.0/255.0, alpha: 1.0).cgColor
+            }
+            gradient.colors = [colorTop, colorBottom]
+            gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
+            gradient.endPoint = CGPoint(x: 1.0, y: 0.0)
+            gradient.frame = cell.connectionView.bounds
+            gradient.cornerRadius = 10
+            
+            cell.connectionView.layer.addSublayer(gradient)
+            
+            
+            cell.connectionView.layer.addSublayer(cell.playerConection.layer)
+            cell.connectionView.layer.addSublayer(cell.connectionImage.layer)
+
+            
+
         return cell
         }
         
@@ -161,18 +214,18 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         if  cell.device.text! == "PENDING"
         {
             colorBottom = UIColor(red: 158.0/255.0, green: 33.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
-             colorTop = UIColor(red: 255.0, green: 156.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
+             colorTop = UIColor(red: 255.0/255.0, green: 156.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
         }
         else if cell.device.text! == "COMPLETED"
         {
             colorBottom = UIColor(red: 38.0/255.0, green: 93.0/255.0, blue: 201.0/255.0, alpha: 1.0).cgColor
-            colorTop = UIColor(red: 131.0, green: 197.0/255.0, blue: 45.0/255.0, alpha: 1.0).cgColor
+            colorTop = UIColor(red: 131.0/255.0, green: 197.0/255.0, blue: 45.0/255.0, alpha: 1.0).cgColor
         }
         else
         {
            
             colorBottom = UIColor(red: 213.0/255.0, green: 133.0/255.0, blue: 7.0/255.0, alpha: 1.0).cgColor
-            colorTop = UIColor(red: 255.0, green: 254.0/255.0, blue: 148.0/255.0, alpha: 1.0).cgColor
+            colorTop = UIColor(red: 255.0/255.0, green: 254.0/255.0, blue: 148.0/255.0, alpha: 1.0).cgColor
         }
        
         //kako da zamaskiram gornji deo viewa da mi se ne zakrivuje nego da ima ostre ivice |-
@@ -263,7 +316,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let newViewController = storyBoard.instantiateViewController(withIdentifier: "sesion") as! SessionViewController
                 newViewController.player = pos.player
-                
+                newViewController.session = pos.sesion
                 
                newViewController.pageOfSeeions = self.pageOfSesion
                // self.present(newViewController, animated: true, completion: nil)

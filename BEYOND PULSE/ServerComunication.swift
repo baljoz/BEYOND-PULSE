@@ -187,6 +187,7 @@ class serverCommunications
                 var couch = coachResponese()
                 var teams = [Team]()
                 var sett = SettingsData()
+                var clu = club()
                 if statuss?["code"] as? String == "BP_200"{
                     var data = responseJSON["data"] as? [String: Any]
                     
@@ -203,6 +204,18 @@ class serverCommunications
                     {
                         couch.image = (UIImage(data: dst as Data)!)
                     }
+                    
+                    let cl = data?["club"] as? [String:Any]
+                    clu.id = cl?["id"] as? Int ?? -1
+                    clu.name = cl?["name"] as? String ?? " "
+                    clu.imageUrl = cl?["logo"] as? String ?? ""
+                    let logoUrl = NSURL(string : clu.imageUrl)
+                    let logoData = NSData(contentsOf: logoUrl! as URL)!
+                    if logoData != nil
+                    {
+                        clu.image = (UIImage(data: logoData as Data)!)
+                    }
+
                     
                     let      team = data?["teams"] as? [[String : Any]]
                     for te in team!
@@ -235,7 +248,7 @@ class serverCommunications
                 var coa = CoachInfo()
                 coa.info = couch
                 coa.settings = sett
-                
+                coa.coutchClub = clu
                 coa.team = teams
                 coa.stat = checkStatus
                 handler(coa)
@@ -803,13 +816,19 @@ struct traningSesion{
  var ended = String()
  var uploadStatus = String()
 }
-
+struct club{
+    var id = Int()
+    var name = String()
+    var imageUrl = String()
+    var image = UIImage()
+}
 struct CoachInfo
 {
     var stat = status()
     var info = coachResponese()
     var settings = SettingsData()
     var team = [Team]()
+    var coutchClub = club()
 }
 struct playerOfSessions
 {

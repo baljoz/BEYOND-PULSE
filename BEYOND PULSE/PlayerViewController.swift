@@ -179,7 +179,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
             cell.connectionView.layer.addSublayer(cell.playerConection.layer)
             cell.connectionView.layer.addSublayer(cell.connectionImage.layer)
 
-            
+            cell.maxHR.text = String(players[indexPath.row].maxHeartRate)
 
         return cell
         }
@@ -245,6 +245,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         cell.backgroundColor = UIColor.clear
         cell.cellView.layer.cornerRadius=10
+        
             return cell
             
         

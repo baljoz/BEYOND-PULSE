@@ -355,6 +355,11 @@ class serverCommunications
                         }
                         pl.postition = player["position"] as? String ?? ""
                         pl.beltName = player["beltNumber"] as? String ?? ""
+                        pl.weight = player["weight"] as? Float ??  -1
+                        pl.height = player["height"] as? Float ?? -1
+                        pl.gender = player["gender"] as? String ?? ""
+                        pl.maxHeartRate = player["maxHeartRate"] as? Int ?? -1
+                        pl.age = player["age"] as? Int ?? -1
                         play.append(pl)
                         i = i + 1
                     }

@@ -30,10 +30,11 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         eMailTextfild.leftViewMode = UITextFieldViewMode.always
      
-        
-        textfieldView.backgroundColor = UIColor.gray.withAlphaComponent(0.6)
+        let colorback = UIColor(red: 31.0/255.0, green: 31.0/255.0, blue: 31.0/255.0, alpha: 1.0)
+        textfieldView.backgroundColor = colorback.withAlphaComponent(0.8)
         textfieldView.layer.borderWidth = 1
-        var color = UIColor(red: 61.0, green: 61.0, blue: 61.0, alpha: 0.6)
+        let color = UIColor(red: 61.0/255.0, green: 61.0/255.0, blue: 61.0/255.0, alpha: 0.6)
+        
         textfieldView.layer.borderColor = color.cgColor
         textfieldView.layer.cornerRadius=5
 
@@ -43,7 +44,7 @@ class LoginViewController: UIViewController {
         
         let gradient:CAGradientLayer = CAGradientLayer()
         let colorBottom = UIColor(red: 158.0/255.0, green: 33.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
-        let colorTop = UIColor(red: 255.0, green: 156.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
+        let colorTop = UIColor(red: 255.0/255.0, green: 156.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
         //colorBottom
         gradient.colors = [colorTop, colorBottom]
         gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
@@ -53,7 +54,7 @@ class LoginViewController: UIViewController {
         
         continueButton.layer.addSublayer(gradient)
         
-        continueButton.layer.cornerRadius = 1;
+        
         continueButton.layer.cornerRadius=10
           emailIcon.contentMode = .scaleAspectFit
         passwordIcon.contentMode = .scaleAspectFit // Do any additional setup after loading the view.

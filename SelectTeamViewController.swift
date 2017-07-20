@@ -53,6 +53,7 @@ class SelectTeamViewController: UIViewController,UITableViewDataSource,UITableVi
         // Dispose of any resources that can be recreated.
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(team.count)
         return team.count
     }
   

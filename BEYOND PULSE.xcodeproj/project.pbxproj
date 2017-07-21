@@ -28,6 +28,7 @@
 		0742F0711F13878A001FA68D /* StartTraningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0742F0701F13878A001FA68D /* StartTraningViewController.swift */; };
 		0765C26D1F0E3E6A007F0792 /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765C26C1F0E3E6A007F0792 /* SessionViewController.swift */; };
 		0765C26F1F0E3F41007F0792 /* SessionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765C26E1F0E3F41007F0792 /* SessionTableViewCell.swift */; };
+		076A45CA1F22140B0075D01B /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 076A45C91F22140B0075D01B /* AlertView.xib */; };
 		07901C051EF949130000F40A /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07901C041EF949130000F40A /* CustomTabBarController.swift */; };
 		07901C071EF960F20000F40A /* TraningSesionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07901C061EF960F20000F40A /* TraningSesionTableViewCell.swift */; };
 		07906D1C1F051CCF00FB36D0 /* iOSDevCenters+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07906D1B1F051CCF00FB36D0 /* iOSDevCenters+GIF.swift */; };
@@ -116,6 +117,7 @@
 		0742F0701F13878A001FA68D /* StartTraningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartTraningViewController.swift; sourceTree = "<group>"; };
 		0765C26C1F0E3E6A007F0792 /* SessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionViewController.swift; sourceTree = "<group>"; };
 		0765C26E1F0E3F41007F0792 /* SessionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionTableViewCell.swift; sourceTree = "<group>"; };
+		076A45C91F22140B0075D01B /* AlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertView.xib; sourceTree = "<group>"; };
 		07901C041EF949130000F40A /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		07901C061EF960F20000F40A /* TraningSesionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraningSesionTableViewCell.swift; sourceTree = "<group>"; };
 		07906D1B1F051CCF00FB36D0 /* iOSDevCenters+GIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "iOSDevCenters+GIF.swift"; sourceTree = SOURCE_ROOT; };
@@ -380,6 +382,7 @@
 				073D5C4E1F175EFD00FB76BA /* actionSheet.swift */,
 				07DFEC201F1DD1F700280D65 /* navigationView.xib */,
 				07DFEC241F1DD2E600280D65 /* NavigationView.swift */,
+				076A45C91F22140B0075D01B /* AlertView.xib */,
 			);
 			name = "Custom View";
 			sourceTree = "<group>";
@@ -538,6 +541,7 @@
 				073D5C4D1F175D2000FB76BA /* actionSheet.xib in Resources */,
 				072697241EE98B15005AC23A /* Assets.xcassets in Resources */,
 				072697221EE98B15005AC23A /* Main.storyboard in Resources */,
+				076A45CA1F22140B0075D01B /* AlertView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

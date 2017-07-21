@@ -59,18 +59,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         JSON.getTraningSesionOfTeam(token: self.sing.loadingInfo.token, id:indexTeam,page:pageOfSesion){  ( session:[traningSesion])-> Void in
             
             self.sing.serverData.sesion = session
-            
-            let button = UIButton(type: .system)
-            button.titleLabel!.lineBreakMode = .byWordWrapping
-            button.setTitle("Coaches \nWebsite", for: .normal)
-            button.titleLabel?.textColor = UIColor.white
-            
-            button.sizeToFit()
-            
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
-           
-           
-            
+
         }
     
     
@@ -80,9 +69,19 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
         
      
-      
+        let button = UIButton(type: .system)
+        button.titleLabel!.lineBreakMode = .byWordWrapping
+        button.setTitle("Coaches \n Website", for: .normal)
+        button.titleLabel?.textColor = UIColor.white
+        
+        button.sizeToFit()
+        
+      self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
+        
+        
+        
         startTrening.layer.cornerRadius=10
-       
+      // rightBarButton.title = "Coaches \n Website"
         
         let gradient:CAGradientLayer = CAGradientLayer()
            let colorBottom = UIColor(red: 254.0/255.0, green: 92.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
@@ -104,11 +103,12 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         players = sing.playerOnTeam
         
         
-        if let navView = Bundle.main.loadNibNamed("navigationView", owner: self, options: nil)?.first as? NavigationView
+        if let navView =  Bundle.main.loadNibNamed("navigationView", owner: self, options: nil)?.first as? NavigationView
         {
             navView.image.image = self.sing.coatch.team[0].img
             navView.title.text = self.sing.coatch.team[0].name
-            navView.center = self.navigationBar.center
+     
+           // navView.center = self.navigationBar.center
             self.navigationBar.topItem?.titleView = navView
             navView.sizeToFit()
         }

@@ -52,7 +52,7 @@ class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITabl
         connectButton.layer.cornerRadius=10
         let gradient:CAGradientLayer = CAGradientLayer()
         let colorBottom = UIColor(red: 158.0/255.0, green: 33.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
-        let colorTop = UIColor(red: 255.0, green: 156.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
+        let colorTop = UIColor(red: 255.0/255.0, green: 156.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
         //colorBottom
         gradient.colors = [colorTop, colorBottom]
         gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
@@ -161,7 +161,10 @@ class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITabl
       //  subview.backgroundColor = UIColor(red: (0/255.0), green: (0/255.0), blue: (0/255.0), alpha: 0.2)
         
         menu.view.tintColor = UIColor.orange
-        
+       // var x = self.view.frame.minX+self.view.frame.maxX - menu.view.frame.width/2
+        //var y = self.view.frame.minY+self.view.frame.maxY - menu.view.frame.height/2
+
+       // menu.view.frame = CGRect(x:x,y:y,width:100,height:100)
        
         let retry = UIAlertAction(title:"Unpair",style : .default,handler:{(alert : UIAlertAction!)-> Void in
             print("retry")

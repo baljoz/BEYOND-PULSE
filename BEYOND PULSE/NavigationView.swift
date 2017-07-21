@@ -10,6 +10,7 @@ import UIKit
 
 class NavigationView: UIView {
 
+    @IBOutlet weak var sesionLength: UILabel!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var title: UILabel!
     /*

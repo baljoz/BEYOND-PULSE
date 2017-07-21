@@ -2,20 +2,22 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "layer7.png",
-      "scale" : "1x"
+      "scale" : "1x",
+      "filename" : "layer9.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "layer9@2x.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "layer9@3x.png"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "zeplin",
+    "version" : "1"
   }
 }

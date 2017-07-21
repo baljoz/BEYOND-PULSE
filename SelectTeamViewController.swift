@@ -36,12 +36,10 @@ class SelectTeamViewController: UIViewController,UITableViewDataSource,UITableVi
        teamTable.separatorStyle = .none
         
         let button = UIButton(type: .system)
-        button.setImage(UIImage(named: "top"), for: .normal)
-        button.imageView?.tintColor = UIColor.orange
         button.titleLabel!.lineBreakMode = .byWordWrapping
         button.setTitle("Coaches \nWebsite", for: .normal)
         button.titleLabel?.textColor = UIColor.white
-       // button.addTarget(self, action: #selector(showCategories), for: .touchUpInside)
+   
         button.sizeToFit()
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)

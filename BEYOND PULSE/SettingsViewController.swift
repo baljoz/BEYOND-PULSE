@@ -26,6 +26,14 @@ class SettingsViewController: UIViewController,UITableViewDataSource,UITableView
         menuButton.target=revealViewController()
         menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
         
+        let button = UIButton(type: .system)
+        button.titleLabel!.lineBreakMode = .byWordWrapping
+        button.setTitle("Coaches \nWebsite", for: .normal)
+        button.titleLabel?.textColor = UIColor.white
+        
+        button.sizeToFit()
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
     }
 
     override func didReceiveMemoryWarning() {

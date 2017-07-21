@@ -20,6 +20,7 @@ class StartTraningViewController: UIViewController {
     @IBOutlet weak var swipeToUnlock: UILabel!
     @IBOutlet weak var constraint: NSLayoutConstraint!
  
+    @IBOutlet weak var rightBarButton: UIBarButtonItem!
     @IBOutlet weak var unlockLabelCentar: NSLayoutConstraint!
      var tim = Timer()
     var timer = Timer()
@@ -27,17 +28,64 @@ class StartTraningViewController: UIViewController {
         var labCentar = CGFloat()
     var sing = MySingleton.sharedInstance
     var start = false
+    var minuts=0
+    var hour = 0
+    var secund = 0
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
                 
-        tileLabel.text = DateFormatter.localizedString(from: NSDate() as Date,dateStyle:.medium,timeStyle: .medium)
+        tileLabel.text = DateFormatter.localizedString(from: NSDate() as Date,dateStyle:.none,timeStyle: .medium)
         lockView.isHidden = true
         leftSideView = self.lockViewLeftSide.constant
-        labCentar =  self.unlockLabelCentar.constant
+      //  labCentar =  self.unlockLabelCentar.constant
         self.swipeToUnlock.isHidden = true
-   
+        let colorback = UIColor(red: 33.0/255.0, green: 33.0/255.0, blue: 33.0/255.0, alpha: 1.0)
+        lockView.backgroundColor = colorback.withAlphaComponent(0.1)
+        
+        
+        stratButton.frame = CGRect(x:0,y:0, width:149.5,height:149.5)
+        
+       
+        stratButton.clipsToBounds = true
+        
+        
+        stratButton.layer.cornerRadius = 145.5/2.0
+        
+        stratButton.backgroundColor = UIColor.red
+        
+        let gradient:CAGradientLayer = CAGradientLayer()
+        let colorBottom = UIColor(red: 254.0/255.0, green: 92.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
+        let  colorTop = UIColor(red: 255.0/255.0, green: 186.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
+        
+        gradient.colors = [colorTop, colorBottom]
+        gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
+        gradient.endPoint = CGPoint(x: 1.0, y: 0.0)
+        gradient.frame = stratButton.bounds
+        gradient.cornerRadius = 10
+        
+       
+        stratButton.layer.addSublayer(gradient)
+        var x = (stratButton.frame.maxX+stratButton.frame.minX)/2
+        var y = (stratButton.frame.minY+stratButton.frame.maxY)/2
+        x = x - 26.5
+        y = y - 26.5
+        let uiimg = UIImage(named:"stopIco")
+        let img = UIImageView()
+        img.image = uiimg
+        img.frame = CGRect(x:x,y:y,width:53.0,height:53.0)
+        stratButton.layer.addSublayer(img.layer)
+        
+        let button = UIButton(type: .system)
+        button.titleLabel!.lineBreakMode = .byWordWrapping
+        button.setTitle("Coaches\nWebsite", for: .normal)
+        button.titleLabel?.textColor = UIColor.white
+        
+        button.sizeToFit()
+
+        
+         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,6 +111,7 @@ class StartTraningViewController: UIViewController {
             lockView.isHidden = false
             stratButton.isEnabled = false
             self.swipeToUnlock.isHidden = false
+            stratButton.alpha = 0.5
             start = true
         }
 
@@ -75,10 +124,12 @@ class StartTraningViewController: UIViewController {
         UIView.animate(withDuration: 0.5) {
             self.lockViewLeftSide.constant = self.lockViewLeftSide.constant  + self.view.frame.maxX
             self.view.layoutIfNeeded()
-            self.unlockLabelCentar.constant = self.unlockLabelCentar.constant + self.view.frame.maxX
-        
+       //     self.unlockLabelCentar.constant = self.unlockLabelCentar.constant + self.view.frame.maxX
+        self.stratButton.alpha = 1.0
        
         self.tim = Timer.scheduledTimer(timeInterval: 1.0,target: self,selector:#selector(self.updateFrame),userInfo: nil,repeats: true)
+            
+            
        
     }
 }
@@ -88,13 +139,26 @@ class StartTraningViewController: UIViewController {
         self.lockView.isHidden = true
         self.swipeToUnlock.isHidden = true
         self.lockViewLeftSide.constant = leftSideView
-        self.unlockLabelCentar.constant = labCentar
+       // self.unlockLabelCentar.constant = labCentar
         tim.invalidate()
 
     }
     
     func incrementTimer() {
-        tileLabel.text = DateFormatter.localizedString(from: NSDate() as Date,dateStyle:.medium,timeStyle: .medium)
+        secund = secund + 1
+        if secund == 60
+        {
+            minuts = minuts + 1
+            secund = 0
+        }
+        
+        if minuts == 60
+        {
+            hour = hour + 1
+            minuts = 0
+            secund = 0
+        }
+        tileLabel.text = String(hour)+":"+String(minuts)+":"+String(secund)
     }
     /*
     // MARK: - Navigation

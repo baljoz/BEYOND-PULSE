@@ -59,7 +59,16 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         JSON.getTraningSesionOfTeam(token: self.sing.loadingInfo.token, id:indexTeam,page:pageOfSesion){  ( session:[traningSesion])-> Void in
             
             self.sing.serverData.sesion = session
-            self.rightBarButton.title = "Coaches\nWebsite"
+            
+            let button = UIButton(type: .system)
+            button.titleLabel!.lineBreakMode = .byWordWrapping
+            button.setTitle("Coaches \nWebsite", for: .normal)
+            button.titleLabel?.textColor = UIColor.white
+            
+            button.sizeToFit()
+            
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
+           
            
             
         }
@@ -171,7 +180,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
             gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
             gradient.endPoint = CGPoint(x: 1.0, y: 0.0)
             gradient.frame = cell.connectionView.bounds
-            gradient.cornerRadius = 10
+           
             
             cell.connectionView.layer.addSublayer(gradient)
             
@@ -180,6 +189,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
             cell.connectionView.layer.addSublayer(cell.connectionImage.layer)
 
             cell.maxHR.text = String(players[indexPath.row].maxHeartRate)
+            cell.connectionView.roundCorners(corners: [.bottomRight, .bottomLeft], radius: 10)
 
         return cell
         }
@@ -204,7 +214,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
         
        
-        cell.layer.cornerRadius=10
+       
         
         let gradient:CAGradientLayer = CAGradientLayer()
         var colorBottom : CGColor
@@ -233,7 +243,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
         gradient.endPoint = CGPoint(x: 1.0, y: 0.0)
         gradient.frame = cell.sessionConnectionView.bounds
-        gradient.cornerRadius = 10
+      
        
         cell.sessionConnectionView.layer.addSublayer(gradient)
         
@@ -246,6 +256,8 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         cell.backgroundColor = UIColor.clear
         cell.cellView.layer.cornerRadius=10
         
+        
+        cell.sessionConnectionView.roundCorners(corners: [.bottomRight, .bottomLeft], radius: 10)
             return cell
             
         
@@ -429,6 +441,14 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
     }
     */
 
+}
+extension UIView {
+    func roundCorners(corners:UIRectCorner, radius: CGFloat) {
+        let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        self.layer.mask = mask
+    }
 }
 
 extension UIView

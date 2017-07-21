@@ -75,7 +75,7 @@ class SessionViewController: UIViewController,UITableViewDataSource,UITableViewD
         gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
         gradient.endPoint = CGPoint(x: 1.0, y: 0.0)
         gradient.frame = cell.sessionConnectionView.bounds
-        gradient.cornerRadius = 10
+       
         
         cell.sessionConnectionView.layer.addSublayer(gradient)
         
@@ -83,8 +83,7 @@ class SessionViewController: UIViewController,UITableViewDataSource,UITableViewD
         cell.sessionConnectionView.layer.addSublayer(cell.connectionPlayer.layer)
         cell.sessionConnectionView.layer.addSublayer(cell.connectionImage.layer)
         
-        
-        
+        cell.sessionConnectionView.roundCorners(corners: [.bottomRight, .bottomLeft], radius: 10)
         return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

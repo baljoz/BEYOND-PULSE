@@ -54,34 +54,26 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         playerTable.backgroundColor = UIColor.clear
  
         tabControl.setTitle("Players ("+String(sing.playerOnTeam.count) + ")", forSegmentAt: 0)
-        
-        
-        JSON.getTraningSesionOfTeam(token: self.sing.loadingInfo.token, id:indexTeam,page:pageOfSesion){  ( session:[traningSesion])-> Void in
-            
-            self.sing.serverData.sesion = session
 
-        }
-    
-    
         
         menuButton.target=revealViewController()
         menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
         
         
      
-        let button = UIButton(type: .system)
-        button.titleLabel!.lineBreakMode = .byWordWrapping
-        button.setTitle("Coaches \n Website", for: .normal)
-        button.titleLabel?.textColor = UIColor.white
-        
-        button.sizeToFit()
-        
-      self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
-        
-        
-        
+        if let butView =  Bundle.main.loadNibNamed("buttonView", owner: self, options: nil)?.first as? CustomButton
+        {
+            butView.buttonImage.image = UIImage(named:"arrow")
+            butView.buttonName.text = "Coutch \n Website"
+            
+            rightBarButton.customView?.layer.addSublayer(butView.layer)
+          //  self.rightBarButton.customView?.addSubview(butView)
+            butView.sizeToFit()
+        }
+
+   
         startTrening.layer.cornerRadius=10
-      // rightBarButton.title = "Coaches \n Website"
+
         
         let gradient:CAGradientLayer = CAGradientLayer()
            let colorBottom = UIColor(red: 254.0/255.0, green: 92.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
@@ -109,11 +101,21 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
             navView.title.text = self.sing.coatch.team[0].name
      
            // navView.center = self.navigationBar.center
+    navView.image.contentMode = .scaleAspectFit
             self.navigationBar.topItem?.titleView = navView
+            self.navigationBar.topItem?.titleView?.center.x = self.view.center.x
+            
             navView.sizeToFit()
         }
         
+        JSON.getTraningSesionOfTeam(token: self.sing.loadingInfo.token, id:indexTeam,page:pageOfSesion){  ( session:[traningSesion])-> Void in
+            
+            self.sing.serverData.sesion = session
+            self.ses = session
+            
+        }
         
+ 
 }
 
     override func didReceiveMemoryWarning() {

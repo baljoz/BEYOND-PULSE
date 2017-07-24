@@ -53,6 +53,8 @@
 		07E2BE2D1F1C017900A134DE /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E2BE2C1F1C017900A134DE /* libsqlite3.0.tbd */; };
 		07E88F181F0F5B530022FC4C /* PlayerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E88F171F0F5B530022FC4C /* PlayerDetailsViewController.swift */; };
 		07EF5BE71F05012200476225 /* FirstScreanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EF5BE61F05012200476225 /* FirstScreanViewController.swift */; };
+		07FDB20D1F26060E00D35B85 /* buttonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07FDB20C1F26060E00D35B85 /* buttonView.xib */; };
+		07FDB2111F26069700D35B85 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FDB2101F26069700D35B85 /* CustomButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +157,8 @@
 		07E2BE2C1F1C017900A134DE /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		07E88F171F0F5B530022FC4C /* PlayerDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerDetailsViewController.swift; path = ../PlayerDetailsViewController.swift; sourceTree = "<group>"; };
 		07EF5BE61F05012200476225 /* FirstScreanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstScreanViewController.swift; path = Assets.xcassets/FirstScreanViewController.swift; sourceTree = "<group>"; };
+		07FDB20C1F26060E00D35B85 /* buttonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = buttonView.xib; sourceTree = "<group>"; };
+		07FDB2101F26069700D35B85 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		10CAC75485C41836B5E78DC4 /* Pods-BEYOND PULSE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BEYOND PULSE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BEYOND PULSE/Pods-BEYOND PULSE.debug.xcconfig"; sourceTree = "<group>"; };
 		E8F6056CD1D0A617B8F75847 /* Pods-BEYOND PULSE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BEYOND PULSE.release.xcconfig"; path = "Pods/Target Support Files/Pods-BEYOND PULSE/Pods-BEYOND PULSE.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -383,6 +387,8 @@
 				07DFEC201F1DD1F700280D65 /* navigationView.xib */,
 				07DFEC241F1DD2E600280D65 /* NavigationView.swift */,
 				076A45C91F22140B0075D01B /* AlertView.xib */,
+				07FDB20C1F26060E00D35B85 /* buttonView.xib */,
+				07FDB2101F26069700D35B85 /* CustomButton.swift */,
 			);
 			name = "Custom View";
 			sourceTree = "<group>";
@@ -541,6 +547,7 @@
 				073D5C4D1F175D2000FB76BA /* actionSheet.xib in Resources */,
 				072697241EE98B15005AC23A /* Assets.xcassets in Resources */,
 				072697221EE98B15005AC23A /* Main.storyboard in Resources */,
+				07FDB20D1F26060E00D35B85 /* buttonView.xib in Resources */,
 				076A45CA1F22140B0075D01B /* AlertView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -618,6 +625,7 @@
 				07BA88FE1F0BB9B8001C4637 /* Players.swift in Sources */,
 				07387E2D1EEA960B003E73D9 /* CoachViewController.swift in Sources */,
 				07906D1C1F051CCF00FB36D0 /* iOSDevCenters+GIF.swift in Sources */,
+				07FDB2111F26069700D35B85 /* CustomButton.swift in Sources */,
 				073D5C4F1F175EFD00FB76BA /* actionSheet.swift in Sources */,
 				07901C071EF960F20000F40A /* TraningSesionTableViewCell.swift in Sources */,
 				07266E581EE9A508005C5BFF /* ForgatPasswordViewController.swift in Sources */,

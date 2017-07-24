@@ -12,6 +12,8 @@ class SessionViewController: UIViewController,UITableViewDataSource,UITableViewD
     @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var sesionTable: UITableView!
 
+    @IBOutlet weak var navigationBar: UINavigationBar!
+    @IBOutlet weak var rightBarButton: UIBarButtonItem!
     
     var player = [Players]()
     var session = traningSesion()
@@ -25,6 +27,35 @@ class SessionViewController: UIViewController,UITableViewDataSource,UITableViewD
         sesionTable.backgroundColor = UIColor.clear
         sesionTable.separatorStyle = .none
         sesionTable.allowsSelection = false
+        
+      //  var time = String()
+        var len = session.started.charOfString(start:0,end:9)
+        print(len)
+         len = len+" - "
+        len  = len + session.started.charOfString(start:12,end:19)
+        len = len+" - "
+        len  = len+session.ended.charOfString(start:12,end:19)
+        if let navView =  Bundle.main.loadNibNamed("navigationView", owner: self, options: nil)?.first as? NavigationView
+        {
+            navView.image.image = self.sing.coatch.team[0].img
+            
+            navView.image.contentMode = .scaleAspectFit
+            
+            navView.title.text = self.sing.coatch.team[0].name
+            navView.sesionLength.text = len
+            self.navigationBar.topItem?.titleView = navView
+          navView.sizeToFit()
+        }
+
+        if let butView =  Bundle.main.loadNibNamed("buttonView", owner: self, options: nil)?.first as? CustomButton
+        {
+            butView.buttonImage.image = UIImage(named:"arrow")
+            butView.buttonName.text = "Coutch \n Website"
+            
+          rightBarButton.customView?.addSubview(butView) 
+            butView.sizeToFit()
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {

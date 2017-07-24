@@ -191,7 +191,7 @@ and performance</string>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WuD-RF-6Zj">
-                                <rect key="frame" x="120" y="217.5" width="135.5" height="34.5"/>
+                                <rect key="frame" x="120.5" y="217.5" width="135.5" height="34.5"/>
                                 <string key="text">Develop your team’s health
 and performance</string>
                                 <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="13"/>
@@ -336,7 +336,7 @@ and performance</string>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Remember me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1z8-v5-Ma7">
-                                <rect key="frame" x="111.5" y="439" width="101.5" height="24"/>
+                                <rect key="frame" x="112" y="439" width="101.5" height="24"/>
                                 <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -349,7 +349,7 @@ and performance</string>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VOF-4Y-pDg">
-                                <rect key="frame" x="120.5" y="261.5" width="135.5" height="34.5"/>
+                                <rect key="frame" x="120" y="261.5" width="135.5" height="34.5"/>
                                 <string key="text">Develop your team’s health
 and performance</string>
                                 <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="13"/>
@@ -383,7 +383,7 @@ and performance</string>
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Twb-Uf-hZU">
-                                <rect key="frame" x="214" y="436" width="51" height="31"/>
+                                <rect key="frame" x="214.5" y="436" width="51" height="31"/>
                                 <color key="onTintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="thumbTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </switch>
@@ -442,8 +442,11 @@ and performance</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="xZR-Ol-p3d">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
                                 <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="vRj-1F-d5e"/>
+                                </constraints>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </textAttributes>
@@ -455,11 +458,14 @@ and performance</string>
                                                 <action selector="clickOnBack:" destination="rfa-wX-axl" id="LFY-pT-Dd5"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" id="o81-a3-KMe">
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="115" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="x2q-6r-UTc">
-                                <rect key="frame" x="17.5" y="54" width="340" height="613"/>
+                                <rect key="frame" x="17.5" y="77" width="340" height="590"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="sesionCell" rowHeight="115" id="1rt-H9-gEL" customClass="SessionTableViewCell" customModule="BEYOND_PULSE" customModuleProvider="target">
@@ -593,6 +599,8 @@ and performance</string>
                     </navigationItem>
                     <connections>
                         <outlet property="backButton" destination="aYu-lh-RVa" id="h10-5q-NcP"/>
+                        <outlet property="navigationBar" destination="xZR-Ol-p3d" id="Rns-9x-53j"/>
+                        <outlet property="rightBarButton" destination="o81-a3-KMe" id="dfq-Kd-x3F"/>
                         <outlet property="sesionTable" destination="x2q-6r-UTc" id="kfi-Lw-O5w"/>
                     </connections>
                 </viewController>
@@ -604,8 +612,6 @@ and performance</string>
         <scene sceneID="zSd-Ab-YFC">
             <objects>
                 <navigationController id="y0O-8y-kSX" sceneMemberID="viewController">
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="667"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="blackTranslucent" id="RIw-3u-y0U">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -723,15 +729,13 @@ and performance</string>
                         <barButtonItem key="leftBarButtonItem" image="hamburger" id="rkw-v9-GpI">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" width="50" id="ss5-5G-VYJ">
-                            <inset key="imageInsets" minX="0.0" minY="50" maxX="0.0" maxY="10"/>
-                            <color key="tintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <barButtonItem key="rightBarButtonItem" image="coachs-website" width="50" id="ss5-5G-VYJ">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="clubNameLabel" destination="lVr-Mm-CYD" id="uCR-ld-qFw"/>
                         <outlet property="menuButton" destination="rkw-v9-GpI" id="wqu-sJ-O2W"/>
-                        <outlet property="rightNavigatioButton" destination="ss5-5G-VYJ" id="V2z-3M-2Ux"/>
                         <outlet property="teamTable" destination="9td-RF-RqC" id="rJf-kN-F5c"/>
                     </connections>
                 </viewController>
@@ -774,21 +778,24 @@ and performance</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="E6S-OM-kcv">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
                                 <color key="backgroundColor" red="0.2196078431372549" green="0.2196078431372549" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="ZBb-rV-cSQ"/>
+                                </constraints>
                                 <items>
                                     <navigationItem id="GQW-kL-2hf">
                                         <barButtonItem key="leftBarButtonItem" image="hamburger" id="VqN-xJ-45h">
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" id="Kye-Oc-S60">
+                                        <barButtonItem key="rightBarButtonItem" image="coachs-website" id="VEw-UK-HN9">
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oBw-dN-Yfx">
-                                <rect key="frame" x="16" y="65" width="343" height="29"/>
+                                <rect key="frame" x="16" y="88" width="343" height="29"/>
                                 <segments>
                                     <segment title="Players"/>
                                     <segment title="Traning Sesion"/>
@@ -799,7 +806,7 @@ and performance</string>
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="116" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="opN-1z-WhY">
-                                <rect key="frame" x="16" y="107.5" width="343" height="559.5"/>
+                                <rect key="frame" x="16" y="130.5" width="343" height="536.5"/>
                                 <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -937,7 +944,7 @@ and performance</string>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="113" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VIt-m9-0TH">
-                                <rect key="frame" x="16" y="108" width="343" height="559"/>
+                                <rect key="frame" x="16" y="131" width="343" height="536"/>
                                 <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="traningSesion" rowHeight="113" id="Nbq-sq-fEb" customClass="TraningSesionTableViewCell" customModule="BEYOND_PULSE" customModuleProvider="target">
@@ -1045,9 +1052,9 @@ and performance</string>
                     </view>
                     <connections>
                         <outlet property="menuButton" destination="VqN-xJ-45h" id="sOx-hc-GOF"/>
-                        <outlet property="navigationBar" destination="E6S-OM-kcv" id="ZZB-ZD-7hc"/>
+                        <outlet property="navigationBar" destination="E6S-OM-kcv" id="JSH-Gw-zCJ"/>
                         <outlet property="playerTable" destination="opN-1z-WhY" id="4OM-ur-Twl"/>
-                        <outlet property="rightBarButton" destination="Kye-Oc-S60" id="hbm-24-yed"/>
+                        <outlet property="rightBarButton" destination="VEw-UK-HN9" id="kaJ-C7-0oP"/>
                         <outlet property="startTrening" destination="laZ-IM-7Hx" id="DXU-M7-kRm"/>
                         <outlet property="tabControl" destination="oBw-dN-Yfx" id="60C-Hk-0uB"/>
                         <outlet property="tranningTable" destination="VIt-m9-0TH" id="rhs-sT-R1P"/>
@@ -1143,7 +1150,7 @@ and performance</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Training sessions in progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Xh-kZ-Sej">
-                                <rect key="frame" x="76" y="135" width="224" height="22.5"/>
+                                <rect key="frame" x="75.5" y="135" width="224" height="22.5"/>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1242,8 +1249,11 @@ and performance</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="bSw-Ju-CWx">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
                                 <color key="backgroundColor" red="0.2196078431372549" green="0.2196078431372549" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="OPu-VP-4lh"/>
+                                </constraints>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </textAttributes>
@@ -1251,7 +1261,7 @@ and performance</string>
                                     <navigationItem title="Title" id="Uhn-mh-j08">
                                         <barButtonItem key="leftBarButtonItem" image="arrowLeft" style="plain" id="xut-uQ-ZS8">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3fW-eM-11D">
-                                                <rect key="frame" x="16" y="7" width="83" height="30"/>
+                                                <rect key="frame" x="16" y="30" width="83" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Back">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1265,18 +1275,21 @@ and performance</string>
                                                 <action selector="clickOnBack:" destination="Pla-kV-vG9" id="ykV-Kg-tKI"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" image="coachs-website" id="CAs-si-KAt">
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lCU-cB-Yn9">
-                                <rect key="frame" x="56" y="59" width="85" height="85"/>
+                                <rect key="frame" x="56" y="82" width="85" height="85"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="85" id="M2X-JR-7U7"/>
                                     <constraint firstAttribute="width" constant="85" id="OcT-Og-LGp"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xX-ha-wwt">
-                                <rect key="frame" x="164" y="63" width="176" height="21"/>
+                                <rect key="frame" x="164" y="86" width="176" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="176" id="m2J-wr-pPk"/>
                                     <constraint firstAttribute="height" constant="21" id="nVr-FX-PUd"/>
@@ -1286,32 +1299,32 @@ and performance</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qu7-dV-Ape">
-                                <rect key="frame" x="206.5" y="100" width="25.5" height="16"/>
+                                <rect key="frame" x="206.5" y="123" width="25.5" height="16"/>
                                 <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="12"/>
                                 <color key="textColor" red="0.61960784313725492" green="0.72941176470588232" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNv-ZA-OyE">
-                                <rect key="frame" x="228" y="152" width="25.5" height="16"/>
+                                <rect key="frame" x="228" y="175" width="25.5" height="16"/>
                                 <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="12"/>
                                 <color key="textColor" red="0.61960784310000006" green="0.72941176470000002" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NzZ-9s-na8">
-                                <rect key="frame" x="18" y="300" width="338" height="1"/>
+                                <rect key="frame" x="18" y="323" width="338" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="0.5" id="vRr-Ri-bgG"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Belt Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UwO-lu-1Wz">
-                                <rect key="frame" x="19" y="266" width="180.5" height="24"/>
+                                <rect key="frame" x="19" y="289" width="180.5" height="24"/>
                                 <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZfK-eE-Rgm">
-                                <rect key="frame" x="19" y="308" width="193" height="20"/>
+                                <rect key="frame" x="19" y="331" width="193" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="193" id="uAL-kR-As0"/>
                                 </constraints>
@@ -1320,13 +1333,13 @@ and performance</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TDO-vs-wHH">
-                                <rect key="frame" x="18" y="336" width="31.5" height="20"/>
+                                <rect key="frame" x="18" y="359" width="31.5" height="20"/>
                                 <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vLd-AY-QLT">
-                                <rect key="frame" x="18" y="364" width="41.5" height="22"/>
+                                <rect key="frame" x="18" y="387" width="41.5" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="Y7o-HO-W45"/>
                                 </constraints>
@@ -1335,13 +1348,13 @@ and performance</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jdc-dm-6FA">
-                                <rect key="frame" x="74.5" y="366.5" width="14" height="20"/>
+                                <rect key="frame" x="74.5" y="389" width="14" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="14" id="r29-0u-kKP"/>
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="56" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TTX-VN-zM4">
-                                <rect key="frame" x="0.0" y="522.5" width="375" height="144.5"/>
+                                <rect key="frame" x="0.0" y="545.5" width="375" height="121.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="tsesion" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tsesion" rowHeight="56" id="2es-tA-48k" customClass="TraningSesionTableViewCell" customModule="BEYOND_PULSE" customModuleProvider="target">
@@ -1396,68 +1409,68 @@ and performance</string>
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Training Sessions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NxY-rC-2Dd">
-                                <rect key="frame" x="11" y="485.5" width="123.5" height="24"/>
+                                <rect key="frame" x="11" y="508.5" width="123.5" height="24"/>
                                 <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gP-DT-aod">
-                                <rect key="frame" x="101.5" y="366.5" width="31.5" height="20"/>
+                                <rect key="frame" x="101.5" y="389" width="31.5" height="20"/>
                                 <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lkg-Pw-G14">
-                                <rect key="frame" x="16" y="471.5" width="343" height="1"/>
+                                <rect key="frame" x="16" y="494.5" width="343" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="0.5" id="cdr-Og-a3Y"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Position:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mU6-CJ-ysU">
-                                <rect key="frame" x="163" y="100" width="41.5" height="16"/>
+                                <rect key="frame" x="163" y="123" width="41.5" height="16"/>
                                 <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max Heart Rate:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRA-rx-M5j">
-                                <rect key="frame" x="163" y="126" width="75" height="16"/>
+                                <rect key="frame" x="163" y="149" width="75" height="16"/>
                                 <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Birth:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNc-zX-1In">
-                                <rect key="frame" x="164" y="152" width="62" height="16"/>
+                                <rect key="frame" x="164" y="175" width="62" height="16"/>
                                 <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ny0-cf-Crg">
-                                <rect key="frame" x="239" y="126" width="25.5" height="16"/>
+                                <rect key="frame" x="239" y="149" width="25.5" height="16"/>
                                 <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="12"/>
                                 <color key="textColor" red="0.61960784313725492" green="0.72941176470588232" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Height:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZrW-ca-dXn">
-                                <rect key="frame" x="164" y="178" width="34" height="16"/>
+                                <rect key="frame" x="164" y="201" width="34" height="16"/>
                                 <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yG9-ZS-Zp0">
-                                <rect key="frame" x="208" y="176" width="29.5" height="18.5"/>
+                                <rect key="frame" x="208" y="199" width="29.5" height="18.5"/>
                                 <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="14"/>
                                 <color key="textColor" red="0.61960784310000006" green="0.72941176470000002" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXe-AP-Iom">
-                                <rect key="frame" x="164" y="204" width="36.5" height="16"/>
+                                <rect key="frame" x="164" y="227" width="36.5" height="16"/>
                                 <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K83-3x-oqc">
-                                <rect key="frame" x="202.5" y="201" width="25.5" height="21"/>
+                                <rect key="frame" x="202.5" y="224" width="25.5" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="i7f-gB-7de"/>
                                 </constraints>
@@ -1466,19 +1479,19 @@ and performance</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GuF-gN-jDb">
-                                <rect key="frame" x="164" y="230" width="35.5" height="16"/>
+                                <rect key="frame" x="164" y="253" width="35.5" height="16"/>
                                 <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="692-nk-wyd">
-                                <rect key="frame" x="201.5" y="230" width="25.5" height="16"/>
+                                <rect key="frame" x="201.5" y="253" width="25.5" height="16"/>
                                 <fontDescription key="fontDescription" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="12"/>
                                 <color key="textColor" red="0.61960784310000006" green="0.72941176470000002" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3G-Gm-mkC">
-                                <rect key="frame" x="16" y="401" width="343" height="57"/>
+                                <rect key="frame" x="16" y="424" width="343" height="57"/>
                                 <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="2ys-Vp-bPD"/>
@@ -1598,7 +1611,7 @@ and performance</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hQs-mW-au1">
-                                <rect key="frame" x="0.0" y="40" width="375" height="627"/>
+                                <rect key="frame" x="0.0" y="67" width="375" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="0" id="vei-hc-b14">
@@ -1609,7 +1622,7 @@ and performance</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DATA AND NOTIFICATIONS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ON-96-ong">
-                                                    <rect key="frame" x="5" y="15.5" width="144" height="13"/>
+                                                    <rect key="frame" x="5" y="16" width="144" height="13"/>
                                                     <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="13"/>
                                                     <color key="textColor" red="0.38823529411764707" green="0.38823529411764707" blue="0.38823529411764707" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1697,7 +1710,7 @@ and performance</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LANGUAGE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LlK-9L-RDd">
-                                                    <rect key="frame" x="5" y="15.5" width="62" height="13"/>
+                                                    <rect key="frame" x="5" y="16" width="62" height="13"/>
                                                     <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1855,7 +1868,7 @@ and performance</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONTACT AND SUPPORT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lA4-Vm-Dle">
-                                                    <rect key="frame" x="13" y="21.5" width="134.5" height="13"/>
+                                                    <rect key="frame" x="13" y="22" width="134.5" height="13"/>
                                                     <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1939,8 +1952,11 @@ and performance</string>
                                 </connections>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="m7c-JS-1cz">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
                                 <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="HTI-vO-1mX"/>
+                                </constraints>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </textAttributes>
@@ -1949,9 +1965,8 @@ and performance</string>
                                         <barButtonItem key="leftBarButtonItem" image="hamburger" id="yoh-Rw-wsU">
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" width="50" id="hgm-cD-cgA">
-                                            <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
-                                            <color key="tintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <barButtonItem key="rightBarButtonItem" image="coachs-website" id="Tsx-Jm-DNe">
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -1963,8 +1978,8 @@ and performance</string>
                             <constraint firstItem="hQs-mW-au1" firstAttribute="bottom" secondItem="LLZ-N3-bla" secondAttribute="top" id="O5A-Tf-U7d"/>
                             <constraint firstItem="m7c-JS-1cz" firstAttribute="leading" secondItem="CRL-hl-LJi" secondAttribute="leading" id="SNp-s8-PQf"/>
                             <constraint firstAttribute="trailing" secondItem="hQs-mW-au1" secondAttribute="trailing" id="UP4-Gp-w6h"/>
+                            <constraint firstItem="hQs-mW-au1" firstAttribute="top" secondItem="m7c-JS-1cz" secondAttribute="bottom" id="X3r-cY-Tjv"/>
                             <constraint firstItem="m7c-JS-1cz" firstAttribute="top" secondItem="CRL-hl-LJi" secondAttribute="top" id="dyd-n5-64p"/>
-                            <constraint firstItem="hQs-mW-au1" firstAttribute="top" secondItem="Zg4-M2-dDS" secondAttribute="bottom" constant="20" id="i5L-UQ-HbB"/>
                             <constraint firstAttribute="trailing" secondItem="m7c-JS-1cz" secondAttribute="trailing" id="mtO-1L-5IN"/>
                         </constraints>
                     </view>
@@ -1975,7 +1990,7 @@ and performance</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6t5-ad-T7a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1652" y="-584"/>
+            <point key="canvasLocation" x="1652" y="-584.25787106446785"/>
         </scene>
         <!--Coach View Controller-->
         <scene sceneID="UIi-nE-GZm">
@@ -2143,6 +2158,7 @@ and performance</string>
     <resources>
         <image name="arrow" width="13" height="21"/>
         <image name="arrowLeft" width="13" height="21"/>
+        <image name="coachs-website" width="38" height="24"/>
         <image name="emailIco" width="18" height="13"/>
         <image name="hamburger" width="23" height="19"/>
         <image name="infoIco" width="22" height="22"/>

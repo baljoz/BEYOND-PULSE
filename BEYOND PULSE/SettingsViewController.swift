@@ -28,7 +28,7 @@ class SettingsViewController: UIViewController,UITableViewDataSource,UITableView
         
         let button = UIButton(type: .system)
         button.titleLabel!.lineBreakMode = .byWordWrapping
-        button.setTitle("Coaches \nWebsite", for: .normal)
+        button.setTitle("Coaches \n Website", for: .normal)
         button.titleLabel?.textColor = UIColor.white
         
         button.sizeToFit()

@@ -140,7 +140,7 @@ class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITabl
        
     }
     @IBAction func clickSync(_ sender: Any) {
-        let message = NSAttributedString(string: "You are about to unpair this player device from Beyond Pulse application.", attributes: [
+        /*let message = NSAttributedString(string: "You are about to unpair this player device from Beyond Pulse application.", attributes: [
             NSFontAttributeName:UIFont.systemFont(ofSize: 15),
             NSForegroundColorAttributeName : UIColor.white
             ])
@@ -176,7 +176,16 @@ class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITabl
         menu.addAction(retry)
      
         
-        present(menu,animated: true , completion: nil)
+        present(menu,animated: true , completion: nil)*/
+        
+        let popUp = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "alterView") as! AlterViewController
+        
+        self.addChildViewController(popUp)
+        popUp.view.frame = self.view.frame
+        self.view.addSubview(popUp.view)
+        
+        popUp.didMove(toParentViewController: self)
+        
 
     }
 

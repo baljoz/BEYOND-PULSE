@@ -58,39 +58,39 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BEYOND PULSE/ServerComunication.swift"
-            timestampString = "522247184.647361"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "860"
-            endingLineNumber = "860">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BEYOND PULSE/ServerComunication.swift"
-            timestampString = "522247184.647361"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "865"
-            endingLineNumber = "865">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BEYOND PULSE/ServerComunication.swift"
-            timestampString = "522247184.647361"
+            timestampString = "522664740.8685"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "861"
             endingLineNumber = "861">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BEYOND PULSE/ServerComunication.swift"
+            timestampString = "522664740.8685"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "866"
+            endingLineNumber = "866">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BEYOND PULSE/ServerComunication.swift"
+            timestampString = "522664740.8685"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "862"
+            endingLineNumber = "862">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -350,7 +350,7 @@
                   moduleName = "BEYOND PULSE"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/milos/Desktop/xCodeProject/BEYONDPULSE/BLEController.h"
-                  timestampString = "522592823.192459"
+                  timestampString = "522667337.734712"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "24"
@@ -365,7 +365,7 @@
                   moduleName = "BEYOND PULSE"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/milos/Desktop/xCodeProject/BEYONDPULSE/BLEController.h"
-                  timestampString = "522592823.19678"
+                  timestampString = "522667337.73843"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "24"
@@ -430,11 +430,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BEYOND PULSE/PlayerViewController.swift"
-            timestampString = "522591520.716312"
+            timestampString = "522658067.607696"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "428"
-            endingLineNumber = "428"
+            startingLineNumber = "435"
+            endingLineNumber = "435"
             landmarkName = "pressCancel()"
             landmarkType = "7">
          </BreakpointContent>

@@ -407,7 +407,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         menu.addAction(cancle)
     
         present(menu,animated: true , completion: nil)*/
-       
+       /*
         if let view2 = Bundle.main.loadNibNamed("actionSheet", owner: self, options: nil)?.first as? actionSheet
         {
             view2.frame = CGRect(x:20,y:self.view.frame.maxY-view2.frame.maxY-20,width:self.view.frame.width-40,height:view2.frame.height)
@@ -420,12 +420,19 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
             
             self.view.addSubview(view2)
             
-        }
+        }*/
+        let popUp = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popUp") as! ActionSheetViewController
+        
+        self.addChildViewController(popUp)
+        popUp.view.frame = self.view.frame
+        self.view.addSubview(popUp.view)
+        
+        popUp.didMove(toParentViewController: self)
        
     }
     func pressCancel()
     {
-        
+        self.view.removeFromSuperview()
     }
     func pressContinue()
     {
@@ -442,7 +449,8 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    
 }
 extension UIView {
     func roundCorners(corners:UIRectCorner, radius: CGFloat) {

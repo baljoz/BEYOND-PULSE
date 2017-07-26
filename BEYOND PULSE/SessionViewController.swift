@@ -129,8 +129,8 @@ class SessionViewController: UIViewController,UITableViewDataSource,UITableViewD
         
         
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "selP") as! PlayerViewController
-        newViewController.players = sing.serverData.playerOnTeam
-        newViewController.ses = sing.serverData.sesion
+        newViewController.players = sing.playerOnTeam
+        newViewController.ses = sing.Sesion
      
         
         newViewController.pageOfSesion = pageOfSeeions

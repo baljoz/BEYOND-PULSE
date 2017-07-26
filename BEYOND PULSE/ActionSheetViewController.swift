@@ -10,6 +10,9 @@ import UIKit
 
 class ActionSheetViewController: UIViewController {
     @IBOutlet weak var popUpView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var cancelButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()

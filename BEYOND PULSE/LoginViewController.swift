@@ -91,6 +91,8 @@ class LoginViewController: UIViewController {
                 let id  = self.getTokenIdCoach(token: ress.token)
                 self.JSON.getCoachInfo(id: id, token: ress.token) { (coa:CoachInfo) -> Void in
                  
+                    if coa.stat.statusCode == "BP_200"
+                    {
                     self.sing.coatch = coa
                     
                     let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -102,19 +104,57 @@ class LoginViewController: UIViewController {
                     DispatchQueue.main.async {
                         
                     self.present(next, animated: true, completion: nil)
-                 
+                        }
+                    }
+                    
+                    else if coa.stat.statusCode == "BP_403"
+                    {
+                        self.JSON.refreshToken(token: ress.refreshToken) {(res:loginResponse)-> Void in
+                            self.sing.loadingInfo = res
+                            let id  = self.getTokenIdCoach(token: ress.token)
+                            self.JSON.getCoachInfo(id: id, token: ress.token) { (coa:CoachInfo) -> Void in
+                                
+                                if coa.stat.statusCode == "BP_200"
+                                {
+                                    self.sing.coatch = coa
+                                    
+                                    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                                    let newViewController = storyBoard.instantiateViewController(withIdentifier: "team") as! SWRevealViewController
+                                    
+                                    newViewController.sirnaslajdera = (self.view.frame.size.width / 3) * 2
+                                    
+                                    let next = newViewController
+                                    DispatchQueue.main.async {
+                                        
+                                        self.present(next, animated: true, completion: nil)
+                                        
+                                    }
+
+                            
+                                }
+                            }
+                        }
                     }
                 }
             }
             else{
+               
                 DispatchQueue.main.async {
-                let alert = UIAlertController(title: ress.stat.statusCode, message:ress.stat.statusDescription, preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-                }
-            }
-        }
+               let popUp = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "alterView") as! AlterViewController
+                popUp.custom = true
+                popUp.titles = "Erorr"
+                popUp.message = ress.stat.statusDescription
+                
+                //popUp.comitButton.isHidden = true
+                self.addChildViewController(popUp)
+                popUp.view.frame = self.view.frame
+                self.view.addSubview(popUp.view)
+                
+                popUp.didMove(toParentViewController: self)
+                }}
+        
       
+    }
     }
     //
     //on token get id

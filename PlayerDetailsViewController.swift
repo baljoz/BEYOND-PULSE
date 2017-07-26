@@ -132,8 +132,8 @@ class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITabl
         
         
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "selP") as! PlayerViewController
-        newViewController.players = sing.serverData.playerOnTeam
-          newViewController.ses = sing.serverData.sesion
+        newViewController.players = sing.playerOnTeam
+          newViewController.ses = sing.Sesion
         newViewController.pageOfSesion = pageOfSeeions
         revealviewcontroller.pushFrontViewController(newViewController, animated: true)
      
@@ -179,7 +179,7 @@ class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITabl
         present(menu,animated: true , completion: nil)*/
         
         let popUp = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "alterView") as! AlterViewController
-        
+      
         self.addChildViewController(popUp)
         popUp.view.frame = self.view.frame
         self.view.addSubview(popUp.view)

@@ -10,7 +10,16 @@ import UIKit
 
 class AlterViewController: UIViewController {
 
+    @IBOutlet weak var horisontalVIew: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var popUpView: UIView!
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var comitButton: UIButton!
+    @IBOutlet weak var closeButton: UIButton!
+    var titles = String()
+    var message = String()
+    var custom = false
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,8 +27,16 @@ class AlterViewController: UIViewController {
         popUpView.layer.cornerRadius = 10
         let col = UIColor(red: 12/255.0, green: 12/255.0, blue: 22/255.0, alpha: 1)
 
-          self.view.backgroundColor = col.withAlphaComponent(0.2)
-        
+          self.view.backgroundColor = col.withAlphaComponent(0.6)
+        closeButton.isHidden = true
+        if custom{
+       titleLabel.text = titles
+        messageLabel.text = message
+        comitButton.isHidden = true
+            cancelButton.isHidden = true
+        closeButton.isHidden = false
+            horisontalVIew.isHidden=true
+        }
     }
 
     @IBAction func ClosePopUP(_ sender: Any) {
@@ -32,6 +49,11 @@ class AlterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func closeButtonOnClick(_ sender: Any) {
+        
+        self.view.removeFromSuperview()
+
+    }
 
     /*
     // MARK: - Navigation

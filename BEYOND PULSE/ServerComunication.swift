@@ -17,6 +17,7 @@ class serverCommunications
     var settings = SettingsData()
     var playerOnTeam = [Players]()
     var sesion = [traningSesion]()
+    var sing = MySingleton.sharedInstance
     var idSesion = Int()
     init() {
         
@@ -190,6 +191,7 @@ class serverCommunications
                 var sett = SettingsData()
                 var clu = club()
                 if statuss?["code"] as? String == "BP_200"{
+                    
                     var data = responseJSON["data"] as? [String: Any]
                     
                     
@@ -245,21 +247,35 @@ class serverCommunications
                     sett.language = setings?["language"] as? String ?? "EU"
                     sett.notificationsEnabled = setings?["notificationsEnabled"] as? Bool ?? false
                     
+                    var coa = CoachInfo()
+                    coa.info = couch
+                    coa.settings = sett
+                    coa.coutchClub = clu
+                    coa.team = teams
+                    coa.stat = checkStatus
+                    handler(coa)
                 }
-                var coa = CoachInfo()
-                coa.info = couch
-                coa.settings = sett
-                coa.coutchClub = clu
-                coa.team = teams
-                coa.stat = checkStatus
-                handler(coa)
+              else if statuss?["code"] as? String == "BP_403"
+                {
+                    self.refreshToken(token: self.sing.loadingInfo.refreshToken) { (ress:loginResponse) -> Void in
+                        self.sing.loadingInfo = self.res
+                        self.getCoachInfo(id: id, token: ress.token) { (coac:CoachInfo) -> Void in
+                            
+                            
+                     handler(coac)
+                        
+                        
+                }
                 
             }
-            
+                }
+        
+            }
         }
         task.resume()
         
     }
+    
     
     func sendSettings(dataSync : Bool , notification : Bool , language : String,token:String,id:Int)
      {
@@ -364,14 +380,25 @@ class serverCommunications
                         play.append(pl)
                         i = i + 1
                     }
-                
+                    handler(play)
+
                 }
                     
-                    handler(play)
-                    
+                else if status?["code"] as? String == "BP_403"
+                {
+                    self.refreshToken(token: self.res.refreshToken){  ( res:loginResponse)-> Void in
+                        self.sing.loadingInfo = res
+                       self.getPlayersOfTeam(token:res.token , id: id) { ( player:[Players])-> Void in
+                        
+                        handler(play)
+                        
+                }
+
                 }
             
             }
+        }
+    }
         task.resume()
 
         }

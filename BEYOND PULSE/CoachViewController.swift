@@ -96,7 +96,7 @@ class CoachViewController: UIViewController,UITableViewDataSource,UITableViewDel
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         JSON.getPlayersOfTeam(token:sing.loadingInfo.token , id: sing.coatch.team[indexPath.row].id) { ( player:[Players])-> Void in
-            self.sing.serverData.sesion.removeAll()
+            self.sing.Sesion.removeAll()
             self.sing.playerOnTeam = player
             self.sing.teamSelectId = self.sing.coatch.team[indexPath.row].id
             let newViewController = storyBoard.instantiateViewController(withIdentifier: "selP") as! PlayerViewController

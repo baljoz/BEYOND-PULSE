@@ -256,8 +256,8 @@
 				07CC00BB1F2095B800045D42 /* Roboto-Bold.ttf */,
 				07CC00BE1F20A50300045D42 /* MyriadPro-Regular.otf */,
 				073775D31F27142500D1ABCC /* ActionSheetViewController.swift */,
-				07DFEC261F1DE86300280D65 /* Custom View */,
 				073775D71F273E8C00D1ABCC /* AlterViewController.swift */,
+				07DFEC261F1DE86300280D65 /* Custom View */,
 			);
 			path = "BEYOND PULSE";
 			sourceTree = "<group>";

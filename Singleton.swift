@@ -14,7 +14,7 @@ class MySingleton {
     
     static let sharedInstance = MySingleton()
     
-    var serverData = serverCommunications()
+  //  var serverData = serverCommunications()
     var teamSelectId = Int()
     
     var coatch = CoachInfo()

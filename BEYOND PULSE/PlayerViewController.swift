@@ -110,7 +110,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
         JSON.getTraningSesionOfTeam(token: self.sing.loadingInfo.token, id:indexTeam,page:pageOfSesion){  ( session:[traningSesion])-> Void in
             
-            self.sing.serverData.sesion = session
+            self.sing.Sesion = session
             self.ses = session
             
         }
@@ -278,13 +278,13 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         {
             
             if ses.count == 0 {
-                if sing.serverData.sesion.count == 0 {
+                if sing.Sesion.count == 0 {
                 JSON.getTraningSesionOfTeam(token: self.sing.loadingInfo.token, id:indexTeam,page:pageOfSesion){  ( session:[traningSesion])-> Void in
 
-                 self.sing.serverData.sesion = session
+                 self.sing.Sesion = session
                     }
                 }
-                self.ses = self.sing.serverData.sesion
+                self.ses = self.sing.Sesion
                     self.pageOfSesion = self.pageOfSesion + 1
                 DispatchQueue.main.async(execute: {
      
@@ -348,7 +348,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if tabControl.selectedSegmentIndex == 1 {
             self.JSON.sesion.removeAll()
-            JSON.getTraningSesionOfTeam(token: self.sing.serverData.res.token, id:indexTeam,page:pageOfSesion){  ( se:[traningSesion])-> Void in
+            JSON.getTraningSesionOfTeam(token: self.sing.loadingInfo.token, id:indexTeam,page:pageOfSesion){  ( se:[traningSesion])-> Void in
                 
                 for s in self.JSON.sesion{
                 

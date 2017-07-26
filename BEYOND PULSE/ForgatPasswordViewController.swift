@@ -20,16 +20,25 @@ class ForgatPasswordViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         
+        let gradient:CAGradientLayer = CAGradientLayer()
+        let colorBottom = UIColor(red: 158.0/255.0, green: 33.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
+        let colorTop = UIColor(red: 255.0/255.0, green: 156.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
+        //colorBottom
+        gradient.colors = [colorTop, colorBottom]
+        gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
+        gradient.endPoint = CGPoint(x: 1.0, y: 0.0)
+        gradient.frame = submitButton.bounds
+        gradient.cornerRadius = 2
         
-        submitButton.layer.cornerRadius = 1
-        submitButton.layer.cornerRadius=1
-        
-        mailView.backgroundColor = UIColor.gray.withAlphaComponent(0.6)
+        submitButton.layer.addSublayer(gradient)
+
+        let col = UIColor(red: 31.0/255.0, green: 31.0/255.0, blue: 31.0/255.0, alpha: 1.0)
+        mailView.backgroundColor = col.withAlphaComponent(0.6)
         mailView.layer.cornerRadius = 2;
        mailView.layer.cornerRadius=5
     
         mailView.layer.borderWidth = 1
-    mailView.layer.borderColor = UIColor(red: 66, green: 66, blue: 66, alpha: 1).cgColor
+    mailView.layer.borderColor = UIColor(red: 61/255.0, green: 61/255.0, blue: 61/255.0, alpha: 1).cgColor
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,9 +61,19 @@ class ForgatPasswordViewController: UIViewController {
         else
         {
             
-            let alert = UIAlertController(title: "Alert", message:ress.stat.statusDescription, preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            DispatchQueue.main.async {
+                let popUp = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "alterView") as! AlterViewController
+                popUp.custom = true
+                popUp.titles = "Erorr"
+                popUp.message = ress.stat.statusDescription
+                
+                //popUp.comitButton.isHidden = true
+                self.addChildViewController(popUp)
+                popUp.view.frame = self.view.frame
+                self.view.addSubview(popUp.view)
+                
+                popUp.didMove(toParentViewController: self)
+            }
         }
         
     }

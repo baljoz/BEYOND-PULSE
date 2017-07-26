@@ -79,6 +79,7 @@ class SelectTeamViewController: UIViewController,UITableViewDataSource,UITableVi
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         JSON.getPlayersOfTeam(token:sing.loadingInfo.token , id: sing.coatch.team[indexPath.row].id) { ( player:[Players])-> Void in
         
+            
             self.sing.playerOnTeam = player
        let newViewController = storyBoard.instantiateViewController(withIdentifier: "selP") as! PlayerViewController
             newViewController.indexTeam = indexPath.row

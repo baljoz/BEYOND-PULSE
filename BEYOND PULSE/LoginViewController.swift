@@ -12,7 +12,8 @@ import JWTDecode
 class LoginViewController: UIViewController {
     @IBOutlet weak var passwordIcon: UIImageView!
 
-    @IBOutlet weak var `switch`: UISwitch!
+    
+    @IBOutlet weak var check: UISwitch!
     @IBOutlet weak var emailIcon: UIImageView!
     @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var textfieldView: UIView!
@@ -58,7 +59,15 @@ class LoginViewController: UIViewController {
         continueButton.layer.cornerRadius=10
           emailIcon.contentMode = .scaleAspectFit
         passwordIcon.contentMode = .scaleAspectFit // Do any additional setup after loading the view.
-        `switch`.transform = CGAffineTransform(scaleX: 0.6, y: 0.6);
+        check.transform = CGAffineTransform(scaleX: 0.6, y: 0.6);
+        if let cek = UserDefaults.standard.object(forKey: "switch")  {
+            if cek as! Bool == true {
+            
+            check.isOn = cek as! Bool
+            eMailTextfild.text = UserDefaults.standard.object(forKey: "email") as! String
+            passwordTextfild.text = UserDefaults.standard.object(forKey: "password") as! String
+            }
+        }
        
                }
 
@@ -80,7 +89,14 @@ class LoginViewController: UIViewController {
 
     @IBAction func onClickContinue(_ sender: Any) {
         
- 
+        let userDefaults = UserDefaults.standard
+        if check.isOn{
+            
+            userDefaults.set(eMailTextfild.text, forKey: "email")
+            userDefaults.set(passwordTextfild.text,forKey:"password")
+        }
+        userDefaults.set(check.isOn,forKey:"switch")
+        userDefaults.synchronize()
         
         JSON.loginGetToken(username: eMailTextfild.text!,password: passwordTextfild.text!) { (ress:loginResponse) -> Void in
         

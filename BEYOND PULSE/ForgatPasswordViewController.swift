@@ -30,15 +30,15 @@ class ForgatPasswordViewController: UIViewController {
         gradient.frame = submitButton.bounds
         gradient.cornerRadius = 2
         
+        submitButton.layer.masksToBounds = true
         submitButton.layer.addSublayer(gradient)
 
         let col = UIColor(red: 31.0/255.0, green: 31.0/255.0, blue: 31.0/255.0, alpha: 1.0)
         mailView.backgroundColor = col.withAlphaComponent(0.6)
-        mailView.layer.cornerRadius = 2;
        mailView.layer.cornerRadius=5
     
         mailView.layer.borderWidth = 1
-    mailView.layer.borderColor = UIColor(red: 61/255.0, green: 61/255.0, blue: 61/255.0, alpha: 1).cgColor
+    mailView.layer.borderColor = UIColor(red: 61.0/255.0, green: 61.0/255.0, blue: 61.0/255.0, alpha: 1).cgColor
     }
 
     override func didReceiveMemoryWarning() {

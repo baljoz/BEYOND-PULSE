@@ -28,7 +28,7 @@ class CoachViewController: UIViewController,UITableViewDataSource,UITableViewDel
         
     
         coachImage.layer.borderWidth = 1.5
-        coachImage.layer.borderColor = UIColor(red: 255, green: 255, blue: 255, alpha: 1).cgColor
+        coachImage.layer.borderColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1).cgColor
         coachImage.layer.cornerRadius=10
         coachImage.contentMode = .scaleAspectFit
         coachImage.image = sing.coatch.info.image
@@ -41,7 +41,7 @@ class CoachViewController: UIViewController,UITableViewDataSource,UITableViewDel
         
         let gradient:CAGradientLayer = CAGradientLayer()
         let colorBottom = UIColor(red: 48.0/255.0, green: 48.0/255.0, blue: 48.0/255.0, alpha: 1.0).cgColor
-        let colorTop = UIColor(red: 61.0, green: 62.0/255.0, blue: 64.0/255.0, alpha: 1.0).cgColor
+        let colorTop = UIColor(red: 61.0/255.0, green: 62.0/255.0, blue: 64.0/255.0, alpha: 1.0).cgColor
         //colorBottom
         gradient.colors = [colorTop, colorBottom]
         gradient.startPoint = CGPoint(x: 0.0, y: 0.0)

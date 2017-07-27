@@ -75,14 +75,7 @@ class CoachViewController: UIViewController,UITableViewDataSource,UITableViewDel
         selectionView.backgroundColor = UIColor(red: 61.0/255.0, green:61.0/255.0 , blue: 61.0/255.0, alpha: 1.0)
         
         cell.selectedBackgroundView = selectionView
-        /*
-         cell.imageTeam.layer.borderColor = UIColor.black.cgColor
-         cell.imageTeam.layer.cornerRadius = cell.imageTeam.frame.height/2
-        cell.imageTeam.clipsToBounds = true
-        cell.imageTeam.backgroundColor = UIColor.black
-        cell.selectionStyle = .none
-        
-        */
+    
         
 
         return cell
@@ -96,6 +89,8 @@ class CoachViewController: UIViewController,UITableViewDataSource,UITableViewDel
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         JSON.getPlayersOfTeam(token:sing.loadingInfo.token , id: sing.coatch.team[indexPath.row].id) { ( player:[Players])-> Void in
+            if self.sing.loadingInfo.stat.statusCode == "BP_200"
+            {
             self.sing.Sesion.removeAll()
             self.sing.playerOnTeam = player
             self.sing.teamSelectId = self.sing.coatch.team[indexPath.row].id
@@ -106,7 +101,25 @@ class CoachViewController: UIViewController,UITableViewDataSource,UITableViewDel
             newViewController.players = player
             DispatchQueue.main.async(execute: {
                 revealviewcontroller.pushFrontViewController(newViewController, animated: true)
+                
+            
             })
+        }
+            else {
+                DispatchQueue.main.async {
+                    let popUp = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "alterView") as! AlterViewController
+                    popUp.custom = true
+                    popUp.titles = "Erorr"
+                    popUp.message = self.sing.loadingInfo.stat.statusDescription
+                    
+                    //popUp.comitButton.isHidden = true
+                    self.addChildViewController(popUp)
+                    popUp.view.frame = self.view.frame
+                    self.view.addSubview(popUp.view)
+                    
+                    popUp.didMove(toParentViewController: self)
+                }
+            }
         }
 
     }

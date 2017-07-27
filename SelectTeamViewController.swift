@@ -78,7 +78,7 @@ class SelectTeamViewController: UIViewController,UITableViewDataSource,UITableVi
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         JSON.getPlayersOfTeam(token:sing.loadingInfo.token , id: sing.coatch.team[indexPath.row].id) { ( player:[Players])-> Void in
-        
+        if self.sing.loadingInfo.stat.statusCode == "BP_200"{
             
             self.sing.playerOnTeam = player
        let newViewController = storyBoard.instantiateViewController(withIdentifier: "selP") as! PlayerViewController
@@ -90,8 +90,25 @@ class SelectTeamViewController: UIViewController,UITableViewDataSource,UITableVi
         revealviewcontroller.pushFrontViewController(newViewController, animated: true)
             })
         }
+        else {
+            DispatchQueue.main.async {
+                let popUp = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "alterView") as! AlterViewController
+                popUp.custom = true
+                popUp.titles = "Erorr"
+                popUp.message = self.sing.loadingInfo.stat.statusDescription
+                
+                //popUp.comitButton.isHidden = true
+                self.addChildViewController(popUp)
+                popUp.view.frame = self.view.frame
+                self.view.addSubview(popUp.view)
+                
+                popUp.didMove(toParentViewController: self)
+            }
+            }
         
         
+        
+    }
     }
     
    

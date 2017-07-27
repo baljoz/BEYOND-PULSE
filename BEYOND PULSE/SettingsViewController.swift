@@ -81,11 +81,30 @@ class SettingsViewController: UIViewController,UITableViewDataSource,UITableView
         {
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
           JSON.sendSettings(dataSync: sing.coatch.settings.autoDataSync, notification: sing.coatch.settings.notificationsEnabled, language: sing.coatch.settings.language, token: sing.loadingInfo.token,id: sing.coatch.info.id)
+            if self.sing.loadingInfo.stat.statusCode == "BP_200"
+            {
             
             let newViewController = storyBoard.instantiateViewController(withIdentifier: "login") as! LoginViewController
            self.present(newViewController, animated: true, completion: nil)
             
               }
+            else
+            {
+                DispatchQueue.main.async {
+                    let popUp = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "alterView") as! AlterViewController
+                    popUp.custom = true
+                    popUp.titles = "Erorr"
+                    popUp.message = self.sing.loadingInfo.stat.statusDescription
+                    
+                    //popUp.comitButton.isHidden = true
+                    self.addChildViewController(popUp)
+                    popUp.view.frame = self.view.frame
+                    self.view.addSubview(popUp.view)
+                    
+                    popUp.didMove(toParentViewController: self)
+                }
+            }
+        }
     }
     
     @IBAction func automaticDataSyncUpdateState(_ sender: Any) {

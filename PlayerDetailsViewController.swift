@@ -68,7 +68,8 @@ class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITabl
         idTeam = sing.teamSelectId
         
         JSON.getTraningSesionOnPlayer(token: sing.loadingInfo.token, idTeam: idTeam, idPlayer: pl.id){( ses:[traningSesion])->Void in
-        
+        if self.sing.loadingInfo.stat.statusCode == "BP_200"
+        {
             self.session = ses
             DispatchQueue.main.async(execute: {
 
@@ -76,6 +77,23 @@ class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITabl
             
             }
         
+        else
+        {
+            DispatchQueue.main.async {
+                let popUp = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "alterView") as! AlterViewController
+                popUp.custom = true
+                popUp.titles = "Erorr"
+                popUp.message = self.sing.loadingInfo.stat.statusDescription
+                
+                //popUp.comitButton.isHidden = true
+                self.addChildViewController(popUp)
+                popUp.view.frame = self.view.frame
+                self.view.addSubview(popUp.view)
+                
+                popUp.didMove(toParentViewController: self)
+            }
+        }
+        }
         
        playerImage.layer.masksToBounds = true
         playerImage.layer.cornerRadius = 10

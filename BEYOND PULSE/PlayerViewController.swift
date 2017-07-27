@@ -67,7 +67,6 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
             butView.buttonName.text = "Coutch \n Website"
             
             rightBarButton.customView?.layer.addSublayer(butView.layer)
-          //  self.rightBarButton.customView?.addSubview(butView)
             butView.sizeToFit()
         }
 
@@ -110,9 +109,26 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
         JSON.getTraningSesionOfTeam(token: self.sing.loadingInfo.token, id:indexTeam,page:pageOfSesion){  ( session:[traningSesion])-> Void in
             
+            if self.sing.loadingInfo.stat.statusCode == "BP_200"
+            {
             self.sing.Sesion = session
             self.ses = session
-            
+            }
+            else{
+                DispatchQueue.main.async {
+                    let popUp = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "alterView") as! AlterViewController
+                    popUp.custom = true
+                    popUp.titles = "Erorr"
+                    popUp.message = self.sing.loadingInfo.stat.statusDescription
+                    
+                    //popUp.comitButton.isHidden = true
+                    self.addChildViewController(popUp)
+                    popUp.view.frame = self.view.frame
+                    self.view.addSubview(popUp.view)
+                    
+                    popUp.didMove(toParentViewController: self)
+                }
+            }
         }
         
  
@@ -280,8 +296,25 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
             if ses.count == 0 {
                 if sing.Sesion.count == 0 {
                 JSON.getTraningSesionOfTeam(token: self.sing.loadingInfo.token, id:indexTeam,page:pageOfSesion){  ( session:[traningSesion])-> Void in
-
+                    if self.sing.loadingInfo.stat.statusCode == "BP_200"
+                    {
                  self.sing.Sesion = session
+                    }
+                    else{
+                        DispatchQueue.main.async {
+                            let popUp = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "alterView") as! AlterViewController
+                            popUp.custom = true
+                            popUp.titles = "Erorr"
+                            popUp.message = self.sing.loadingInfo.stat.statusDescription
+                            
+                            //popUp.comitButton.isHidden = true
+                            self.addChildViewController(popUp)
+                            popUp.view.frame = self.view.frame
+                            self.view.addSubview(popUp.view)
+                            
+                            popUp.didMove(toParentViewController: self)
+                        }
+                    }
                     }
                 }
                 self.ses = self.sing.Sesion
@@ -293,6 +326,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
                 self.tranningTable.reloadData()
                 self.startTrening.isHidden = true
                 })
+                
             }
            
         
@@ -316,17 +350,38 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "pdetails") as! PlayerDetailsViewController
         
         JSON.getPlayerDetails(token: sing.loadingInfo.token, idTeam: indexTeam, idPlayer: sing.playerOnTeam[indexPath.row].id){ ( player:Players)-> Void in
+            
+            if self.sing.loadingInfo.stat.statusCode == "BP_200"
+            {
         newViewController.pl = player
        newViewController.pageOfSeeions = self.pageOfSesion
       
             DispatchQueue.main.async(execute: {
  revealviewcontroller.pushFrontViewController(newViewController, animated: true)  })
+            }
+            else
+            {
+                DispatchQueue.main.async {
+                    let popUp = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "alterView") as! AlterViewController
+                    popUp.custom = true
+                    popUp.titles = "Erorr"
+                    popUp.message = self.sing.loadingInfo.stat.statusDescription
+                    
+                    //popUp.comitButton.isHidden = true
+                    self.addChildViewController(popUp)
+                    popUp.view.frame = self.view.frame
+                    self.view.addSubview(popUp.view)
+                    
+                    popUp.didMove(toParentViewController: self)
+                }
+            }
         }
         }
        else{
           let revealviewcontroller:SWRevealViewController = self.revealViewController()
         JSON.getPlayersOfSesionTranning(token: self.sing.loadingInfo.token, idTeam:indexTeam,idSesion: ses[indexPath.row].id){  ( pos:playerOfSessions)-> Void in
-          
+          if self.sing.loadingInfo.stat.statusCode == "BP_200"
+          {
             DispatchQueue.main.async(execute: {
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let newViewController = storyBoard.instantiateViewController(withIdentifier: "sesion") as! SessionViewController
@@ -339,7 +394,22 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
 
 
             })
-
+            }
+          else{
+            DispatchQueue.main.async {
+                let popUp = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "alterView") as! AlterViewController
+                popUp.custom = true
+                popUp.titles = "Erorr"
+                popUp.message = self.sing.loadingInfo.stat.statusDescription
+                
+                //popUp.comitButton.isHidden = true
+                self.addChildViewController(popUp)
+                popUp.view.frame = self.view.frame
+                self.view.addSubview(popUp.view)
+                
+                popUp.didMove(toParentViewController: self)
+            }
+            }
         }
     }
 }
@@ -349,7 +419,8 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         if tabControl.selectedSegmentIndex == 1 {
             self.JSON.sesion.removeAll()
             JSON.getTraningSesionOfTeam(token: self.sing.loadingInfo.token, id:indexTeam,page:pageOfSesion){  ( se:[traningSesion])-> Void in
-                
+                if self.sing.loadingInfo.stat.statusCode == "BP_200"
+                {
                 for s in self.JSON.sesion{
                 
                 self.ses.append(s)
@@ -361,6 +432,22 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
                     self.tranningTable.reloadData()
                 })
                 self.pageOfSesion = self.pageOfSesion + 1
+                }
+                else{
+                    DispatchQueue.main.async {
+                        let popUp = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "alterView") as! AlterViewController
+                        popUp.custom = true
+                        popUp.titles = "Erorr"
+                        popUp.message = self.sing.loadingInfo.stat.statusDescription
+                        
+                        //popUp.comitButton.isHidden = true
+                        self.addChildViewController(popUp)
+                        popUp.view.frame = self.view.frame
+                        self.view.addSubview(popUp.view)
+                        
+                        popUp.didMove(toParentViewController: self)
+                    }
+                }
         }
         }
     }

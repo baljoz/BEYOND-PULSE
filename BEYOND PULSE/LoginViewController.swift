@@ -64,8 +64,8 @@ class LoginViewController: UIViewController {
             if cek as! Bool == true {
             
             check.isOn = cek as! Bool
-            eMailTextfild.text = UserDefaults.standard.object(forKey: "email") as! String
-            passwordTextfild.text = UserDefaults.standard.object(forKey: "password") as! String
+            eMailTextfild.text = UserDefaults.standard.object(forKey: "email") as? String
+            passwordTextfild.text = UserDefaults.standard.object(forKey: "password") as? String
             }
         }
        

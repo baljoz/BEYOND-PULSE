@@ -176,6 +176,10 @@ class serverCommunications
         let task = URLSession.shared.dataTask(with: request)  { data, response, error in
             guard let data = data, error == nil else {
                 print(error?.localizedDescription ?? "No data")
+                
+                self.sing.loadingInfo.stat.statusCode = "Erorr"
+                self.sing.loadingInfo.stat.statusDescription = (error?.localizedDescription as? String)!
+                
                 return    handler(CoachInfo())
             }
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
@@ -233,12 +237,12 @@ class serverCommunications
                         t.name.append(te["name"] as? String ?? "")
                         t.urlImage = cName["logo"] as? String ?? ""
                         let str = NSURL(string : t.urlImage)
-                         let dstt = NSData(contentsOf: str! as URL)!
-                        if dstt != nil
+                        if let dstt = NSData(contentsOf: str! as URL)
                         {
+                       
                             t.img = (UIImage(data: dstt as Data)!)
-                        }
                         
+                        }
                         t.gender = te["gender"] as? String ?? ""
                         teams.append(t)
                     }
@@ -296,6 +300,10 @@ class serverCommunications
      let task = URLSession.shared.dataTask(with: request) { data, response, error in
         guard let data = data, error == nil else {
             print(error?.localizedDescription ?? "No data")
+            
+            self.sing.loadingInfo.stat.statusCode = "Erorr"
+            self.sing.loadingInfo.stat.statusDescription = (error?.localizedDescription)!
+            
             return
      }
         let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
@@ -337,6 +345,9 @@ class serverCommunications
         let task = URLSession.shared.dataTask(with: request)  { data, response, error in
             guard let data = data, error == nil else {
                 print(error?.localizedDescription ?? "No data")
+                
+                self.sing.loadingInfo.stat.statusCode = "Erorr"
+                self.sing.loadingInfo.stat.statusDescription = (error?.localizedDescription)!
                 return    handler([Players]())
             }
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
@@ -344,6 +355,8 @@ class serverCommunications
             if let responseJSON = responseJSON as? [String: Any] {
                 var status = responseJSON["status"] as? [String : Any]
                 var play = [Players]()
+                self.sing.loadingInfo.stat.statusCode = (status?["code"] as? String)!
+                self.sing.loadingInfo.stat.statusDescription = (status?["desc"] as? String)!
                 if status?["code"] as? String == "BP_200"
                 {
                 let data = responseJSON["data"] as? [[String: Any]]
@@ -440,6 +453,8 @@ class serverCommunications
         let task = URLSession.shared.dataTask(with: request)  { data, response, error in
             guard let data = data, error == nil else {
                 print(error?.localizedDescription ?? "No data")
+                self.sing.loadingInfo.stat.statusCode = "Erorr"
+                self.sing.loadingInfo.stat.statusDescription = (error?.localizedDescription)!
                 return handler(sesions)
 
             }
@@ -489,6 +504,10 @@ class serverCommunications
         let task = URLSession.shared.dataTask(with: request)  { data, response, error in
             guard let data = data, error == nil else {
                 print(error?.localizedDescription ?? "No data")
+                
+                self.sing.loadingInfo.stat.statusCode = "Erorr"
+                self.sing.loadingInfo.stat.statusDescription = (error?.localizedDescription)!
+                
                 return    handler(pos)
             }
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
@@ -571,6 +590,10 @@ class serverCommunications
         let task = URLSession.shared.dataTask(with: request)  { data, response, error in
             guard let data = data, error == nil else {
                 print(error?.localizedDescription ?? "No data")
+                
+                self.sing.loadingInfo.stat.statusCode = "Erorr"
+                self.sing.loadingInfo.stat.statusDescription = (error?.localizedDescription)!
+                
                 return    handler(sesion)
             }
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
@@ -617,6 +640,10 @@ class serverCommunications
         let task = URLSession.shared.dataTask(with: request)  { data, response, error in
             guard let data = data, error == nil else {
                 print(error?.localizedDescription ?? "No data")
+                
+                self.sing.loadingInfo.stat.statusCode = "Erorr"
+                self.sing.loadingInfo.stat.statusDescription = (error?.localizedDescription)!
+                
                 return    handler(playe)
             }
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
@@ -693,6 +720,10 @@ class serverCommunications
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {
                 print(error?.localizedDescription ?? "No data")
+                
+                self.sing.loadingInfo.stat.statusCode = "Erorr"
+                self.sing.loadingInfo.stat.statusDescription = (error?.localizedDescription)!
+                
                 return
             }
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
@@ -741,6 +772,11 @@ class serverCommunications
         let task = URLSession.shared.dataTask(with: request)  { data, response, error in
             guard let data = data, error == nil else {
                 print(error?.localizedDescription ?? "No data")
+                
+                
+                self.sing.loadingInfo.stat.statusCode = "Erorr"
+                self.sing.loadingInfo.stat.statusDescription = (error?.localizedDescription)!
+                
                 return
             }
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
@@ -779,6 +815,10 @@ class serverCommunications
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {
                 print(error?.localizedDescription ?? "No data")
+                
+                self.sing.loadingInfo.stat.statusCode = "Erorr"
+                self.sing.loadingInfo.stat.statusDescription = (error?.localizedDescription)!
+                
                 return
             }
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])

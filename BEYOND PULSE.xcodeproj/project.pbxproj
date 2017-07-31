@@ -251,12 +251,9 @@
 				079597061F025D46002FD487 /* ServerComunication.swift */,
 				07E88F171F0F5B530022FC4C /* PlayerDetailsViewController.swift */,
 				0742F0701F13878A001FA68D /* StartTraningViewController.swift */,
-				07DFEC271F1DFD3500280D65 /* RobotoCondensed-Regular.ttf */,
-				07961F781F1F6D0800A8919E /* Roboto-Medium.ttf */,
-				07CC00BB1F2095B800045D42 /* Roboto-Bold.ttf */,
-				07CC00BE1F20A50300045D42 /* MyriadPro-Regular.otf */,
 				073775D31F27142500D1ABCC /* ActionSheetViewController.swift */,
 				073775D71F273E8C00D1ABCC /* AlterViewController.swift */,
+				074B476C1F29DE9C00565E02 /* Fonts */,
 				07DFEC261F1DE86300280D65 /* Custom View */,
 			);
 			path = "BEYOND PULSE";
@@ -287,6 +284,17 @@
 				0742F06E1F134C90001FA68D /* Pods_BEYOND_PULSE.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		074B476C1F29DE9C00565E02 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				07DFEC271F1DFD3500280D65 /* RobotoCondensed-Regular.ttf */,
+				07961F781F1F6D0800A8919E /* Roboto-Medium.ttf */,
+				07CC00BB1F2095B800045D42 /* Roboto-Bold.ttf */,
+				07CC00BE1F20A50300045D42 /* MyriadPro-Regular.otf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		07B37FB71F0A681100B7FB8A /* Frameworks */ = {

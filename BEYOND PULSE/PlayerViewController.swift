@@ -144,6 +144,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         }
         else
         {
+          
             return ses.count
         }
     }
@@ -289,6 +290,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
             playerTable.isHidden = false
             playerTable.reloadData()
             self.startTrening.isHidden = false
+            self.playerTable.isEditing = true
         }
         else
         {
@@ -320,7 +322,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
                 self.ses = self.sing.Sesion
                     self.pageOfSesion = self.pageOfSesion + 1
                 DispatchQueue.main.async(execute: {
-     
+                self.playerTable.isEditing = false
                 self.playerTable.isHidden = true
                 self.tranningTable.isHidden = false
                 self.tranningTable.reloadData()

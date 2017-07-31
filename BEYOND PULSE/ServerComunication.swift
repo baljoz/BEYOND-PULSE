@@ -50,7 +50,7 @@ class serverCommunications
 
             if let responseJSON = responseJSON as? [String: Any] {
                 let status = responseJSON["status"] as? [String: Any]
-                
+              
                 response.stat.statusCode = status?["code"] as! String
                 response.stat.statusDescription = status?["desc"] as! String
                 if status?["code"] as? String == "BP_200"{

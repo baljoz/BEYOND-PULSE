@@ -30,7 +30,7 @@ class SessionViewController: UIViewController,UITableViewDataSource,UITableViewD
         
       //  var time = String()
         var len = session.started.charOfString(start:0,end:9)
-        print(len)
+        
          len = len+" - "
         len  = len + session.started.charOfString(start:12,end:19)
         len = len+" - "

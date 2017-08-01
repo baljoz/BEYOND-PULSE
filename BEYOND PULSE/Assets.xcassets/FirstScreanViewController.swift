@@ -43,7 +43,7 @@ class FirstScreanViewController: UIViewController {
 
 
  func timerDidFire(timer: Timer) {
-    print(timer)
+   
     let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     let newViewController = storyBoard.instantiateViewController(withIdentifier: "login")
     self.present(newViewController, animated: true, completion: nil)

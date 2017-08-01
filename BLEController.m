@@ -388,6 +388,15 @@
             NSArray *uuid = @[batteryLevelCharacteristicUUID];
             [aPeripheral discoverCharacteristics:uuid forService:aService];
         }
+        
+        /*
+        
+        
+      
+         heartRateMeasurementCharacteristicUUID = [CBUUID UUIDWithString:@"2A37"];
+         batteryLevelCharacteristicUUID = [CBUUID UUIDWithString:@"2A19"];
+
+         */
     }
 }
 
@@ -506,11 +515,11 @@
     /* Endast debug
      int size = sizeof(reportData);
      NSLog(@"Size of reportData: %d", size);
-     
+     */
      for (int i = 0; i < sizeof(reportData); i++) {
      NSLog(@"reportData[%d]: %d", i, reportData[i]);
      }
-     */
+     
     
     if ((reportData[0] & 0x01) == 0)
     {
@@ -563,13 +572,15 @@
         NSLog(@"Ett pulsband är redan anslutet");
         return;
     }
-    NSString *uuidString = nil;
+    NSString *uuidString = _beltNumber;
+    printf("%s", _beltNumber);
    // NSString *uuidString = [[NSUserDefaults standardUserDefaults] stringForKey:kHRSensorUUID];
     
     if (uuidString != nil) {
         NSLog(@"Kolla om UUID: %@ är en känd CBPeripheral?", uuidString);
         
                    NSUUID *nsuuid = [[NSUUID alloc] initWithUUIDString:uuidString];
+        //treba da se vidi kako da se ishendluje greska kada je nevalidan belt Number
             NSArray *peripherals = [manager retrievePeripheralsWithIdentifiers:@[nsuuid]];
             
             NSLog(@"retrievePeripheralsWithIdentifiers: %zd - %@", [peripherals count], peripherals);

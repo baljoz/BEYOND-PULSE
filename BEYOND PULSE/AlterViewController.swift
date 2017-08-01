@@ -20,6 +20,7 @@ class AlterViewController: UIViewController {
     var titles = String()
     var message = String()
     var custom = false
+    var comButt = String()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,6 +38,11 @@ class AlterViewController: UIViewController {
         closeButton.isHidden = false
             horisontalVIew.isHidden=true
         }
+        print(comButt)
+        
+    }
+    @IBAction func ClickCommit(_ sender: Any) {
+        self.view.removeFromSuperview()
     }
 
     @IBAction func ClosePopUP(_ sender: Any) {

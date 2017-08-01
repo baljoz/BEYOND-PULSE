@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,BLEControllerDelegate {
     var pl = Players()
     var idTeam = Int()
     var session = [traningSesion]()
@@ -30,17 +30,25 @@ class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITabl
     @IBOutlet weak var playerHeight: UILabel!
     @IBOutlet weak var playerGender: UILabel!
     @IBOutlet weak var playerWeight: UILabel!
+    
+    var BL = BLEController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        
+        BL.delegate = self
+        
+        
         playerImage.image = pl.playerImage
         playerImage.contentMode = .scaleAspectFit
         playerName.text = pl.firstName+" "+pl.middleName+" "+pl.lastName
         playerPosition.text = pl.postition
         playerBirth.text = pl.dob
         
-        beltID.text = "Belt ID:"+"  "+pl.beltName
+        beltID.text = pl.beltName
         beltBatery.text = "Battery:"+"N/A"
         beltStatus.text = "??"
         
@@ -103,6 +111,17 @@ class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITabl
         playerHeight.text = String(pl.height)
         playerHeartRate.text = String(pl.maxHeartRate)
     
+        if(BL.isDeviceConnected())
+        {
+            
+           connectButton.setTitle("Unpair", for: .normal)
+        }
+        else
+        {
+            connectButton.setTitle("Pair", for: .normal)
+        }
+
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -196,19 +215,58 @@ class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITabl
         
         present(menu,animated: true , completion: nil)*/
         
+        
+        
         let popUp = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "alterView") as! AlterViewController
       
         self.addChildViewController(popUp)
         popUp.view.frame = self.view.frame
         self.view.addSubview(popUp.view)
-        
+        if(BL.isDeviceConnected())
+        {
+            popUp.comButt = "Unpair"
+        popUp.comitButton.setTitle("Unpair", for: .normal)
+        }
+        else
+        {
+          popUp.comitButton.setTitle("Pair", for: .normal)
+        }
+        popUp.comitButton.addTarget(self, action:  #selector(pressComit), for: .touchUpInside)
         popUp.didMove(toParentViewController: self)
         
 
+
     }
 
-   
+   func pressComit()
+   {
+    if(!BL.isDeviceConnected())
+    {
+        BL.beltNumber = beltID.text
+    BL.loadUserPeripheral()
     
+    
+    
+        
+        connectButton.setTitle("Unpair", for: .normal)
+    }
+    else
+    {
+        BL.cancelConnectionSilent(true, byUser: true)
+        connectButton.setTitle("Pair", for: .normal)
+    }
+
+    
+    
+    //removeFromSuperview()
+    
+    }
+    
+    func   newHeartRateValue(_ bpm :UInt8)
+    {
+        print("delegiraaaaa", bpm)
+    }
+
 }
 extension String {
     

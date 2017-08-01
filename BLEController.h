@@ -27,6 +27,8 @@
 
 @property (nonatomic, strong)       CBPeripheral *peripheral;
 
+@property (nonatomic, strong)  NSString *beltNumber;
+
 -(void)tryToConnectToPeripheral:(CBPeripheral *)aPeripheral;
 
 /*! Scannar efter BLE-enheter
@@ -35,6 +37,8 @@
 
 /*! Stoppa scanning */
 - (void) stopScan;
+
+- (void) connectHeartRateSensor;
 
 /*! Avbruter anslutningen till en ansluten peripheral (eller ett pågående anslutningsförsök).
  @param silent Visa inget felmeddelande för användaren

@@ -141,8 +141,7 @@ class LoginViewController: UIViewController {
                                     
                                     let next = newViewController
                                     DispatchQueue.main.async {
-                                        self.navigationController?.pushViewController(next, animated: true)
-                                        //self.present(next, animated: true, completion: nil)
+                                        self.present(next, animated: true, completion: nil)
                                         
                                     }
 

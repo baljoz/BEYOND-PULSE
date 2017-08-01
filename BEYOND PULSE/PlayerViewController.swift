@@ -82,6 +82,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
         gradient.endPoint = CGPoint(x: 1.0, y: 0.0)
         gradient.frame = startTrening.bounds
+       
         gradient.cornerRadius = 10
         
        startTrening.layer.addSublayer(gradient)
@@ -160,7 +161,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         {
             let cell = self.playerTable.dequeueReusableCell(withIdentifier: "playercell") as! PlayerTableViewCell
             
-               cell.playerName.text = players[indexPath.row].firstName+" "+players[indexPath.row].middleName+" "+players[indexPath.row].lastName
+        cell.playerName.text = players[indexPath.row].firstName+" "+players[indexPath.row].middleName+" "+players[indexPath.row].lastName
             
         cell.playerPosition.text = players[indexPath.row].postition
         cell.playerImage.image = players[indexPath.row].playerImage
@@ -212,7 +213,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
 
         return cell
         }
-        
+        print(indexPath.row)
         let cell = self.tranningTable.dequeueReusableCell(withIdentifier: "traningSesion") as! TraningSesionTableViewCell
 
         cell.time.text?.removeAll()
@@ -224,14 +225,14 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         time = time+"/"
         time  = time+cell.time.text!+ses[indexPath.row].ended.charOfString(start:12,end:19)
         cell.time.text = time
-        cell.cellView.layer.cornerRadius=10
+       
         
         
         
         
         cell.backgroundColor = UIColor.clear
         
-        
+        cell.sessionConnectionView.roundCorners(corners: [.bottomRight, .bottomLeft], radius: 10)
        
        
         
@@ -263,7 +264,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         gradient.endPoint = CGPoint(x: 1.0, y: 0.0)
         gradient.frame = cell.sessionConnectionView.bounds
       
-       
+      
         cell.sessionConnectionView.layer.addSublayer(gradient)
         
         cell.device.text = ses[indexPath.row].uploadStatus
@@ -276,7 +277,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         cell.cellView.layer.cornerRadius=10
         
         
-        cell.sessionConnectionView.roundCorners(corners: [.bottomRight, .bottomLeft], radius: 10)
+        
             return cell
             
         
@@ -294,7 +295,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         }
         else
         {
-            
+           // playerTable.
             if ses.count == 0 {
                 if sing.Sesion.count == 0 {
                 JSON.getTraningSesionOfTeam(token: self.sing.loadingInfo.token, id:indexTeam,page:pageOfSesion){  ( session:[traningSesion])-> Void in
@@ -359,7 +360,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
        newViewController.pageOfSeeions = self.pageOfSesion
       
             DispatchQueue.main.async(execute: {
- revealviewcontroller.pushFrontViewController(newViewController, animated: true)  })
+                revealviewcontroller.pushFrontViewController(newViewController, animated: true)  })
             }
             else
             {
@@ -550,7 +551,7 @@ extension UIView {
     }
 }
 
-extension UIView
+/*extension UIView
 {
     func searchVisualEffectsSubview() -> UIVisualEffectView?
     {
@@ -571,4 +572,4 @@ extension UIView
         
         return nil
     }
-}
+}*/

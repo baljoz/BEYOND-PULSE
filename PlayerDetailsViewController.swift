@@ -31,7 +31,10 @@ class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITabl
     @IBOutlet weak var playerGender: UILabel!
     @IBOutlet weak var playerWeight: UILabel!
     
-    var BL = BLEController()
+    @IBOutlet weak var connectImage: UIImageView!
+    
+    var playerId = Int()
+    //var BL = BLEController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +42,7 @@ class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITabl
         // Do any additional setup after loading the view.
         
         
-        BL.delegate = self
+        self.sing.BL.delegate = self
         
         
         playerImage.image = pl.playerImage
@@ -49,8 +52,8 @@ class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITabl
         playerBirth.text = pl.dob
         
         beltID.text = pl.beltName
-        beltBatery.text = "Battery:"+"N/A"
-        beltStatus.text = "??"
+        beltBatery.text = "Battery:"+"  N/A"
+        
         
         tranningSesion.backgroundColor = UIColor.clear
         
@@ -111,16 +114,24 @@ class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITabl
         playerHeight.text = String(pl.height)
         playerHeartRate.text = String(pl.maxHeartRate)
     
-        if(BL.isDeviceConnected())
+        if(self.sing.BL.isDeviceConnected())
         {
-            
+            connectImage.image = UIImage(named:"connectedIco")
            connectButton.setTitle("Unpair", for: .normal)
+            beltStatus.text = "CONNECTED"
+            let color = UIColor(red: 131.0/255.0, green: 145.0/255.0, blue: 95.0/255.0, alpha: 1.0)
+            beltStatus.textColor = color
         }
         else
         {
+            connectImage.image = UIImage(named:"x")
             connectButton.setTitle("Pair", for: .normal)
+            beltStatus.text = "NOT CONNECTED"
+            beltStatus.textColor = UIColor.red
         }
-
+        //var image = UIImageView(image: UIImage(named:"brokenLinkIco2"))
+        
+        
         
     }
 
@@ -222,14 +233,18 @@ class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITabl
         self.addChildViewController(popUp)
         popUp.view.frame = self.view.frame
         self.view.addSubview(popUp.view)
-        if(BL.isDeviceConnected())
+        if(self.sing.BL.isDeviceConnected())
         {
             popUp.comButt = "Unpair"
         popUp.comitButton.setTitle("Unpair", for: .normal)
+            
+            sing.playerConnected[playerId] = true
+            
         }
         else
         {
           popUp.comitButton.setTitle("Pair", for: .normal)
+            sing.playerConnected[playerId] = true
         }
         popUp.comitButton.addTarget(self, action:  #selector(pressComit), for: .touchUpInside)
         popUp.didMove(toParentViewController: self)
@@ -240,20 +255,26 @@ class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITabl
 
    func pressComit()
    {
-    if(!BL.isDeviceConnected())
+    if(!self.sing.BL.isDeviceConnected())
     {
-        BL.beltNumber = beltID.text
-    BL.loadUserPeripheral()
-    
-    
-    
-        
+        self.sing.BL.beltNumber = beltID.text
+    self.sing.BL.loadUserPeripheral()
         connectButton.setTitle("Unpair", for: .normal)
+        
+        beltStatus.text = "CONNECTED"
+        let color = UIColor(red: 131.0/255.0, green: 145.0/255.0, blue: 95.0/255.0, alpha: 1.0)
+        beltStatus.textColor = color
+        connectImage.image = UIImage(named:"connectedIco")
+        connectButton.setImage(UIImage(named:"brokenLinkIco"), for: .normal)
     }
     else
     {
-        BL.cancelConnectionSilent(true, byUser: true)
+        self.sing.BL.cancelConnectionSilent(true, byUser: true)
         connectButton.setTitle("Pair", for: .normal)
+        
+        beltStatus.text = "NOT CONNECTED"
+        beltStatus.textColor = UIColor.red
+        connectImage.image = UIImage(named:"x")
     }
 
     

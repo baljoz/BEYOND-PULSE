@@ -14,6 +14,7 @@ class ActionSheetViewController: UIViewController {
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var cancelButton: UIButton!
 
+    @IBOutlet weak var startTranningSessions: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,6 +33,11 @@ class ActionSheetViewController: UIViewController {
         self.view.removeFromSuperview()
     }
 
+   /* @IBAction func clickOnStart(_ sender: Any) {
+       
+        
+    }
+  */
     /*
     // MARK: - Navigation
 

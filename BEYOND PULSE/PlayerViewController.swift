@@ -45,7 +45,8 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         // Do any additional setup after loading the view.
 
         
-       
+        
+        
         
         tranningTable.isHidden=true
         tranningTable.backgroundColor = UIColor.clear
@@ -107,7 +108,8 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
             
             navView.sizeToFit()
         }
-        
+        if self.sing.Sesion.count == 0
+        {
         JSON.getTraningSesionOfTeam(token: self.sing.loadingInfo.token, id:indexTeam,page:pageOfSesion){  ( session:[traningSesion])-> Void in
             
             if self.sing.loadingInfo.stat.statusCode == "BP_200"
@@ -131,6 +133,11 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
                 }
             }
         }
+        }
+        else
+        {
+            ses = sing.Sesion
+        }
         
  
 }
@@ -141,11 +148,11 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tabControl.selectedSegmentIndex == 0 {
-            return players.count
+          return players.count
         }
         else
         {
-          
+          print("session")
             return ses.count
         }
     }
@@ -172,20 +179,31 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
           cell.cellView.layer.cornerRadius=10
             cell.selectionStyle = UITableViewCellSelectionStyle.none
         cell.backgroundColor = UIColor.clear
-            cell.connectionImage.image = UIImage(named:"x")
-            cell.playerConection.text = "NOT Connected"
+            
+            
+            if sing.playerConnected[indexPath.row]
+            {
+            cell.playerConection.text = "CONNECTED"
+                cell.connectionImage.image = UIImage(named:"checkmark")
+                cell.cellView.backgroundColor = UIColor.gray
+            }
+            else{
+            cell.playerConection.text = "NOT CONNECTED"
+                cell.connectionImage.image = UIImage(named:"x")
+                cell.cellView.backgroundColor = UIColor.black
+            }
             
             let gradient:CAGradientLayer = CAGradientLayer()
             var colorBottom : CGColor
             var colorTop : CGColor
             
             
-            if  cell.playerConection.text! == "NOT Connected"
+            if  cell.playerConection.text! == "NOT CONNECTED"
             {
                 colorBottom = UIColor(red: 158.0/255.0, green: 33.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
                 colorTop = UIColor(red: 255.0/255.0, green: 156.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
             }
-            else if cell.playerConection.text! == "COMPLETED"
+            else if cell.playerConection.text! == "CONNECTED"
             {
                 colorBottom = UIColor(red: 38.0/255.0, green: 93.0/255.0, blue: 201.0/255.0, alpha: 1.0).cgColor
                 colorTop = UIColor(red: 131.0/255.0, green: 197.0/255.0, blue: 45.0/255.0, alpha: 1.0).cgColor
@@ -240,7 +258,8 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         var colorBottom : CGColor
         var colorTop : CGColor
         
-    
+        cell.device.text = ses[indexPath.row].uploadStatus
+        
         if  cell.device.text! == "PENDING"
         {
             colorBottom = UIColor(red: 158.0/255.0, green: 33.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
@@ -267,7 +286,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
       
         cell.sessionConnectionView.layer.addSublayer(gradient)
         
-        cell.device.text = ses[indexPath.row].uploadStatus
+        
         cell.sessionConnectionView.layer.addSublayer(cell.device.layer)
         cell.sessionConnectionView.layer.addSublayer(cell.connectionImage.layer)
         
@@ -291,7 +310,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
             playerTable.isHidden = false
             playerTable.reloadData()
             self.startTrening.isHidden = false
-            self.playerTable.isEditing = true
+            
         }
         else
         {
@@ -323,7 +342,6 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
                 self.ses = self.sing.Sesion
                     self.pageOfSesion = self.pageOfSesion + 1
                 DispatchQueue.main.async(execute: {
-                self.playerTable.isEditing = false
                 self.playerTable.isHidden = true
                 self.tranningTable.isHidden = false
                 self.tranningTable.reloadData()
@@ -358,6 +376,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
             {
         newViewController.pl = player
        newViewController.pageOfSeeions = self.pageOfSesion
+            newViewController.playerId = indexPath.row
       
             DispatchQueue.main.async(execute: {
                 revealviewcontroller.pushFrontViewController(newViewController, animated: true)  })
@@ -424,9 +443,10 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
             JSON.getTraningSesionOfTeam(token: self.sing.loadingInfo.token, id:indexTeam,page:pageOfSesion){  ( se:[traningSesion])-> Void in
                 if self.sing.loadingInfo.stat.statusCode == "BP_200"
                 {
-                for s in self.JSON.sesion{
+                for s in se{
                 
                 self.ses.append(s)
+                self.sing.Sesion = self.ses
             }
                 DispatchQueue.main.async(execute: {
                     
@@ -511,14 +531,23 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
             self.view.addSubview(view2)
             
         }*/
-        let popUp = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popUp") as! ActionSheetViewController
+      let popUp = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popUp") as! ActionSheetViewController
         
         self.addChildViewController(popUp)
         popUp.view.frame = self.view.frame
         self.view.addSubview(popUp.view)
         
         popUp.didMove(toParentViewController: self)
-       
+        popUp.startTranningSessions.addTarget(self, action:  #selector(pressContinue), for: .touchUpInside)
+        
+    /*    let revealviewcontroller:SWRevealViewController = self.revealViewController()
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "sessions") as! StartTraningViewController
+        
+        revealviewcontroller.pushFrontViewController(newViewController, animated: true)*/
     }
     func pressCancel()
     {
@@ -528,6 +557,15 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
     {
         
      // JSON.updatePlayerTraningSessionsData(token: sing.loadingInfo.token, idTeam: indexTeam, idSession: 4, beltNumber: "111222336", data: "2222ppbbbbmmmm", idPlayer: 6)
+        let revealviewcontroller:SWRevealViewController = self.revealViewController()
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "sessions") as! StartTraningViewController
+        
+        revealviewcontroller.pushFrontViewController(newViewController, animated: true)
+
     }
     
     /*

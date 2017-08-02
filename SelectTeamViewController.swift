@@ -47,6 +47,7 @@ class SelectTeamViewController: UIViewController,UITableViewDataSource,UITableVi
         let backUnderground = UIColor(red: 33.0/255.0, green: 33.0/255.0, blue: 33.0/255.0, alpha: 1.0)
         teamTable.backgroundColor = backUnderground
         clubNameLabel.text = sing.coatch.coutchClub.name
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -86,6 +87,10 @@ class SelectTeamViewController: UIViewController,UITableViewDataSource,UITableVi
             
             newViewController.players = player
             self.sing.teamSelectId = self.sing.coatch.team[indexPath.row].id
+            for _ in 0...player.count
+            {
+                self.sing.playerConnected.append(false)
+            }
             DispatchQueue.main.async(execute: {
         revealviewcontroller.pushFrontViewController(newViewController, animated: true)
             })

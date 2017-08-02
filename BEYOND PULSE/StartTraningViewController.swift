@@ -10,6 +10,8 @@ import UIKit
 
 class StartTraningViewController: UIViewController {
     
+    @IBOutlet weak var navigationBar: UINavigationBar!
+    @IBOutlet weak var tranningSessionInfo: UILabel!
     @IBOutlet weak var stratButton: UIButton!
 
     @IBOutlet weak var tileLabel: UILabel!
@@ -35,11 +37,11 @@ class StartTraningViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-                
-        tileLabel.text = DateFormatter.localizedString(from: NSDate() as Date,dateStyle:.none,timeStyle: .medium)
+                tileLabel.text = ""
+        tranningSessionInfo.text = "Press button to start sessions"
+     
         lockView.isHidden = true
         leftSideView = self.lockViewLeftSide.constant
-      //  labCentar =  self.unlockLabelCentar.constant
         self.swipeToUnlock.isHidden = true
         let colorback = UIColor(red: 33.0/255.0, green: 33.0/255.0, blue: 33.0/255.0, alpha: 1.0)
         lockView.backgroundColor = colorback.withAlphaComponent(0.1)
@@ -86,6 +88,20 @@ class StartTraningViewController: UIViewController {
 
         
          navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
+        
+        if let navView =  Bundle.main.loadNibNamed("navigationView", owner: self, options: nil)?.first as? NavigationView
+        {
+            navView.image.image = self.sing.coatch.team[0].img
+            navView.title.text = self.sing.coatch.team[0].name
+            
+            navView.center = self.navigationBar.center
+            navView.image.contentMode = .scaleAspectFit
+            self.navigationBar.topItem?.titleView = navView
+            self.navigationBar.topItem?.titleView?.center.x = self.view.center.x
+            
+            navView.sizeToFit()
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -95,18 +111,19 @@ class StartTraningViewController: UIViewController {
     
     
     @IBAction func startSession(_ sender: Any) {
+        tranningSessionInfo.isHidden = false
         if start
         {
             let revealviewcontroller:SWRevealViewController = self.revealViewController()
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let newViewController = storyBoard.instantiateViewController(withIdentifier: "selP") as! PlayerViewController
            
-      
             revealviewcontroller.pushFrontViewController(newViewController, animated: true)
 
         }
         else
         {
+            
             timer = Timer.scheduledTimer(timeInterval: 1.0,target: self,selector:#selector(incrementTimer),userInfo: nil,repeats: true)
             lockView.isHidden = false
             stratButton.isEnabled = false
@@ -159,6 +176,7 @@ class StartTraningViewController: UIViewController {
             secund = 0
         }
         tileLabel.text = String(hour)+":"+String(minuts)+":"+String(secund)
+        tranningSessionInfo.text = "Training sessions in progress"
     }
     /*
     // MARK: - Navigation

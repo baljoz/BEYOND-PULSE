@@ -318,11 +318,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BEYOND PULSE/PlayerViewController.swift"
-            timestampString = "523432181.829017"
+            timestampString = "523450378.993116"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "346"
-            endingLineNumber = "346"
+            startingLineNumber = "349"
+            endingLineNumber = "349"
             landmarkName = "onClickToSegment(_:)"
             landmarkType = "7">
             <Locations>
@@ -366,11 +366,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BEYOND PULSE/PlayerViewController.swift"
-            timestampString = "523432181.829017"
+            timestampString = "523450707.614381"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "557"
-            endingLineNumber = "557"
+            startingLineNumber = "559"
+            endingLineNumber = "559"
             landmarkName = "pressCancel()"
             landmarkType = "7">
          </BreakpointContent>

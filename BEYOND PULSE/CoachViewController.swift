@@ -97,7 +97,7 @@ class CoachViewController: UIViewController,UITableViewDataSource,UITableViewDel
             self.sing.playerOnTeam = player
             self.sing.teamSelectId = self.sing.coatch.team[indexPath.row].id
             let newViewController = storyBoard.instantiateViewController(withIdentifier: "selP") as! PlayerViewController
-            newViewController.indexTeam = self.sing.coatch.team[indexPath.row].id
+           self.sing.indexOfSelectedTeam = indexPath.row
             newViewController.navTitleName = self.sing.coatch.team[indexPath.row].name
             newViewController.navigationItem.title = self.sing.coatch.team[indexPath.row].name
             newViewController.players = player

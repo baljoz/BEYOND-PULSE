@@ -26,5 +26,6 @@ class MySingleton {
     var idSesion = Int()
     
     var BL = BLEController()
-    var playerConnected = [Bool]() 
+    var playerConnected = [Bool]()
+    var indexOfSelectedTeam = Int()
 }

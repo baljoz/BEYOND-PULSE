@@ -83,7 +83,7 @@ class SelectTeamViewController: UIViewController,UITableViewDataSource,UITableVi
             
             self.sing.playerOnTeam = player
        let newViewController = storyBoard.instantiateViewController(withIdentifier: "selP") as! PlayerViewController
-            newViewController.indexTeam = indexPath.row
+            self.sing.indexOfSelectedTeam = indexPath.row
             
             newViewController.players = player
             self.sing.teamSelectId = self.sing.coatch.team[indexPath.row].id

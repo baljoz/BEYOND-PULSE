@@ -18,7 +18,8 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
     var imgPlayer  = [UIImage]()
      var sing = MySingleton.sharedInstance
     var JSON = serverCommunications()
-    var indexTeam = Int()
+    var indexOfTeam = Int()
+    var teamId = Int()
     var pageOfSesion : Int = 0
     var players = [Players]()
     
@@ -47,7 +48,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         // Do any additional setup after loading the view.
 
         
-        
+        indexOfTeam =  sing.indexOfSelectedTeam
         
         
         tranningTable.isHidden=true
@@ -86,23 +87,24 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         gradient.endPoint = CGPoint(x: 1.0, y: 0.0)
         
         gradient.frame = startTrening.layer.bounds
-        
+        gradient.masksToBounds = true
         gradient.cornerRadius = 10
         
-       startTrening.layer.addSublayer(gradient)
+       startTrening.layer.insertSublayer(gradient, at: 0)
 
         
         
         playerTable.separatorStyle = .none
         
-        indexTeam = sing.teamSelectId
+        teamId = sing.teamSelectId
         players = sing.playerOnTeam
         
         
         if let navView =  Bundle.main.loadNibNamed("navigationView", owner: self, options: nil)?.first as? NavigationView
         {
-            navView.image.image = self.sing.coatch.team[0].img
-            navView.title.text = self.sing.coatch.team[0].name
+            print(teamId)
+            navView.image.image = self.sing.coatch.team[indexOfTeam].img
+            navView.title.text = self.sing.coatch.team[indexOfTeam].name
      
            // navView.center = self.navigationBar.center
             navView.image.contentMode = .scaleAspectFit
@@ -113,7 +115,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         }
         if self.sing.Sesion.count == 0
         {
-        JSON.getTraningSesionOfTeam(token: self.sing.loadingInfo.token, id:indexTeam,page:pageOfSesion){  ( session:[traningSesion])-> Void in
+        JSON.getTraningSesionOfTeam(token: self.sing.loadingInfo.token, id:teamId,page:pageOfSesion){  ( session:[traningSesion])-> Void in
             
             if self.sing.loadingInfo.stat.statusCode == "BP_200"
             {
@@ -144,7 +146,8 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
  
 }
-
+    
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -320,7 +323,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
            // playerTable.
             if ses.count == 0 {
                 if sing.Sesion.count == 0 {
-                JSON.getTraningSesionOfTeam(token: self.sing.loadingInfo.token, id:indexTeam,page:pageOfSesion){  ( session:[traningSesion])-> Void in
+                JSON.getTraningSesionOfTeam(token: self.sing.loadingInfo.token, id:teamId,page:pageOfSesion){  ( session:[traningSesion])-> Void in
                     if self.sing.loadingInfo.stat.statusCode == "BP_200"
                     {
                  self.sing.Sesion = session
@@ -373,14 +376,13 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         let revealviewcontroller:SWRevealViewController = self.revealViewController()
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "pdetails") as! PlayerDetailsViewController
         
-        JSON.getPlayerDetails(token: sing.loadingInfo.token, idTeam: indexTeam, idPlayer: sing.playerOnTeam[indexPath.row].id){ ( player:Players)-> Void in
+        JSON.getPlayerDetails(token: sing.loadingInfo.token, idTeam: teamId, idPlayer: sing.playerOnTeam[indexPath.row].id){ ( player:Players)-> Void in
             
             if self.sing.loadingInfo.stat.statusCode == "BP_200"
             {
         newViewController.pl = player
        newViewController.pageOfSeeions = self.pageOfSesion
             newViewController.playerId = indexPath.row
-      
             DispatchQueue.main.async(execute: {
                 revealviewcontroller.pushFrontViewController(newViewController, animated: true)  })
             }
@@ -404,7 +406,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         }
        else{
           let revealviewcontroller:SWRevealViewController = self.revealViewController()
-        JSON.getPlayersOfSesionTranning(token: self.sing.loadingInfo.token, idTeam:indexTeam,idSesion: ses[indexPath.row].id){  ( pos:playerOfSessions)-> Void in
+        JSON.getPlayersOfSesionTranning(token: self.sing.loadingInfo.token, idTeam:teamId,idSesion: ses[indexPath.row].id){  ( pos:playerOfSessions)-> Void in
           if self.sing.loadingInfo.stat.statusCode == "BP_200"
           {
             DispatchQueue.main.async(execute: {
@@ -443,7 +445,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if tabControl.selectedSegmentIndex == 1 {
             self.JSON.sesion.removeAll()
-            JSON.getTraningSesionOfTeam(token: self.sing.loadingInfo.token, id:indexTeam,page:pageOfSesion){  ( se:[traningSesion])-> Void in
+            JSON.getTraningSesionOfTeam(token: self.sing.loadingInfo.token, id:teamId,page:pageOfSesion){  ( se:[traningSesion])-> Void in
                 if self.sing.loadingInfo.stat.statusCode == "BP_200"
                 {
                 for s in se{
@@ -559,7 +561,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
     func pressContinue()
     {
         
-     // JSON.updatePlayerTraningSessionsData(token: sing.loadingInfo.token, idTeam: indexTeam, idSession: 4, beltNumber: "111222336", data: "2222ppbbbbmmmm", idPlayer: 6)
+     // JSON.updatePlayerTraningSessionsData(token: sing.loadingInfo.token, idTeam: teamId, idSession: 4, beltNumber: "111222336", data: "2222ppbbbbmmmm", idPlayer: 6)
         let revealviewcontroller:SWRevealViewController = self.revealViewController()
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)

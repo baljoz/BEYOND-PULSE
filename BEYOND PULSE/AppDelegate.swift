@@ -36,6 +36,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         else {  
             application.registerForRemoteNotifications(matching: [.badge, .sound, .alert])
         }
+        BITHockeyManager.shared().configure(withIdentifier: "aef1d66809f64f7f9931db910ab5b1d9")
+        // Do some additional configuration if needed here
+        BITHockeyManager.shared().start()
+        BITHockeyManager.shared().authenticator.authenticateInstallation()
+
         return true
     }
 

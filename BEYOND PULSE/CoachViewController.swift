@@ -39,13 +39,15 @@ class CoachViewController: UIViewController,UITableViewDataSource,UITableViewDel
         coachName.text = sing.coatch.info.firstName+" "+sing.coatch.info.middleName+" "+sing.coatch.info.lastName
         
         
-        let gradient:CAGradientLayer = CAGradientLayer()
+        var gradient:CAGradientLayer = CAGradientLayer()
         let colorBottom = UIColor(red: 48.0/255.0, green: 48.0/255.0, blue: 48.0/255.0, alpha: 1.0).cgColor
         let colorTop = UIColor(red: 61.0/255.0, green: 62.0/255.0, blue: 64.0/255.0, alpha: 1.0).cgColor
         //colorBottom
         gradient.colors = [colorTop, colorBottom]
         gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
         gradient.endPoint = CGPoint(x: 0.0, y: 1.0)
+        
+        //gradient.frame = self.view.bounds
         
         self.view.layer.addSublayer(gradient)
 
@@ -99,6 +101,10 @@ class CoachViewController: UIViewController,UITableViewDataSource,UITableViewDel
             newViewController.navTitleName = self.sing.coatch.team[indexPath.row].name
             newViewController.navigationItem.title = self.sing.coatch.team[indexPath.row].name
             newViewController.players = player
+                for _ in 0...player.count
+                {
+                    self.sing.playerConnected.append(false)
+                }
             DispatchQueue.main.async(execute: {
                 revealviewcontroller.pushFrontViewController(newViewController, animated: true)
                 
@@ -147,3 +153,4 @@ class CoachViewController: UIViewController,UITableViewDataSource,UITableViewDel
     */
 
 }
+

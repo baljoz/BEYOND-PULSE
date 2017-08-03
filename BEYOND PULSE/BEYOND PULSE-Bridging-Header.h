@@ -5,3 +5,4 @@
 #import "SWRevealViewController.h"
 #import "BLEController.h"
 #import <sqlite3.h>
+#import <HockeySDK/HockeySDK.h>

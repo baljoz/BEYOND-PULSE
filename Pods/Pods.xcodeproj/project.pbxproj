@@ -7,52 +7,168 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00A5810AAD8C49376BB7E749620E9AEF /* Pods-BEYOND PULSE-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD8655D048C87A54F407050FC4389B5 /* Pods-BEYOND PULSE-dummy.m */; };
-		57288CA2B6034890BC8A9C773DFA151F /* Pods-BEYOND PULSE-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A905ED2E5186C867782AD42169D87BA /* Pods-BEYOND PULSE-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		034F6BF87B11EFC7171144FD31993C02 /* feedbackActivity~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 95F13279D30C4CEC537D61835D896655 /* feedbackActivity~ipad.png */; };
+		0641EEDA5A3D37E4410A1AD47765CDF8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		0A9ED6AAA5EE93F76F69579EEE1BF2FE /* Rectangle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7F2078702A893E8CD692291A5A9956 /* Rectangle@2x.png */; };
+		0C7B08590B13FDCB31E05F09C69D02E8 /* iconCamera.png in Resources */ = {isa = PBXBuildFile; fileRef = EEFE6181AFBC463A5CA9CBD086833623 /* iconCamera.png */; };
+		0CA78AC46C03FD0677D2BD70F763AA5D /* pt.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 1C658102973D948BAEB01275F9F03F93 /* pt.lproj */; };
+		18C8FE31C992810CC728A5AFEDAA7F13 /* es.lproj in Resources */ = {isa = PBXBuildFile; fileRef = FEC6A740C51B844FDF1E22DCCEB2B05B /* es.lproj */; };
+		1A2180E0DC0BA0B0C7B5CE3ACD2A6768 /* iconCamera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D4A5D123502F873EE2E875101C9D8D /* iconCamera@2x.png */; };
+		1A434D26CCA5BDDFD62A1C92FF4CE93C /* buttonRoundedRegularHighlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 20E428681092ED95CC0649D2089E1075 /* buttonRoundedRegularHighlighted@2x.png */; };
+		21AF0368D2A74AE7CACCDF04BDD015FF /* authorize_denied@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AADC9E16B349D4544F47D2D29232142 /* authorize_denied@3x.png */; };
+		2893823E9CB1E5776F122C091C03B4F7 /* de.lproj in Resources */ = {isa = PBXBuildFile; fileRef = E252A2591289C19B4DE43B963625D0F6 /* de.lproj */; };
+		298A8CF1F92121EE8975416E1B42DA96 /* buttonRoundedRegularHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 886340D07A28AB201B3188E2FD63E3F8 /* buttonRoundedRegularHighlighted.png */; };
+		2B196B950858F08FF975A2246D64C9F7 /* Cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DBF2D3B4ADEAD08B8C25CD5DB3BAE3E /* Cancel.png */; };
+		2F5E6CBD401998573AD5FE0E464262B1 /* ja.lproj in Resources */ = {isa = PBXBuildFile; fileRef = EAFFD9FC930DB615183F1922C645DD54 /* ja.lproj */; };
+		3D8D9920EE3EF913B602FFEEB8C0A695 /* buttonRoundedRegular@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 045BD75E36AFC9C467981C80FA1967BF /* buttonRoundedRegular@2x.png */; };
+		3D9524F690E8C682CA151F6A071BC937 /* zh-Hans.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 806822B4A630F79EFF61D4269F607CE6 /* zh-Hans.lproj */; };
+		44A7EACB545AABDD70E670102CF8C17C /* Arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 559C4839E80C0920588362113F03E90F /* Arrow.png */; };
+		491750401A9EFDFD245721E7BE4627C6 /* Blur.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E8EAFC4C1BAD5B9FD0A142D2E0B6474 /* Blur.png */; };
+		4CCBA4C92CA1EEF80DB166BBEE0E0920 /* feedbackActivity@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F842A2E18A2FCA2BE6AAC1643FDE6E69 /* feedbackActivity@3x.png */; };
+		4F72D084AB1AB0385AFA896BD39BE97D /* Ok.png in Resources */ = {isa = PBXBuildFile; fileRef = A4172D13E204418CEB2A4D86982895F8 /* Ok.png */; };
+		546C2C92080EDDC0E0991C5D93D85C8C /* Ok@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EA395C37D5ACF85E06BEE6AE894EB7A /* Ok@2x.png */; };
 		5944E2D024536025780592F98790B795 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		98022D1600D56CC5017A3BAC58E7778A /* JWTDecode-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CA7CBADD3271038B4B1F522AF074601A /* JWTDecode-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A9446745193904C17AA24F0E27598332 /* JWTDecode-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B20042A6067AE96D36FB9FD2244F1C4B /* JWTDecode-dummy.m */; };
-		B31079901B7416DC296D3511107E4B97 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		C9B0FF5A0106E352E3EC3854BDD36A93 /* JWT.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FF965E8DB5545D6E084A60850081FE /* JWT.swift */; };
-		CA79CBF22E3ABF544E73107CB3FB7460 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF34F67148D1B03B8DE3337FC27BA1F /* Errors.swift */; };
-		D0E2F0F2ADD84482502AA3C8753D925D /* JWTDecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F85B69BE2B6F2AF8ADDA10A88429772 /* JWTDecode.swift */; };
-		ED56A7B3B4F8C8EAA7667F81D2D0A04A /* A0JWT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BD0F148470DAF50E3C10FA4CB914A8 /* A0JWT.swift */; };
+		62B3B2FF935934D79D6A3F98DD9A3310 /* nb.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C992315E28C9E1DC857F67C96405CE55 /* nb.lproj */; };
+		67CD82782BD1B0E3D61179A03E1D551C /* it.lproj in Resources */ = {isa = PBXBuildFile; fileRef = A1C71EB796DC0803CF7A656F4B73BD5F /* it.lproj */; };
+		6C28BC458369D421FB1C6768D294212B /* Pods-BEYOND PULSE-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A905ED2E5186C867782AD42169D87BA /* Pods-BEYOND PULSE-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6F35985538D059073ADF34294A4CD93C /* IconGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = E3803023680CC670446EE7882EE0502E /* IconGradient.png */; };
+		6FEEAB6B0BF65AD3A4B262D249393BB5 /* Ok@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A5E4E3B20E5B2DF0B7A1782E9F15429 /* Ok@3x.png */; };
+		7C074DD39BC70B9C2FEA1DDC557D1E51 /* authorize_denied@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A1E854B0188A63B0529E5650A90D009 /* authorize_denied@2x.png */; };
+		7F5F10E74ED8034D89B93DFEB5CFD539 /* Cancel@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8534B258524971C54881066A89B990A0 /* Cancel@3x.png */; };
+		8055D3FC20CCE9BC4F44626203C81745 /* feedbackActivity@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EC5788607F5490FA771AE7F12811C55 /* feedbackActivity@2x.png */; };
+		8092BB02C170FE0923AD7E7A3640FB24 /* buttonRoundedDelete.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EEC437D2759EA387EB7C302ECC3DCA2 /* buttonRoundedDelete.png */; };
+		82A484029E7E614526A7FD2C1366AC39 /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 70CF67C2B4693793BFDE4CBF033D28AB /* en.lproj */; };
+		82F1D9DA6251D6CE6FCC9F9E7FA3687F /* Pods-BEYOND PULSE-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD8655D048C87A54F407050FC4389B5 /* Pods-BEYOND PULSE-dummy.m */; };
+		83AA80C4C4288E95D1ED250B7A53B1DB /* authorize_denied.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E03D7708A4F91F6EBD4D1D5ABBC979E /* authorize_denied.png */; };
+		84004D40E25E334F16B4D70D53BF149F /* buttonRoundedDeleteHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 5797F307504B88A8F3388704DDDF0C2A /* buttonRoundedDeleteHighlighted.png */; };
+		87CFB536A253F968FED77C5A75DC8847 /* Blur@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66CAC81C2E6471D489F2E9C233C50694 /* Blur@2x.png */; };
+		8C115D2276DEB53520730E0B8791BE0F /* pt-PT.lproj in Resources */ = {isa = PBXBuildFile; fileRef = E970463AEE502E10B1593F16DD22DEBF /* pt-PT.lproj */; };
+		90C28D94DAD18307A25CF195A78B18DF /* FeedbackPlaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 17D940AF8EAC1498DA64924993B33C96 /* FeedbackPlaceholder.png */; };
+		927F2545D650AD499F0114FC9E7C6341 /* fr.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 35F0A898E3E65B3A80613532C2C769D1 /* fr.lproj */; };
+		947E44184B30403F13924C59A1E3B3EE /* hu.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 55079C8398FF8BCA5EDED887696FFEE5 /* hu.lproj */; };
+		98022D1600D56CC5017A3BAC58E7778A /* JWTDecode-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 34EE18F1B675E08A40CD31E3DE80EDA2 /* JWTDecode-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9BC767136A627318026727B775DC290F /* Rectangle@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EDB680664719F452BB733452F92448B /* Rectangle@3x.png */; };
+		9F1E42A64A0982335FB22EA98BADA1CF /* feedbackActivity.png in Resources */ = {isa = PBXBuildFile; fileRef = 07707C3E93214A68D3EBEC49CA8D2089 /* feedbackActivity.png */; };
+		A18DD09A116B5BFA895E52DBB9E05B4A /* Arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0CDFAB46F34C7C7E34BB91071038F57 /* Arrow@2x.png */; };
+		A9446745193904C17AA24F0E27598332 /* JWTDecode-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A0701EA8573B7B0C87F0391CD3D60B5A /* JWTDecode-dummy.m */; };
+		ACE32A0A30642056880DC51F9EBDCDDD /* ru.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 853F9243CC4E3B8CA5DCD3EC9BF2E2C3 /* ru.lproj */; };
+		AF756DF0D4B06480BBEA3BBF81A81D13 /* buttonRoundedDeleteHighlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 853333CBBE9356AA0A808BEC1037C54E /* buttonRoundedDeleteHighlighted@2x.png */; };
+		B9EDCE6E451154EB487F04EF2F4EF2A9 /* AppIconPlaceHolder.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C97AE8BE774CE1EAD93024642D8410 /* AppIconPlaceHolder.png */; };
+		C6E03FE266AC3767805DE30EC71059C1 /* Blur@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D4FD601FA01D2FB8F86658670711EBF /* Blur@3x.png */; };
+		C6E9DDF394B9D50179A07335F0AB5863 /* hr.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 4DE8043E1B83914A482421D276EDC19A /* hr.lproj */; };
+		C9B0FF5A0106E352E3EC3854BDD36A93 /* JWT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC0FB4982120FB8306AEF87B300E510 /* JWT.swift */; };
+		CA79CBF22E3ABF544E73107CB3FB7460 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EF6A15C9EEAC6592248148A5B0E341 /* Errors.swift */; };
+		CC5FD2D069557A5B89BC1879996276D7 /* nl.lproj in Resources */ = {isa = PBXBuildFile; fileRef = A5D63F7BF36EEA7697E957BBAB742701 /* nl.lproj */; };
+		CD9FB0D75EDC3673AAA051DED29F9490 /* buttonRoundedDelete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E17AC1AEA3EA44D5490F71BCD5B6FD9 /* buttonRoundedDelete@2x.png */; };
+		D04B99BD1CFCF232405B6F90B87D5E53 /* fa.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 311EA65969EBE6A73CB6471ACF7EA7E9 /* fa.lproj */; };
+		D0E2F0F2ADD84482502AA3C8753D925D /* JWTDecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D67D28BD1634C9B38009D15EFDC75 /* JWTDecode.swift */; };
+		D34E43E323C6A19985196C4D8F0A61D8 /* buttonRoundedRegular.png in Resources */ = {isa = PBXBuildFile; fileRef = 5888B1673BF3F38D632408832843A595 /* buttonRoundedRegular.png */; };
+		DFDE46266B9D8D56D4656A33A14309B0 /* Rectangle.png in Resources */ = {isa = PBXBuildFile; fileRef = D594C85C2A7E295ABEEF8E2A109117FD /* Rectangle.png */; };
+		ED56A7B3B4F8C8EAA7667F81D2D0A04A /* A0JWT.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1F59E0DF59239A55649B10A09C89C1 /* A0JWT.swift */; };
+		F2852A28C22BF89F8787A33932048DB9 /* IconGradient@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64465E9872D8C9BF7FCFF3773C8850CC /* IconGradient@2x.png */; };
+		F5A90570C26448C498D553B5042EC63F /* Cancel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A33B09EA97CC6787A7589843963A36C0 /* Cancel@2x.png */; };
+		F7832D722DC20EA1887B494B5E50969F /* feedbackActivity@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = D121D9205E7CBCB583862139E3D4BA7D /* feedbackActivity@2x~ipad.png */; };
+		F93D762E66C4C543A0BB8B71CEB9CBE8 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 487660C0BB27E8A7BC2EF92B014682E1 /* bg.png */; };
+		FB6510577C9EB0624EDF73879DC61B45 /* Arrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C83556E4CD550DDA74DF086BB662E5F /* Arrow@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F5E2351AB5DA139187B1149A1BFF3C6B /* PBXContainerItemProxy */ = {
+		057B03702FF49ACD1EFEC04BF8BC8DC9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 734E126F2A1BB2F7F1ACCF523A9A8351;
 			remoteInfo = JWTDecode;
 		};
+		ECC82CFB8165D61C4CE13BD541CC8E47 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB9AD825427F216B54E693242E671FA1;
+			remoteInfo = "HockeySDK-HockeySDKResources";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0405122722C2954476EEDF28F6E7FCBF /* JWTDecode-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JWTDecode-prefix.pch"; sourceTree = "<group>"; };
+		045BD75E36AFC9C467981C80FA1967BF /* buttonRoundedRegular@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "buttonRoundedRegular@2x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/buttonRoundedRegular@2x.png"; sourceTree = "<group>"; };
+		07707C3E93214A68D3EBEC49CA8D2089 /* feedbackActivity.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = feedbackActivity.png; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/feedbackActivity.png"; sourceTree = "<group>"; };
 		0A358EBB888B5D136E5BB3CF9D75244D /* Pods-BEYOND PULSE-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BEYOND PULSE-acknowledgements.plist"; sourceTree = "<group>"; };
+		0EEC437D2759EA387EB7C302ECC3DCA2 /* buttonRoundedDelete.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = buttonRoundedDelete.png; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/buttonRoundedDelete.png"; sourceTree = "<group>"; };
+		17D940AF8EAC1498DA64924993B33C96 /* FeedbackPlaceholder.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = FeedbackPlaceholder.png; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/FeedbackPlaceholder.png"; sourceTree = "<group>"; };
+		1C658102973D948BAEB01275F9F03F93 /* pt.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = pt.lproj; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/pt.lproj"; sourceTree = "<group>"; };
+		20E428681092ED95CC0649D2089E1075 /* buttonRoundedRegularHighlighted@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "buttonRoundedRegularHighlighted@2x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/buttonRoundedRegularHighlighted@2x.png"; sourceTree = "<group>"; };
+		2407E35A4D92EAF2FDB321F477FCE9FD /* JWTDecode.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = JWTDecode.modulemap; sourceTree = "<group>"; };
 		24F697EF7091BB6FC66B8C7702372CFB /* Pods-BEYOND PULSE-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BEYOND PULSE-resources.sh"; sourceTree = "<group>"; };
 		26695B42D414547961E31EE35AA8DFA5 /* Pods-BEYOND PULSE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BEYOND PULSE.release.xcconfig"; sourceTree = "<group>"; };
 		2A905ED2E5186C867782AD42169D87BA /* Pods-BEYOND PULSE-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BEYOND PULSE-umbrella.h"; sourceTree = "<group>"; };
-		33BD0F148470DAF50E3C10FA4CB914A8 /* A0JWT.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = A0JWT.swift; path = JWTDecode/A0JWT.swift; sourceTree = "<group>"; };
+		2D4FD601FA01D2FB8F86658670711EBF /* Blur@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "Blur@3x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/Blur@3x.png"; sourceTree = "<group>"; };
+		311EA65969EBE6A73CB6471ACF7EA7E9 /* fa.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = fa.lproj; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/fa.lproj"; sourceTree = "<group>"; };
+		34EE18F1B675E08A40CD31E3DE80EDA2 /* JWTDecode-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JWTDecode-umbrella.h"; sourceTree = "<group>"; };
+		35F0A898E3E65B3A80613532C2C769D1 /* fr.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = fr.lproj; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/fr.lproj"; sourceTree = "<group>"; };
+		3B42CC03EEB0CA56692E625B3CD966FF /* ResourceBundle-HockeySDKResources-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-HockeySDKResources-Info.plist"; sourceTree = "<group>"; };
 		3BF2E8DE0CC2D71690A2DD203703FACF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3E614DFD4E2F97AA6447CAAE49B360C3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4F85B69BE2B6F2AF8ADDA10A88429772 /* JWTDecode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JWTDecode.swift; path = JWTDecode/JWTDecode.swift; sourceTree = "<group>"; };
-		54F435DBE82354D2F07E94E72BD88811 /* JWTDecode-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JWTDecode-prefix.pch"; sourceTree = "<group>"; };
+		3EA395C37D5ACF85E06BEE6AE894EB7A /* Ok@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "Ok@2x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/Ok@2x.png"; sourceTree = "<group>"; };
+		44D4A5D123502F873EE2E875101C9D8D /* iconCamera@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "iconCamera@2x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/iconCamera@2x.png"; sourceTree = "<group>"; };
+		487660C0BB27E8A7BC2EF92B014682E1 /* bg.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = bg.png; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/bg.png"; sourceTree = "<group>"; };
+		4A1E854B0188A63B0529E5650A90D009 /* authorize_denied@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "authorize_denied@2x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/authorize_denied@2x.png"; sourceTree = "<group>"; };
+		4C7F2078702A893E8CD692291A5A9956 /* Rectangle@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "Rectangle@2x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/Rectangle@2x.png"; sourceTree = "<group>"; };
+		4DE8043E1B83914A482421D276EDC19A /* hr.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = hr.lproj; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/hr.lproj"; sourceTree = "<group>"; };
+		4E03D7708A4F91F6EBD4D1D5ABBC979E /* authorize_denied.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = authorize_denied.png; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/authorize_denied.png"; sourceTree = "<group>"; };
+		4E17AC1AEA3EA44D5490F71BCD5B6FD9 /* buttonRoundedDelete@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "buttonRoundedDelete@2x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/buttonRoundedDelete@2x.png"; sourceTree = "<group>"; };
+		55079C8398FF8BCA5EDED887696FFEE5 /* hu.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = hu.lproj; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/hu.lproj"; sourceTree = "<group>"; };
+		559C4839E80C0920588362113F03E90F /* Arrow.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = Arrow.png; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/Arrow.png"; sourceTree = "<group>"; };
+		5797F307504B88A8F3388704DDDF0C2A /* buttonRoundedDeleteHighlighted.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = buttonRoundedDeleteHighlighted.png; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/buttonRoundedDeleteHighlighted.png"; sourceTree = "<group>"; };
+		5888B1673BF3F38D632408832843A595 /* buttonRoundedRegular.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = buttonRoundedRegular.png; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/buttonRoundedRegular.png"; sourceTree = "<group>"; };
+		5A5E4E3B20E5B2DF0B7A1782E9F15429 /* Ok@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "Ok@3x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/Ok@3x.png"; sourceTree = "<group>"; };
+		5AADC9E16B349D4544F47D2D29232142 /* authorize_denied@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "authorize_denied@3x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/authorize_denied@3x.png"; sourceTree = "<group>"; };
+		5EC5788607F5490FA771AE7F12811C55 /* feedbackActivity@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "feedbackActivity@2x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/feedbackActivity@2x.png"; sourceTree = "<group>"; };
+		64465E9872D8C9BF7FCFF3773C8850CC /* IconGradient@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "IconGradient@2x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/IconGradient@2x.png"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		66CAC81C2E6471D489F2E9C233C50694 /* Blur@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "Blur@2x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/Blur@2x.png"; sourceTree = "<group>"; };
+		6C83556E4CD550DDA74DF086BB662E5F /* Arrow@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "Arrow@3x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/Arrow@3x.png"; sourceTree = "<group>"; };
+		70CF67C2B4693793BFDE4CBF033D28AB /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = en.lproj; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/en.lproj"; sourceTree = "<group>"; };
+		7E465ECC2749ACF1C82FC2921434E602 /* Pods_BEYOND_PULSE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BEYOND_PULSE.framework; path = "Pods-BEYOND PULSE.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EDB680664719F452BB733452F92448B /* Rectangle@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "Rectangle@3x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/Rectangle@3x.png"; sourceTree = "<group>"; };
+		806822B4A630F79EFF61D4269F607CE6 /* zh-Hans.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = "zh-Hans.lproj"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/zh-Hans.lproj"; sourceTree = "<group>"; };
 		82E0D18684E71E8507F6EA29ED33500D /* Pods-BEYOND PULSE-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BEYOND PULSE-acknowledgements.markdown"; sourceTree = "<group>"; };
+		853333CBBE9356AA0A808BEC1037C54E /* buttonRoundedDeleteHighlighted@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "buttonRoundedDeleteHighlighted@2x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/buttonRoundedDeleteHighlighted@2x.png"; sourceTree = "<group>"; };
+		8534B258524971C54881066A89B990A0 /* Cancel@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "Cancel@3x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/Cancel@3x.png"; sourceTree = "<group>"; };
+		853F9243CC4E3B8CA5DCD3EC9BF2E2C3 /* ru.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = ru.lproj; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/ru.lproj"; sourceTree = "<group>"; };
+		886340D07A28AB201B3188E2FD63E3F8 /* buttonRoundedRegularHighlighted.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = buttonRoundedRegularHighlighted.png; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/buttonRoundedRegularHighlighted.png"; sourceTree = "<group>"; };
+		8DBF2D3B4ADEAD08B8C25CD5DB3BAE3E /* Cancel.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = Cancel.png; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/Cancel.png"; sourceTree = "<group>"; };
+		8E8EAFC4C1BAD5B9FD0A142D2E0B6474 /* Blur.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = Blur.png; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/Blur.png"; sourceTree = "<group>"; };
 		91DC5114E6E7C5DD52F409ADCE1A585C /* Pods-BEYOND PULSE-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BEYOND PULSE-frameworks.sh"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A80F3B18A27E72E93A18AE7123A4FB9A /* Pods_BEYOND_PULSE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BEYOND_PULSE.framework; path = "Pods-BEYOND PULSE.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B20042A6067AE96D36FB9FD2244F1C4B /* JWTDecode-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JWTDecode-dummy.m"; sourceTree = "<group>"; };
-		BBF34F67148D1B03B8DE3337FC27BA1F /* Errors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Errors.swift; path = JWTDecode/Errors.swift; sourceTree = "<group>"; };
-		C0089CA1C4AF43F80F6D96ABC69A945D /* JWTDecode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JWTDecode.framework; path = JWTDecode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C07DF0EBA9BD2E90284442F06A1D6881 /* JWTDecode.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = JWTDecode.modulemap; sourceTree = "<group>"; };
-		CA7CBADD3271038B4B1F522AF074601A /* JWTDecode-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JWTDecode-umbrella.h"; sourceTree = "<group>"; };
+		95F13279D30C4CEC537D61835D896655 /* feedbackActivity~ipad.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "feedbackActivity~ipad.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/feedbackActivity~ipad.png"; sourceTree = "<group>"; };
+		9AC0FB4982120FB8306AEF87B300E510 /* JWT.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JWT.swift; path = JWTDecode/JWT.swift; sourceTree = "<group>"; };
+		9C5C8D8C787C2B2F8BCB260CA3322B62 /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HockeySDK.framework; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDK.framework"; sourceTree = "<group>"; };
+		9E42CF8AA06D539A339AD169922275AE /* JWTDecode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JWTDecode.framework; path = JWTDecode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0701EA8573B7B0C87F0391CD3D60B5A /* JWTDecode-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JWTDecode-dummy.m"; sourceTree = "<group>"; };
+		A1C71EB796DC0803CF7A656F4B73BD5F /* it.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = it.lproj; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/it.lproj"; sourceTree = "<group>"; };
+		A33B09EA97CC6787A7589843963A36C0 /* Cancel@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "Cancel@2x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/Cancel@2x.png"; sourceTree = "<group>"; };
+		A4172D13E204418CEB2A4D86982895F8 /* Ok.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = Ok.png; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/Ok.png"; sourceTree = "<group>"; };
+		A5D63F7BF36EEA7697E957BBAB742701 /* nl.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = nl.lproj; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/nl.lproj"; sourceTree = "<group>"; };
+		A71F420FE949AABF3F3C3C3DA21E8D74 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACE1C47621E4E4A264EF1DCAA40A03B7 /* HockeySDKResources.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = HockeySDKResources.bundle; path = HockeySDKResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6EF6A15C9EEAC6592248148A5B0E341 /* Errors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Errors.swift; path = JWTDecode/Errors.swift; sourceTree = "<group>"; };
+		BB1F59E0DF59239A55649B10A09C89C1 /* A0JWT.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = A0JWT.swift; path = JWTDecode/A0JWT.swift; sourceTree = "<group>"; };
+		C0CDFAB46F34C7C7E34BB91071038F57 /* Arrow@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "Arrow@2x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/Arrow@2x.png"; sourceTree = "<group>"; };
+		C992315E28C9E1DC857F67C96405CE55 /* nb.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = nb.lproj; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/nb.lproj"; sourceTree = "<group>"; };
+		D121D9205E7CBCB583862139E3D4BA7D /* feedbackActivity@2x~ipad.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "feedbackActivity@2x~ipad.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/feedbackActivity@2x~ipad.png"; sourceTree = "<group>"; };
 		D4EA1AA14B9E895B590B62DFCDB572F7 /* Pods-BEYOND PULSE.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-BEYOND PULSE.modulemap"; sourceTree = "<group>"; };
-		E31CB60D2075D083FF4FF3BB07E1C2E2 /* JWTDecode.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JWTDecode.xcconfig; sourceTree = "<group>"; };
-		F6FF965E8DB5545D6E084A60850081FE /* JWT.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JWT.swift; path = JWTDecode/JWT.swift; sourceTree = "<group>"; };
+		D594C85C2A7E295ABEEF8E2A109117FD /* Rectangle.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = Rectangle.png; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/Rectangle.png"; sourceTree = "<group>"; };
+		DE4D67D28BD1634C9B38009D15EFDC75 /* JWTDecode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JWTDecode.swift; path = JWTDecode/JWTDecode.swift; sourceTree = "<group>"; };
+		E252A2591289C19B4DE43B963625D0F6 /* de.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = de.lproj; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/de.lproj"; sourceTree = "<group>"; };
+		E3803023680CC670446EE7882EE0502E /* IconGradient.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = IconGradient.png; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/IconGradient.png"; sourceTree = "<group>"; };
+		E970463AEE502E10B1593F16DD22DEBF /* pt-PT.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = "pt-PT.lproj"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/pt-PT.lproj"; sourceTree = "<group>"; };
+		EAFFD9FC930DB615183F1922C645DD54 /* ja.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = ja.lproj; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/ja.lproj"; sourceTree = "<group>"; };
+		EEFE6181AFBC463A5CA9CBD086833623 /* iconCamera.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = iconCamera.png; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/iconCamera.png"; sourceTree = "<group>"; };
+		F4C97AE8BE774CE1EAD93024642D8410 /* AppIconPlaceHolder.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = AppIconPlaceHolder.png; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/AppIconPlaceHolder.png"; sourceTree = "<group>"; };
+		F842A2E18A2FCA2BE6AAC1643FDE6E69 /* feedbackActivity@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "feedbackActivity@3x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/feedbackActivity@3x.png"; sourceTree = "<group>"; };
+		FBD6F42E63E240A813FF8355BEC99E95 /* JWTDecode.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JWTDecode.xcconfig; sourceTree = "<group>"; };
 		FBD8655D048C87A54F407050FC4389B5 /* Pods-BEYOND PULSE-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BEYOND PULSE-dummy.m"; sourceTree = "<group>"; };
+		FEC6A740C51B844FDF1E22DCCEB2B05B /* es.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = es.lproj; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/es.lproj"; sourceTree = "<group>"; };
 		FF89C144141032BA873B064AEF50ACBD /* Pods-BEYOND PULSE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BEYOND PULSE.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,17 +181,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B2520294F17B160B23CFC3890498846A /* Frameworks */ = {
+		3E4285FE58B9D59B584D9F34BF3244CC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B31079901B7416DC296D3511107E4B97 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C380F6853DB333798C4B7387079477A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0641EEDA5A3D37E4410A1AD47765CDF8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14666AECF3A70AB928691D0B4C195CA4 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3B42CC03EEB0CA56692E625B3CD966FF /* ResourceBundle-HockeySDKResources-Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/HockeySDK";
+			sourceTree = "<group>";
+		};
 		14FB4B6DDFD2DC651EB4D1593FB6FA5F /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,13 +216,18 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		2F784C17BCB0A24498A72C4530B77A3B /* Products */ = {
+		310AB190C961F9239E252EF506AC9FD5 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				C0089CA1C4AF43F80F6D96ABC69A945D /* JWTDecode.framework */,
-				A80F3B18A27E72E93A18AE7123A4FB9A /* Pods_BEYOND_PULSE.framework */,
+				A71F420FE949AABF3F3C3C3DA21E8D74 /* Info.plist */,
+				2407E35A4D92EAF2FDB321F477FCE9FD /* JWTDecode.modulemap */,
+				FBD6F42E63E240A813FF8355BEC99E95 /* JWTDecode.xcconfig */,
+				A0701EA8573B7B0C87F0391CD3D60B5A /* JWTDecode-dummy.m */,
+				0405122722C2954476EEDF28F6E7FCBF /* JWTDecode-prefix.pch */,
+				34EE18F1B675E08A40CD31E3DE80EDA2 /* JWTDecode-umbrella.h */,
 			);
-			name = Products;
+			name = "Support Files";
+			path = "../Target Support Files/JWTDecode";
 			sourceTree = "<group>";
 		};
 		39411EEF0438BC04F27C7AB32187EC82 /* Pods-BEYOND PULSE */ = {
@@ -111,50 +248,115 @@
 			path = "Target Support Files/Pods-BEYOND PULSE";
 			sourceTree = "<group>";
 		};
-		563D75F3E5DDAFC598937C098D478E49 /* JWTDecode */ = {
-			isa = PBXGroup;
-			children = (
-				33BD0F148470DAF50E3C10FA4CB914A8 /* A0JWT.swift */,
-				BBF34F67148D1B03B8DE3337FC27BA1F /* Errors.swift */,
-				F6FF965E8DB5545D6E084A60850081FE /* JWT.swift */,
-				4F85B69BE2B6F2AF8ADDA10A88429772 /* JWTDecode.swift */,
-				ADF9FFF89252CC1D86D94448F25CBBB8 /* Support Files */,
-			);
-			name = JWTDecode;
-			path = JWTDecode;
-			sourceTree = "<group>";
-		};
-		7A3E74A767D0A7398FB72829C093B784 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				563D75F3E5DDAFC598937C098D478E49 /* JWTDecode */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				7A3E74A767D0A7398FB72829C093B784 /* Pods */,
-				2F784C17BCB0A24498A72C4530B77A3B /* Products */,
+				89A9AE50B00255E183FEFE971C4A7F4D /* Pods */,
+				AC3A281DECED55BC899D0A99745E40A7 /* Products */,
 				14FB4B6DDFD2DC651EB4D1593FB6FA5F /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		ADF9FFF89252CC1D86D94448F25CBBB8 /* Support Files */ = {
+		89A9AE50B00255E183FEFE971C4A7F4D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3E614DFD4E2F97AA6447CAAE49B360C3 /* Info.plist */,
-				C07DF0EBA9BD2E90284442F06A1D6881 /* JWTDecode.modulemap */,
-				E31CB60D2075D083FF4FF3BB07E1C2E2 /* JWTDecode.xcconfig */,
-				B20042A6067AE96D36FB9FD2244F1C4B /* JWTDecode-dummy.m */,
-				54F435DBE82354D2F07E94E72BD88811 /* JWTDecode-prefix.pch */,
-				CA7CBADD3271038B4B1F522AF074601A /* JWTDecode-umbrella.h */,
+				DAD9695CF06DCCE28209F2C2CC451CEA /* HockeySDK */,
+				AE7AB0FC6F62BC640F6BFD7201878878 /* JWTDecode */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/JWTDecode";
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9384752A6B7D1C86F7EC6488A58C8E16 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9C5C8D8C787C2B2F8BCB260CA3322B62 /* HockeySDK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AC3A281DECED55BC899D0A99745E40A7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ACE1C47621E4E4A264EF1DCAA40A03B7 /* HockeySDKResources.bundle */,
+				9E42CF8AA06D539A339AD169922275AE /* JWTDecode.framework */,
+				7E465ECC2749ACF1C82FC2921434E602 /* Pods_BEYOND_PULSE.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AE7AB0FC6F62BC640F6BFD7201878878 /* JWTDecode */ = {
+			isa = PBXGroup;
+			children = (
+				BB1F59E0DF59239A55649B10A09C89C1 /* A0JWT.swift */,
+				B6EF6A15C9EEAC6592248148A5B0E341 /* Errors.swift */,
+				9AC0FB4982120FB8306AEF87B300E510 /* JWT.swift */,
+				DE4D67D28BD1634C9B38009D15EFDC75 /* JWTDecode.swift */,
+				310AB190C961F9239E252EF506AC9FD5 /* Support Files */,
+			);
+			name = JWTDecode;
+			path = JWTDecode;
+			sourceTree = "<group>";
+		};
+		BB09DFD9952DAE783828526A75F3D531 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F4C97AE8BE774CE1EAD93024642D8410 /* AppIconPlaceHolder.png */,
+				559C4839E80C0920588362113F03E90F /* Arrow.png */,
+				C0CDFAB46F34C7C7E34BB91071038F57 /* Arrow@2x.png */,
+				6C83556E4CD550DDA74DF086BB662E5F /* Arrow@3x.png */,
+				4E03D7708A4F91F6EBD4D1D5ABBC979E /* authorize_denied.png */,
+				4A1E854B0188A63B0529E5650A90D009 /* authorize_denied@2x.png */,
+				5AADC9E16B349D4544F47D2D29232142 /* authorize_denied@3x.png */,
+				487660C0BB27E8A7BC2EF92B014682E1 /* bg.png */,
+				8E8EAFC4C1BAD5B9FD0A142D2E0B6474 /* Blur.png */,
+				66CAC81C2E6471D489F2E9C233C50694 /* Blur@2x.png */,
+				2D4FD601FA01D2FB8F86658670711EBF /* Blur@3x.png */,
+				0EEC437D2759EA387EB7C302ECC3DCA2 /* buttonRoundedDelete.png */,
+				4E17AC1AEA3EA44D5490F71BCD5B6FD9 /* buttonRoundedDelete@2x.png */,
+				5797F307504B88A8F3388704DDDF0C2A /* buttonRoundedDeleteHighlighted.png */,
+				853333CBBE9356AA0A808BEC1037C54E /* buttonRoundedDeleteHighlighted@2x.png */,
+				5888B1673BF3F38D632408832843A595 /* buttonRoundedRegular.png */,
+				045BD75E36AFC9C467981C80FA1967BF /* buttonRoundedRegular@2x.png */,
+				886340D07A28AB201B3188E2FD63E3F8 /* buttonRoundedRegularHighlighted.png */,
+				20E428681092ED95CC0649D2089E1075 /* buttonRoundedRegularHighlighted@2x.png */,
+				8DBF2D3B4ADEAD08B8C25CD5DB3BAE3E /* Cancel.png */,
+				A33B09EA97CC6787A7589843963A36C0 /* Cancel@2x.png */,
+				8534B258524971C54881066A89B990A0 /* Cancel@3x.png */,
+				E252A2591289C19B4DE43B963625D0F6 /* de.lproj */,
+				70CF67C2B4693793BFDE4CBF033D28AB /* en.lproj */,
+				FEC6A740C51B844FDF1E22DCCEB2B05B /* es.lproj */,
+				311EA65969EBE6A73CB6471ACF7EA7E9 /* fa.lproj */,
+				07707C3E93214A68D3EBEC49CA8D2089 /* feedbackActivity.png */,
+				5EC5788607F5490FA771AE7F12811C55 /* feedbackActivity@2x.png */,
+				D121D9205E7CBCB583862139E3D4BA7D /* feedbackActivity@2x~ipad.png */,
+				F842A2E18A2FCA2BE6AAC1643FDE6E69 /* feedbackActivity@3x.png */,
+				95F13279D30C4CEC537D61835D896655 /* feedbackActivity~ipad.png */,
+				17D940AF8EAC1498DA64924993B33C96 /* FeedbackPlaceholder.png */,
+				35F0A898E3E65B3A80613532C2C769D1 /* fr.lproj */,
+				4DE8043E1B83914A482421D276EDC19A /* hr.lproj */,
+				55079C8398FF8BCA5EDED887696FFEE5 /* hu.lproj */,
+				EEFE6181AFBC463A5CA9CBD086833623 /* iconCamera.png */,
+				44D4A5D123502F873EE2E875101C9D8D /* iconCamera@2x.png */,
+				E3803023680CC670446EE7882EE0502E /* IconGradient.png */,
+				64465E9872D8C9BF7FCFF3773C8850CC /* IconGradient@2x.png */,
+				A1C71EB796DC0803CF7A656F4B73BD5F /* it.lproj */,
+				EAFFD9FC930DB615183F1922C645DD54 /* ja.lproj */,
+				C992315E28C9E1DC857F67C96405CE55 /* nb.lproj */,
+				A5D63F7BF36EEA7697E957BBAB742701 /* nl.lproj */,
+				A4172D13E204418CEB2A4D86982895F8 /* Ok.png */,
+				3EA395C37D5ACF85E06BEE6AE894EB7A /* Ok@2x.png */,
+				5A5E4E3B20E5B2DF0B7A1782E9F15429 /* Ok@3x.png */,
+				1C658102973D948BAEB01275F9F03F93 /* pt.lproj */,
+				E970463AEE502E10B1593F16DD22DEBF /* pt-PT.lproj */,
+				D594C85C2A7E295ABEEF8E2A109117FD /* Rectangle.png */,
+				4C7F2078702A893E8CD692291A5A9956 /* Rectangle@2x.png */,
+				7EDB680664719F452BB733452F92448B /* Rectangle@3x.png */,
+				853F9243CC4E3B8CA5DCD3EC9BF2E2C3 /* ru.lproj */,
+				806822B4A630F79EFF61D4269F607CE6 /* zh-Hans.lproj */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -173,14 +375,33 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		DAD9695CF06DCCE28209F2C2CC451CEA /* HockeySDK */ = {
+			isa = PBXGroup;
+			children = (
+				E8F190577F456A63871A6AEA50D28A84 /* DefaultLib */,
+				14666AECF3A70AB928691D0B4C195CA4 /* Support Files */,
+			);
+			name = HockeySDK;
+			path = HockeySDK;
+			sourceTree = "<group>";
+		};
+		E8F190577F456A63871A6AEA50D28A84 /* DefaultLib */ = {
+			isa = PBXGroup;
+			children = (
+				9384752A6B7D1C86F7EC6488A58C8E16 /* Frameworks */,
+				BB09DFD9952DAE783828526A75F3D531 /* Resources */,
+			);
+			name = DefaultLib;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		69A4CF93EEBF1F76A1A257694854BE69 /* Headers */ = {
+		27C1793FA04AD9176C415C7B56D25F70 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57288CA2B6034890BC8A9C773DFA151F /* Pods-BEYOND PULSE-umbrella.h in Headers */,
+				6C28BC458369D421FB1C6768D294212B /* Pods-BEYOND PULSE-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +416,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		20088781EB49975FD78B6C1D08B10986 /* Pods-BEYOND PULSE */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 60C4CCFCC5F122FA5CDB02DEDFFF054E /* Build configuration list for PBXNativeTarget "Pods-BEYOND PULSE" */;
+			buildPhases = (
+				8817D81D6185F6CF342B3E80E6F9ACCE /* Sources */,
+				C380F6853DB333798C4B7387079477A6 /* Frameworks */,
+				27C1793FA04AD9176C415C7B56D25F70 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6D1DF76C0CD799BDD1BD850B934A014B /* PBXTargetDependency */,
+				3120971793233F6DCFB9908B73783F62 /* PBXTargetDependency */,
+			);
+			name = "Pods-BEYOND PULSE";
+			productName = "Pods-BEYOND PULSE";
+			productReference = 7E465ECC2749ACF1C82FC2921434E602 /* Pods_BEYOND_PULSE.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		734E126F2A1BB2F7F1ACCF523A9A8351 /* JWTDecode */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 033B38A811E6E54B02C8CB30C17608FB /* Build configuration list for PBXNativeTarget "JWTDecode" */;
@@ -209,26 +449,25 @@
 			);
 			name = JWTDecode;
 			productName = JWTDecode;
-			productReference = C0089CA1C4AF43F80F6D96ABC69A945D /* JWTDecode.framework */;
+			productReference = 9E42CF8AA06D539A339AD169922275AE /* JWTDecode.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		B77E62D1B16162D7A37355AD06371E63 /* Pods-BEYOND PULSE */ = {
+		EB9AD825427F216B54E693242E671FA1 /* HockeySDK-HockeySDKResources */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 24E6615840444B4EEEE2B13620F5F745 /* Build configuration list for PBXNativeTarget "Pods-BEYOND PULSE" */;
+			buildConfigurationList = 36BC870E757C15E340A9A6F2C5E8A6F4 /* Build configuration list for PBXNativeTarget "HockeySDK-HockeySDKResources" */;
 			buildPhases = (
-				F54885CAA32EB5C1055EB12348191CC1 /* Sources */,
-				B2520294F17B160B23CFC3890498846A /* Frameworks */,
-				69A4CF93EEBF1F76A1A257694854BE69 /* Headers */,
+				7097FE18530E2A5B620A9BFBDE8ABC3C /* Sources */,
+				3E4285FE58B9D59B584D9F34BF3244CC /* Frameworks */,
+				5E1A292E24DC1060B1BBA5AB692423C3 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				0806B7D4989CC55D9334CC66FB2ECD1D /* PBXTargetDependency */,
 			);
-			name = "Pods-BEYOND PULSE";
-			productName = "Pods-BEYOND PULSE";
-			productReference = A80F3B18A27E72E93A18AE7123A4FB9A /* Pods_BEYOND_PULSE.framework */;
-			productType = "com.apple.product-type.framework";
+			name = "HockeySDK-HockeySDKResources";
+			productName = "HockeySDK-HockeySDKResources";
+			productReference = ACE1C47621E4E4A264EF1DCAA40A03B7 /* HockeySDKResources.bundle */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -247,17 +486,96 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 2F784C17BCB0A24498A72C4530B77A3B /* Products */;
+			productRefGroup = AC3A281DECED55BC899D0A99745E40A7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				EB9AD825427F216B54E693242E671FA1 /* HockeySDK-HockeySDKResources */,
 				734E126F2A1BB2F7F1ACCF523A9A8351 /* JWTDecode */,
-				B77E62D1B16162D7A37355AD06371E63 /* Pods-BEYOND PULSE */,
+				20088781EB49975FD78B6C1D08B10986 /* Pods-BEYOND PULSE */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		5E1A292E24DC1060B1BBA5AB692423C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9EDCE6E451154EB487F04EF2F4EF2A9 /* AppIconPlaceHolder.png in Resources */,
+				44A7EACB545AABDD70E670102CF8C17C /* Arrow.png in Resources */,
+				A18DD09A116B5BFA895E52DBB9E05B4A /* Arrow@2x.png in Resources */,
+				FB6510577C9EB0624EDF73879DC61B45 /* Arrow@3x.png in Resources */,
+				83AA80C4C4288E95D1ED250B7A53B1DB /* authorize_denied.png in Resources */,
+				7C074DD39BC70B9C2FEA1DDC557D1E51 /* authorize_denied@2x.png in Resources */,
+				21AF0368D2A74AE7CACCDF04BDD015FF /* authorize_denied@3x.png in Resources */,
+				F93D762E66C4C543A0BB8B71CEB9CBE8 /* bg.png in Resources */,
+				491750401A9EFDFD245721E7BE4627C6 /* Blur.png in Resources */,
+				87CFB536A253F968FED77C5A75DC8847 /* Blur@2x.png in Resources */,
+				C6E03FE266AC3767805DE30EC71059C1 /* Blur@3x.png in Resources */,
+				8092BB02C170FE0923AD7E7A3640FB24 /* buttonRoundedDelete.png in Resources */,
+				CD9FB0D75EDC3673AAA051DED29F9490 /* buttonRoundedDelete@2x.png in Resources */,
+				84004D40E25E334F16B4D70D53BF149F /* buttonRoundedDeleteHighlighted.png in Resources */,
+				AF756DF0D4B06480BBEA3BBF81A81D13 /* buttonRoundedDeleteHighlighted@2x.png in Resources */,
+				D34E43E323C6A19985196C4D8F0A61D8 /* buttonRoundedRegular.png in Resources */,
+				3D8D9920EE3EF913B602FFEEB8C0A695 /* buttonRoundedRegular@2x.png in Resources */,
+				298A8CF1F92121EE8975416E1B42DA96 /* buttonRoundedRegularHighlighted.png in Resources */,
+				1A434D26CCA5BDDFD62A1C92FF4CE93C /* buttonRoundedRegularHighlighted@2x.png in Resources */,
+				2B196B950858F08FF975A2246D64C9F7 /* Cancel.png in Resources */,
+				F5A90570C26448C498D553B5042EC63F /* Cancel@2x.png in Resources */,
+				7F5F10E74ED8034D89B93DFEB5CFD539 /* Cancel@3x.png in Resources */,
+				2893823E9CB1E5776F122C091C03B4F7 /* de.lproj in Resources */,
+				82A484029E7E614526A7FD2C1366AC39 /* en.lproj in Resources */,
+				18C8FE31C992810CC728A5AFEDAA7F13 /* es.lproj in Resources */,
+				D04B99BD1CFCF232405B6F90B87D5E53 /* fa.lproj in Resources */,
+				9F1E42A64A0982335FB22EA98BADA1CF /* feedbackActivity.png in Resources */,
+				8055D3FC20CCE9BC4F44626203C81745 /* feedbackActivity@2x.png in Resources */,
+				F7832D722DC20EA1887B494B5E50969F /* feedbackActivity@2x~ipad.png in Resources */,
+				4CCBA4C92CA1EEF80DB166BBEE0E0920 /* feedbackActivity@3x.png in Resources */,
+				034F6BF87B11EFC7171144FD31993C02 /* feedbackActivity~ipad.png in Resources */,
+				90C28D94DAD18307A25CF195A78B18DF /* FeedbackPlaceholder.png in Resources */,
+				927F2545D650AD499F0114FC9E7C6341 /* fr.lproj in Resources */,
+				C6E9DDF394B9D50179A07335F0AB5863 /* hr.lproj in Resources */,
+				947E44184B30403F13924C59A1E3B3EE /* hu.lproj in Resources */,
+				0C7B08590B13FDCB31E05F09C69D02E8 /* iconCamera.png in Resources */,
+				1A2180E0DC0BA0B0C7B5CE3ACD2A6768 /* iconCamera@2x.png in Resources */,
+				6F35985538D059073ADF34294A4CD93C /* IconGradient.png in Resources */,
+				F2852A28C22BF89F8787A33932048DB9 /* IconGradient@2x.png in Resources */,
+				67CD82782BD1B0E3D61179A03E1D551C /* it.lproj in Resources */,
+				2F5E6CBD401998573AD5FE0E464262B1 /* ja.lproj in Resources */,
+				62B3B2FF935934D79D6A3F98DD9A3310 /* nb.lproj in Resources */,
+				CC5FD2D069557A5B89BC1879996276D7 /* nl.lproj in Resources */,
+				4F72D084AB1AB0385AFA896BD39BE97D /* Ok.png in Resources */,
+				546C2C92080EDDC0E0991C5D93D85C8C /* Ok@2x.png in Resources */,
+				6FEEAB6B0BF65AD3A4B262D249393BB5 /* Ok@3x.png in Resources */,
+				8C115D2276DEB53520730E0B8791BE0F /* pt-PT.lproj in Resources */,
+				0CA78AC46C03FD0677D2BD70F763AA5D /* pt.lproj in Resources */,
+				DFDE46266B9D8D56D4656A33A14309B0 /* Rectangle.png in Resources */,
+				0A9ED6AAA5EE93F76F69579EEE1BF2FE /* Rectangle@2x.png in Resources */,
+				9BC767136A627318026727B775DC290F /* Rectangle@3x.png in Resources */,
+				ACE32A0A30642056880DC51F9EBDCDDD /* ru.lproj in Resources */,
+				3D9524F690E8C682CA151F6A071BC937 /* zh-Hans.lproj in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		7097FE18530E2A5B620A9BFBDE8ABC3C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8817D81D6185F6CF342B3E80E6F9ACCE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82F1D9DA6251D6CE6FCC9F9E7FA3687F /* Pods-BEYOND PULSE-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A609FCE138E7FE7BA6445FC3598F7293 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -270,27 +588,64 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F54885CAA32EB5C1055EB12348191CC1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				00A5810AAD8C49376BB7E749620E9AEF /* Pods-BEYOND PULSE-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0806B7D4989CC55D9334CC66FB2ECD1D /* PBXTargetDependency */ = {
+		3120971793233F6DCFB9908B73783F62 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = JWTDecode;
 			target = 734E126F2A1BB2F7F1ACCF523A9A8351 /* JWTDecode */;
-			targetProxy = F5E2351AB5DA139187B1149A1BFF3C6B /* PBXContainerItemProxy */;
+			targetProxy = 057B03702FF49ACD1EFEC04BF8BC8DC9 /* PBXContainerItemProxy */;
+		};
+		6D1DF76C0CD799BDD1BD850B934A014B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "HockeySDK-HockeySDKResources";
+			target = EB9AD825427F216B54E693242E671FA1 /* HockeySDK-HockeySDKResources */;
+			targetProxy = ECC82CFB8165D61C4CE13BD541CC8E47 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		3A29B5B07681DB282C6EC5B0FD536AAF /* Release */ = {
+		061E0692169828370178E77A13637D89 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF89C144141032BA873B064AEF50ACBD /* Pods-BEYOND PULSE.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-BEYOND PULSE/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BEYOND PULSE/Pods-BEYOND PULSE.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_BEYOND_PULSE;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		242F2E0E8A234A3AC61A8E55BF80B855 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 26695B42D414547961E31EE35AA8DFA5 /* Pods-BEYOND PULSE.release.xcconfig */;
 			buildSettings = {
@@ -308,7 +663,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-BEYOND PULSE/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-BEYOND PULSE/Pods-BEYOND PULSE.modulemap";
@@ -328,7 +683,7 @@
 			};
 			name = Release;
 		};
-		4E487F173E6C9664F4E9E26B9635D23C /* Debug */ = {
+		643C76AA582046977B7877822ED7A258 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -368,7 +723,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
@@ -376,9 +731,25 @@
 			};
 			name = Debug;
 		};
+		830037AC6C08B9382331954EBA7A82C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/HockeySDK";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/HockeySDK/ResourceBundle-HockeySDKResources-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = HockeySDKResources;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
 		8B17C8A9F8B93977B015F340E67024BC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E31CB60D2075D083FF4FF3BB07E1C2E2 /* JWTDecode.xcconfig */;
+			baseConfigurationReference = FBD6F42E63E240A813FF8355BEC99E95 /* JWTDecode.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -411,46 +782,7 @@
 			};
 			name = Debug;
 		};
-		BAB3C5E8F9957D1782A410B07450A24F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF89C144141032BA873B064AEF50ACBD /* Pods-BEYOND PULSE.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-BEYOND PULSE/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-BEYOND PULSE/Pods-BEYOND PULSE.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_BEYOND_PULSE;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		BDD0139D6EB93FA375F887ABD62DAB2E /* Release */ = {
+		C03B8870130C98D1B02B59D003687524 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -486,7 +818,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
@@ -494,9 +826,25 @@
 			};
 			name = Release;
 		};
+		CFDCC476D49D1DAD0A29BE5211B7F5CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/HockeySDK";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/HockeySDK/ResourceBundle-HockeySDKResources-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = HockeySDKResources;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 		F5C6AA91553DA0EACAA6B349A0FEC1BB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E31CB60D2075D083FF4FF3BB07E1C2E2 /* JWTDecode.xcconfig */;
+			baseConfigurationReference = FBD6F42E63E240A813FF8355BEC99E95 /* JWTDecode.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -540,20 +888,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		24E6615840444B4EEEE2B13620F5F745 /* Build configuration list for PBXNativeTarget "Pods-BEYOND PULSE" */ = {
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BAB3C5E8F9957D1782A410B07450A24F /* Debug */,
-				3A29B5B07681DB282C6EC5B0FD536AAF /* Release */,
+				643C76AA582046977B7877822ED7A258 /* Debug */,
+				C03B8870130C98D1B02B59D003687524 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+		36BC870E757C15E340A9A6F2C5E8A6F4 /* Build configuration list for PBXNativeTarget "HockeySDK-HockeySDKResources" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4E487F173E6C9664F4E9E26B9635D23C /* Debug */,
-				BDD0139D6EB93FA375F887ABD62DAB2E /* Release */,
+				830037AC6C08B9382331954EBA7A82C1 /* Debug */,
+				CFDCC476D49D1DAD0A29BE5211B7F5CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		60C4CCFCC5F122FA5CDB02DEDFFF054E /* Build configuration list for PBXNativeTarget "Pods-BEYOND PULSE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				061E0692169828370178E77A13637D89 /* Debug */,
+				242F2E0E8A234A3AC61A8E55BF80B855 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

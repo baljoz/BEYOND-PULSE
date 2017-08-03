@@ -54,6 +54,7 @@
 		07EF5BE71F05012200476225 /* FirstScreanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EF5BE61F05012200476225 /* FirstScreanViewController.swift */; };
 		07FDB20D1F26060E00D35B85 /* buttonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07FDB20C1F26060E00D35B85 /* buttonView.xib */; };
 		07FDB2111F26069700D35B85 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FDB2101F26069700D35B85 /* CustomButton.swift */; };
+		78985CF4092A36EF7773A9E3 /* Pods_BEYOND_PULSE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B565572DBE07F87A83508FBC /* Pods_BEYOND_PULSE.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +159,7 @@
 		07FDB20C1F26060E00D35B85 /* buttonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = buttonView.xib; sourceTree = "<group>"; };
 		07FDB2101F26069700D35B85 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		10CAC75485C41836B5E78DC4 /* Pods-BEYOND PULSE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BEYOND PULSE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BEYOND PULSE/Pods-BEYOND PULSE.debug.xcconfig"; sourceTree = "<group>"; };
+		B565572DBE07F87A83508FBC /* Pods_BEYOND_PULSE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BEYOND_PULSE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8F6056CD1D0A617B8F75847 /* Pods-BEYOND PULSE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BEYOND PULSE.release.xcconfig"; path = "Pods/Target Support Files/Pods-BEYOND PULSE/Pods-BEYOND PULSE.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -172,6 +174,7 @@
 				0742F06F1F134CAB001FA68D /* Pods_BEYOND_PULSE.framework in Frameworks */,
 				07DB2B871F0CCD0100D686C9 /* CoreLocation.framework in Frameworks */,
 				07DB2B851F0CC49C00D686C9 /* CoreBluetooth.framework in Frameworks */,
+				78985CF4092A36EF7773A9E3 /* Pods_BEYOND_PULSE.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +311,7 @@
 				07B37FC21F0A687600B7FB8A /* Pods */,
 				07B37FC01F0A684B00B7FB8A /* BEYOND PULSE.xcworkspace */,
 				07B37FB81F0A681100B7FB8A /* JWTDecode */,
+				B565572DBE07F87A83508FBC /* Pods_BEYOND_PULSE.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

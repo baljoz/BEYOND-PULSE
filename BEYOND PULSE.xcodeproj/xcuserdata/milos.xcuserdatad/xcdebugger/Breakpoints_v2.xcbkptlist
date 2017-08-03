@@ -318,11 +318,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BEYOND PULSE/PlayerViewController.swift"
-            timestampString = "523372535.867467"
+            timestampString = "523432181.829017"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "343"
-            endingLineNumber = "343"
+            startingLineNumber = "346"
+            endingLineNumber = "346"
             landmarkName = "onClickToSegment(_:)"
             landmarkType = "7">
             <Locations>
@@ -366,11 +366,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BEYOND PULSE/PlayerViewController.swift"
-            timestampString = "523372535.867467"
+            timestampString = "523432181.829017"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "554"
-            endingLineNumber = "554"
+            startingLineNumber = "557"
+            endingLineNumber = "557"
             landmarkName = "pressCancel()"
             landmarkType = "7">
          </BreakpointContent>
@@ -389,6 +389,22 @@
             endingLineNumber = "24"
             landmarkName = "-performSelector:"
             landmarkType = "6">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BEYOND PULSE/CoachViewController.swift"
+            timestampString = "523443110.750802"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

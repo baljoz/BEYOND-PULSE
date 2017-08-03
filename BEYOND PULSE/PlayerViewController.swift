@@ -22,6 +22,8 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
     var pageOfSesion : Int = 0
     var players = [Players]()
     
+    let gradient:CAGradientLayer = CAGradientLayer()
+    
     @IBOutlet weak var rightBarButton: UIBarButtonItem!
     
     @IBOutlet weak var navigationBar: UINavigationBar!
@@ -75,15 +77,16 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         startTrening.layer.cornerRadius=10
 
         
-        let gradient:CAGradientLayer = CAGradientLayer()
+        
            let colorBottom = UIColor(red: 254.0/255.0, green: 92.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
           let  colorTop = UIColor(red: 255.0/255.0, green: 186.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
         
         gradient.colors = [colorTop, colorBottom]
         gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
         gradient.endPoint = CGPoint(x: 1.0, y: 0.0)
-        gradient.frame = startTrening.bounds
-       
+        
+        gradient.frame = startTrening.layer.bounds
+        
         gradient.cornerRadius = 10
         
        startTrening.layer.addSublayer(gradient)
@@ -102,7 +105,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
             navView.title.text = self.sing.coatch.team[0].name
      
            // navView.center = self.navigationBar.center
-    navView.image.contentMode = .scaleAspectFit
+            navView.image.contentMode = .scaleAspectFit
             self.navigationBar.topItem?.titleView = navView
             self.navigationBar.topItem?.titleView?.center.x = self.view.center.x
             

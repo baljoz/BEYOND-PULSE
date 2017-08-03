@@ -114,7 +114,7 @@ class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITabl
         playerHeight.text = String(pl.height)
         playerHeartRate.text = String(pl.maxHeartRate)
     
-        if(self.sing.BL.isDeviceConnected())
+        if(self.sing.playerConnected[playerId])
         {
             connectImage.image = UIImage(named:"connectedIco")
            connectButton.setTitle("Unpair", for: .normal)

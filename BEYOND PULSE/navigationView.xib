@@ -16,14 +16,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YBG-RB-FzQ">
-                    <rect key="frame" x="70" y="25" width="31" height="17"/>
+                    <rect key="frame" x="85" y="25" width="31" height="17"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="31" id="JNh-IR-Ooc"/>
                         <constraint firstAttribute="height" constant="17" id="Lmx-5s-h2I"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CkW-mc-tie">
-                    <rect key="frame" x="110" y="26" width="35.5" height="15"/>
+                    <rect key="frame" x="125" y="26" width="35.5" height="15"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="15" id="YiP-vN-v5b"/>
                     </constraints>
@@ -44,7 +44,7 @@
                 <constraint firstItem="YBG-RB-FzQ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="bOM-Dt-DEL"/>
                 <constraint firstItem="CkW-mc-tie" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="iBu-wf-cgW"/>
                 <constraint firstItem="Pov-JB-EWd" firstAttribute="top" secondItem="CkW-mc-tie" secondAttribute="bottom" constant="5.5" id="oRf-KW-HQG"/>
-                <constraint firstItem="CkW-mc-tie" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="qNf-vf-VSF"/>
+                <constraint firstItem="CkW-mc-tie" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="15.25" id="qNf-vf-VSF"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>

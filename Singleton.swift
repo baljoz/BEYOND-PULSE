@@ -28,4 +28,7 @@ class MySingleton {
     var BL = BLEController()
     var playerConnected = [Bool]()
     var indexOfSelectedTeam = Int()
+    
+    var a = [Float]()
+    var b = [Float]()
 }

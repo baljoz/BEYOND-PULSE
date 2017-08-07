@@ -40,6 +40,8 @@
 		07B380051F0A9F7D00B7FB8A /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B380041F0A9F7D00B7FB8A /* SettingsTableViewCell.swift */; };
 		07B813621F15EBD40026A26D /* JWTDecode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0742F06C1F134C90001FA68D /* JWTDecode.framework */; };
 		07BA88FE1F0BB9B8001C4637 /* Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BA88FD1F0BB9B8001C4637 /* Players.swift */; };
+		07BF10F61F3343BC0093AEE5 /* StopTraningSesionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BF10F51F3343BC0093AEE5 /* StopTraningSesionViewController.swift */; };
+		07BF10FD1F334ED90093AEE5 /* LayerContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BF10FC1F334ED90093AEE5 /* LayerContainerView.swift */; };
 		07CC00BF1F20A53700045D42 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07CC00BB1F2095B800045D42 /* Roboto-Bold.ttf */; };
 		07CC00C01F20A53C00045D42 /* MyriadPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07CC00BE1F20A50300045D42 /* MyriadPro-Regular.otf */; };
 		07CC00C11F20A54100045D42 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07961F781F1F6D0800A8919E /* Roboto-Medium.ttf */; };
@@ -85,6 +87,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = A80F3B18A27E72E93A18AE7123A4FB9A;
 			remoteInfo = "Pods-BEYOND PULSE";
+		};
+		07BF10FA1F3343BF0093AEE5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0742F0661F134C90001FA68D /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = ACE1C47621E4E4A264EF1DCAA40A03B7;
+			remoteInfo = "HockeySDK-HockeySDKResources";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -145,6 +154,8 @@
 		07B380021F0A965600B7FB8A /* Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Singleton.swift; path = ../Singleton.swift; sourceTree = "<group>"; };
 		07B380041F0A9F7D00B7FB8A /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		07BA88FD1F0BB9B8001C4637 /* Players.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Players.swift; sourceTree = "<group>"; };
+		07BF10F51F3343BC0093AEE5 /* StopTraningSesionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopTraningSesionViewController.swift; sourceTree = "<group>"; };
+		07BF10FC1F334ED90093AEE5 /* LayerContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerContainerView.swift; sourceTree = "<group>"; };
 		07CC00BB1F2095B800045D42 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		07CC00BE1F20A50300045D42 /* MyriadPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Regular.otf"; sourceTree = "<group>"; };
 		07DB2B811F0CB3AC00D686C9 /* BLETestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLETestViewController.swift; sourceTree = "<group>"; };
@@ -248,7 +259,6 @@
 				07BA88FD1F0BB9B8001C4637 /* Players.swift */,
 				0708E28F1F0CB1F300A3143C /* BLEController.h */,
 				0708E2901F0CB1F300A3143C /* BLEController.m */,
-				07DB2B811F0CB3AC00D686C9 /* BLETestViewController.swift */,
 				0765C26C1F0E3E6A007F0792 /* SessionViewController.swift */,
 				0765C26E1F0E3F41007F0792 /* SessionTableViewCell.swift */,
 				079597061F025D46002FD487 /* ServerComunication.swift */,
@@ -256,8 +266,11 @@
 				0742F0701F13878A001FA68D /* StartTraningViewController.swift */,
 				073775D31F27142500D1ABCC /* ActionSheetViewController.swift */,
 				073775D71F273E8C00D1ABCC /* AlterViewController.swift */,
+				07BF10F51F3343BC0093AEE5 /* StopTraningSesionViewController.swift */,
 				074B476C1F29DE9C00565E02 /* Fonts */,
 				07DFEC261F1DE86300280D65 /* Custom View */,
+				07BF10FC1F334ED90093AEE5 /* LayerContainerView.swift */,
+				07DB2B811F0CB3AC00D686C9 /* BLETestViewController.swift */,
 			);
 			path = "BEYOND PULSE";
 			sourceTree = "<group>";
@@ -283,6 +296,7 @@
 		0742F0671F134C90001FA68D /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				07BF10FB1F3343BF0093AEE5 /* HockeySDKResources.bundle */,
 				0742F06C1F134C90001FA68D /* JWTDecode.framework */,
 				0742F06E1F134C90001FA68D /* Pods_BEYOND_PULSE.framework */,
 			);
@@ -539,6 +553,13 @@
 			remoteRef = 0742F06D1F134C90001FA68D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		07BF10FB1F3343BF0093AEE5 /* HockeySDKResources.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = HockeySDKResources.bundle;
+			remoteRef = 07BF10FA1F3343BF0093AEE5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -643,12 +664,14 @@
 				07EF5BE71F05012200476225 /* FirstScreanViewController.swift in Sources */,
 				0726974B1EE98B67005AC23A /* LoginViewController.swift in Sources */,
 				07A6238D1EF1151A003A5395 /* PlayerTableViewCell.swift in Sources */,
+				07BF10FD1F334ED90093AEE5 /* LayerContainerView.swift in Sources */,
 				07A6238F1EF1158F003A5395 /* PlayerViewController.swift in Sources */,
 				0765C26D1F0E3E6A007F0792 /* SessionViewController.swift in Sources */,
 				07DB2B821F0CB3AC00D686C9 /* BLETestViewController.swift in Sources */,
 				0726971D1EE98B15005AC23A /* AppDelegate.swift in Sources */,
 				07B380051F0A9F7D00B7FB8A /* SettingsTableViewCell.swift in Sources */,
 				07DFEC251F1DD2E600280D65 /* NavigationView.swift in Sources */,
+				07BF10F61F3343BC0093AEE5 /* StopTraningSesionViewController.swift in Sources */,
 				07387E251EEA7985003E73D9 /* SelectTeamViewController.swift in Sources */,
 				073775D81F273E8C00D1ABCC /* AlterViewController.swift in Sources */,
 				079991421F03BFAA00D4860E /* SettingsViewController.swift in Sources */,

@@ -12,12 +12,25 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var sing = MySingleton.sharedInstance
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        
+        sing.a.append(158.0/255.0)
+        sing.a.append(33.0/255.0)
+        sing.a.append(0.0/255.0)
+        sing.a.append(1.0)
+        
+        sing.b.append(255.0/255.0)
+        sing.b.append(156.0/255.0)
+        sing.b.append(0.0/255.0)
+        sing.b.append(1.0)
+
         // Override point for customization after application launch.
       //za notifikacije 
         // iOS 10 support
+        
         if #available(iOS 10, *) {
             UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in }
             application.registerForRemoteNotifications()
@@ -36,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         else {  
             application.registerForRemoteNotifications(matching: [.badge, .sound, .alert])
         }
-        BITHockeyManager.shared().configure(withIdentifier: "aef1d66809f64f7f9931db910ab5b1d9")
+        BITHockeyManager.shared().configure(withIdentifier: "5abec300cbc370b7c5fd98d34c2f59344553be47")
         // Do some additional configuration if needed here
         BITHockeyManager.shared().start()
         BITHockeyManager.shared().authenticator.authenticateInstallation()

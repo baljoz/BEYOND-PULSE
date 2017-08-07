@@ -22,6 +22,7 @@ class ActionSheetViewController: UIViewController {
         let col = UIColor(red: 11/255.0, green: 18/255.0, blue: 20/255.0, alpha: 1)
     popUpView.backgroundColor = col.withAlphaComponent(0.9)
         popUpView.layer.cornerRadius = 10
+    
     }
 
     override func didReceiveMemoryWarning() {

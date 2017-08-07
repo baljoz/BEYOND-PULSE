@@ -33,6 +33,7 @@ class StartTraningViewController: UIViewController {
     var minuts=0
     var hour = 0
     var secund = 0
+    var player = [Players]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -116,8 +117,8 @@ class StartTraningViewController: UIViewController {
         {
             let revealviewcontroller:SWRevealViewController = self.revealViewController()
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let newViewController = storyBoard.instantiateViewController(withIdentifier: "selP") as! PlayerViewController
-           
+            let newViewController = storyBoard.instantiateViewController(withIdentifier: "stopTraning") as! StopTraningSesionViewController
+           newViewController.players = player
             revealviewcontroller.pushFrontViewController(newViewController, animated: true)
 
         }

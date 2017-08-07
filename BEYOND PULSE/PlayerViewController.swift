@@ -75,6 +75,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         }
 
    
+   
         startTrening.layer.cornerRadius=10
 
         
@@ -86,11 +87,13 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
         gradient.endPoint = CGPoint(x: 1.0, y: 0.0)
         
-        gradient.frame = startTrening.layer.bounds
+        gradient.frame = startTrening.layer.frame
         gradient.masksToBounds = true
         gradient.cornerRadius = 10
         
-       startTrening.layer.insertSublayer(gradient, at: 0)
+        //startTrening.layer = gradient
+        
+       startTrening.layer.insertSublayer(gradient, at: 1)
 
         
         
@@ -568,7 +571,13 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
         
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "sessions") as! StartTraningViewController
-        
+        for i in 0...players.count
+        {
+            if self.sing.playerConnected[i]
+            {
+                newViewController.player.append(players[i])
+            }
+        }
         revealviewcontroller.pushFrontViewController(newViewController, animated: true)
 
     }

@@ -9,21 +9,26 @@
 import UIKit
 
 class BLETestViewController: UIViewController,BLEControllerDelegate{
+    var sing = MySingleton.sharedInstance
  var gg = String()
     @IBOutlet weak var lab: UILabel!
     
+   
+    @IBOutlet weak var v: UIView!
     var bl = BLEController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         bl.delegate = self
         // Do any additional setup after loading the view.
+   
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
+        
+        }
     
 
     @IBAction func onClick(_ sender: Any) {

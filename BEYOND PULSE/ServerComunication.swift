@@ -752,7 +752,7 @@ class serverCommunications
     
     
 //Proverena .... radi ali msm da ce treba malo drugojacije da se implementira
-    func createNewTraningSessins(token:String , idTeam: Int,sessionStart:String,sessionEnd:String,idPlayers:[Int])    {
+    func createNewTraningSessins(token:String , idTeam: Int,sessionStart:String,sessionEnd:String,idPlayers:[Int],handler:@escaping (_ idSession : Int)-> Void)  {
     
         let json: [String: Any] = ["started": sessionStart,
                                    "ended": sessionEnd,"playerIds":idPlayers]
@@ -785,7 +785,7 @@ class serverCommunications
                 var code = status?["code"] as? String ?? ""
                 if code == "BP_200"
                 {
-                    self.idSesion = responseJSON["data"] as? Int ?? 0
+                   handler(responseJSON["data"] as? Int ?? 0)
                 }
                 else {
                     //hvali za not found za token ..... treba da se izhendluje

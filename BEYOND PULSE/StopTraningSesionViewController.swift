@@ -161,9 +161,16 @@ class StopTraningSesionViewController: UIViewController,UITableViewDataSource,UI
     }
     func pressContinue()
     {
-        JSON.updatePlayerTraningSessionsData(token: sing.loadingInfo.token, idTeam: 4
-            , idSession: 2, beltNumber: players[0].beltName, idPlayer: players[0].id, strideRate: strideRate, numberOfSteps: numberOfSteps, heartRate: heartRate)
-        
+        var id = [Int]()
+        for  i in players
+        {
+            id.append(i.id)
+        }
+        JSON.createNewTraningSessins(token: sing.loadingInfo.token, idTeam: sing.coatch.team[indexOfTeam].id, sessionStart: "2017-06-30T15:02:38Z", sessionEnd: "2017-06-30T16:03:38Z", idPlayers:id ){( id : Int)-> Void in
+    
+        self.JSON.updatePlayerTraningSessionsData(token: self.sing.loadingInfo.token, idTeam: self.sing.coatch.team[self.indexOfTeam].id
+            , idSession: id, beltNumber: self.players[0].beltName, idPlayer: self.players[0].id, strideRate: self.strideRate, numberOfSteps: self.numberOfSteps, heartRate: self.heartRate)
+        }
     }
     @IBAction func pressBack(_ sender: Any) {
         let revealviewcontroller:SWRevealViewController = self.revealViewController()

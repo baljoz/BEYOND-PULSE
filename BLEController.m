@@ -247,6 +247,7 @@
    // [manager connectPeripheral:self.peripheral options:nil]; //ja sam zakomentarisao
     
     // add the found HRM sensor to the scan list if new
+    
     [self checkIfNotInList:aPeripheral];
 }
 
@@ -544,7 +545,7 @@
     }
     
     //Rapportera pulsen till parent
-    [self.delegate newHeartRateValue:bpm];
+    [self.delegate newHeartRateValue:reportData];
     
 }
 

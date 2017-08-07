@@ -9,6 +9,10 @@
 import UIKit
 
 class BLETestViewController: UIViewController,BLEControllerDelegate{
+    func newHeartRateValue(_ bpm: UnsafeMutablePointer<UInt8>!) {
+        print(bpm)
+    }
+
     var sing = MySingleton.sharedInstance
  var gg = String()
     @IBOutlet weak var lab: UILabel!
@@ -66,10 +70,10 @@ class BLETestViewController: UIViewController,BLEControllerDelegate{
         // Pass the selected object to the new view controller.
     }
     */
-    func   newHeartRateValue(_ bpm :UInt8)
+  /*  func   newHeartRateValue(_ bpm :UInt8)
     {
         print("delegiraaaaa")
-    }
+    }*/
     func abortPairing() {
     
     // avbryt parningen med ett pulsband

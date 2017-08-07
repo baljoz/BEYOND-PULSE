@@ -796,9 +796,13 @@ class serverCommunications
     }
     // Testirana radi 
     
-    func updatePlayerTraningSessionsData(token:String , idTeam: Int,idSession:Int,beltNumber:String,idPlayer:Int,strideRate: Int,numberOfSteps:Int,heartRate:Int)
+    func updatePlayerTraningSessionsData(token:String , idTeam: Int,idSession:Int,beltNumber:String,idPlayer:Int,strideRate: [Int],numberOfSteps:[Int],heartRate:[Int])
         
     {
+        var nos = [Int]()
+        nos.append(5)
+        nos.append(5)
+        nos.append(5)
         // vraca BP_500 ????
         let json: [String: Any] = ["beltNumber": beltNumber,"playerId":idPlayer,"strideRate":strideRate,"numberOfSteps":numberOfSteps,"heartRate":heartRate]
         let jsonData = try? JSONSerialization.data(withJSONObject: json)

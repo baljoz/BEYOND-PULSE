@@ -13,7 +13,7 @@
 @protocol BLEControllerDelegate <NSObject>
 /*! Rapportera nya pulsvärden
  */
-- (void) newHeartRateValue:(Byte)bpm;
+- (void) newHeartRateValue:(uint8_t *)bpm;
 @end
 
 @interface BLEController : NSObject <CBCentralManagerDelegate, CBPeripheralDelegate> {

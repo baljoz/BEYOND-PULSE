@@ -12,6 +12,14 @@ class StopTraningSesionViewController: UIViewController,UITableViewDataSource,UI
     var players =  [Players]()
     @IBOutlet weak var uploadButton: UIButton!
     @IBOutlet weak var playerTable: UITableView!
+    var sing = MySingleton.sharedInstance
+    @IBOutlet weak var navigationBar: UINavigationBar!
+    var indexOfTeam = Int()
+    var JSON = serverCommunications()
+    var heartRate = [Int]()
+    var strideRate = [Int]()
+    var numberOfSteps=[Int]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
       
@@ -37,6 +45,22 @@ class StopTraningSesionViewController: UIViewController,UITableViewDataSource,UI
         //startTrening.layer = gradient
         
         uploadButton.layer.addSublayer(gradient)
+        
+        if let navView =  Bundle.main.loadNibNamed("navigationView", owner: self, options: nil)?.first as? NavigationView
+        {
+         
+            navView.image.image = self.sing.coatch.team[indexOfTeam].img
+            navView.title.text = self.sing.coatch.team[indexOfTeam].name
+            
+            // navView.center = self.navigationBar.center
+            navView.image.contentMode = .scaleAspectFit
+            self.navigationBar.topItem?.titleView = navView
+            self.navigationBar.topItem?.titleView?.center.x = self.view.center.x
+            
+            
+            navView.sizeToFit()
+        }
+   
     }
 
     override func didReceiveMemoryWarning() {
@@ -129,9 +153,26 @@ class StopTraningSesionViewController: UIViewController,UITableViewDataSource,UI
         popUp.titleLabel.text = "Unable to sync all devices"
         popUp.messageLabel.text = "Some of the devices failed to sync. Players are either out of range or batteries are too low."
         popUp.startTranningSessions.setTitle("Continue to Upload", for: .normal)
+          popUp.startTranningSessions.addTarget(self, action:  #selector(pressContinue), for: .touchUpInside)
         self.view.addSubview(popUp.view)
-        
+       
         popUp.didMove(toParentViewController: self)
        // popUp.startTranningSessions.addTarget(self, action:  #selector(pressContinue), for: .touchUpInside)
     }
+    func pressContinue()
+    {
+        JSON.updatePlayerTraningSessionsData(token: sing.loadingInfo.token, idTeam: 4
+            , idSession: 2, beltNumber: players[0].beltName, idPlayer: players[0].id, strideRate: strideRate, numberOfSteps: numberOfSteps, heartRate: heartRate)
+        
+    }
+    @IBAction func pressBack(_ sender: Any) {
+        let revealviewcontroller:SWRevealViewController = self.revealViewController()
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "selP") as! PlayerViewController
+              // self.present(newViewController, animated: true, completion: nil)
+        revealviewcontroller.pushFrontViewController(newViewController, animated: true)
+        
+
+    }
+   
 }

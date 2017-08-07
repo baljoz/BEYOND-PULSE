@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StartTraningViewController: UIViewController {
+class StartTraningViewController: UIViewController,BLEControllerDelegate  {
     
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var tranningSessionInfo: UILabel!
@@ -34,9 +34,14 @@ class StartTraningViewController: UIViewController {
     var hour = 0
     var secund = 0
     var player = [Players]()
+    var teamIndex = Int()
+    var heartRate = [Int]()
+    var strideRate = [Int]()
+    var numberOfSteps=[Int]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        sing.BL.delegate = self
         // Do any additional setup after loading the view.
                 tileLabel.text = ""
         tranningSessionInfo.text = "Press button to start sessions"
@@ -118,7 +123,12 @@ class StartTraningViewController: UIViewController {
             let revealviewcontroller:SWRevealViewController = self.revealViewController()
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let newViewController = storyBoard.instantiateViewController(withIdentifier: "stopTraning") as! StopTraningSesionViewController
+            newViewController.indexOfTeam = teamIndex
            newViewController.players = player
+            newViewController.heartRate = heartRate
+            newViewController.strideRate = strideRate
+            newViewController.numberOfSteps = numberOfSteps
+           
             revealviewcontroller.pushFrontViewController(newViewController, animated: true)
 
         }
@@ -151,6 +161,31 @@ class StartTraningViewController: UIViewController {
        
     }
 }
+  /*  func newHeartRateValue(bpm:[UInt8])
+    {
+        print("dad")
+        print(bpm)
+        print("dad")
+    }*/
+    
+    func   newHeartRateValue(_ bpm:UnsafeMutablePointer<UInt8>)
+    {
+        print("dad")
+   
+        print(Int(bpm[1]))
+        print(Int(bpm[2]))
+        print(Int(bpm[3]))
+
+        print(bpm[0])
+        heartRate.append(Int(bpm[1]))
+        numberOfSteps.append(Int(bpm[2]))
+        strideRate.append(Int(bpm[3]))
+        
+        
+        
+        //self.heartRate.append(Int(bpm[0]))
+    }
+
     func updateFrame()
     {
         self.stratButton.isEnabled = true

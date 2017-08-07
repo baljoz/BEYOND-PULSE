@@ -108,6 +108,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
             print(teamId)
             navView.image.image = self.sing.coatch.team[indexOfTeam].img
             navView.title.text = self.sing.coatch.team[indexOfTeam].name
+            
      
            // navView.center = self.navigationBar.center
             navView.image.contentMode = .scaleAspectFit
@@ -383,6 +384,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
             
             if self.sing.loadingInfo.stat.statusCode == "BP_200"
             {
+                self.sing.playerOnTeam[indexPath.row].beltName = player.beltName
         newViewController.pl = player
        newViewController.pageOfSeeions = self.pageOfSesion
             newViewController.playerId = indexPath.row
@@ -571,6 +573,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
         
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "sessions") as! StartTraningViewController
+        newViewController.teamIndex = indexOfTeam
         for i in 0...players.count
         {
             if self.sing.playerConnected[i]

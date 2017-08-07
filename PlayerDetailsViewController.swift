@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,BLEControllerDelegate {
+class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITableViewDelegate{
     var pl = Players()
     var idTeam = Int()
     var session = [traningSesion]()
@@ -42,7 +42,7 @@ class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITabl
         // Do any additional setup after loading the view.
         
         
-        self.sing.BL.delegate = self
+       // self.sing.BL.delegate = self
         
         
         playerImage.image = pl.playerImage

@@ -42,7 +42,6 @@ class StopTraningSesionViewController: UIViewController,UITableViewDataSource,UI
         gradient.masksToBounds = true
         gradient.cornerRadius = 10
         
-        //startTrening.layer = gradient
         
         uploadButton.layer.addSublayer(gradient)
         
@@ -52,7 +51,6 @@ class StopTraningSesionViewController: UIViewController,UITableViewDataSource,UI
             navView.image.image = self.sing.coatch.team[indexOfTeam].img
             navView.title.text = self.sing.coatch.team[indexOfTeam].name
             
-            // navView.center = self.navigationBar.center
             navView.image.contentMode = .scaleAspectFit
             self.navigationBar.topItem?.titleView = navView
             self.navigationBar.topItem?.titleView?.center.x = self.view.center.x
@@ -105,17 +103,7 @@ class StopTraningSesionViewController: UIViewController,UITableViewDataSource,UI
             colorBottom = UIColor(red: 255.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
             cell.connectionImage.image = UIImage(named:"synced")
         }
-       /* else if cell.playerConection.text! == "CONNECTED"
-        {
-            colorBottom = UIColor(red: 38.0/255.0, green: 93.0/255.0, blue: 201.0/255.0, alpha: 1.0).cgColor
-            colorTop = UIColor(red: 131.0/255.0, green: 197.0/255.0, blue: 45.0/255.0, alpha: 1.0).cgColor
-        }
-        else
-        {
-            
-            colorBottom = UIColor(red: 213.0/255.0, green: 133.0/255.0, blue: 7.0/255.0, alpha: 1.0).cgColor
-            colorTop = UIColor(red: 255.0/255.0, green: 254.0/255.0, blue: 148.0/255.0, alpha: 1.0).cgColor
-        }*/
+  
         gradient.colors = [colorTop, colorBottom]
         gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
         gradient.endPoint = CGPoint(x: 1.0, y: 0.0)

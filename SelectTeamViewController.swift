@@ -35,14 +35,7 @@ class SelectTeamViewController: UIViewController,UITableViewDataSource,UITableVi
         menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
        teamTable.separatorStyle = .none
         
-       /* let button = UIButton(type: .system)
-        button.titleLabel!.lineBreakMode = .byWordWrapping
-        button.setTitle("Coaches \nWebsite", for: .normal)
-        button.titleLabel?.textColor = UIColor.white
-   
-        button.sizeToFit()
-        
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)*/
+     
 
         let backUnderground = UIColor(red: 33.0/255.0, green: 33.0/255.0, blue: 33.0/255.0, alpha: 1.0)
         teamTable.backgroundColor = backUnderground

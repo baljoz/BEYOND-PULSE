@@ -70,32 +70,21 @@ class BLETestViewController: UIViewController,BLEControllerDelegate{
         // Pass the selected object to the new view controller.
     }
     */
-  /*  func   newHeartRateValue(_ bpm :UInt8)
-    {
-        print("delegiraaaaa")
-    }*/
-    func abortPairing() {
+      func abortPairing() {
     
     // avbryt parningen med ett pulsband
             bl.stopScan()
    bl.cancelConnectionSilent(true, byUser: true)
        
 
-    /*
-     [[[UIAlertView alloc]
-     initWithTitle:@"Could not find a heart rate sensor?"
-     message:@"Make sure it's turned on, it's near your iPhone and also not connected to another device."
-     delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil] show];
-     */ //ja sam zakomentarisao
-    
+       
     if self.bl.listOfperipheral.count == 0
     {
           }
     else
     {
        
-   // NSArray devices = [NSArray arrayWithCapacity:5];
-    //print(self.bl.listOfperipheral)
+  
         var p : NSInteger = 0
         bl.tryToConnect(to: bl.listOfperipheral.object(at: p) as! CBPeripheral)
         let g = bl.listOfperipheral.object(at: p) as! CBPeripheral

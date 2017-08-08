@@ -118,8 +118,7 @@ class CoachViewController: UIViewController,UITableViewDataSource,UITableViewDel
                     popUp.titles = "Erorr"
                     popUp.message = self.sing.loadingInfo.stat.statusDescription
                     
-                    //popUp.comitButton.isHidden = true
-                    self.addChildViewController(popUp)
+                                        self.addChildViewController(popUp)
                     popUp.view.frame = self.view.frame
                     self.view.addSubview(popUp.view)
                     

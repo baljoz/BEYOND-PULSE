@@ -33,12 +33,6 @@ class ActionSheetViewController: UIViewController {
     @IBAction func ClosePopUP(_ sender: Any) {
         self.view.removeFromSuperview()
     }
-
-   /* @IBAction func clickOnStart(_ sender: Any) {
-       
-        
-    }
-  */
     /*
     // MARK: - Navigation
 

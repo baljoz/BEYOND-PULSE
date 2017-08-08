@@ -188,44 +188,7 @@ class PlayerDetailsViewController: UIViewController,UITableViewDataSource,UITabl
        
     }
     @IBAction func clickSync(_ sender: Any) {
-        /*let message = NSAttributedString(string: "You are about to unpair this player device from Beyond Pulse application.", attributes: [
-            NSFontAttributeName:UIFont.systemFont(ofSize: 15),
-            NSForegroundColorAttributeName : UIColor.white
-            ])
-        let title = NSAttributedString(string: "Unpair Device", attributes: [
-            NSFontAttributeName:UIFont.systemFont(ofSize: 25),
-            NSForegroundColorAttributeName : UIColor.white
-            ])
-        
-        
-        let menu = UIAlertController(title:"",message:"",preferredStyle: .alert)
-        
-        menu.setValue(message, forKey: "attributedMessage")
-        menu.setValue(title, forKey: "attributedTitle")
-        
-     menu.view.backgroundColor = UIColor(red: (0/255.0), green: (0/255.0), blue: (0/255.0), alpha: 0.2)
-        
-        
-      //  subview.backgroundColor = UIColor(red: (0/255.0), green: (0/255.0), blue: (0/255.0), alpha: 0.2)
-        
-        menu.view.tintColor = UIColor.orange
-       // var x = self.view.frame.minX+self.view.frame.maxX - menu.view.frame.width/2
-        //var y = self.view.frame.minY+self.view.frame.maxY - menu.view.frame.height/2
-
-       // menu.view.frame = CGRect(x:x,y:y,width:100,height:100)
-       
-        let retry = UIAlertAction(title:"Unpair",style : .default,handler:{(alert : UIAlertAction!)-> Void in
-            print("retry")
-        })
-        let cancle = UIAlertAction(title:"Cancel",style : .default,handler:{(alert : UIAlertAction!)-> Void in
-            print("Cancle")
-        })
-         menu.addAction(cancle)
-        menu.addAction(retry)
-     
-        
-        present(menu,animated: true , completion: nil)*/
-        
+               
         
         
         let popUp = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "alterView") as! AlterViewController

@@ -40,10 +40,7 @@ class LoginViewController: UIViewController {
         textfieldView.layer.cornerRadius=5
 
         
-       // let loginButton = UIButton(frame: CGRect(x: 10, y: 50, width: 300, height: 30))
-       // self.view.addSubview(loginButton)
-        
-        let gradient:CAGradientLayer = CAGradientLayer()
+             let gradient:CAGradientLayer = CAGradientLayer()
         let colorBottom = UIColor(red: 158.0/255.0, green: 33.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
         let colorTop = UIColor(red: 255.0/255.0, green: 156.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
         //colorBottom
@@ -161,8 +158,7 @@ class LoginViewController: UIViewController {
                 popUp.titles = "Erorr"
                 popUp.message = ress.stat.statusDescription
                 
-                //popUp.comitButton.isHidden = true
-                self.addChildViewController(popUp)
+                              self.addChildViewController(popUp)
                 popUp.view.frame = self.view.frame
                 self.view.addSubview(popUp.view)
                 
@@ -172,8 +168,7 @@ class LoginViewController: UIViewController {
       
     }
     }
-    //
-    //on token get id
+  
     func getTokenIdCoach(token : String) -> Int
     {
          var id = -1

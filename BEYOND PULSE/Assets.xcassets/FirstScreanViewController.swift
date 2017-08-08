@@ -16,12 +16,7 @@ class FirstScreanViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      // let jeremyGif = UIImage.gifImageWithName("heartbeat")
-     //   let imageView = UIImageView(image: jeremyGif)
-       // imageView.frame = CGRect(x: 20.0, y: view.frame.size.height - 300 , width: self.view.frame.size.width - 40, height: 150.0)
-       // view.addSubview(imageView)
-        
-        
+              
         
         self.timer = Timer.scheduledTimer(timeInterval: 5, target: self,
                                           selector: #selector(self.timerDidFire(timer:)), userInfo: nil, repeats: false)

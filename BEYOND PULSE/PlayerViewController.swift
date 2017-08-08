@@ -110,7 +110,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
             navView.title.text = self.sing.coatch.team[indexOfTeam].name
             
      
-           // navView.center = self.navigationBar.center
+         
             navView.image.contentMode = .scaleAspectFit
             self.navigationBar.topItem?.titleView = navView
             self.navigationBar.topItem?.titleView?.center.x = self.view.center.x
@@ -133,8 +133,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
                     popUp.titles = "Erorr"
                     popUp.message = self.sing.loadingInfo.stat.statusDescription
                     
-                    //popUp.comitButton.isHidden = true
-                    self.addChildViewController(popUp)
+                                        self.addChildViewController(popUp)
                     popUp.view.frame = self.view.frame
                     self.view.addSubview(popUp.view)
                     
@@ -399,7 +398,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
                     popUp.titles = "Erorr"
                     popUp.message = self.sing.loadingInfo.stat.statusDescription
                     
-                    //popUp.comitButton.isHidden = true
+                   
                     self.addChildViewController(popUp)
                     popUp.view.frame = self.view.frame
                     self.view.addSubview(popUp.view)
@@ -421,7 +420,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
                 newViewController.session = pos.sesion
                 
                newViewController.pageOfSeeions = self.pageOfSesion
-               // self.present(newViewController, animated: true, completion: nil)
+               
                 revealviewcontroller.pushFrontViewController(newViewController, animated: true)
 
 
@@ -434,7 +433,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
                 popUp.titles = "Erorr"
                 popUp.message = self.sing.loadingInfo.stat.statusDescription
                 
-                //popUp.comitButton.isHidden = true
+               
                 self.addChildViewController(popUp)
                 popUp.view.frame = self.view.frame
                 self.view.addSubview(popUp.view)
@@ -487,61 +486,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
     @IBAction func connectAndStartTraning(_ sender: Any) {
         
-      /*  let message = NSAttributedString(string: "Some of the devices failed to connect.Platers are euther out of rage or batteries are too low.", attributes: [
-            NSFontAttributeName:UIFont.systemFont(ofSize: 15),
-            NSForegroundColorAttributeName : UIColor.white
-            ])
-        let title = NSAttributedString(string: "Unable to connect to all devices.", attributes: [
-            NSFontAttributeName:UIFont.systemFont(ofSize: 25),
-            NSForegroundColorAttributeName : UIColor.white
-            ])
-
-        
-        let menu = UIAlertController(title:"",message:"",preferredStyle: .actionSheet)
-    
-       menu.setValue(message, forKey: "attributedMessage")
-        menu.setValue(title, forKey: "attributedTitle")
-
-        let subview = (menu.view.subviews.first?.subviews.first?.subviews.first!)! as UIView
-        
-     
-        subview.backgroundColor = UIColor(red: (0/255.0), green: (0/255.0), blue: (0/255.0), alpha: 0.2)
-        
-        menu.view.tintColor = UIColor.orange
-        
-        let startTranning = UIAlertAction(title:"Start Training Session Anyway",style : .default,handler:{(alert : UIAlertAction!)-> Void in
-            let revealviewcontroller:SWRevealViewController = self.revealViewController()
-                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let newViewController = storyBoard.instantiateViewController(withIdentifier: "starttranning") as! StartTraningViewController
-                revealviewcontroller.pushFrontViewController(newViewController, animated: true)
-        })
-      
-        let retry = UIAlertAction(title:"Retry",style : .default,handler:{(alert : UIAlertAction!)-> Void in
-            print("retry")
-        })
-        let cancle = UIAlertAction(title:"Cancel",style : .default,handler:{(alert : UIAlertAction!)-> Void in
-            print("Cancle")
-        })
-        menu.addAction(startTranning)
-        menu.addAction(retry)
-        menu.addAction(cancle)
-    
-        present(menu,animated: true , completion: nil)*/
-       /*
-        if let view2 = Bundle.main.loadNibNamed("actionSheet", owner: self, options: nil)?.first as? actionSheet
-        {
-            view2.frame = CGRect(x:20,y:self.view.frame.maxY-view2.frame.maxY-20,width:self.view.frame.width-40,height:view2.frame.height)
-            view2.layer.cornerRadius = 10
-      
-            view2.continueButton.addTarget(self, action: #selector(pressContinue), for: .touchUpInside)
-             view2.continueButton.addTarget(self, action: #selector(pressCancel), for: .touchUpInside)
-         
-            view2.backgroundColor = UIColor.black.withAlphaComponent(0.9)
-            
-            self.view.addSubview(view2)
-            
-        }*/
-      let popUp = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popUp") as! ActionSheetViewController
+           let popUp = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popUp") as! ActionSheetViewController
         
         self.addChildViewController(popUp)
         popUp.view.frame = self.view.frame
@@ -550,15 +495,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         popUp.didMove(toParentViewController: self)
         popUp.startTranningSessions.addTarget(self, action:  #selector(pressContinue), for: .touchUpInside)
         
-    /*    let revealviewcontroller:SWRevealViewController = self.revealViewController()
-        
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: "sessions") as! StartTraningViewController
-        
-        revealviewcontroller.pushFrontViewController(newViewController, animated: true)*/
-    }
+       }
     func pressCancel()
     {
         self.view.removeFromSuperview()
@@ -566,8 +503,7 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
     func pressContinue()
     {
         
-     // JSON.updatePlayerTraningSessionsData(token: sing.loadingInfo.token, idTeam: teamId, idSession: 4, beltNumber: "111222336", data: "2222ppbbbbmmmm", idPlayer: 6)
-        let revealviewcontroller:SWRevealViewController = self.revealViewController()
+           let revealviewcontroller:SWRevealViewController = self.revealViewController()
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
@@ -606,25 +542,3 @@ extension UIView {
     }
 }
 
-/*extension UIView
-{
-    func searchVisualEffectsSubview() -> UIVisualEffectView?
-    {
-        if let visualEffectView = self as? UIVisualEffectView
-        {
-            return visualEffectView
-        }
-        else
-        {
-            for subview in subviews
-            {
-                if let found = subview.searchVisualEffectsSubview()
-                {
-                    return found
-                }
-            }
-        }
-        
-        return nil
-    }
-}*/

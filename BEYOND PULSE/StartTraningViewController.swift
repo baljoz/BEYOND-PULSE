@@ -161,13 +161,7 @@ class StartTraningViewController: UIViewController,BLEControllerDelegate  {
        
     }
 }
-  /*  func newHeartRateValue(bpm:[UInt8])
-    {
-        print("dad")
-        print(bpm)
-        print("dad")
-    }*/
-    
+      
     func   newHeartRateValue(_ bpm:UnsafeMutablePointer<UInt8>)
     {
         print("dad")

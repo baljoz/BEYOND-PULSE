@@ -87,13 +87,13 @@ class PlayerViewController: UIViewController,UITableViewDataSource,UITableViewDe
         gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
         gradient.endPoint = CGPoint(x: 1.0, y: 0.0)
         
-        gradient.frame = startTrening.layer.frame
+        gradient.frame = startTrening.layer.bounds
         gradient.masksToBounds = true
         gradient.cornerRadius = 10
         
-        //startTrening.layer = gradient
+        startTrening.layer.addSublayer(gradient)
         
-       startTrening.layer.insertSublayer(gradient, at: 1)
+     
 
         
         
